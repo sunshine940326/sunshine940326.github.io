@@ -327,110 +327,12 @@
 
       
         
-          
-            <p>之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。</p>
-<h2 id="什么是github-pages"><a href="#什么是github-pages" class="headerlink" title="什么是github pages"></a>什么是github pages</h2><ol>
-<li><p>什么是github pages<br>github是项目托管网站，列出了项目的源文件，所以github  有一个pages功能，可以自定义主页，用来代替默认的列出源列表的这个页面</p>
-<blockquote>
-<p>所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。</p>
-</blockquote>
-</li>
-<li><p>下面是GitHub Pages 官方文档:</p>
-</li>
-</ol>
-<ul>
-<li><a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a> </li>
-<li><a href="http://help.github.com/pages" target="_blank" rel="external">http://help.github.com/pages</a></li>
-</ul>
-<ol>
-<li><p>GitHub提供两种类型的主页(<a href="https://help.github.com/articles/user-organization-and-project-pages" target="_blank" rel="external">https://help.github.com/articles/user-organization-and-project-pages</a>):</p>
-<ul>
-<li>个人或组织主页 - 页面内容位于 master 下 </li>
-<li>项目主页 - 页面内容位于每个项目的master下</li>
-</ul>
-<p>我们创建的博客属于个人页面（也可以创建为项目主页，不过默认的域名不一样，个人理解）</p>
-</li>
-</ol>
-<h2 id="怎么使用github-pages"><a href="#怎么使用github-pages" class="headerlink" title="怎么使用github pages"></a>怎么使用github pages</h2><ol>
-<li>使用个人或组织页面<br>使用个人或组织页面，需要先创建一个和你的账号同名的仓库，比我我的github账号是sunshine940326，那么我需要创建一个名为sunshine940326.github.io的repo，然后在master上提交你的项目代码，这样就可以通过网址：<a href="http://sunshine940326.github.io来访问我的个人博客。" target="_blank" rel="external">http://sunshine940326.github.io来访问我的个人博客。</a></li>
-<li><p>使用项目主页的方法如下</p>
-<ul>
-<li>设置的方法很简单，只需要在你项目的右上角点击setting<br><img src="http://img.blog.csdn.net/20170226100516628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
-<li>找到下方的pages，将默认的none改成master分支<img src="http://img.blog.csdn.net/20170226100803503?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
-<li>点击保存，之后就可以在github pages后面看到你的项目链接了，你可以直接通过这个链接查看你master分支中代码的html内容<img src="http://img.blog.csdn.net/20170226101029145?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>user pages只有一个, project pages可以有多个, 对于个人博客而言, 两种方式都可以.如果用户申请了自己的域名, 还可以使用CNAME文件自定义domain name, 这样访问你的域名就自动访问到github上的页面. 用户也可以自定义404页面.</p>
-</blockquote>
-<h2 id="什么是hexo以及安装hexo"><a href="#什么是hexo以及安装hexo" class="headerlink" title="什么是hexo以及安装hexo"></a>什么是hexo以及安装hexo</h2><p>说完了githubpages，继续来说一下什么是hexo</p>
-<ol>
-<li>什么是Hexo<br>google的第一条结果的解释是这样的<br><img src="http://img.blog.csdn.net/20170226102946906?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>点开这个链接就是中文版的官网了，<strong>强烈建议大家多看看官方教程</strong>，比看其他的教程有用多了</li>
-</ol>
-<p>hexo是基于node环境，所以你需要先安装node，进行一些操作需要用到命令行，所以建议大家直接装一个git bash<br>这是git for windows自带的一组程序，提供了Linux风格的shell，在该环境下，您可以直接用上面提到的命令来安装Node.js。打开它的方法很简单，在任意位置单击右键，选择“GitBash Here”即可。由于Hexo的很多操作都涉及到命令行，您可以考虑始终使用Git Bash来进行操作。</p>
-<ol>
-<li>安装 Git<ul>
-<li>Windows：下载并安装 git.<a href="https://github.com/waylau/git-for-win" target="_blank" rel="external">百度云git下载地址</a></li>
-<li>Mac：使用 Homebrew, MacPorts ：brew install git;或下载 安装程序 安装。</li>
-<li>Linux (Ubuntu, Debian)：sudo apt-get install git-core</li>
-<li>Linux (Fedora, Red Hat, CentOS)：sudo yum install git-core</li>
-</ul>
-</li>
-<li><p>安装node<br>安装node的方式有很多种，我建议直接使用安装程序安装<a href="https://nodejs.org/en/" target="_blank" rel="external">node安装程序</a></p>
-<blockquote>
-<p>对于windows用户来说，建议使用安装程序进行安装。安装时，请勾选Add to PATH选项。<br><strong>安装node是需要配置环境变量的</strong></p>
-</blockquote>
-<p>安装完成之后打开命令行，输入 node -v，如果有返回版本号，即说明安装成功</p>
-</li>
-<li>安装Hexo<br>当你安装好了git和node之后，就可以安装hexo了，好激动有没有，先不要激动的太早，这才刚开始= =<br>只需要输入下面的代码就可以安装hexo<br>在任意位置新建一个文件夹名为hexo <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ cd d:/hexo</div><div class="line">$ npm install hexo-cli -g</div><div class="line">$ hexo init blog</div><div class="line">$ cd blog</div><div class="line">$ npm install</div><div class="line">$ hexo g # 或者hexo generate</div><div class="line">$ hexo s # 或者hexo server可以在http://localhost:4000/ 查看</div></pre></td></tr></table></figure></li>
-</ol>
-<p>至此，你可以在浏览器输入<a href="http://localhost:4000/，预览你的博客了，通常都是一篇hello" target="_blank" rel="external">http://localhost:4000/，预览你的博客了，通常都是一篇hello</a> world= =<br>然后我们就需要将我们的项目部署到github上</p>
-<p><strong>首先需要明白所谓部署到github的原理。</strong><br><strong>之前步骤中在Github上创建的那个个人项目的repo（sunshine940326.github.io）一个最大的特点就是其master中的html静态文件，可以通过链接http:// .github.io来直接访问。</strong><br><strong>Hexo -g 会生成一个静态网站（第一次会生成一个public目录），这个静态文件可以直接访问。</strong><br><strong>需要将hexo生成的静态网站，提交(git commit)到github上。</strong><br>然后我们需要配置_config.yml配置文件<br>目前我安装所用的本地环境如下：(可以通过hexo -v查看)<code>$ hexo -v
-hexo: 3.2.2
-hexo-cli: 1.0.2
-os: Windows_NT 6.3.9600 win32 x64
-http_parser: 2.7.0
-node: 4.5.0
-v8: 4.5.103.37
-uv: 1.9.1
-zlib: 1.2.8
-ares: 1.10.1-DEV
-icu: 56.1
-modules: 46
-openssl: 1.0.2h</code><br>要想部署到github，我们需要作如下配置（貌似不同版本的hexo配置不同，主要是hexo2.0和hexo3.0，所以你需要先查看自己安装的hexo版本）<br><strong>注意type:后面有一个空格</strong><br>将repository后面的链接换成你的博客名字<code># Deployment
- Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repository: https://github.com/sunshine940326/sunshine940326.github.io.git</code><br>然后在执行<br><code>$ hexo clean
- $ hexo g
- $ hexo s
- $ hexo d</code></p>
-<ol>
-<li><p>命令解释：</p>
-<ul>
-<li>hexo clean：清除public，当 source文件夹中的部分资源更改过之后，特别是对文件进行了删除或者路径的改变之后，需要执行这个命令，然后重新编译。</li>
-<li>hexo generate (hexo g)： 编译，一般部署上去的时候都需要编译一下，编译后，会出现一个 public 文件夹，将所有的md文件编译成html文件 开启本地服务，</li>
-<li>hexo server (hexo s) 启动本地web服务，用于博客的预览</li>
-<li>hexo deploy (hexo d) 部署播客到远端（比如github, heroku等平台）：部署博客到github上，如果一切顺利，你就通过访问usename.github.io访问你的博客了！</li>
-<li>是的，现在你拥有了自己的博客！<br>然后你就可以输入<a href="http://sunshine940326.github.io来查看你的博客啦~" target="_blank" rel="external">http://sunshine940326.github.io来查看你的博客啦~</a><br>注意需要提前安装一个扩展：<code>$ npm install hexo-deployer-git --save</code></li>
-</ul>
-</li>
-</ol>
-<h2 id="装饰你的个人博客"><a href="#装饰你的个人博客" class="headerlink" title="装饰你的个人博客"></a>装饰你的个人博客</h2><p>至此，已经完成了github pages+hexo搭建博客的步骤，现在需要装饰你的博客</p>
-<ol>
-<li>Hexo 主题配置<br>就和当时我们用的qq空间一样，我们可以直接用写好的主题，然后我们就只需要写文章就好<br>这里以主题NexT为例进行说明。</li>
-<li>安装主题 <code>$ hexo clean
-$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></li>
-<li>启用主题</li>
-</ol>
-<p>修改Hexo目录下的_config.yml配置文件中的theme属性，将其设置为next。</p>
-<ol>
-<li>更新主题<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd themes/next</div><div class="line">$ git pull</div><div class="line">$ hexo g # 生成</div><div class="line">$ hexo s # 启动本地web服务器</div></pre></td></tr></table></figure></li>
-</ol>
-<p>现在打开<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> ，会看到我们已经应用了一个新的主题。<br>你可以在<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes·Hexo</a>上选择你的主题，我使用的Next主题<br>参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">Next官方文档</a>,内容十分详尽</p>
-
-          
+          <p>之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/26/了解githubPages-hexo搭建博客的原理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -547,10 +449,9 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></li>
 
       
         
-          
-            <h2 id="什么是git："><a href="#什么是git：" class="headerlink" title="什么是git："></a>什么是git：</h2><p>之前我使用过svn进行和队友合作开发项目，觉得svn是一个很好的工具，可以避免代码冲突，解决团队代码的同步问题，svn是集中式的版本控制系统，而git是分布式的版本控制系统<br>有人拿git和svn比较，我觉得git更偏向于版本控制，就是自己对自己的代码进行控制，有了版本的概念和回滚，即使不是变成人员也可以使用，比如作家可以管理自己的作品。</p>
-<p>关于git怎么使用的，百度可以搜出来一大堆，这里就不再赘述了，推荐廖雪峰老师的教程<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="external">Git教程 - 廖雪峰的官方网站</a></p>
-<p>现在来说一下我对github的初步认识<br>因为现在使用github还不是特别熟练，只指出最基本的，<br>github是做什么的，github不仅仅是程序员可以使用的，在知乎上看完之后仿佛开启了新世界的大门<a href="https://www.zhihu.com/question/20070065" target="_blank" rel="external">怎么使用Github</a></p>
+          <h2 id="什么是git："><a href="#什么是git：" class="headerlink" title="什么是git："></a>什么是git：</h2><p>之前我使用过svn进行和队友合作开发项目，觉得svn是一个很好的工具，可以避免代码冲突，解决团队代码的同步问题，svn是集中式的版本控制系统，而git是分布式的版本控制系统<br>有人拿git和svn比较，我觉得git更偏向于版本控制，就是自己对自己的代码进行控制，有了版本的概念和回滚，即使不是变成人员也可以使用，比如作家可以管理自己的作品。</p>
+<p>关于git怎么使用的，百度可以搜出来一大堆，这里就不再赘述了，推荐廖雪峰老师的教程<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/">Git教程 - 廖雪峰的官方网站</a></p>
+<p>现在来说一下我对github的初步认识<br>因为现在使用github还不是特别熟练，只指出最基本的，<br>github是做什么的，github不仅仅是程序员可以使用的，在知乎上看完之后仿佛开启了新世界的大门<a href="https://www.zhihu.com/question/20070065">怎么使用Github</a></p>
 <p>我现在的使用有两个方面：</p>
 <ol>
 <li><p>使用gitPage+hexo创建自己的博客，不过我发现如果单纯的以内容为主，在github上建一个仓库其实就是可以的，完全可以达到记录的目的，但谁让咱们是技术工作者呢，为了逼格更高一些，也为了运用更多的技术（前端工作者，有一个自己的网站可以把技术用上何乐而不为呢）<br>但是现阶段我还没有完全搞明白gitpage+hexo创建博客的原理，所以这个工程就一直停滞不前，先挖一个坑┗|｀O′|┛ 嗷~~</p>
@@ -562,46 +463,11 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></li>
 <li><p>和海内外同胞共享资源，</p>
 </li>
 </ol>
-<p>先来说一个我遇到的问题，不知道你们有没有遇到，因为不经常上github，所以有的时候我的ssh都会变成灰色的，这样本地就连接不上github，于是找到了解决方法：因为没有设置用户名和邮箱，解决方法如下：<br>“Git”-&gt;“Git Bash”，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;Your Name&quot;</div><div class="line">$ git config --global user.email email@example.com</div><div class="line">$ ssh -T Git@github.com</div></pre></td></tr></table></figure>
-<p>git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
-<p>执行完最后一步的时候，刷新github的setting页面，就可以看见ssh中的钥匙变成绿色的</p>
-<p>但是在最后一步的时候报错了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh: connect to host github.com port 22: Connection timed out</div></pre></td></tr></table></figure>
-<p>解决方法是<br>在存放公钥私钥(id_rsa和id_rsa.pub)的文件里，新建config文本，内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Host github.com</div><div class="line">User YourEmail@163.com</div><div class="line">Hostname ssh.github.com</div><div class="line">PreferredAuthentications publickey</div><div class="line">IdentityFile ~/.ssh/id_rsa</div><div class="line">Port 443</div></pre></td></tr></table></figure>
-<p>YourEmail为您的邮箱<br>再次执行“ssh -T git@github.com”时，会出现提示如下，回车”yes”即可。<br><img src="http://img.blog.csdn.net/20160113200605078" alt="这里写图片描述"></p>
-<p>这时验证就可以通过。 </p>
-<p>这里要说一下的是，最开始我认为github只是用来对代码进行版本控制的工具，不知道要怎么用，现在大概总结了三种在github上建仓库的方式：</p>
-<ol>
-<li>网页版的github网页</li>
-<li>客户端版本的github,windows版本的github客户端很多都安装不了，在官网下载数次都未安装成功，最后在知乎上终于找到安装包，链接: <a href="http://pan.baidu.com/s/1eS2mHxS" target="_blank" rel="external">http://pan.baidu.com/s/1eS2mHxS</a> 密码: yatq ，有需要的同学可以点击下载。</li>
-<li>我最喜欢的方式，通过webstorm跟github连接，就可以写完代码直接push，相当之方便，方法不是很难，大家自行百度</li>
-</ol>
-<p>首先要新建一个项目，然后有三种上传项目的方式：</p>
-<ol>
-<li>…or create a new repository on the command line  新建一个项目</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">echo &quot;# 2017-02-23&quot; &gt;&gt; README.md     新建一个README.md文件并在里面写入 2017-02-23</div><div class="line">git init                             初始化一个git的本地仓库，这时会生成一个.git的隐藏文件</div><div class="line">git add README.md                    用命令git add告诉Git，把文件添加到仓库(实际上就是把文件修改添加到暂存区)</div><div class="line">git commit -m &quot;first commit&quot;         用命令git commit告诉Git，把文件提交到仓库(实际上就是把暂存区的所有内容提交到当前分支)（git commit -m &quot;有意义的附加说明&quot;）</div><div class="line">git remote add origin https://github.com/sunshine940326/2017-02-23node1.git   将本地仓库与远程建立联系</div><div class="line">git push -u origin master            提交给远程的github .需要说明的是首次提交需要 加-u ,再次提交不需要加-u 即写成git push  origin master</div></pre></td></tr></table></figure>
-<ol>
-<li>…or push an existing repository from the command line  通过命令行提交一个已有的项目</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git remote add origin https://github.com/sunshine940326/2017-02-23node1.git</div><div class="line">git push -u origin master</div></pre></td></tr></table></figure>
-<ol>
-<li>…or import code from another repository   从其他项目引入</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">You can initialize this repository with code from a Subversion, Mercurial, or TFS project.</div></pre></td></tr></table></figure>
-<p>这里先埋一个坑，在第一种方法进行到git remote add origin这一步的时候一直报错Failed connect to    github.com:443 显示超时<br>网上的解决方法没有看懂，先贴出来：<a href="http://blog.csdn.net/u011249920/article/details/55190409" target="_blank" rel="external">git遇到的诡异错误: Failed connect to github.com:443</a></p>
-<p>总结一下用命令行提交项目的步骤（已经init过了）：</p>
-<ol>
-<li>git add 将要同步的文件add到暂存区 add后面可以直接跟文件名或文件夹名，也可以直接跟 .表示全部（add和.之间有空格）</li>
-<li>git commit -m “first commit”</li>
-<li><p>push origin master</p>
-<p>可以使用git status查看文件状态</p>
-</li>
-</ol>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/25/将项目上传至github/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1305,37 +1171,13 @@ Filter
 
       
         
-          
-            <h2 id="博客中插入图片-音乐"><a href="#博客中插入图片-音乐" class="headerlink" title="博客中插入图片,音乐"></a>博客中插入图片,音乐</h2><p>　　基本分为两种办法<br>（1）放在本地文件<br>首先在nanshanyi.github.io目录下确认 _config.yml 中有 post_asset_folder:true 。<br>在 hexo 目录，执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install https://github.com/CodeFalling/hexo-asset-image --save</div></pre></td></tr></table></figure>
-<p>　　之后再使用 hexo new ‘new’ 创建新博客的时候，会在source/_posts里面创建.md文件的同时生成一个相同的名字的文件夹。把该文章中需要使用的图片放在该文件夹下即可。<br>使用的时候</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">![“图片描述”（可以不写）](/文件夹名/你的图片名字.JPG)</div><div class="line">例如：</div><div class="line">！[ ] (new/text.jpg)</div></pre></td></tr></table></figure>
-<p>（2）放在七牛上，需要先注册，上传图片生成链接，直接在文章中使用链接即可。<br>（3）插入音乐<br>　　可以使用网易云音乐，搜索想要的歌曲，点击歌曲名字进入播放器页面，点击生成外链播放器；复制代码，直接粘贴到博文中即可。这样会显示一个网易的播放器，可以把</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=298 height=52 src=&quot;http://music.163.com/outchain/player?type=2&amp;id=32192436&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;</div><div class="line"></div><div class="line">//其中的width=298 height=52 均改为0就看不到了，依然可以播放音乐</div></pre></td></tr></table></figure>
-<h2 id="集成多说评论，分享"><a href="#集成多说评论，分享" class="headerlink" title="集成多说评论，分享"></a>集成多说评论，分享</h2><p>　　申请多说帐号,打开页面点击我要安装注册帐号</p>
-<p>  在themes/next目录下打开 _config.yml，设置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">duoshuo_shortname:  nanshanyi //上面多说域名中填的内容</div><div class="line">需要分享的打开duoshuo_share: true 即可，支持分享到微博、QQ空间、微信</div></pre></td></tr></table></figure>
-<p>然后打开themes\landscape\layout_partial\article.ejs文件<br>把以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;div id=&quot;disqus_thread&quot;&gt;</div><div class="line">    &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure></p>
-<p>替换为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">  &lt;section id=&quot;comments&quot;&gt;</div><div class="line">    &lt;!-- 多说评论框 start --&gt;</div><div class="line">    &lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;!-- 多说评论框 end --&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var duoshuoQuery = &#123;short_name:&apos;&lt;%= config.duoshuo_shortname %&gt;&apos;&#125;;</div><div class="line">      (function() &#123;</div><div class="line">        var ds = document.createElement(&apos;script&apos;);</div><div class="line">        ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">        ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">        ds.charset = &apos;UTF-8&apos;;</div><div class="line">        (document.getElementsByTagName(&apos;head&apos;)[0]</div><div class="line">         || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">      &#125;)();</div><div class="line">      &lt;/script&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">  &lt;/section&gt;</div><div class="line">  &lt;% &#125; %&gt;</div></pre></td></tr></table></figure></p>
-<p>然后你hexo s ,打开<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 打开文章看一下，评论和分享已经静静的躺在那了</p>
-<h2 id="添加标签页"><a href="#添加标签页" class="headerlink" title="添加标签页"></a>添加标签页</h2><p>　　在nanshanyi.github.io文件目录下执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new page tags //会在nanshanyi.github.io/source下创建tags文件夹内部是一个index.md和index文件夹</div></pre></td></tr></table></figure></p>
-<p>修改nanshanyi.github.io/themes/next/_config.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  home: /      //主页</div><div class="line">  #categories: /categories //分类</div><div class="line">  archives: /archives   //归档</div><div class="line">  tags: /tags   //标签（添加此行即可）</div><div class="line">  about: /about   //关于</div><div class="line">  #commonweal: /404.html</div></pre></td></tr></table></figure></p>
-<p>首页菜单就会有便签项，点击即可进入标签页。</p>
-<h2 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h2><p>　　next支持Swiftype 、微搜索和Local Search<br>　　（1）Swiftype （收费的没有免费版，进可以使用15天）是为网站和移动应用提供内部搜索的工具，点击进入Swiftype注册页面 ，注册之后需要填写自己的博客的网址<br>然后选择</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/966908-7aed60a7543e2571.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt="Swiftype注册页面"></p>
-<p>选择 install Search</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/966908-8cfb4600366ab1c0.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt="swiftype"></p>
-<p>途中的即为swiftype_key<br>修改nanshanyi.github.io/themes/next/_config.yml中的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">swiftype_key:上面红圈中的内容</div></pre></td></tr></table></figure></p>
-<p>点击 resume Configuration 选择 search field edit</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/966908-6673e77e95e084da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swiftype"></p>
-<p>save<br>发布即可看到效果</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/966908-fd0c0885439ef44d.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt="swiftype"></p>
-<p>（2）添加本地搜索<br>安装 hexo-generator-search，在nanshanyi.github.io目录下执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-search --save</div></pre></td></tr></table></figure></p>
-<p>在nanshanyi.github.io/themes/next/_config.yml添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">search:</div><div class="line">      path: search.xml</div><div class="line">      field: post</div></pre></td></tr></table></figure></p>
-<p>发布即可看到效果，和上面的 swiftType 效果差不多，就不再粘图片了。</p>
-<p>文／_南山忆（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/a52b68794a6b" target="_blank" rel="external">http://www.jianshu.com/p/a52b68794a6b</a><br>著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。</p>
-
-          
+          <p>博客中插入图片,音乐  </p>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/17/hexo附件插入音乐、分享、评论、标签页、搜索/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1452,250 +1294,12 @@ Filter
 
       
         
-          
-            <p>进入程序员这个坑之后就开始自己在网上扒资料，然而资料太多，情况太复杂，主要是看见别人的博客，感觉好高大上，并且感觉在茫茫的互联网有自己的小天地感觉也是极好的。不是为了给别人看，而是为了 记录自己的成长，记录自己的每一个脚印。</p>
-<h2 id="Gitpage-hexo"><a href="#Gitpage-hexo" class="headerlink" title="Gitpage+hexo"></a>Gitpage+hexo</h2><p>想要实现拥有一个独立的私有博客，我们需要两个东西，一个是可供浏览器访问的静态网页存储空间，这个我们选择gitPage，一个是一个静态网页生成工具，Octopress也好，Hexo也罢，这里我选择的是Hexo。</p>
-<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><h2 id="1-安装Node"><a href="#1-安装Node" class="headerlink" title="1 安装Node"></a>1 安装Node</h2><p>到Node.js官网下载相应平台的最新版本，一路安装即可。我用的是node-v0.10.22-x86.msi</p>
-<h2 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2 安装Git"></a>2 安装Git</h2><p>安装git，或安装github客户端，自我感觉github客户端很好用，界面很友好，同样操作起来也比git好用的多！我用的是window10系统，在官网下载数次都未安装成功，最后在知乎上终于找到安装包，链接: <a href="http://pan.baidu.com/s/1eS2mHxS" target="_blank" rel="external">http://pan.baidu.com/s/1eS2mHxS</a> 密码: yatq ，有需要的同学可以点击下载。</p>
-<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><h2 id="1-安装Hexo"><a href="#1-安装Hexo" class="headerlink" title="1 安装Hexo"></a>1 安装Hexo</h2><p>使用git shell,依次输入以下代码命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /</div><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
-<p>命令解释：</p>
-<p><strong>cd和/之间要有空格</strong>，这条指令的作用是返回根目录，也可以在cd /后加入一个文件名，例如下文要用到的cd /Hexo 就可以指向这个文件夹，再输入代码行就默认在在此文件下执行。</p>
-<h2 id="2-安装博客所需文件"><a href="#2-安装博客所需文件" class="headerlink" title="2 安装博客所需文件"></a>2 安装博客所需文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cd /</div><div class="line">hexo init Hexo</div><div class="line">cd /Hexo</div><div class="line">npm instal</div><div class="line">hexo generate（可简写为hexo g）</div><div class="line">hexo sever（可简写为hexo s）</div></pre></td></tr></table></figure>
-<p>命令解释:</p>
-<ul>
-<li><p>cd /这里返回的根目录取决于你在github客户端的设置，我设置的是F盘，所以返回得也是F盘，所以下面创建的Hexo文件夹也在F盘。</p>
-</li>
-<li><p>Hexo这个文件名可以随便命名，存放的是构建博客所要用到的所有文件。</p>
-</li>
-<li><p>指向Hexo目录</p>
-</li>
-<li><p>安装依赖文件</p>
-</li>
-<li><p>编译</p>
-</li>
-<li><p>开启本地服务(第5、6步的操作可以合并成hexo s -g)</p>
-</li>
-</ul>
-<p>此时打开浏览器，在地址栏输入<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a><br>即可查看博客的原型，是不是看到了胜利的曙光；但是如果“显示无法访问此网站”也不要沮丧，我这步是直接看到页面的，你无法访问的原因可能你没有翻墙，因为页面中默认使用了ajax.google.com 下的js包。</p>
-<p>那么如何翻墙呢？ 下面提供我所知道的两种方法：</p>
-<p>这种方法比较简单，下载安装运行Lantern，可以官网下载的吧！这里提供一下安装包吧，链接: <a href="http://pan.baidu.com/s/1c2x7eRu" target="_blank" rel="external">http://pan.baidu.com/s/1c2x7eRu</a><br>密码: z3kw</p>
-<p>这种方法需要修改hosts文件，我的 hosts 文件路径：C:\Windows\System32\drivers\etc ，详细攻略：<a href="http://blog.my-eclipse.cn/host-google.html" target="_blank" rel="external">http://blog.my-eclipse.cn/host-google.html</a></p>
-<p>如果你不想翻墙，可以采用这种方法：<br>进入你刚新建好的 blog根目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">themes/landscape/layout/_partial</div></pre></td></tr></table></figure>
-<p>1，找到 after-footer.ejs把</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js“ &gt; &lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>替换成</p>
-<blockquote>
-<p><code>&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js“ &gt; &lt;/script&gt;</code></p>
-</blockquote>
-<p>2，找到 header.ejs<br>注释掉或者删掉 下面这句css引用<br><code>&lt;link href=&quot;//fonts.googleapis.com/css?family=Source+Code+Pro&quot; rel=”stylesheet” type=”text/css”&gt;</code><br>hexo server 之后。访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就会看到blog主页了。</p>
-<p>如果你成功在<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a><br>下看到了博客原型，那么再进行一些简单的操作之后就可以马上拥有自己的博客了，是不是很激动！</p>
-<blockquote>
-<p>行百里者半九十</p>
-</blockquote>
-<p>不到成功的那一刻，一切欣喜若狂都是不值得的！如果你已经迫不及待，我们继续：</p>
-<h2 id="3-部署博客到服务器"><a href="#3-部署博客到服务器" class="headerlink" title="3 部署博客到服务器"></a>3 部署博客到服务器</h2><p>也就是把博客部署到github page提供的服务器上。</p>
-<p>步骤</p>
-<ul>
-<li>首先回到git shell按ctrl+c，之后输入y即可</li>
-</ul>
-<ul>
-<li>修改Hexo文件夹下_config.yml文件，如下图所示修改，repository后的地址要改成你自己的地址：<code>deploy:  type: github  repo: https://github.com/yourname/blog.git</code></li>
-</ul>
-<p>继续回到git shell输入命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo s</div><div class="line">hexo d</div></pre></td></tr></table></figure>
-<p>命令解释:</p>
-<ul>
-<li>清除public，当 source 文件夹中的部分资源更改过之后，特别是对文件进行了删除或者路径的改变之后，需要执行这个命令，然后重新编译。<br>编译，一般部署上去的时候都需要编译一下，编译后，会出现一个 public 文件夹，将所有的md文件编译成html文件</li>
-<li>开启本地服务，</li>
-<li>部署博客到github上，如果一切顺利，你就通过访问usename.github.io访问你的博客了！<br>是的，现在你拥有了自己的博客！</li>
-</ul>
-<h1 id="发表博文"><a href="#发表博文" class="headerlink" title="发表博文"></a>发表博文</h1><p>千辛万苦建立了博客，那么我们来学习一下如何发表博文。</p>
-<h2 id="新建博文"><a href="#新建博文" class="headerlink" title="新建博文"></a>新建博文</h2><p>继续回到git shell输入：</p>
-<p>hexo new “新博文的名字”<br>即可在 Hexo\source_posts 目录中找到”新博文的名字.md”这个文件。你就可以使用maekdown编辑器打开进行编写博客内容了。</p>
-<p><strong>Markdown编辑器</strong></p>
-<p>推荐两款我所使用的markdown编辑器：</p>
-<p><strong>MIU</strong>，据说是仿mac版的mou，界面相当友好，非常喜欢，官网都下载不了，挺小众，可能我就是典型的少说派，我也是偶然间得到，在此提供下载地址：<br>链接: <a href="http://pan.baidu.com/s/1slMPeTR" target="_blank" rel="external">http://pan.baidu.com/s/1slMPeTR</a><br>密码: 2pnk<br><strong>正在使用的Atom:</strong>更为先进的文本代码编辑器 ,由 Github 打造的下一代编程开发神器,其中支持markdown。<br>可能会遇到的问题</p>
-<blockquote>
-<p>hexo new [layout] “postName” #新建文章</p>
-</blockquote>
-<p>其中layout是可选参数，默认值为post。有哪些layout呢，请到scaffolds目录下查看，这些文件名称就是layout名称。当然你可以添加自己的layout，方法就是添加一个文件即可，同时你也可以编辑现有的layout，比如post的layout默认是hexo\scaffolds\post.md</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: &#123; &#123; title &#125; &#125;</div><div class="line">date: &#123; &#123; date &#125; &#125;</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure>
-<p>大括号与大括号之间我多加了个空格，否则会被转义，不能正常显示。<br>我想添加categories，以免每次手工输入，只需要修改这个文件添加一行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: &#123; &#123; title &#125; &#125;</div><div class="line">date: &#123; &#123; date &#125; &#125;</div><div class="line">categories:</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure>
-<p>postName是md文件的名字，同时也出现在你文章的URL中，postName如果包含空格，必须用”将其包围，postName可以为中文。</p>
-<p>注意，所有文件：后面都必须有个空格，不然会报错。</p>
-<p>看一下刚才生成的文件hexo\source_posts\postName.md</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: postName #文章页面上的显示名称，可以任意修改，不会出现在URL中</div><div class="line">date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改</div><div class="line">categories: #文章分类目录，可以为空，注意:后面有个空格</div><div class="line">tags: #文章标签，可空，多标签请用格式[tag1,tag2,tag3]，注意:后面有个空格</div><div class="line">---</div></pre></td></tr></table></figure>
-<p>始使用markdown格式输入你的正文。，你就可以用喜爱的编辑器尽情书写你的文章。关于markdown语法，可以参考我的文章Markdown简明语法。</p>
-<p><strong>fancybox</strong><br>可能有人对这个Reading页面中图片的fancybox效果感兴趣，这个是怎么做的呢。<br>很简单，只需要在你的文章*.md文件的头上添加photos项即可，然后一行行添加你要展示的照片：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">layout: photo</div><div class="line">title: 我的阅历</div><div class="line">date: 2085-01-16 07:33:44</div><div class="line">tags: [hexo]</div><div class="line">photos:</div><div class="line">- http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg</div><div class="line">- http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg</div></pre></td></tr></table></figure></p>
-<p>经过测试，文件头上的layout: photo可以省略。</p>
-<p>不想每次都手动添加怎么办？同样的，打开您的hexo\scaffolds\photo.md<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">layout: &#123; &#123; layout &#125; &#125;</div><div class="line">title: &#123; &#123; title &#125; &#125;</div><div class="line">date: &#123; &#123; date &#125; &#125;</div><div class="line">tags:</div><div class="line">photos:</div><div class="line">-</div><div class="line">---</div></pre></td></tr></table></figure></p>
-<p>然后每次可以执行带layout的new命令生成照片文章：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new photo &quot;photoPostName&quot; #新建照片文章</div></pre></td></tr></table></figure>
-<p>description<br>markdown文件头中也可以添加description，以覆盖全局配置文件中的description内容，请参考下文_config.yml的介绍。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: hexo你的博客</div><div class="line">date: 2013-11-22 17:11:54</div><div class="line">categories: default</div><div class="line">tags: [hexo]</div><div class="line">description: 你对本页的描述</div><div class="line">---</div></pre></td></tr></table></figure></p>
-<p>hexo默认会处理全部markdown和html文件，如果不想让hexo处理你的文件，可以在文件头中加入layout: false。</p>
-<p><strong>文章摘要</strong><br>在需要显示摘要的地方添加如下代码即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">以上是摘要</div><div class="line">&lt;!--more--&gt;</div><div class="line">以下是余下全文</div></pre></td></tr></table></figure>
-<p>more以上内容即是文章摘要，在主页显示，more以下内容点击『&gt; Read More』链接打开全文才显示。</p>
-<p>hexo中所有文件的编码格式均是UTF-8。</p>
-<h2 id="优雅的在博客上插入图片"><a href="#优雅的在博客上插入图片" class="headerlink" title="优雅的在博客上插入图片"></a>优雅的在博客上插入图片</h2><p>看到很多博客上说使用七牛，但是这种方法可能是用着最爽的，我们来看一下如何使用：</p>
-<p>首先确认 _config.yml 中更改 post_asset_folder:true 。<br>回到git shell，输入</p>
-<p>npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">https://github.com/CodeFalling/hexo-asset-image</a> –save</p>
-<p>继续执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo s</div><div class="line">hexo d</div></pre></td></tr></table></figure>
-<p>重新创建一个博客名字，然后发现Hexo\source_posts下多了一个与博客名字相同的空文件夹</p>
-<p>然后就可以把我们博客中要用到的图片存放在这个文件夹下，需要时直接引用即可，是不是特别方便？<br>提醒：</p>
-<p>写一篇博文时尽量只使用一种markdown编辑器，如果同时使用两个编辑器，我感觉不同编辑器对markdown语法的编译还是有一些差别的，用这个编辑器写好的格式用另一个编辑器打开却乱了！</p>
-<h2 id="预览和发表"><a href="#预览和发表" class="headerlink" title="预览和发表"></a>预览和发表</h2><p>继续重复以下命令即可实现预览和发表，恭喜你已经在自己建设的博客网站上发表了第一篇博文！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1.  hexo clean</div><div class="line">2.  hexo g</div><div class="line">3.  hexo s</div><div class="line">4.  hexo d</div></pre></td></tr></table></figure>
-<p>更高大上的发表博文的方法</p>
-<p>使用Travis CI自动部署你的Hexo博客到Github,请参考<a href="http://i.woblog.cn/2016/05/04/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8Travis%20CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E4%BD%A0%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E4%B8%8A/#more" target="_blank" rel="external">手把手教你使用Travis CI自动部署你的Hexo博客到Github上</a></p>
-<p>使用could9在线更新博客，这样的话即使更换了电脑，也能优雅的更新博客了。详细请参考：用c9.io实现在线更新博客</p>
-<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>如果你跟我一样觉得原始的博客主题很low，想更换一个高逼格的，那我们继续往下进行：</p>
-<p>选择主题</p>
-<p>你可以在<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes·Hexo</a>上选择你喜欢的主题，我使用的Next主题</p>
-<h2 id="安装Next主题"><a href="#安装Next主题" class="headerlink" title="安装Next主题"></a>安装Next主题</h2><p>参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">Next官方文档</a>,内容十分详尽！</p>
-<p>安装主题的方法就是一句git命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/heroicyang/hexo-theme-modernist.git themes/modernist</div></pre></td></tr></table></figure>
-<p>目录是否是modernist无所谓，只要与_config.yml文件一致即可。</p>
-<p>安装完成后，打开hexo_config.yml，修改主题为modernist</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: modernist</div></pre></td></tr></table></figure>
-<p>打开hexo\themes\modernist目录，编辑主题配置文件_config.yml：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">menu: #配置页头显示哪些菜单</div><div class="line">#  Home: /</div><div class="line">  Archives: /archives</div><div class="line">  Reading: /reading</div><div class="line">  About: /about</div><div class="line">#  Guestbook: /about</div><div class="line"></div><div class="line">excerpt_link: Read More #摘要链接文字</div><div class="line">archive_yearly: false #按年存档</div><div class="line"></div><div class="line">widgets: #配置页脚显示哪些小挂件</div><div class="line">  - category</div><div class="line">#  - tag</div><div class="line">  - tagcloud</div><div class="line">  - recent_posts</div><div class="line">#  - blogroll</div><div class="line"></div><div class="line">blogrolls: #友情链接</div><div class="line">  - bruce sha&apos;s duapp wordpress: http://ibruce.duapp.com</div><div class="line">  - bruce sha&apos;s javaeye: http://buru.iteye.com</div><div class="line">  - bruce sha&apos;s oschina blog: http://my.oschina.net/buru</div><div class="line">  - bruce sha&apos;s baidu space: http://hi.baidu.com/iburu</div><div class="line"></div><div class="line">fancybox: true #是否开启fancybox效果</div><div class="line"></div><div class="line">duoshuo_shortname: buru #多说账号</div><div class="line"></div><div class="line">google_analytics:</div><div class="line">rss:</div></pre></td></tr></table></figure>
-<p>更新主题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd themes/modernist</div><div class="line">git pull</div></pre></td></tr></table></figure>
-<h2 id="评论框"><a href="#评论框" class="headerlink" title="评论框"></a>评论框</h2><p>静态博客要使用第三方评论系统，hexo默认集成的是Disqus，因为你懂的，所以国内的话还是建议用<a href="https://hexo.io/plugins/" target="_blank" rel="external">多说</a><br>直接用你的微博/豆瓣/人人/百度/开心网帐号登录多说，做一下基本设置。如果使用modernist主题，在modernist_config.yml中配置duoshuo_shortname为多说的基本设置-&gt;域名中的shortname即可。你也可以在多说后台自定义一下多说评论框的格式，比如评论框的位置，对于css设置，可以<a href="http://dev.duoshuo.com/docs/4ff1cfd0397309552c000017" target="_blank" rel="external">参考这里</a>，我是在HeroicYang的基础上修改的。</p>
-<p>如果你是有的其他第三方评论系统，将通用代码粘贴到hexo\themes\modernist\layout_partial\comment.ejs里面，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;% if (config.disqus_shortname &amp;&amp; page.comments)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comment&quot;&gt;</div><div class="line">  #你的通用代码</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-<h2 id="构建新页面"><a href="#构建新页面" class="headerlink" title="构建新页面"></a>构建新页面</h2><p>那些小图标都是一个新页面，需要手动创建，那么如何创建？</p>
-<p>回到git shell，</p>
-<p>hexo new page “页面名称”<br>比如你要创建一个about页面，就输入hexo new page “about”</p>
-<p>正确显示各页面内容</p>
-<p>发表博文后发现点击上面建立的页面后发现是空白页，比如，打开标签页面，发现是空白，或者提示找不到！</p>
-<p>解决方法：以标签页为例，打开Hexo\source\tags下index.md文件，修改如下：</p>
-<p>comments: false即关闭此页面的评论功能</p>
-<p>type: “tags”这里的值根据你想更改的页面决定</p>
-<p>更改过后，在重新部署到github上，你就可以点击各个页面查看，发现一切都是那么美好！</p>
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>hexo支持的插件：<a href="https://hexo.io/plugins/" target="_blank" rel="external">Plugins | Hexo</a><br>想安装什么插件，按照相关README.md中介绍操作即可。</p>
-<p>安装多说评论、不蒜子（或LeanCloud）和分享插件，参考:<a href="http://theme-next.iissnan.com/third-party-services.html#swfitype" target="_blank" rel="external">第三方服务集成</a>，介绍非常全面！好好用来装饰你的博客吧！</p>
-<p>安装sitemap和feed插件时，如果遇到问题，可以参考:<a href="http://www.imys.net/20150513/wordpress-to-hexo.html#%E6%97%A0%E6%B3%95%E5%BC%80%E5%90%AFRSS%E5%92%8Csitemap" target="_blank" rel="external">博客搬迁记 - 从WordPress到Hexo</a>，安装sitemap后要到<a href="http://zhanzhang.baidu.com/?castk=LTE=" target="_blank" rel="external">百度站长</a>提交你的网站，首先要添加站点，然后在链接提交你的sitemap.xml，详细操作参考:<a href="http://www.gfwsb.com/2016/use-sitemap-for-hexo/" target="_blank" rel="external">为Hexo博客生成sitemap</a></p>
-<p>安装swiftype插件，如果遇到问题，可以参考<a href="http://www.jerryfu.net/post/search-engine-for-hexo-with-swiftype-v2.html" target="_blank" rel="external">利用swiftype为hexo添加站内搜索</a></p>
-<h2 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h2><p>考虑到博客的速度，同时也为了便于博客的迁移，图床是必须的。我墙裂推荐七牛，访问速度极快，支持日志、防盗链和水印。</p>
-<p>免费用户有每月10GB流量+总空间10GB+PUT/DELETE 10万次请求+GET 100万次请求，这对个人博客来说足够，有一点要说明的是，七牛没有目录的概念，但是文件名可以包含/，比如2013/11/27/reading/photos-0.jpg，参考这里<a href="https://support.qiniu.com/hc/" target="_blank" rel="external">关于key-value存储系统</a>。</p>
-<p>七牛除了作为图床还可以作为其他静态文件存储空间，比如我的个人站点首页有个字库文件和JS文件下载较慢，有时间会把它弄到七牛上去，以提高首页打开速度。请看这篇<a href="https://linux.cn/article-2311-1.html" target="_blank" rel="external">Linux中国采用七牛云存储支撑图片访问</a>。</p>
-<p>如果非要说不足的话，就是文件管理界面不是很友好，不支持CNAME到分配的永久链接，也不能绑定未备案的自有域名，必须备案才可以。</p>
-<p>如果你对七牛web版的文件管理界面不满意，可以用官方的<a href="http://docs.qiniu.com/tools/v6/index.html" target="_blank" rel="external">七牛云存储工具</a>。</p>
-<p>您还可以使用如下图床服务 FarBox，Dropbox，又拍云</p>
-<h2 id="主题优化"><a href="#主题优化" class="headerlink" title="主题优化"></a>主题优化</h2><p>Next主题很美观，个人也非常喜欢，但是一点令我们烦恼的就是主题加载的特别缓慢，那怎么优化呢？请参考一下两篇博文，作者已经总结的非常详细了，有需要的可以拜读一下，受益匪浅！</p>
-<p><a href="http://www.gfwsb.com/2016/improveNexTspeed/" target="_blank" rel="external">提升Hexo的NexT主题加载速度</a></p>
-<p><a href="http://www.5941740.cn/2016/02/19/%E4%BD%BF%E7%94%A8gulp%E7%B2%BE%E7%AE%80hexo%E5%8D%9A%E5%AE%A2%E4%BB%A3%E7%A0%81/" target="_blank" rel="external">使用gulp精简hexo博客代码</a></p>
-<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>购买域名，我是在<a href="https://account.aliyun.com/login/login.htm?oauth_callback=http://netcn.console.aliyun.com/core/domain/tclist" target="_blank" rel="external">万网</a>购买的，可以申请到国际域名，免去了备案的繁杂过程，我居然申请了两个，由于自学前端，所以就构建了一个网站来展示自己写的一些demo，【至于如何快速的构建一个网站，从购买域名，云空间到上传文件，你可以试一下这个<a href="http://www.xiaoerguo.com/" target="_blank" rel="external">网站</a>,但是现在可以用github page做服务器，也可以构建多个项目主页来展现demo，是我马上要研究的方向，自己上传云服务器感觉步骤好繁琐，看一下在github建立项目主页能否得到改善！】还一个正好闲置着，所以就拿来解析到github page上，以后就可以通过自己的域名访问自己的博客了！</p>
-<p>如何操作：在 Hexo\source 文件夹里新建一个名为 CNAME 的文件，用文本编辑器打开，添加内容 yourwebsite.com （你的个人域名 ）。保存后，部署你的博客即可。如果这步遇到问题，也可手动在万网上解析，github page提供的IP：</p>
-<p>192.30.252.153</p>
-<p>192.30.252.154</p>
-<h2 id="制作ICO图标"><a href="#制作ICO图标" class="headerlink" title="制作ICO图标"></a>制作ICO图标</h2><p>favicon.ico一般用于作为缩略图的网站标志，<a href="http://www.bitbug.net/" target="_blank" rel="external">在线制作网站</a><br>关于是否绑定域名</p>
-<p>经过这几天的试用，关于是否绑定域名，发表一下自己的看法，如果你仅仅是使用个人主页来托管个人博客。绑定与否看你自己的想法，如果你还想使用github的项目主页来展示平时写的一些小练习demo，那我劝你不要绑定个人域名了，关于如何使用github的项目主页，请参考<a href="http://chitanda.me/2015/11/03/multiple-git-pages-in-one-github-account/" target="_blank" rel="external">单个GitHub帐号下添加多个GitHub Pages的相关问题</a>,这样你就可以直接在需要展示的项目下添加gh-pages分支，然后通过访问“用户名。github.io/项目名/*.html”来查看页面展示效果了。这多方便，不用自己在上传云空间了，省去了一堆麻烦事！</p>
-<p>##至此，基本操作介绍完毕，以下内容普通用户无需了解。<br>默认目录结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── .deploy</div><div class="line">├── public</div><div class="line">├── scaffolds</div><div class="line">├── scripts</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">├── themes</div><div class="line">├── _config.yml</div><div class="line">└── package.json</div></pre></td></tr></table></figure></p>
-<ul>
-<li>deploy：执行hexo deploy命令部署到GitHub上的内容目录</li>
-<li>public：执行hexo generate命令，输出的静态网页内容目录</li>
-<li>scaffolds：layout模板文件目录，其中的md文件可以添加编辑</li>
-<li>scripts：扩展脚本目录，这里可以自定义一些javascript脚本</li>
-<li>source：文章源码目录，该目录下的markdown和html文件均会被hexo处理。该页面对应repo的根目录，404文件、favicon.ico文件，CNAME文件等都应该放这里，该目录下可新建页面目录。<ul>
-<li>drafts：草稿文章</li>
-<li>posts：发布文章</li>
-</ul>
-</li>
-<li>themes：主题文件目录</li>
-<li>_config.yml：全局配置文件，大多数的设置都在这里</li>
-<li>package.json：应用程序数据，指明hexo的版本等信息，类似于一般软件中的关于按钮</li>
-</ul>
-<p>接下来是重头戏_config.yml，做个简单说明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"># Hexo Configuration</div><div class="line">## Docs: http://zespia.tw/hexo/docs/configure.html</div><div class="line">## Source: https://github.com/tommy351/hexo/</div><div class="line"></div><div class="line"># Site #整站的基本信息</div><div class="line">title: 不如 #网站标题</div><div class="line">subtitle: 码农，程序猿，未来的昏析师 #网站副标题</div><div class="line">description: bruce sha&apos;s blog | java | scala | bi #网站描述，给搜索引擎用的，在生成html中的head-&gt;meta中可看到</div><div class="line">author: bruce #网站作者，在下方显示</div><div class="line">email: bu.ru@qq.com #联系邮箱</div><div class="line">language: zh-CN #语言</div><div class="line"></div><div class="line"># URL #域名和文件结构</div><div class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</div><div class="line">url: http://ibruce.info #你的域名</div><div class="line">root: /</div><div class="line">permalink: :year/:month/:day/:title/</div><div class="line">tag_dir: tags</div><div class="line">archive_dir: archives</div><div class="line">category_dir: categories</div><div class="line">code_dir: downloads/code</div><div class="line"></div><div class="line"># Writing #写文章选项</div><div class="line">new_post_name: :title.md # File name of new posts</div><div class="line">default_layout: post #默认layout方式</div><div class="line">auto_spacing: false # Add spaces between asian characters and western characters</div><div class="line">titlecase: false # Transform title into titlecase</div><div class="line">external_link: true # Open external links in new tab</div><div class="line">max_open_file: 100</div><div class="line">multi_thread: true</div><div class="line">filename_case: 0</div><div class="line">render_drafts: false</div><div class="line">highlight: #代码高亮</div><div class="line">  enable: true #是否启用</div><div class="line">  line_number: false #是否显示行号</div><div class="line">  tab_replace:</div><div class="line"></div><div class="line"># Category &amp; Tag #分类与标签</div><div class="line">default_category: uncategorized # default</div><div class="line">category_map:</div><div class="line">tag_map:</div><div class="line"></div><div class="line"># Archives #存档，这里的说明好像不对。全部选择1，这个选项与主题中的选项有时候会有冲突</div><div class="line">## 2: Enable pagination</div><div class="line">## 1: Disable pagination</div><div class="line">## 0: Fully Disable</div><div class="line">archive: 1</div><div class="line">category: 1</div><div class="line">tag: 1</div><div class="line"></div><div class="line"># Server #本地服务参数</div><div class="line">## Hexo uses Connect as a server</div><div class="line">## You can customize the logger format as defined in</div><div class="line">## http://www.senchalabs.org/connect/logger.html</div><div class="line">port: 4000</div><div class="line">logger: true</div><div class="line">logger_format:</div><div class="line"></div><div class="line"># Date / Time format #日期显示格式</div><div class="line">## Hexo uses Moment.js to parse and display date</div><div class="line">## You can customize the date format as defined in</div><div class="line">## http://momentjs.com/docs/#/displaying/format/</div><div class="line">date_format: MMM D YYYY</div><div class="line">time_format: H:mm:ss</div><div class="line"></div><div class="line"># Pagination #分页设置</div><div class="line">## Set per_page to 0 to disable pagination</div><div class="line">per_page: 10 #每页10篇文章</div><div class="line">pagination_dir: page</div><div class="line"></div><div class="line"># Disqus #社会化评论disqus，我使用多说，在主题中配置</div><div class="line">disqus_shortname:</div><div class="line"></div><div class="line"># Extensions #插件，暂时未安装插件</div><div class="line">## Plugins: https://github.com/tommy351/hexo/wiki/Plugins</div><div class="line">## Themes: https://github.com/tommy351/hexo/wiki/Themes</div><div class="line">## 主题</div><div class="line">theme: modernist # raytaylorism # pacman # modernist # light</div><div class="line">exclude_generator:</div><div class="line"></div><div class="line"># Deployment #部署</div><div class="line">## Docs: http://zespia.tw/hexo/docs/deploy.html</div><div class="line">deploy:</div><div class="line">  type: github</div><div class="line">  repository: git@github.com:bruce-sha/bruce-sha.github.com.git #你的GitHub Pages仓库</div></pre></td></tr></table></figure></p>
-<h2 id="修改局部页面"><a href="#修改局部页面" class="headerlink" title="修改局部页面"></a>修改局部页面</h2><p>页面展现的全部逻辑都在每个主题中控制，源代码在hexo\themes\你使用的主题\中，以modernist主题为例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── languages          #多语言</div><div class="line">|   ├── default.yml    #默认语言</div><div class="line">|   └── zh-CN.yml      #中文语言</div><div class="line">├── layout             #布局，根目录下的*.ejs文件是对主页，分页，存档等的控制</div><div class="line">|   ├── _partial       #局部的布局，此目录下的*.ejs是对头尾等局部的控制</div><div class="line">|   └── _widget        #小挂件的布局，页面下方小挂件的控制</div><div class="line">├── source             #源码</div><div class="line">|   ├── css            #css源码</div><div class="line">|   |   ├── _base      #*.styl基础css</div><div class="line">|   |   ├── _partial   #*.styl局部css</div><div class="line">|   |   ├── fonts      #字体</div><div class="line">|   |   ├── images     #图片</div><div class="line">|   |   └── style.styl #*.styl引入需要的css源码</div><div class="line">|   ├── fancybox       #fancybox效果源码</div><div class="line">|   └── js             #javascript源代码</div><div class="line">├── _config.yml        #主题配置文件</div><div class="line">└── README.md          #用GitHub的都知道</div></pre></td></tr></table></figure></p>
-<p>如果你需要修改头部，直接修改hexo\themes\modernist\layout_partial\header.ejs，比如头上加个搜索框：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">&lt;form class=&quot;search&quot; action=&quot;//google.com/search&quot; method=&quot;get&quot; accept-charset=&quot;utf-8&quot;&gt;</div><div class="line"> &lt;input type=&quot;search&quot; name=&quot;q&quot; id=&quot;search&quot; autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; maxlength=&quot;20&quot; placeholder=&quot;Search&quot; /&gt;</div><div class="line"> &lt;input type=&quot;hidden&quot; name=&quot;q&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &apos;&apos;) %&gt;&quot;&gt;</div><div class="line">&lt;/form&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>将如上代码加入即可，您需要修改css以便这个搜索框比较美观。</p>
-<p>再如，你要修改页脚版权信息，直接编辑hexo\themes\modernist\layout_partial\footer.ejs。同理，你需要修改css，直接去修改对应位置的styl文件。</p>
-<h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><p>页面上显示访问次数可以使用 <a href="http://busuanzi.ibruce.info/" target="_blank" rel="external">不蒜子</a>，两行代码即可搞定。</p>
-<p>因Google Analytics偶尔被墙，故用百度统计，以modernist主题为例，介绍如何添加。<br>编辑文件hexo\themes\modernist_config.yml，增加配置选项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">baidu_tongji: true</div></pre></td></tr></table></figure>
-<p>新建文件hexo\themes\modernist\layout_partial\baidu_tongji.ejs，内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;% if (theme.baidu_tongji)&#123; %&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">#你的百度统计代码</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-<p>注册并登录百度统计获取你的统计代码。</p>
-<p>编辑文件hexo\themes\modernist\layout_partial\head.ejs，在『/head』之前增加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%- partial(&apos;baidu_tongji&apos;) %&gt;</div></pre></td></tr></table></figure>
-<p>重新生成并部署你的站点。</p>
-<p>不出意外的话，在你的站点的每个页面的左上角都会看到一个恶心的百度LOGO。你只能在『百度统计首页-&gt;网站列表-&gt;获取代码-&gt;系统管理设置-&gt;统计图标设置-&gt;显示图标』，把那个勾去掉。百度真是恶心，我准备还是用Google Analytics。</p>
-<h2 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h2><p>我没有添加分享，觉得这个不是很必要，导致页面看起来啰嗦。以加网为例介绍如何添加：</p>
-<ul>
-<li>在hexo\themes\modernist\layout_partial\post下新建jiathis.ejs文件。<br>注册加网获得你的分享代码，写入jiathis.ejs。</li>
-<li>在hexo\themes\modernist\layout_partial\article.ejs中，添加&lt;%-partial(‘post/jiathis’)%&gt;。<br>-分享服务还可以使用如下企业提供的技术<a href="http://www.jiathis.com/" target="_blank" rel="external">加网</a>，<a href="http://www.bshare.cn/" target="_blank" rel="external">bShare</a>，<a href="http://share.baidu.com/" target="_blank" rel="external">百度分享</a>。</li>
-</ul>
-<p>网站图标</p>
-<p>看一下hexo\themes\modernist\layout_partial\head.ejs，找到这句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;&lt;%- config.root %&gt;favicon.ico&quot;&gt;</div></pre></td></tr></table></figure>
-<p>你懂的，将你的favicon.ico放到工程根目录下即可，也就是hexo\source目录。可以<a href="http://www.faviconer.com/" target="_blank" rel="external">在Faviconer</a>制作你的ico图标，国内有<a href="http://www.bitbug.net/" target="_blank" rel="external">比特虫</a>。</p>
-<h2 id="自定义挂件"><a href="#自定义挂件" class="headerlink" title="自定义挂件"></a>自定义挂件</h2><p>除了默认已提供的挂件外，你还可以自定义自己的小挂件，在hexo\themes\modernist\layout_widget\下，新建自己的ejs文件，如myWidget.ejs，然后在配置文件hexo\themes\modernist_config.yml中配置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">widgets:</div><div class="line">  - myWidget</div></pre></td></tr></table></figure></p>
-<p>用上述方法可以添加新浪微博小挂件。</p>
-<ul>
-<li>生成自己的微博组件。</li>
-<li>添加hexo\themes\modernist\layout_widget\weibo.ejs文件。</li>
-<li>配置hexo\themes\modernist_config.yml。<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2></li>
-</ul>
-<p>安装插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install &lt;plugin-name&gt; --save</div></pre></td></tr></table></figure></p>
-<p>启用插件：在*hexo_config.yml文件添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugins:</div><div class="line">- &lt;plugin-name&gt;  #插件名</div></pre></td></tr></table></figure></p>
-<p>升级插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm update</div></pre></td></tr></table></figure></p>
-<p>卸载插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm uninstall &lt;plugin-name&gt;</div></pre></td></tr></table></figure></p>
-<p>RSS插件<br>将上述命令中的『plugin-name』，替换为hexo-generator-feed。一旦安装完成，你可以在配置显示你站点的RSS，文件路径\atom.xml。</p>
-<p>你可以用rss作为迁移工具，用如下命令读取其他位置的rss：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo migrate rss &lt;source&gt;</div></pre></td></tr></table></figure>
-<p>『source』是本地或网络文件路径。</p>
-<p>Sitemap插件<br>将上述命令中的『plugin-name』，替换为hexo-generator-sitemap。你可以将你站点地图提交给搜索引擎，文件路径\sitemap.xml。</p>
-<p>更多插件的安装方法，请参考<a href="https://github.com/hexojs/hexo/wiki/Plugins" target="_blank" rel="external">官方Wiki</a>。</p>
-<p>如果你按照上述步骤做，但插件不起作用，没有生成atom.xml和sitemap.xml，也没有报错，那么你应该cd到你的hexo初始化目录，在该目录下重新安装插件，重试。</p>
-<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><p>hexo支持从其他类型站点迁移，如通用RSS，Jekyll，Octopress，WordPress等，这一部分我没试过。请参考官方文档Hexo Migration。</p>
-<h2 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h2><p>你可以到<a href="http://www.sousuoyinqingtijiao.com/" target="_blank" rel="external">屈站长</a>提交你的站点给搜索引擎。其他内容如添加站点或页面的description，提交Sitemap，添加百度统计，Google Analytics等等，参考本文其他章节的内容，不再一一阐述。</p>
-<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>更新hexo：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm update -g hexo</div></pre></td></tr></table></figure>
-<p>更新主题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd themes/你的主题</div><div class="line">git pull</div></pre></td></tr></table></figure></p>
-<p>更新插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm update</div></pre></td></tr></table></figure></p>
-<p>干掉IE</p>
-<p>Kill IE6 提示的javascript代码，请自行搜索。</p>
-<h2 id="换机器"><a href="#换机器" class="headerlink" title="换机器"></a>换机器</h2><p>你要保留好自己的博客源码。换机器写博客，就只能使用各种网盘的同步功能，或者你把你的站点源文件提交到某代码托管服务器。另外，貌似这篇很牛逼，Hexo 服务器端布署及 Dropbox 同步。</p>
-<p>我的办法是这样的，先在一个目录下做好Node+Git+Hexo的绿色环境，写个hexos.bat可以一键启动hexo工作台，把整个目录用Dropbox同步，这样随便在办公室或家的任何笔记本台式机都可以写博客，也不用处理什么文件拷贝备份的事情，非常爽。</p>
-<h2 id="统计功能"><a href="#统计功能" class="headerlink" title="统计功能"></a>统计功能</h2><p>为hexo博客添加访问次数统计功能</p>
-<p>其它</p>
-<p>网站加速</p>
-<p><a href="http://www.webluker.com/" target="_blank" rel="external">Webluker-CDN 网站加速 免费CDN DNS解析</a></p>
-<p>Webluker-FAQ索引</p>
-<p>网站监控</p>
-<p><a href="http://www.jiankongbao.com/" target="_blank" rel="external">监控宝-网站监控 网页监控 服务器监控</a></p>
-<p><a href="http://www.jiankongbao.com/faq" target="_blank" rel="external">监控宝-常见问题</a></p>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
-<li><p><a href="http://blog.netpi.me/%E5%AE%9E%E7%94%A8/hexo/" target="_blank" rel="external">hexo + github + 多说 来搭建免费博客</a></p>
-</li>
-<li><p><a href="http://www.jerryfu.net/post/search-engine-for-hexo-with-swiftype-v2.html" target="_blank" rel="external">利用swiftype为hexo添加站内搜索</a></p>
-</li>
-<li><p><a href="http://www.imys.net/20150513/wordpress-to-hexo.html#%E6%97%A0%E6%B3%95%E5%BC%80%E5%90%AFRSS%E5%92%8Csitemap" target="_blank" rel="external">博客搬迁记 - 从WordPress到Hexo</a></p>
-</li>
-<li><p><a href="http://www.tuicool.com/articles/umEBVfI" target="_blank" rel="external">在 hexo中无痛使用本地图片</a></p>
-</li>
-<li><p><a href="http://i.woblog.cn/2016/05/04/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8Travis%20CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E4%BD%A0%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E4%B8%8A/#more" target="_blank" rel="external">手把手教你使用Travis CI自动部署你的Hexo博客到Github上</a></p>
-</li>
-<li><p><a href="http://www.gfwsb.com/2016/use-sitemap-for-hexo/" target="_blank" rel="external">为Hexo博客生成sitemap</a></p>
-</li>
-</ul>
-<ul>
-<li><p><a href="http://www.5941740.cn/2016/02/19/%E4%BD%BF%E7%94%A8gulp%E7%B2%BE%E7%AE%80hexo%E5%8D%9A%E5%AE%A2%E4%BB%A3%E7%A0%81/" target="_blank" rel="external">使用gulp精简hexo博客代码</a></p>
-</li>
-<li><p><a href="http://chitanda.me/2015/11/03/multiple-git-pages-in-one-github-account/" target="_blank" rel="external">单个GitHub帐号下添加多个GitHub Pages的相关问题</a></p>
-</li>
-<li><p><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客</a></p>
-</li>
-</ul>
-
-          
+          <p>进入程序员这个坑之后就开始自己在网上扒资料，然而资料太多，情况太复杂，主要是看见别人的博客，感觉好高大上，并且感觉在茫茫的互联网有自己的小天地感觉也是极好的。不是为了给别人看，而是为了 记录自己的成长，记录自己的每一个脚印。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/16/利用Gitpage-hexo开发自己的博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1917,15 +1521,6 @@ Filter
                     <i class="fa fa-fw fa-weibo"></i>
                   
                   Weibo
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="" target="_blank" title="Others">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  Others
                 </a>
               </span>
             

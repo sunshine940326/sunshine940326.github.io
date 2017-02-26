@@ -93,7 +93,7 @@
 <meta property="og:description" content="什么是git：之前我使用过svn进行和队友合作开发项目，觉得svn是一个很好的工具，可以避免代码冲突，解决团队代码的同步问题，svn是集中式的版本控制系统，而git是分布式的版本控制系统有人拿git和svn比较，我觉得git更偏向于版本控制，就是自己对自己的代码进行控制，有了版本的概念和回滚，即使不是变成人员也可以使用，比如作家可以管理自己的作品。
 关于git怎么使用的，百度可以搜出来一大堆，这里">
 <meta property="og:image" content="http://img.blog.csdn.net/20160113200605078">
-<meta property="og:updated_time" content="2017-02-26T10:13:46.342Z">
+<meta property="og:updated_time" content="2017-02-26T11:33:53.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="将项目上传至github">
 <meta name="twitter:description" content="什么是git：之前我使用过svn进行和队友合作开发项目，觉得svn是一个很好的工具，可以避免代码冲突，解决团队代码的同步问题，svn是集中式的版本控制系统，而git是分布式的版本控制系统有人拿git和svn比较，我觉得git更偏向于版本控制，就是自己对自己的代码进行控制，有了版本的概念和回滚，即使不是变成人员也可以使用，比如作家可以管理自己的作品。
@@ -341,6 +341,7 @@
 <li><p>和海内外同胞共享资源，</p>
 </li>
 </ol>
+<a id="more"></a>
 <p>先来说一个我遇到的问题，不知道你们有没有遇到，因为不经常上github，所以有的时候我的ssh都会变成灰色的，这样本地就连接不上github，于是找到了解决方法：因为没有设置用户名和邮箱，解决方法如下：<br>“Git”-&gt;“Git Bash”，输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;Your Name&quot;</div><div class="line">$ git config --global user.email email@example.com</div><div class="line">$ ssh -T Git@github.com</div></pre></td></tr></table></figure>
 <p>git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
@@ -556,15 +557,6 @@
                     <i class="fa fa-fw fa-weibo"></i>
                   
                   Weibo
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="" target="_blank" title="Others">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  Others
                 </a>
               </span>
             
