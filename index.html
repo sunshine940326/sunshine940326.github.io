@@ -327,37 +327,12 @@
 
       
         
-          
-            <p>这里是看慕课网初学react做的一些总结<a href="http://www.imooc.com/video/9819" target="_blank" rel="external">[课程]React入门</a>，</p>
-<h1 id="什么是react"><a href="#什么是react" class="headerlink" title="什么是react"></a>什么是react</h1><p>这里只是读书笔记，因为刚开始接触react，也不能概括出什么是react，这里挖一个坑，以后再填。</p>
-<p>在这一个小时内对react的认识中，我有了对react的初步印象</p>
-<ol>
-<li>js库</li>
-<li>facebook开发的</li>
-<li>高度的组件化</li>
-<li>使用jsx</li>
-<li>将html和js结合</li>
-<li>单项传输数据</li>
-<li>虚拟dom</li>
-<li>只负责view层</li>
-</ol>
-<p>react并不是一个完整的mvc或者mvvm框架，只是负责view层，特点是“轻”，组件化的开发：组件高度的可重用。含义是将有独立功能的UI控件封装起来，将UI上的每一个独立的模块定义成组件，通过组合或者嵌套的方式构成大的组件，完成完整的UI</p>
-<h1 id="react应用场景"><a href="#react应用场景" class="headerlink" title="react应用场景"></a>react应用场景</h1><ol>
-<li>复杂场景下的高性能</li>
-<li>重用组件库，组件组合</li>
-<li>“懒”</li>
-</ol>
-<h1 id="使用react"><a href="#使用react" class="headerlink" title="使用react"></a>使用react</h1><p>最正确的打开方式还是直接看官方api：<a href="http://reactjs.cn/react/docs/getting-started-zh-CN.html" target="_blank" rel="external">react入门教程</a></p>
-<p>或者阮一峰老师的教程：<a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="external">React 入门实例教程</a></p>
-<p>我们先用React JSFiddle来创建一个最简单的hello world</p>
-<p>html：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//这里引入的js库只是方便学习和实验的，在正式项目不引入</div><div class="line">&lt;script src=&quot;https://facebook.github.io/react/js/jsfiddle-integration-babel.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;div id=&quot;container&quot;&gt;</div><div class="line">    &lt;!-- This element&apos;s contents will be replaced with your component. --&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>js:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//jsx语法糖，计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。通常来说使用语法糖能够增加程序的可读性，从而减少程序代码出错的机会。</div><div class="line"></div><div class="line">//react里面的div只是虚拟的dom，在react看来只是react componments的一个实例，调用ReactDOM.render方法使虚拟的dom呈现到页面上，ReactDOM.render方法第一次参数就是我们要渲染的react componments，第二个参数是我们要插入的位置</div><div class="line"></div><div class="line">//自定义的componments通过React.createClass来进行创建</div><div class="line">//&#123;&#125;里面为js表达式的值this是我们所使用的componments，props是我们在ReactDOM.render中所使用的属性的集合</div><div class="line">var Hello = React.createClass(&#123;</div><div class="line">  render: function() &#123;</div><div class="line">  </div><div class="line">    </div><div class="line">    return &lt;div&gt;Hello &#123;this.props.name&#125;&lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  //生成自定义标签</div><div class="line">  &lt;Hello name=&quot;World&quot; /&gt;,</div><div class="line">  document.getElementById(&apos;container&apos;)</div><div class="line">);</div></pre></td></tr></table></figure>
-<h1 id="为html添加css"><a href="#为html添加css" class="headerlink" title="为html添加css"></a>为html添加css</h1><h2 id="添加类"><a href="#添加类" class="headerlink" title="添加类"></a>添加类</h2><p>因为class是js中的保留字，所以在给标签加css类的时候不能使用class需要用className</p>
-<h2 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h2><p>需要使用驼峰写法的键值对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return &lt;div style=&#123;&#123;color:&apos;red&apos;&#125;&#125;&gt;Hello &#123;this.props.name&#125;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
-
-          
+          <p>这里只是读书笔记，因为刚开始接触react，概况的说一下什么是react，并且使用react完成hello world</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/01/react（一）：初识react/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
