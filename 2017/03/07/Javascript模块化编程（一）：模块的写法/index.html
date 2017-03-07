@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js,node,commonJS," />
+  <meta name="keywords" content="js模块化,js," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下">
+<meta name="description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js模块化的发展史">
-<meta property="og:url" content="http://yoursite.com/2017/03/02/前端面试/index.html">
+<meta property="og:title" content="Javascript模块化编程（一）：模块的写法">
+<meta property="og:url" content="http://yoursite.com/2017/03/07/Javascript模块化编程（一）：模块的写法/index.html">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下">
-<meta property="og:updated_time" content="2017-03-07T14:24:57.961Z">
+<meta property="og:description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
+<meta property="og:updated_time" content="2017-03-07T14:42:38.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js模块化的发展史">
-<meta name="twitter:description" content="在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下">
+<meta name="twitter:title" content="Javascript模块化编程（一）：模块的写法">
+<meta name="twitter:description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/02/前端面试/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/07/Javascript模块化编程（一）：模块的写法/"/>
 
-  <title> js模块化的发展史 | Cherry's Blog </title>
+  <title> Javascript模块化编程（一）：模块的写法 | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +256,7 @@
             
             
               
-                js模块化的发展史
+                Javascript模块化编程（一）：模块的写法
               
             
           </h1>
@@ -268,8 +268,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-02T21:55:57+08:00" content="2017-03-02">
-              2017-03-02
+            <time itemprop="dateCreated" datetime="2017-03-07T22:40:16+08:00" content="2017-03-07">
+              2017-03-07
             </time>
           </span>
 
@@ -298,8 +298,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/03/02/前端面试/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/02/前端面试/" itemprop="commentsCount"></span>
+                <a href="/2017/03/07/Javascript模块化编程（一）：模块的写法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/07/Javascript模块化编程（一）：模块的写法/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -322,53 +322,33 @@
       
 
       
-        <p>在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下<br><a id="more"></a></p>
-<h1 id="js在发展过程"><a href="#js在发展过程" class="headerlink" title="js在发展过程"></a>js在发展过程</h1><p>有几个阶段：<br>过程式的JavaScript→面向对象的javascript→面相模块的javascript</p>
-<p>在经历了这些阶段，我们现在的主流js编程方式是面相模块的javascript</p>
-<h1 id="为什么使用模块化的js"><a href="#为什么使用模块化的js" class="headerlink" title="为什么使用模块化的js"></a>为什么使用模块化的js</h1><p>使用模块化的javascript主要是为了解决两个问题（个人理解，以下均是，欢迎指正(＾－＾)V）</p>
-<ol>
-<li>命名冲突，是不是有点同感了！！！<br>闭包作用域和命名空间其实已经解决了这个问题了，但是js模块化更加优雅的解决了这个问题<br><strong>通过export暴露接口，不需要命名空间，不需要全局变量</strong></li>
-<li>文件依赖<br>文件的加载顺序很重要啊有没有，一不小心就犯错了，还是很不好找原因啊！<br>js模块化的解决方式是使用require引入依赖，使依赖内置，开发者只需关心当前模块的依赖，其他事情 SeaJS都会自动处理好。对模块开发者来说，这是一种很好的 关注度分离 ，能让程序员更多地享受编码的乐趣。</li>
-</ol>
-<h1 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h1><p>为了解决上述的两个问题，commonJS就出现了，node应该是将commonJS运用的最出名的</p>
-<h2 id="什么是commonJS"><a href="#什么是commonJS" class="headerlink" title="什么是commonJS"></a>什么是commonJS</h2><p>commonJS就是一套javascript使用模块化的规范，原本是想统一服务器端和浏览器，所以起名叫做commonJS，但是commonJS在浏览器上使用有诸多不便，所以诞生了AMD（稍后详细说明）</p>
-<h2 id="使用commonJS编写node"><a href="#使用commonJS编写node" class="headerlink" title="使用commonJS编写node"></a>使用commonJS编写node</h2><p>以下是node写模块化的一个示例：</p>
-<ol>
-<li>math.js</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">exports.add = function() &#123;</div><div class="line">    var sum = 0, i = 0, args = arguments, l = args.length;</div><div class="line">    while (i &lt; l) &#123;</div><div class="line">        sum += args[i++];</div><div class="line">    &#125;</div><div class="line">    return sum;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<ol>
-<li>increment.js</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var add = require(&apos;math&apos;).add;</div><div class="line">exports.increment = function(val) &#123;</div><div class="line">    return add(val, 1);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<ol>
-<li>main.js，该文件为入口文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var inc = require(&apos;increment&apos;).increment;</div><div class="line">var a = 1;</div><div class="line">inc(a); // 2</div></pre></td></tr></table></figure>
-<p>从上述代码可以看到：</p>
+        <p>不得不说现在“前端”的知识点实在是太多了，(ಥ<em>ಥ)<br>就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥ</em>ಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成</p>
+<a id="more"></a>
+<h1 id="了解基本概念：AMD-CMD-commonJS"><a href="#了解基本概念：AMD-CMD-commonJS" class="headerlink" title="了解基本概念：AMD/CMD/commonJS"></a>了解基本概念：AMD/CMD/commonJS</h1><p>先来大体说一些这些都是什么东西：<br>AMD/CMD/commonJS都是JavaScript模块化变的规范</p>
+<blockquote>
+<p>因为有了模块，我们就可以更方便地使用别人的代码，想要什么功能，就加载什么模块。<br>但是，这样做有一个前提，那就是大家必须以同样的方式编写模块，否则你有你的写法，我有我的写法，岂不是乱了套！考虑到Javascript模块现在还没有官方规范，这一点就更重要了。</p>
+</blockquote>
 <ul>
-<li>node要求一个js文件对应一个模块。可以把该文件中的代码想象成是包在一个匿名函数中，所有代码都在匿名函数中，其它模块不可访问除exports外的私有变量</li>
-<li>使用exports导出API</li>
-<li>使用require加载其它模块</li>
-<li><h2 id="commonJS的缺点"><a href="#commonJS的缺点" class="headerlink" title="commonJS的缺点"></a>commonJS的缺点</h2>因为node也可以进行服务器端的编程，那么使用commonJS写模块是不是就可以前后端兼顾呢，事与愿违，commonJS在浏览器的支持还是有很多不足的</li>
+<li>AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。</li>
+<li>CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。</li>
+<li>commonJS是nodejs在推广过程中对模块定义的规范化产出。</li>
 </ul>
+<p>因为node主要是将javascript语言用于服务器端编程，所以对应的commonJS主要是针对服务端，AMD/CMD主要是针对浏览器端。</p>
+<h2 id="AMD-Asynchronous-Module-Definition"><a href="#AMD-Asynchronous-Module-Definition" class="headerlink" title="AMD(Asynchronous Module Definition)"></a>AMD(Asynchronous Module Definition)</h2><p>全称是Asynchronous Module Definition，即异步模块加载机制。</p>
+<h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><p>CommonJS 的目标是定义一套普通应用程序使用的API，从而填补原生JavaScript标准库过少的缺点。终极目标是实现一个像python，java中含有的标准库。现在非常火爆的node.js实际上就是CommonJS 的一个实现。</p>
+<p>通过 CommonJS 的规范和代码可以看出，require 是同步的，模块系统需要同步读取模块文件内容，并编译执行以得到模块接口。在服务端，比如node.js，这一般来说没有问题，文件请求都是本地获取，对性能没有什么影响。但是放在浏览器端，问题就出来了，等到所有模块同步加载完毕，时间不知道要过去多久了。</p>
+<blockquote>
+<p>CommonJS 最早叫做 ServerJS，Modules 1.0规范在node.js上实践的很好，由于知道自身在浏览器中的不足，CommonJS社区把名字改为CommonJS，意为想统一服务器端和浏览器端，但是要实现浏览器端，就要有新的版本的标准，在新的版本制定过程中，社区出现了分歧，在这个分歧中，分出了AMD规范。</p>
+<p>由于风格和机制的差异，最终，AMD从CommonJS社区中独立了出来<br>–<a href="http://www.feeldesignstudio.com/2013/09/javascript-module-pattern-commonjs/?utm_source=caibaojian.com" target="_blank" rel="external">JavaScript模块化开发（二）——CommonJS规范</a></p>
+</blockquote>
+<h1 id="那么AMD-CMD又有什么区别呢？"><a href="#那么AMD-CMD又有什么区别呢？" class="headerlink" title="那么AMD/CMD又有什么区别呢？"></a>那么AMD/CMD又有什么区别呢？</h1><p>AMD和CMD的区别 </p>
 <ol>
-<li>服务器端的js模块就在本地，浏览器端则需要通过网络请求</li>
-<li>服务器端可以很容易进行同步或异步请求模块，浏览器则问题多多</li>
+<li>对于依赖的模块，AMD 是 提前执行 ，CMD 是 延迟执行 。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible. </li>
+<li>CMD 推崇 依赖就近 ，AMD 推崇 依赖前置 。（这一点是非常重要的区别） </li>
+<li>AMD 的 API 默认是 一个当多个用 ，CMD 的 API 严格区分，推崇 职责单一 。</li>
 </ol>
-<h1 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h1><p>基于上述两点的commcommonJS的缺点，AMD就孕育而生，</p>
-<h2 id="什么是AMD"><a href="#什么是AMD" class="headerlink" title="什么是AMD"></a>什么是AMD</h2><p>AMD可以理解为异步模块定义，可以认为是浏览器中的模块规范</p>
-<p>更多请阅读：</p>
-<ul>
-<li><a href="http://www.tuicool.com/articles/rqEjEv" target="_blank" rel="external">浅谈模块化的JavaScript</a></li>
-<li><a href="http://www.cnblogs.com/snandy/archive/2012/03/30/2423612.html" target="_blank" rel="external">JavaScript模块化开发库之SeaJS</a></li>
-<li><a href="http://www.cnblogs.com/snandy/archive/2012/03/09/2386092.html" target="_blank" rel="external">Node.js模块风格在浏览器中的尝试</a></li>
-<li><a href="http://www.cnblogs.com/snandy/archive/2012/03/08/2378441.html" target="_blank" rel="external">JavaScript中模块写法</a></li>
-<li><a href="http://caibaojian.com/toutiao/6090" target="_blank" rel="external">JavaScript中的AMD和CMD模块化</a></li>
-<li><a href="https://github.com/seajs/seajs/issues/242?utm_source=caibaojian.com" target="_blank" rel="external">CMD 模块定义规范</a></li>
-<li><a href="http://www.feeldesignstudio.com/2013/09/javascript-module-pattern-requirejs/" target="_blank" rel="external">JavaScript模块化开发（四）——RequireJS</a></li>
-<li><a href="http://note.youdao.com/" target="_blank" rel="external">Javascript模块化编程</a></li>
-</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>不得不说，其实这篇文章大部分都是摘录的，反思了一下，归根结底还是自己对这些概念理解的不清，首先是没有找到系统的讲解文章，其次是自己没有用到项目中去，自我批评。</p>
+<p>先挖个坑，以后我胡汉三还会回来的~</p>
 
       
     </div>
@@ -391,11 +371,9 @@
       
         <div class="post-tags">
           
+            <a href="/tags/js模块化/" rel="tag">#js模块化</a>
+          
             <a href="/tags/js/" rel="tag">#js</a>
-          
-            <a href="/tags/node/" rel="tag">#node</a>
-          
-            <a href="/tags/commonJS/" rel="tag">#commonJS</a>
           
         </div>
       
@@ -404,17 +382,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/02/自律才能自由/" rel="next" title="自律才能自由">
-                <i class="fa fa-chevron-left"></i> 自律才能自由
+              <a href="/2017/03/06/面试题/" rel="next" title="前端面试">
+                <i class="fa fa-chevron-left"></i> 前端面试
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/06/知识点/" rel="prev" title="前端面试">
-                前端面试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -429,10 +403,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/03/02/前端面试/"
-     data-title="js模块化的发展史"
+        <div class="ds-share flat" data-thread-key="2017/03/07/Javascript模块化编程（一）：模块的写法/"
+     data-title="Javascript模块化编程（一）：模块的写法"
      data-content=""
-     data-url="http://yoursite.com/2017/03/02/前端面试/">
+     data-url="http://yoursite.com/2017/03/07/Javascript模块化编程（一）：模块的写法/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -459,8 +433,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/02/前端面试/"
-           data-title="js模块化的发展史" data-url="http://yoursite.com/2017/03/02/前端面试/">
+      <div class="ds-thread" data-thread-key="2017/03/07/Javascript模块化编程（一）：模块的写法/"
+           data-title="Javascript模块化编程（一）：模块的写法" data-url="http://yoursite.com/2017/03/07/Javascript模块化编程（一）：模块的写法/">
       </div>
     
   </div>
@@ -522,7 +496,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -571,7 +545,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js在发展过程"><span class="nav-number">1.</span> <span class="nav-text">js在发展过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么使用模块化的js"><span class="nav-number">2.</span> <span class="nav-text">为什么使用模块化的js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#commonJS"><span class="nav-number">3.</span> <span class="nav-text">commonJS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是commonJS"><span class="nav-number">3.1.</span> <span class="nav-text">什么是commonJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用commonJS编写node"><span class="nav-number">3.2.</span> <span class="nav-text">使用commonJS编写node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#commonJS的缺点"><span class="nav-number">3.3.</span> <span class="nav-text">commonJS的缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AMD"><span class="nav-number">4.</span> <span class="nav-text">AMD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是AMD"><span class="nav-number">4.1.</span> <span class="nav-text">什么是AMD</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#了解基本概念：AMD-CMD-commonJS"><span class="nav-number">1.</span> <span class="nav-text">了解基本概念：AMD/CMD/commonJS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AMD-Asynchronous-Module-Definition"><span class="nav-number">1.1.</span> <span class="nav-text">AMD(Asynchronous Module Definition)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#commonJS"><span class="nav-number">1.2.</span> <span class="nav-text">commonJS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#那么AMD-CMD又有什么区别呢？"><span class="nav-number">2.</span> <span class="nav-text">那么AMD/CMD又有什么区别呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>
