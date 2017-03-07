@@ -1,0 +1,767 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js模块化,js," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下
+js在发展过程有几个阶段：过程式的JavaScript→面向对象的javascript→面相模块的javascript
+在经历了这些阶段，我们现在的主流js编程方式是面相模块的javascript
+为什么使用模块化的js使用模块化的javascript主要是为了解决两个问题（个人理解，以下均是，欢迎指正(＾－＾)V）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript的发展史">
+<meta property="og:url" content="http://yoursite.com/2017/03/07/javascript模块化编程（二）：js模块化的发展史/index.html">
+<meta property="og:site_name" content="Cherry's Blog">
+<meta property="og:description" content="在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下
+js在发展过程有几个阶段：过程式的JavaScript→面向对象的javascript→面相模块的javascript
+在经历了这些阶段，我们现在的主流js编程方式是面相模块的javascript
+为什么使用模块化的js使用模块化的javascript主要是为了解决两个问题（个人理解，以下均是，欢迎指正(＾－＾)V）">
+<meta property="og:updated_time" content="2017-03-07T15:06:18.696Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript的发展史">
+<meta name="twitter:description" content="在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下
+js在发展过程有几个阶段：过程式的JavaScript→面向对象的javascript→面相模块的javascript
+在经历了这些阶段，我们现在的主流js编程方式是面相模块的javascript
+为什么使用模块化的js使用模块化的javascript主要是为了解决两个问题（个人理解，以下均是，欢迎指正(＾－＾)V）">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/07/javascript模块化编程（二）：js模块化的发展史/"/>
+
+  <title> javascript的发展史 | Cherry's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Cherry's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">自律才能自由</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                javascript的发展史
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-07T23:04:40+08:00" content="2017-03-07">
+              2017-03-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/07/javascript模块化编程（二）：js模块化的发展史/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/07/javascript模块化编程（二）：js模块化的发展史/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下</p>
+<h1 id="js在发展过程"><a href="#js在发展过程" class="headerlink" title="js在发展过程"></a>js在发展过程</h1><p>有几个阶段：<br>过程式的JavaScript→面向对象的javascript→面相模块的javascript</p>
+<p>在经历了这些阶段，我们现在的主流js编程方式是面相模块的javascript</p>
+<h1 id="为什么使用模块化的js"><a href="#为什么使用模块化的js" class="headerlink" title="为什么使用模块化的js"></a>为什么使用模块化的js</h1><p>使用模块化的javascript主要是为了解决两个问题（个人理解，以下均是，欢迎指正(＾－＾)V）</p>
+<ol>
+<li>命名冲突，是不是有点同感了！！！<br>闭包作用域和命名空间其实已经解决了这个问题了，但是js模块化更加优雅的解决了这个问题<br><strong>通过export暴露接口，不需要命名空间，不需要全局变量</strong></li>
+<li>文件依赖<br>文件的加载顺序很重要啊有没有，一不小心就犯错了，还是很不好找原因啊！<br>js模块化的解决方式是使用require引入依赖，使依赖内置，开发者只需关心当前模块的依赖，其他事情 SeaJS都会自动处理好。对模块开发者来说，这是一种很好的 关注度分离 ，能让程序员更多地享受编码的乐趣。</li>
+</ol>
+<h1 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h1><p>为了解决上述的两个问题，commonJS就出现了，node应该是将commonJS运用的最出名的</p>
+<h2 id="什么是commonJS"><a href="#什么是commonJS" class="headerlink" title="什么是commonJS"></a>什么是commonJS</h2><p>commonJS就是一套javascript使用模块化的规范，原本是想统一服务器端和浏览器，所以起名叫做commonJS，但是commonJS在浏览器上使用有诸多不便，所以诞生了AMD（稍后详细说明）</p>
+<h2 id="使用commonJS编写node"><a href="#使用commonJS编写node" class="headerlink" title="使用commonJS编写node"></a>使用commonJS编写node</h2><p>以下是node写模块化的一个示例：</p>
+<ol>
+<li>math.js</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">exports.add = function() &#123;</div><div class="line">    var sum = 0, i = 0, args = arguments, l = args.length;</div><div class="line">    while (i &lt; l) &#123;</div><div class="line">        sum += args[i++];</div><div class="line">    &#125;</div><div class="line">    return sum;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<ol>
+<li>increment.js</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var add = require(&apos;math&apos;).add;</div><div class="line">exports.increment = function(val) &#123;</div><div class="line">    return add(val, 1);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<ol>
+<li>main.js，该文件为入口文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var inc = require(&apos;increment&apos;).increment;</div><div class="line">var a = 1;</div><div class="line">inc(a); // 2</div></pre></td></tr></table></figure>
+<p>从上述代码可以看到：</p>
+<ul>
+<li>node要求一个js文件对应一个模块。可以把该文件中的代码想象成是包在一个匿名函数中，所有代码都在匿名函数中，其它模块不可访问除exports外的私有变量</li>
+<li>使用exports导出API</li>
+<li>使用require加载其它模块</li>
+<li><h2 id="commonJS的缺点"><a href="#commonJS的缺点" class="headerlink" title="commonJS的缺点"></a>commonJS的缺点</h2>因为node也可以进行服务器端的编程，那么使用commonJS写模块是不是就可以前后端兼顾呢，事与愿违，commonJS在浏览器的支持还是有很多不足的</li>
+</ul>
+<ol>
+<li>服务器端的js模块就在本地，浏览器端则需要通过网络请求</li>
+<li>服务器端可以很容易进行同步或异步请求模块，浏览器则问题多多</li>
+</ol>
+<p>如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var event = require(&quot;event&quot;);</div><div class="line"> </div><div class="line">event.bind(el, &apos;click&apos;, function() &#123;</div><div class="line">    // todo</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>这段代码中 require 如果是异步执行的，则 event.bind 的执行有可能会出错</p>
+<h1 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h1><p>基于上述两点的commcommonJS的缺点，AMD就孕育而生，</p>
+<blockquote>
+<p>这时AMD 诞生了，它的全称为异步模块定义。从名称上看便知它是适合script tag的。也可以说AMD是专门为浏览器中JavaScript环境设计的规范。它吸取了CommonJS的一些优点，但又不照搬它的格式。开始AMD作为CommonJS的transport format 存在，因无法与CommonJS开发者达成一致而独立出来。它有自己的wiki 和讨论组 。</p>
+</blockquote>
+<h2 id="什么是AMD"><a href="#什么是AMD" class="headerlink" title="什么是AMD"></a>什么是AMD</h2><p>AMD可以理解为异步模块定义，可以认为是浏览器中的模块规范</p>
+<p>AMD只有一个简洁的API，是的，只有一句API！！！并且其中的两个参数都是可选的！！！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">define(id?, dependencies?, factory);</div></pre></td></tr></table></figure>
+<p>其中：</p>
+<ul>
+<li>id: 模块标识，可以省略。</li>
+<li>dependencies: 所依赖的模块，可以省略。</li>
+<li>factory: 模块的实现，或者一个JavaScript对象。</li>
+<li>id遵循CommonJS Module Identifiers 。dependencies元素的顺序和factory参数一一对应。</li>
+</ul>
+<h2 id="简单的AMD模式应用"><a href="#简单的AMD模式应用" class="headerlink" title="简单的AMD模式应用"></a>简单的AMD模式应用</h2><p>以下是使用AMD模式开发的简单的三层结构（基础库/UI层/应用层）<br><code>base.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">define(function() &#123;</div><div class="line">    return &#123;</div><div class="line">        mix: function(source, target) &#123;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><code>ui.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">define([&apos;base&apos;], function(base) &#123;</div><div class="line">    return &#123;</div><div class="line">        show: function() &#123;</div><div class="line">            // todo with module base</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>`page.js``<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">define([&apos;data&apos;, &apos;ui&apos;], function(data, ui) &#123;</div><div class="line">    // init here</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><code>data.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">define(&#123;</div><div class="line">    users: [],</div><div class="line">    members: []</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>以上同时演示了define的三种用法</p>
+<ul>
+<li>定义无依赖的模块（base.js）</li>
+<li>定义有依赖的模块（ui.js，page.js）</li>
+<li>定义数据对象模块（data.js）</li>
+</ul>
+<p>以上的id参数都为空，这是为什么呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">define(&apos;index&apos;, [&apos;data&apos;,&apos;base&apos;], function(data, base) &#123;</div><div class="line">    // todo</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>这种具名函数是不推荐的，一般由打包工具合并多个模块到一个js文件中时使用。</p>
+<p>更多请阅读：</p>
+<ul>
+<li><a href="http://www.tuicool.com/articles/rqEjEv" target="_blank" rel="external">浅谈模块化的JavaScript</a></li>
+<li><a href="http://www.cnblogs.com/snandy/archive/2012/03/30/2423612.html" target="_blank" rel="external">JavaScript模块化开发库之SeaJS</a></li>
+<li><a href="http://www.cnblogs.com/snandy/archive/2012/03/09/2386092.html" target="_blank" rel="external">Node.js模块风格在浏览器中的尝试</a></li>
+<li><a href="http://www.cnblogs.com/snandy/archive/2012/03/08/2378441.html" target="_blank" rel="external">JavaScript中模块写法</a></li>
+<li><a href="http://caibaojian.com/toutiao/6090" target="_blank" rel="external">JavaScript中的AMD和CMD模块化</a></li>
+<li><a href="https://github.com/seajs/seajs/issues/242?utm_source=caibaojian.com" target="_blank" rel="external">CMD 模块定义规范</a></li>
+<li><a href="http://www.feeldesignstudio.com/2013/09/javascript-module-pattern-requirejs/" target="_blank" rel="external">JavaScript模块化开发（四）——RequireJS</a></li>
+<li><a href="http://note.youdao.com/" target="_blank" rel="external">Javascript模块化编程</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js模块化/" rel="tag">#js模块化</a>
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/07/Javascript模块化编程（一）：初识js模块化/" rel="next" title="Javascript模块化编程（一）：模块的写法">
+                <i class="fa fa-chevron-left"></i> Javascript模块化编程（一）：模块的写法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/07/javascript模块化编程（二）：js模块化的发展史/"
+     data-title="javascript的发展史"
+     data-content=""
+     data-url="http://yoursite.com/2017/03/07/javascript模块化编程（二）：js模块化的发展史/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/07/javascript模块化编程（二）：js模块化的发展史/"
+           data-title="javascript的发展史" data-url="http://yoursite.com/2017/03/07/javascript模块化编程（二）：js模块化的发展史/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Cherry" />
+          <p class="site-author-name" itemprop="name">Cherry</p>
+          <p class="site-description motion-element" itemprop="description">记录学习道路上的一点一滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/sunshine940326" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5094854684/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js在发展过程"><span class="nav-number">1.</span> <span class="nav-text">js在发展过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么使用模块化的js"><span class="nav-number">2.</span> <span class="nav-text">为什么使用模块化的js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#commonJS"><span class="nav-number">3.</span> <span class="nav-text">commonJS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是commonJS"><span class="nav-number">3.1.</span> <span class="nav-text">什么是commonJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用commonJS编写node"><span class="nav-number">3.2.</span> <span class="nav-text">使用commonJS编写node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#commonJS的缺点"><span class="nav-number">3.3.</span> <span class="nav-text">commonJS的缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AMD"><span class="nav-number">4.</span> <span class="nav-text">AMD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是AMD"><span class="nav-number">4.1.</span> <span class="nav-text">什么是AMD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的AMD模式应用"><span class="nav-number">4.2.</span> <span class="nav-text">简单的AMD模式应用</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cherry</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunshine940326"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
