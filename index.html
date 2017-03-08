@@ -258,8 +258,130 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/08/Javascript模块化编程（三）：require.js的用法/" itemprop="url">
+                  Javascript模块化编程（三）：require.js的用法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-08T23:11:42+08:00" content="2017-03-08">
+              2017-03-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/08/Javascript模块化编程（三）：require.js的用法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/08/Javascript模块化编程（三）：require.js的用法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在简单了介绍了javascript的模块化编程思想之后，我们来写一个简单的requireJS的案例，来了解一下具体是怎么在你的项目中使用requireJS的<br>本文的源码在个人的github上：<a href="https://github.com/sunshine940326/js-module-demo">https://github.com/sunshine940326/js-module-demo</a><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/08/Javascript模块化编程（三）：require.js的用法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/07/javascript模块化编程（二）：js模块化的发展史/" itemprop="url">
-                  javascript的发展史
+                  javascript模块化编程（二）：js模块化发展史
                 </a>
               
             
@@ -327,87 +449,12 @@
 
       
         
-          
-            <p>在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下</p>
-<h1 id="js在发展过程"><a href="#js在发展过程" class="headerlink" title="js在发展过程"></a>js在发展过程</h1><p>有几个阶段：<br>过程式的JavaScript→面向对象的javascript→面相模块的javascript</p>
-<p>在经历了这些阶段，我们现在的主流js编程方式是面相模块的javascript</p>
-<h1 id="为什么使用模块化的js"><a href="#为什么使用模块化的js" class="headerlink" title="为什么使用模块化的js"></a>为什么使用模块化的js</h1><p>使用模块化的javascript主要是为了解决两个问题（个人理解，以下均是，欢迎指正(＾－＾)V）</p>
-<ol>
-<li>命名冲突，是不是有点同感了！！！<br>闭包作用域和命名空间其实已经解决了这个问题了，但是js模块化更加优雅的解决了这个问题<br><strong>通过export暴露接口，不需要命名空间，不需要全局变量</strong></li>
-<li>文件依赖<br>文件的加载顺序很重要啊有没有，一不小心就犯错了，还是很不好找原因啊！<br>js模块化的解决方式是使用require引入依赖，使依赖内置，开发者只需关心当前模块的依赖，其他事情 SeaJS都会自动处理好。对模块开发者来说，这是一种很好的 关注度分离 ，能让程序员更多地享受编码的乐趣。</li>
-</ol>
-<h1 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h1><p>为了解决上述的两个问题，commonJS就出现了，node应该是将commonJS运用的最出名的</p>
-<h2 id="什么是commonJS"><a href="#什么是commonJS" class="headerlink" title="什么是commonJS"></a>什么是commonJS</h2><p>commonJS就是一套javascript使用模块化的规范，原本是想统一服务器端和浏览器，所以起名叫做commonJS，但是commonJS在浏览器上使用有诸多不便，所以诞生了AMD（稍后详细说明）</p>
-<h2 id="使用commonJS编写node"><a href="#使用commonJS编写node" class="headerlink" title="使用commonJS编写node"></a>使用commonJS编写node</h2><p>以下是node写模块化的一个示例：</p>
-<ol>
-<li>math.js</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">exports.add = function() &#123;</div><div class="line">    var sum = 0, i = 0, args = arguments, l = args.length;</div><div class="line">    while (i &lt; l) &#123;</div><div class="line">        sum += args[i++];</div><div class="line">    &#125;</div><div class="line">    return sum;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<ol>
-<li>increment.js</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var add = require(&apos;math&apos;).add;</div><div class="line">exports.increment = function(val) &#123;</div><div class="line">    return add(val, 1);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<ol>
-<li>main.js，该文件为入口文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var inc = require(&apos;increment&apos;).increment;</div><div class="line">var a = 1;</div><div class="line">inc(a); // 2</div></pre></td></tr></table></figure>
-<p>从上述代码可以看到：</p>
-<ul>
-<li>node要求一个js文件对应一个模块。可以把该文件中的代码想象成是包在一个匿名函数中，所有代码都在匿名函数中，其它模块不可访问除exports外的私有变量</li>
-<li>使用exports导出API</li>
-<li>使用require加载其它模块</li>
-<li><h2 id="commonJS的缺点"><a href="#commonJS的缺点" class="headerlink" title="commonJS的缺点"></a>commonJS的缺点</h2>因为node也可以进行服务器端的编程，那么使用commonJS写模块是不是就可以前后端兼顾呢，事与愿违，commonJS在浏览器的支持还是有很多不足的</li>
-</ul>
-<ol>
-<li>服务器端的js模块就在本地，浏览器端则需要通过网络请求</li>
-<li>服务器端可以很容易进行同步或异步请求模块，浏览器则问题多多</li>
-</ol>
-<p>如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var event = require(&quot;event&quot;);</div><div class="line"> </div><div class="line">event.bind(el, &apos;click&apos;, function() &#123;</div><div class="line">    // todo</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>这段代码中 require 如果是异步执行的，则 event.bind 的执行有可能会出错</p>
-<h1 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h1><p>基于上述两点的commcommonJS的缺点，AMD就孕育而生，</p>
-<blockquote>
-<p>这时AMD 诞生了，它的全称为异步模块定义。从名称上看便知它是适合script tag的。也可以说AMD是专门为浏览器中JavaScript环境设计的规范。它吸取了CommonJS的一些优点，但又不照搬它的格式。开始AMD作为CommonJS的transport format 存在，因无法与CommonJS开发者达成一致而独立出来。它有自己的wiki 和讨论组 。</p>
-</blockquote>
-<h2 id="什么是AMD"><a href="#什么是AMD" class="headerlink" title="什么是AMD"></a>什么是AMD</h2><p>AMD可以理解为异步模块定义，可以认为是浏览器中的模块规范</p>
-<p>AMD只有一个简洁的API，是的，只有一句API！！！并且其中的两个参数都是可选的！！！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">define(id?, dependencies?, factory);</div></pre></td></tr></table></figure>
-<p>其中：</p>
-<ul>
-<li>id: 模块标识，可以省略。</li>
-<li>dependencies: 所依赖的模块，可以省略。</li>
-<li>factory: 模块的实现，或者一个JavaScript对象。</li>
-<li>id遵循CommonJS Module Identifiers 。dependencies元素的顺序和factory参数一一对应。</li>
-</ul>
-<h2 id="简单的AMD模式应用"><a href="#简单的AMD模式应用" class="headerlink" title="简单的AMD模式应用"></a>简单的AMD模式应用</h2><p>以下是使用AMD模式开发的简单的三层结构（基础库/UI层/应用层）<br><code>base.js</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">define(function() &#123;</div><div class="line">    return &#123;</div><div class="line">        mix: function(source, target) &#123;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><code>ui.js</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">define([&apos;base&apos;], function(base) &#123;</div><div class="line">    return &#123;</div><div class="line">        show: function() &#123;</div><div class="line">            // todo with module base</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>`page.js``<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">define([&apos;data&apos;, &apos;ui&apos;], function(data, ui) &#123;</div><div class="line">    // init here</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p><code>data.js</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">define(&#123;</div><div class="line">    users: [],</div><div class="line">    members: []</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>以上同时演示了define的三种用法</p>
-<ul>
-<li>定义无依赖的模块（base.js）</li>
-<li>定义有依赖的模块（ui.js，page.js）</li>
-<li>定义数据对象模块（data.js）</li>
-</ul>
-<p>以上的id参数都为空，这是为什么呢？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">define(&apos;index&apos;, [&apos;data&apos;,&apos;base&apos;], function(data, base) &#123;</div><div class="line">    // todo</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>这种具名函数是不推荐的，一般由打包工具合并多个模块到一个js文件中时使用。</p>
-<p>更多请阅读：</p>
-<ul>
-<li><a href="http://www.tuicool.com/articles/rqEjEv" target="_blank" rel="external">浅谈模块化的JavaScript</a></li>
-<li><a href="http://www.cnblogs.com/snandy/archive/2012/03/30/2423612.html" target="_blank" rel="external">JavaScript模块化开发库之SeaJS</a></li>
-<li><a href="http://www.cnblogs.com/snandy/archive/2012/03/09/2386092.html" target="_blank" rel="external">Node.js模块风格在浏览器中的尝试</a></li>
-<li><a href="http://www.cnblogs.com/snandy/archive/2012/03/08/2378441.html" target="_blank" rel="external">JavaScript中模块写法</a></li>
-<li><a href="http://caibaojian.com/toutiao/6090" target="_blank" rel="external">JavaScript中的AMD和CMD模块化</a></li>
-<li><a href="https://github.com/seajs/seajs/issues/242?utm_source=caibaojian.com" target="_blank" rel="external">CMD 模块定义规范</a></li>
-<li><a href="http://www.feeldesignstudio.com/2013/09/javascript-module-pattern-requirejs/" target="_blank" rel="external">JavaScript模块化开发（四）——RequireJS</a></li>
-<li><a href="http://note.youdao.com/" target="_blank" rel="external">Javascript模块化编程</a></li>
-</ul>
-
-          
+          <p>在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下javascrip的模块化发展史，主要是commonJS、AMD和应用AMD的requireJS、CMD和应用CMD的seaJS（不过现在seaJS貌似用的人挺少的，就不详细说明了）<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/07/javascript模块化编程（二）：js模块化的发展史/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1410,128 +1457,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/17/hexo附件插入音乐、分享、评论、标签页、搜索/" itemprop="url">
-                  hexo附件插入音乐、分享、评论、标签页、搜索
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-17T01:01:48+08:00" content="2016-09-17">
-              2016-09-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/17/hexo附件插入音乐、分享、评论、标签页、搜索/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/17/hexo附件插入音乐、分享、评论、标签页、搜索/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>hexo高阶教程，教你怎样在你的博客中插入音乐、分享、评论和标签页<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/17/hexo附件插入音乐、分享、评论、标签页、搜索/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1577,7 +1502,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

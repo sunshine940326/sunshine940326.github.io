@@ -1,0 +1,716 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js模块化,js," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="在简单了介绍了javascript的模块化编程思想之后，我们来写一个简单的requireJS的案例，来了解一下具体是怎么在你的项目中使用requireJS的本文的源码在个人的github上：https://github.com/sunshine940326/js-module-demo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript模块化编程（三）：require.js的用法">
+<meta property="og:url" content="http://yoursite.com/2017/03/08/Javascript模块化编程（三）：require.js的用法/index.html">
+<meta property="og:site_name" content="Cherry's Blog">
+<meta property="og:description" content="在简单了介绍了javascript的模块化编程思想之后，我们来写一个简单的requireJS的案例，来了解一下具体是怎么在你的项目中使用requireJS的本文的源码在个人的github上：https://github.com/sunshine940326/js-module-demo">
+<meta property="og:updated_time" content="2017-03-08T15:15:25.679Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript模块化编程（三）：require.js的用法">
+<meta name="twitter:description" content="在简单了介绍了javascript的模块化编程思想之后，我们来写一个简单的requireJS的案例，来了解一下具体是怎么在你的项目中使用requireJS的本文的源码在个人的github上：https://github.com/sunshine940326/js-module-demo">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/08/Javascript模块化编程（三）：require.js的用法/"/>
+
+  <title> Javascript模块化编程（三）：require.js的用法 | Cherry's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Cherry's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">自律才能自由</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Javascript模块化编程（三）：require.js的用法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-08T23:11:42+08:00" content="2017-03-08">
+              2017-03-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/08/Javascript模块化编程（三）：require.js的用法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/08/Javascript模块化编程（三）：require.js的用法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在简单了介绍了javascript的模块化编程思想之后，我们来写一个简单的requireJS的案例，来了解一下具体是怎么在你的项目中使用requireJS的<br>本文的源码在个人的github上：<a href="https://github.com/sunshine940326/js-module-demo" target="_blank" rel="external">https://github.com/sunshine940326/js-module-demo</a><br><a id="more"></a><br>首先祭上<a href="http://www.requirejs.cn/docs/start.html" target="_blank" rel="external">requireJS的官方api</a></p>
+<h1 id="下载requireJS"><a href="#下载requireJS" class="headerlink" title="下载requireJS"></a>下载requireJS</h1><p>我们可以再requireJS的官网上下载最新的reqrequireJS：下载链接：<a href="http://www.requirejs.cn/docs/download.html" target="_blank" rel="external">http://www.requirejs.cn/docs/download.html</a></p>
+<p>你可以下载最新版本的<code>require.js</code>, <code>r.js</code>(node中使用)，以及requireJS的插件：</p>
+<ol>
+<li>text</li>
+<li>domReady</li>
+<li>cs(coffeeScript)</li>
+<li>i18n（国际化）</li>
+</ol>
+<h1 id="在html中引入require-js"><a href="#在html中引入require-js" class="headerlink" title="在html中引入require.js"></a>在html中引入require.js</h1><p>使用requireJS的方法很简单，只需要在html中引入<code>&lt;script src=&quot;js/require.js&quot;  data-main=&quot;js/main&quot;  async=&quot;true&quot;&gt;&lt;/script&gt;</code>就可以，和引入普通的js一样。</p>
+<p>async属性是html5中的新特性，意为异步加载该js，就是可以不用把这个script标签放在底部，不会使网页失去响应</p>
+<p><code>data-main=&quot;js/main</code>main.js就是我们自己编写的js文件，因为requireJS默认的文件后缀就是js，所以<code>.js</code>文件后缀可以省略<br>这个<code>main.js</code>就是我们程序的js主入口，会第一个被require加载。和c的<code>main()</code>一样</p>
+<p>我们原来的html的<code>&lt;head&gt;</code>中是不是加载了很多的js，因为能同时发出的http请求是有限的，所以在加载的时候网页需要响应的时间变长，浏览器会停止网页的渲染。</p>
+<p>并且这样加载还有一个弊端就是js文件之间存在依赖关系，一定要有一个先后顺序，所以加载顺序很重要<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">　　&lt;script src=&quot;1.js&quot;&gt;&lt;/script&gt;</div><div class="line">　　&lt;script src=&quot;2.js&quot;&gt;&lt;/script&gt;</div><div class="line">　　&lt;script src=&quot;3.js&quot;&gt;&lt;/script&gt;</div><div class="line">　　&lt;script src=&quot;4.js&quot;&gt;&lt;/script&gt;</div><div class="line">　　&lt;script src=&quot;5.js&quot;&gt;&lt;/script&gt;</div><div class="line">　　&lt;script src=&quot;6.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>所以requireJS解决了这两个问题：</p>
+<ol>
+<li>实现js文件的异步加载，避免网页失去响应；</li>
+<li>管理模块之间的依赖性，便于代码的编写和维护。</li>
+</ol>
+<h1 id="main-js的编写"><a href="#main-js的编写" class="headerlink" title="main.js的编写"></a>main.js的编写</h1><p>我们试着在<code>main.js</code>中加入如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(&quot;Hello world!&quot;)</div></pre></td></tr></table></figure>
+<p>打开<code>index,html</code>看到弹出“Hello world！”就说明我们的require引用成功</p>
+<p>这只是初步解决了第一个问题，还没有解决模块的依赖关系，这时候就需要使用AMD规范来定义require()函数，不了解AMD规范的请查看前一篇博文</p>
+<h1 id="math-js模块编写"><a href="#math-js模块编写" class="headerlink" title="math.js模块编写"></a>math.js模块编写</h1><p>现在我们来编写一个求和的模块，然后在<code>main.js</code>中依赖该模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//math.js</div><div class="line">define(function()&#123;</div><div class="line">   var add = function(x,y)&#123;</div><div class="line">       return x+y&apos;</div><div class="line">       </div><div class="line">   &#125;</div><div class="line">   return&#123;</div><div class="line">       add:add</div><div class="line">   &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="加载方式"><a href="#加载方式" class="headerlink" title="加载方式"></a>加载方式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//main.js</div><div class="line">require([&apos;math&apos;],function()&#123;</div><div class="line">    console.log(math.add(1,2))   //3</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>如果是加载多个模块，那么require的第一个参数就是一个数组，默认情况下，require.js假定这三个模块与main.js在同一个目录。第二个参数是一个回调函数，当前面指定的模块都加载成功后，它将被调用。加载的模块会已参数的形式传入该参数，从而在回调函数内部就可以使用这些模块。</p>
+<p>require()异步加载各个依赖模块，浏览器不会失去响应，并且指定的回调函数只有在前面的模块都加载成功后才会运行，解决了依赖的问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">　　require([&apos;jquery&apos;, &apos;underscore&apos;, &apos;backbone&apos;], function ($, _, Backbone)&#123;</div><div class="line">　　　　// some code here</div><div class="line">　　&#125;);</div></pre></td></tr></table></figure>
+<p>默认情况是依赖模块和主模块在一个目录下，但是我们也可以自定义配置，在<code>main.js</code>的头部写一个<code>require.config()</code>方法就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　require.config(&#123;</div><div class="line">　　　　paths: &#123;</div><div class="line">　　　　　　&quot;jquery&quot;: &quot;jquery.min&quot;,</div><div class="line">　　　　　　&quot;underscore&quot;: &quot;underscore.min&quot;,</div><div class="line">　　　　　　&quot;backbone&quot;: &quot;backbone.min&quot;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;);</div></pre></td></tr></table></figure></p>
+<p>上面的代码给出了三个模块的文件名，路径默认与main.js在同一个目录（js子目录）。如果这些模块在其他目录，比如js/lib目录，则有两种写法。一种是逐一指定路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　require.config(&#123;</div><div class="line">　　　　paths: &#123;</div><div class="line">　　　　　　&quot;jquery&quot;: &quot;lib/jquery.min&quot;,</div><div class="line">　　　　　　&quot;underscore&quot;: &quot;lib/underscore.min&quot;,</div><div class="line">　　　　　　&quot;backbone&quot;: &quot;lib/backbone.min&quot;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;);</div></pre></td></tr></table></figure></p>
+<p>另一种则是直接改变基目录（baseUrl）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">require.config(&#123;</div><div class="line">　　　　baseUrl: &quot;js/lib&quot;,</div><div class="line">　　　　paths: &#123;</div><div class="line">　　　　　　&quot;jquery&quot;: &quot;jquery.min&quot;,</div><div class="line">　　　　　　&quot;underscore&quot;: &quot;underscore.min&quot;,</div><div class="line">　　　　　　&quot;backbone&quot;: &quot;backbone.min&quot;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;);</div></pre></td></tr></table></figure></p>
+<p>如果某个模块在另一台主机上，也可以直接指定它的网址，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">　　require.config(&#123;</div><div class="line">　　　　paths: &#123;</div><div class="line">　　　　　　&quot;jquery&quot;: &quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min&quot;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>require.js要求，每个模块是一个单独的js文件。这样的话，如果加载多个模块，就会发出多次HTTP请求，会影响网页的加载速度。因此，require.js提供了一个优化工具，当模块部署完毕以后，可以用这个工具将多个模块合并在一个文件中，减少HTTP请求数。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js模块化/" rel="tag">#js模块化</a>
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/07/javascript模块化编程（二）：js模块化的发展史/" rel="next" title="javascript模块化编程（二）：js模块化发展史">
+                <i class="fa fa-chevron-left"></i> javascript模块化编程（二）：js模块化发展史
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/08/Javascript模块化编程（三）：require.js的用法/"
+     data-title="Javascript模块化编程（三）：require.js的用法"
+     data-content=""
+     data-url="http://yoursite.com/2017/03/08/Javascript模块化编程（三）：require.js的用法/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/08/Javascript模块化编程（三）：require.js的用法/"
+           data-title="Javascript模块化编程（三）：require.js的用法" data-url="http://yoursite.com/2017/03/08/Javascript模块化编程（三）：require.js的用法/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Cherry" />
+          <p class="site-author-name" itemprop="name">Cherry</p>
+          <p class="site-description motion-element" itemprop="description">记录学习道路上的一点一滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/sunshine940326" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5094854684/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载requireJS"><span class="nav-number">1.</span> <span class="nav-text">下载requireJS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在html中引入require-js"><span class="nav-number">2.</span> <span class="nav-text">在html中引入require.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#main-js的编写"><span class="nav-number">3.</span> <span class="nav-text">main.js的编写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#math-js模块编写"><span class="nav-number">4.</span> <span class="nav-text">math.js模块编写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加载方式"><span class="nav-number">5.</span> <span class="nav-text">加载方式</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cherry</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunshine940326"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
