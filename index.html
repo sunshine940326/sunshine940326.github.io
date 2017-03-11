@@ -258,6 +258,107 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/11/javascript设计模式（一）/" itemprop="url">
+                  javascript设计模式（一）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-11T23:54:11+08:00" content="2017-03-11">
+              2017-03-11
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/11/javascript设计模式（一）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/javascript设计模式（一）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div></pre></td><td class="code"><pre><div class="line">var empty = &#123;&#125;;</div><div class="line">console.log(empty);</div><div class="line">var point = &#123;</div><div class="line">    x:0,</div><div class="line">    y:1</div><div class="line">&#125;</div><div class="line">console.log(point.x,+point.y)</div><div class="line">var point2 = &#123;</div><div class="line">    x:point.x,</div><div class="line">    y:point.y+1</div><div class="line">&#125;</div><div class="line">console.log(&quot;point2.x&quot; + &quot;:&quot;+ point2.x + &quot;,&quot;+ &quot;point2.y&quot; +&quot;:&quot;+ point2.y)</div><div class="line">   </div><div class="line">var book = &#123;</div><div class="line">    &quot;main_title&quot;:&quot;javascript&quot;,</div><div class="line">    &quot;sub_title&quot; : &quot;The Definitive Guide&quot;,</div><div class="line">    &quot;for&quot;:&quot;all&quot;,</div><div class="line">    &quot;author&quot;:&#123;</div><div class="line">        &quot;firstName&quot;:&quot;cherry&quot;,</div><div class="line">        &quot;lastName&quot;:&quot;Li&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">console.log(book.author.firstName,book.author.lastName)</div><div class="line">console.log(book.main_title)</div><div class="line">console.log(book.sub_title)</div><div class="line">console.log(book.for)</div><div class="line">   </div><div class="line">//通过new创建对象，new后跟一个函数调用，构造函数</div><div class="line">var o = new Object();</div><div class="line">var a = new Array();</div><div class="line">   </div><div class="line">console.log(o)  //Object &#123;  &#125;</div><div class="line">   </div><div class="line">//Object.create 方法创建一个拥有指定原型和若干个指定属性的对象。</div><div class="line">//Object.create(proto, [ propertiesObject ])</div><div class="line">var o6 = Object.create(null)   //没有原型，不继承任何东西</div><div class="line">console.log(o6 instanceof Object) //为什么是false！！！！！！！！</div><div class="line">   </div><div class="line">var o2 = Object.create(&#123;x:1,y:2&#125;)</div><div class="line">console.log(o2.x)</div><div class="line">   </div><div class="line">var o3 = Object.create(Object.prototype)</div><div class="line">   </div><div class="line">//下面的例子演示了如何使用Object.create()来实现类式继承。这是一个单继承。</div><div class="line">//shape superclass</div><div class="line">function Shape() &#123;</div><div class="line">    this.x = 0;</div><div class="line">    this.y = 0;</div><div class="line">&#125;</div><div class="line">   </div><div class="line">Shape.prototype.move = function (x,y) &#123;</div><div class="line">    this.x += x;</div><div class="line">    this.y += y;</div><div class="line">    console.log(x,y,&apos;shape moved&apos;)</div><div class="line">&#125;</div><div class="line">   </div><div class="line">//rectangle - subclass</div><div class="line">function Rectangle() &#123;</div><div class="line">    Shape.call(this);</div><div class="line">&#125;</div><div class="line">   </div><div class="line">Rectangle.prototype = Object.create(Shape.prototype); //为什么要这么用</div><div class="line">   </div><div class="line">var rect = new Rectangle();</div><div class="line">rect.move(3,4)</div><div class="line">console.log(rect instanceof Rectangle)</div><div class="line">console.log(rect instanceof Shape)</div><div class="line">   </div><div class="line">//使用Object.create的propertyObject对象</div><div class="line">var o;</div><div class="line">   </div><div class="line">//创建一个原型null的空对象</div><div class="line">o = Object.create(null);</div><div class="line">   </div><div class="line">o = &#123;&#125;</div><div class="line">   </div><div class="line">o = Object.create(Object.prototype) //通过字面量方式创建的空对象相当于</div><div class="line">   </div><div class="line">o = Object.create(Object.prototype,&#123;</div><div class="line">    //foo会成为所创建对象的数据属性</div><div class="line">    foo:&#123;</div><div class="line">        writable:true,</div><div class="line">        configurable:true,</div><div class="line">        value:&apos;hello&apos;</div><div class="line">    &#125;,</div><div class="line">    //bar会成为所创建对象的访问器属性</div><div class="line">    bar:&#123;</div><div class="line">        configurable:false,</div><div class="line">        get:function () &#123;</div><div class="line">            return 10</div><div class="line">        &#125;,</div><div class="line">        set:function (value) &#123;</div><div class="line">            console.log(&apos;Hello&apos;,value)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">   </div><div class="line">&#125;)</div><div class="line">   </div><div class="line">function Constructor() &#123;&#125;</div><div class="line">o = new Constructor();</div><div class="line">o = Object.create(Constructor.prototype) //跟上面一句是等价的，当然,如果在Constructor函数中有一些初始化代码,Object.create不能执行那些代码</div><div class="line">   </div><div class="line">    //创建一个以另一个空对象为原型，且拥有一个属性p的对象</div><div class="line">o = Object.create(null, &#123;</div><div class="line">    p: &#123;</div><div class="line">        value: 20</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">   </div><div class="line">// 省略了的属性特性默认为false,所以属性p是不可写,不可枚举,不可配置的:</div><div class="line">o.p = 24</div><div class="line">console.log(o.p)</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/08/Javascript模块化编程（三）：require.js的用法/" itemprop="url">
                   Javascript模块化编程（三）：require.js的用法
                 </a>
@@ -1335,128 +1436,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/17/hexo高级进阶/" itemprop="url">
-                  hexo高级进阶
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-17T01:14:19+08:00" content="2016-09-17">
-              2016-09-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/17/hexo高级进阶/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/17/hexo高级进阶/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>这一部分的主要是一些高级进阶的功能，想自定义自己的主题，就需要这部分的内容。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/17/hexo高级进阶/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1502,7 +1481,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
