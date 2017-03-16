@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/11/javascript设计模式（一）/index.html">
 <meta property="og:site_name" content="Cherry's Blog">
 <meta property="og:description" content="在之前学习javascript模块发开发的过程中，看到了一篇好文，是极客学院的学习javascript设计模式，本文的所有demo地址见本人的github：https://github.com/sunshine940326/js-object-demo">
-<meta property="og:updated_time" content="2017-03-15T14:35:44.030Z">
+<meta property="og:updated_time" content="2017-03-16T14:12:37.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript设计模式（一）">
 <meta name="twitter:description" content="在之前学习javascript模块发开发的过程中，看到了一篇好文，是极客学院的学习javascript设计模式，本文的所有demo地址见本人的github：https://github.com/sunshine940326/js-object-demo">
@@ -325,7 +325,10 @@
         <p>在之前学习javascript模块发开发的过程中，看到了一篇好文，是极客学院的<a href="http://wiki.jikexueyuan.com/project/javascript-design-patterns/" target="_blank" rel="external">学习javascript设计模式</a>，本文的所有demo地址见本人的github：<a href="https://github.com/sunshine940326/js-object-demo" target="_blank" rel="external">https://github.com/sunshine940326/js-object-demo</a><br><a id="more"></a></p>
 <p>javascript的设计模式，首先，我们需要知道什么是函数（基础知识，大神跳过）</p>
 <p>#定义函数</p>
-<h1 id="构造器模式"><a href="#构造器模式" class="headerlink" title="构造器模式"></a>构造器模式</h1><h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>在js中创建对象有三种基本方式：<br>下面的每一种方式都会创建一个新对象</p>
+<h1 id="构造器模式"><a href="#构造器模式" class="headerlink" title="构造器模式"></a>构造器模式</h1><p>js不支持类的概念，但它支持与对象一起使用的特殊Constructor（构造器）函数。通过在构造器前面加new关键字，告诉js想树勇构造器一样实例化一个新的对象，并且对象成员由该函数定义。在构造器内，关键字this引用新创建的对象。</p>
+<p>在面向对象编程中，构造器是一个当新建对象的内存被分配后，用来初始化该对象的一个特殊函数。</p>
+<p>对象构造器是被用来创建特殊类型的对象的，首先它要准备使用的对象，其次在对象初次被创建时，通过接收参数，构造器用来对成员的属性和方法进行赋值。</p>
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>在js中创建对象有三种基本方式：<br>下面的每一种方式都会创建一个新对象</p>
 <ol>
 <li>对象直接量</li>
 </ol>
