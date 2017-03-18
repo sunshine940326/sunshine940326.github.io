@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="gulp," />
 
 
 
@@ -84,21 +84,19 @@
 
 
 
-<meta name="description" content="本文主要讲了怎么使用webstorm连接自己的github，从而做到版本控制自己的代码，用起来很方便，在coding完之后直接可以commit和push，但是时间长了发现还是有一定的不方便（应该是自己还不会用= =），本文持续更新，★,°:.☆(￣▽￣)/$:.°★。撒花！~">
+<meta name="description" content="gulp的工作原理简述下Grunt.js和Gulp.js工作方式的区别
+grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用webstorm连接github">
-<meta property="og:url" content="http://yoursite.com/2017/02/24/使用webstorm连接github/index.html">
+<meta property="og:title" content="gulp（一）">
+<meta property="og:url" content="http://yoursite.com/2017/03/18/gulp（一）/index.html">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="本文主要讲了怎么使用webstorm连接自己的github，从而做到版本控制自己的代码，用起来很方便，在coding完之后直接可以commit和push，但是时间长了发现还是有一定的不方便（应该是自己还不会用= =），本文持续更新，★,°:.☆(￣▽￣)/$:.°★。撒花！~">
-<meta property="og:image" content="http://img.blog.csdn.net/20170224184547396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170224184718834?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/1004353/201608/1004353-20160815113925453-1269489073.png">
-<meta property="og:image" content="http://img.blog.csdn.net/20170224185234305?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-03-12T02:45:05.477Z">
+<meta property="og:description" content="gulp的工作原理简述下Grunt.js和Gulp.js工作方式的区别
+grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可">
+<meta property="og:updated_time" content="2017-03-18T12:01:56.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用webstorm连接github">
-<meta name="twitter:description" content="本文主要讲了怎么使用webstorm连接自己的github，从而做到版本控制自己的代码，用起来很方便，在coding完之后直接可以commit和push，但是时间长了发现还是有一定的不方便（应该是自己还不会用= =），本文持续更新，★,°:.☆(￣▽￣)/$:.°★。撒花！~">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170224184547396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="gulp（一）">
+<meta name="twitter:description" content="gulp的工作原理简述下Grunt.js和Gulp.js工作方式的区别
+grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可">
 
 
 
@@ -119,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/24/使用webstorm连接github/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/18/gulp（一）/"/>
 
-  <title> 使用webstorm连接github | Cherry's Blog </title>
+  <title> gulp（一） | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +259,7 @@
             
             
               
-                使用webstorm连接github
+                gulp（一）
               
             
           </h1>
@@ -273,8 +271,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-24T10:40:20+08:00" content="2017-02-24">
-              2017-02-24
+            <time itemprop="dateCreated" datetime="2017-03-18T20:00:06+08:00" content="2017-03-18">
+              2017-03-18
             </time>
           </span>
 
@@ -287,8 +285,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/gulp/" itemprop="url" rel="index">
+                    <span itemprop="name">gulp</span>
                   </a>
                 </span>
 
@@ -303,8 +301,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/02/24/使用webstorm连接github/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/24/使用webstorm连接github/" itemprop="commentsCount"></span>
+                <a href="/2017/03/18/gulp（一）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/18/gulp（一）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -327,32 +325,26 @@
       
 
       
-        <p>本文主要讲了怎么使用webstorm连接自己的github，从而做到版本控制自己的代码，用起来很方便，在coding完之后直接可以commit和push，但是时间长了发现还是有一定的不方便（应该是自己还不会用= =），本文持续更新，<em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em>。撒花！~<br><a id="more"></a><br>昨天重新捣鼓了下github，给自己立一个flag，每天都要写总结，记录这一天学习的内容</p>
-<p>说起来很惭愧，之前用webstorm都是把其当成编辑器使用，不知道可以导入工程的概念= =，表打我，因为我们公司好多项目都是在playcanvas下开展的，不能直接打开index.html浏览项目，每次都需要开启终端，开启python，然后我们同事说你用webstorm可以直接打开，然后我试了下，不行，就没有再继续尝试下去了，直到用sass的时候，我发现按照网上的方式，怎么都添加不了watch，一直报错,然后用webstorm创建工程发现就可以了，心塞塞~然后在知乎上看了一个问答才发现我一直在暴殄天物，<a href="https://www.zhihu.com/question/20936155" target="_blank" rel="external">WebStorm 有哪些过人之处？</a>，说一下我现在觉得有用的功能：</p>
-<ul>
-<li>连接ftp，可以直接上传文件，一键就可以更新</li>
-<li>就是自带git功能，并且可以连接github，也是可以一键更新，没有什么命令行那么麻烦</li>
-</ul>
-<p>因为我还没有那么高的水平，所以目前就觉得这两点比较方便= =，待以后发现更多的强大功能</p>
-<p>今天记录一下怎么用webstorm连接github以及一些操作说明<br>怎么连接用webstorm连接github这点自行百度。<br>在连接到github上之后，想要把你的项目上传到github上，<br>1、点击右上方的VCS然后import…→share….<br><img src="http://img.blog.csdn.net/20170224184547396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>2、填写一下新建仓库的名称和描述，然后点击share，就可以在你的github下创新一个新的仓库<br><img src="http://img.blog.csdn.net/20170224184718834?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>3、然后你就会发现你的左侧文件都变成了红色，红色代表你还没有add到缓存区，点击右键，将你要上传的文件add到缓存区。<br><img src="http://images2015.cnblogs.com/blog/1004353/201608/1004353-20160815113925453-1269489073.png" alt="这里写图片描述"><br>add之后文件就会变成绿色的了，接下来要commit，直接右下角可以选择commit and push我理解的commit就是发布版本的意思，将你add到缓存区的文件发布成版本，这里还是本地的版本，需要push到github上，就是同步到github上<br><img src="http://img.blog.csdn.net/20170224185234305?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>之后再push，也可以点击上方的VSC-git-push</p>
-<p>附文件颜色代表的含义：<br>红色：本地新增文件，没有关联到git，ctrl + k 提交不到git；</p>
-<p>绿色：由红色add to 转变而成，ctrl + k 可以提交的新增文件；</p>
-<p>蓝色：文件内容有修改；</p>
-<p>灰色：本地删除的文件（待删除的文件，远程没删）ctrl + k ,ctrl + shift + k 提交就没了。</p>
-<p>总结一下就是先share到github（在github上创建仓库）→将文件add到缓存区→commit发布版本→push到github（同步到github上）；</p>
-<p>这些步骤可以再上方的VCS完成也可以在左侧的包管理器右键</p>
-<p>在右下角还可以口管理分支</p>
-<p>附上查找的资料，他们写的比较详细，我就不再赘述</p>
-<ul>
-<li><a href="http://www.cnblogs.com/liulinjie/p/5708149.html" target="_blank" rel="external">利用WebStorm来管理你的Github</a></li>
-<li><a href="http://www.tuicool.com/articles/A3Mn6f" target="_blank" rel="external">git checkout 命令详解</a></li>
-<li><a href="http://www.cnblogs.com/zhaoxiu/p/5772466.html" target="_blank" rel="external">webstormGit上的使用</a></li>
-<li><a href="http://www.cnblogs.com/jinguangguo/p/4868152.html" target="_blank" rel="external">使用webstorm操作git</a></li>
-<li><a href="http://www.cnblogs.com/vanstrict/p/5677716.html" target="_blank" rel="external">使用webstorm上传代码到github</a></li>
-</ul>
+        <h1 id="gulp的工作原理简述"><a href="#gulp的工作原理简述" class="headerlink" title="gulp的工作原理简述"></a>gulp的工作原理简述</h1><h2 id="下Grunt-js和Gulp-js工作方式的区别"><a href="#下Grunt-js和Gulp-js工作方式的区别" class="headerlink" title="下Grunt.js和Gulp.js工作方式的区别"></a>下Grunt.js和Gulp.js工作方式的区别</h2><blockquote>
+<p>grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可以通过stream的<code>pipe()</code>方法把流导入到你想要的地方，比如gulp的插件中，经过插件处理后的流又可以继续导入到其他插件中，当然也可以把流写到文件中，所以gulp是以stream为媒介的，它不需要频繁的生成临时文件，这也是gulp比grunt快的一个原因</p>
+</blockquote>
+<h2 id="gulp传入的路径参数与最终生成文件的关系"><a href="#gulp传入的路径参数与最终生成文件的关系" class="headerlink" title="gulp传入的路径参数与最终生成文件的关系"></a>gulp传入的路径参数与最终生成文件的关系</h2><blockquote>
+<p>理解了gulp传入路径参数与最终生成文件的关系，就可以理解怎么使用<code>gulp.dest()</code>这个方法。gulp的流程是这样的：首先通过<code>gulp.src()</code>方法获取到我们想要处理的文件流，然后把文件流通过pipe方法导入到gulp插件中，最后把经过插件处理后的流再通过pipe方法导入到<code>gulp.dest()</code>中，<code>gulp.dest()</code>方法则把流中的内容写入到文件中，这里首先需要弄清楚一点的是，我们给<code>gulp.dest()</code>传入的路径参数，只能用来指定要生成的文件的目录，而不能指定生成文件的文件名，它生成文件的文件名使用的是导入到它的文件流自身的文件名，<strong>所以生成的文件名是由导入到它的文件流决定的</strong>即使我们给它传入一个带有文件名的路径的参数，然后它也会把这个文件名</p>
+</blockquote>
+<h1 id="gulp安装"><a href="#gulp安装" class="headerlink" title="gulp安装"></a>gulp安装</h1><p>gulp是基于node环境的，所以首先需要安装node环境<br>然后以全局方式安装gulp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g gulp</div></pre></td></tr></table></figure></p>
+<p>全局安装gulp之后还需要在每个要使用gulp的项目中都单独安装一次。把目录切换到你的项目文件夹中，然后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp</div></pre></td></tr></table></figure></p>
+<p>如果想要在安装的时候把gulp写进项目package.json文件的依赖中，可以加上 –save-dev<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp</div></pre></td></tr></table></figure></p>
+<h1 id="开始使用gulp"><a href="#开始使用gulp" class="headerlink" title="开始使用gulp"></a>开始使用gulp</h1><h2 id="建立gulpfile-js文件"><a href="#建立gulpfile-js文件" class="headerlink" title="建立gulpfile.js文件"></a>建立gulpfile.js文件</h2><p>建立一个<code>gulpfile.js</code>文件，这个文件就是gulp的主文件，之后要做的事情就是在<code>gulpfile.js</code>文件中定义我们的任务就好，下面是一个最简单的<code>gulpfile.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&apos;gulp&apos;);</div><div class="line">gulp.task(&apos;default&apos;,function()&#123;</div><div class="line">  console.log(&apos;Hello world&apos;)  </div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>此时我们的目录结构是这样的<br>├── gulpfile.js<br>├── node_modules<br>│ └── gulp<br>└── package.json</p>
+<h2 id="运行gulp任务"><a href="#运行gulp任务" class="headerlink" title="运行gulp任务"></a>运行gulp任务</h2><p>要运行gulp任务，只需切换到存放<code>gulpfile.js</code>文件的目录，然后在命令行执行<code>gulp</code>命令就可以，<code>gulp</code>后面加上要执行的任务名，例如<code>gulp task1</code>，如果没有指定任务名。则是按照默认的<code>defaule</code>任务</p>
+<h1 id="gulp的api"><a href="#gulp的api" class="headerlink" title="gulp的api"></a>gulp的api</h1><p>gulp只要四个api，<code>gulp.task()</code>、<code>gulp.src()</code>,<code>gulp.dest()</code>,<code>gulp.watch()</code></p>
+<h2 id="gulp-src"><a href="#gulp-src" class="headerlink" title="gulp.src"></a>gulp.src</h2><p>这个方法用来读取你需要操作的文件</p>
+<p><code>gulp.src()</code>方法正是用来获取流的，但是要注意这个流里的内容不是原始的文件流，而是一个虚拟文件对象流，这个虚拟文件对象中存储着原始文件的路径、文件名、内容信息等，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.src(globs[,options])</div></pre></td></tr></table></figure>
+<p>globs参数是文件匹配模式，用来匹配文件路径（包括文件名），当然这里也可以直接指定某个具体的文件路径，当有多个匹配模式时，该参数可以为一个数组</p>
+<p>option是可选参数，通常情况下我们不需要用到</p>
+<h1 id="gulp-dest"><a href="#gulp-dest" class="headerlink" title="gulp.dest()"></a>gulp.dest()</h1><p><code>gulp.dest()</code>是用来写文件的，其语法为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.dest(path[,option])</div></pre></td></tr></table></figure></p>
+<p><code>path</code>为写入文件的路径<br>option为一个可选的参数，通常我们不需要用到</p>
 
       
     </div>
@@ -375,7 +367,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag">#git</a>
+            <a href="/tags/gulp/" rel="tag">#gulp</a>
           
         </div>
       
@@ -384,17 +376,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/17/hexo高级进阶/" rel="next" title="hexo高级进阶">
-                <i class="fa fa-chevron-left"></i> hexo高级进阶
+              <a href="/2017/03/15/Git常用命令-完成一个小工作流/" rel="next" title="Git常用命令&完成一个小工作流">
+                <i class="fa fa-chevron-left"></i> Git常用命令&完成一个小工作流
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/25/将项目上传至github/" rel="prev" title="将项目上传至github">
-                将项目上传至github <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -409,10 +397,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/24/使用webstorm连接github/"
-     data-title="使用webstorm连接github"
+        <div class="ds-share flat" data-thread-key="2017/03/18/gulp（一）/"
+     data-title="gulp（一）"
      data-content=""
-     data-url="http://yoursite.com/2017/02/24/使用webstorm连接github/">
+     data-url="http://yoursite.com/2017/03/18/gulp（一）/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -439,8 +427,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/24/使用webstorm连接github/"
-           data-title="使用webstorm连接github" data-url="http://yoursite.com/2017/02/24/使用webstorm连接github/">
+      <div class="ds-thread" data-thread-key="2017/03/18/gulp（一）/"
+           data-title="gulp（一）" data-url="http://yoursite.com/2017/03/18/gulp（一）/">
       </div>
     
   </div>
@@ -551,7 +539,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp的工作原理简述"><span class="nav-number">1.</span> <span class="nav-text">gulp的工作原理简述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下Grunt-js和Gulp-js工作方式的区别"><span class="nav-number">1.1.</span> <span class="nav-text">下Grunt.js和Gulp.js工作方式的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp传入的路径参数与最终生成文件的关系"><span class="nav-number">1.2.</span> <span class="nav-text">gulp传入的路径参数与最终生成文件的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp安装"><span class="nav-number">2.</span> <span class="nav-text">gulp安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用gulp"><span class="nav-number">3.</span> <span class="nav-text">开始使用gulp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立gulpfile-js文件"><span class="nav-number">3.1.</span> <span class="nav-text">建立gulpfile.js文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行gulp任务"><span class="nav-number">3.2.</span> <span class="nav-text">运行gulp任务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp的api"><span class="nav-number">4.</span> <span class="nav-text">gulp的api</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp-src"><span class="nav-number">4.1.</span> <span class="nav-text">gulp.src</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp-dest"><span class="nav-number">5.</span> <span class="nav-text">gulp.dest()</span></a></li></ol></div>
             
           </div>
         </section>
