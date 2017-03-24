@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="gulp的工作原理简述下Grunt.js和Gulp.js工作方式的区别
-grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可">
+<meta name="description" content="因为新的工作使用的是ｇｕｌｐ，所以学习一下ｇｕｌｐ，本文主要参考的是：http://www.cnblogs.com/2050/p/4198792.html，以及ｇｕｌｐ的官网">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gulp（一）">
 <meta property="og:url" content="http://yoursite.com/2017/03/18/gulp（一）/index.html">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="gulp的工作原理简述下Grunt.js和Gulp.js工作方式的区别
-grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可">
-<meta property="og:updated_time" content="2017-03-18T12:01:56.627Z">
+<meta property="og:description" content="因为新的工作使用的是ｇｕｌｐ，所以学习一下ｇｕｌｐ，本文主要参考的是：http://www.cnblogs.com/2050/p/4198792.html，以及ｇｕｌｐ的官网">
+<meta property="og:updated_time" content="2017-03-24T15:20:48.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gulp（一）">
-<meta name="twitter:description" content="gulp的工作原理简述下Grunt.js和Gulp.js工作方式的区别
-grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可">
+<meta name="twitter:description" content="因为新的工作使用的是ｇｕｌｐ，所以学习一下ｇｕｌｐ，本文主要参考的是：http://www.cnblogs.com/2050/p/4198792.html，以及ｇｕｌｐ的官网">
 
 
 
@@ -325,7 +322,8 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
       
 
       
-        <h1 id="gulp的工作原理简述"><a href="#gulp的工作原理简述" class="headerlink" title="gulp的工作原理简述"></a>gulp的工作原理简述</h1><h2 id="下Grunt-js和Gulp-js工作方式的区别"><a href="#下Grunt-js和Gulp-js工作方式的区别" class="headerlink" title="下Grunt.js和Gulp.js工作方式的区别"></a>下Grunt.js和Gulp.js工作方式的区别</h2><blockquote>
+        <p>因为新的工作使用的是ｇｕｌｐ，所以学习一下ｇｕｌｐ，本文主要参考的是：<a href="http://www.cnblogs.com/2050/p/4198792.html，以及ｇｕｌｐ的官网" target="_blank" rel="external">http://www.cnblogs.com/2050/p/4198792.html，以及ｇｕｌｐ的官网</a><br><a id="more"></a></p>
+<h1 id="gulp的工作原理简述"><a href="#gulp的工作原理简述" class="headerlink" title="gulp的工作原理简述"></a>gulp的工作原理简述</h1><h2 id="下Grunt-js和Gulp-js工作方式的区别"><a href="#下Grunt-js和Gulp-js工作方式的区别" class="headerlink" title="下Grunt.js和Gulp.js工作方式的区别"></a>下Grunt.js和Gulp.js工作方式的区别</h2><blockquote>
 <p>grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可以通过stream的<code>pipe()</code>方法把流导入到你想要的地方，比如gulp的插件中，经过插件处理后的流又可以继续导入到其他插件中，当然也可以把流写到文件中，所以gulp是以stream为媒介的，它不需要频繁的生成临时文件，这也是gulp比grunt快的一个原因</p>
 </blockquote>
 <h2 id="gulp传入的路径参数与最终生成文件的关系"><a href="#gulp传入的路径参数与最终生成文件的关系" class="headerlink" title="gulp传入的路径参数与最终生成文件的关系"></a>gulp传入的路径参数与最终生成文件的关系</h2><blockquote>
