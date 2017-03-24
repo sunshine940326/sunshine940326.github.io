@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="gulp," />
+  <meta name="keywords" content="git,实战经验," />
 
 
 
@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="gulp的工作原理简述下Grunt.js和Gulp.js工作方式的区别
-grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可">
+<meta name="description" content="在Git的使用过程中，难免会有这样那样的错误，对于刚开始使用git的小白来说，来记录一下使用过程中报错情况以及怎么处理的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gulp（一）">
-<meta property="og:url" content="http://yoursite.com/2017/03/18/gulp（一）/index.html">
+<meta property="og:title" content="Git使用中的报错情况">
+<meta property="og:url" content="http://yoursite.com/2017/03/11/Git使用中的报错情况/index.html">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="gulp的工作原理简述下Grunt.js和Gulp.js工作方式的区别
-grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可">
-<meta property="og:updated_time" content="2017-03-18T12:01:56.627Z">
+<meta property="og:description" content="在Git的使用过程中，难免会有这样那样的错误，对于刚开始使用git的小白来说，来记录一下使用过程中报错情况以及怎么处理的">
+<meta property="og:updated_time" content="2017-03-24T15:13:38.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gulp（一）">
-<meta name="twitter:description" content="gulp的工作原理简述下Grunt.js和Gulp.js工作方式的区别
-grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可">
+<meta name="twitter:title" content="Git使用中的报错情况">
+<meta name="twitter:description" content="在Git的使用过程中，难免会有这样那样的错误，对于刚开始使用git的小白来说，来记录一下使用过程中报错情况以及怎么处理的">
 
 
 
@@ -117,9 +114,9 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/18/gulp（一）/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/11/Git使用中的报错情况/"/>
 
-  <title> gulp（一） | Cherry's Blog </title>
+  <title> Git使用中的报错情况 | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +256,7 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
             
             
               
-                gulp（一）
+                Git使用中的报错情况
               
             
           </h1>
@@ -271,8 +268,8 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-18T20:00:06+08:00" content="2017-03-18">
-              2017-03-18
+            <time itemprop="dateCreated" datetime="2017-03-11T23:54:11+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -285,8 +282,8 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/gulp/" itemprop="url" rel="index">
-                    <span itemprop="name">gulp</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -301,8 +298,8 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/03/18/gulp（一）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/18/gulp（一）/" itemprop="commentsCount"></span>
+                <a href="/2017/03/11/Git使用中的报错情况/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Git使用中的报错情况/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -325,26 +322,26 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
       
 
       
-        <h1 id="gulp的工作原理简述"><a href="#gulp的工作原理简述" class="headerlink" title="gulp的工作原理简述"></a>gulp的工作原理简述</h1><h2 id="下Grunt-js和Gulp-js工作方式的区别"><a href="#下Grunt-js和Gulp-js工作方式的区别" class="headerlink" title="下Grunt.js和Gulp.js工作方式的区别"></a>下Grunt.js和Gulp.js工作方式的区别</h2><blockquote>
-<p>grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可以通过stream的<code>pipe()</code>方法把流导入到你想要的地方，比如gulp的插件中，经过插件处理后的流又可以继续导入到其他插件中，当然也可以把流写到文件中，所以gulp是以stream为媒介的，它不需要频繁的生成临时文件，这也是gulp比grunt快的一个原因</p>
-</blockquote>
-<h2 id="gulp传入的路径参数与最终生成文件的关系"><a href="#gulp传入的路径参数与最终生成文件的关系" class="headerlink" title="gulp传入的路径参数与最终生成文件的关系"></a>gulp传入的路径参数与最终生成文件的关系</h2><blockquote>
-<p>理解了gulp传入路径参数与最终生成文件的关系，就可以理解怎么使用<code>gulp.dest()</code>这个方法。gulp的流程是这样的：首先通过<code>gulp.src()</code>方法获取到我们想要处理的文件流，然后把文件流通过pipe方法导入到gulp插件中，最后把经过插件处理后的流再通过pipe方法导入到<code>gulp.dest()</code>中，<code>gulp.dest()</code>方法则把流中的内容写入到文件中，这里首先需要弄清楚一点的是，我们给<code>gulp.dest()</code>传入的路径参数，只能用来指定要生成的文件的目录，而不能指定生成文件的文件名，它生成文件的文件名使用的是导入到它的文件流自身的文件名，<strong>所以生成的文件名是由导入到它的文件流决定的</strong>即使我们给它传入一个带有文件名的路径的参数，然后它也会把这个文件名</p>
-</blockquote>
-<h1 id="gulp安装"><a href="#gulp安装" class="headerlink" title="gulp安装"></a>gulp安装</h1><p>gulp是基于node环境的，所以首先需要安装node环境<br>然后以全局方式安装gulp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g gulp</div></pre></td></tr></table></figure></p>
-<p>全局安装gulp之后还需要在每个要使用gulp的项目中都单独安装一次。把目录切换到你的项目文件夹中，然后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp</div></pre></td></tr></table></figure></p>
-<p>如果想要在安装的时候把gulp写进项目package.json文件的依赖中，可以加上 –save-dev<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp</div></pre></td></tr></table></figure></p>
-<h1 id="开始使用gulp"><a href="#开始使用gulp" class="headerlink" title="开始使用gulp"></a>开始使用gulp</h1><h2 id="建立gulpfile-js文件"><a href="#建立gulpfile-js文件" class="headerlink" title="建立gulpfile.js文件"></a>建立gulpfile.js文件</h2><p>建立一个<code>gulpfile.js</code>文件，这个文件就是gulp的主文件，之后要做的事情就是在<code>gulpfile.js</code>文件中定义我们的任务就好，下面是一个最简单的<code>gulpfile.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&apos;gulp&apos;);</div><div class="line">gulp.task(&apos;default&apos;,function()&#123;</div><div class="line">  console.log(&apos;Hello world&apos;)  </div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>此时我们的目录结构是这样的<br>├── gulpfile.js<br>├── node_modules<br>│ └── gulp<br>└── package.json</p>
-<h2 id="运行gulp任务"><a href="#运行gulp任务" class="headerlink" title="运行gulp任务"></a>运行gulp任务</h2><p>要运行gulp任务，只需切换到存放<code>gulpfile.js</code>文件的目录，然后在命令行执行<code>gulp</code>命令就可以，<code>gulp</code>后面加上要执行的任务名，例如<code>gulp task1</code>，如果没有指定任务名。则是按照默认的<code>defaule</code>任务</p>
-<h1 id="gulp的api"><a href="#gulp的api" class="headerlink" title="gulp的api"></a>gulp的api</h1><p>gulp只要四个api，<code>gulp.task()</code>、<code>gulp.src()</code>,<code>gulp.dest()</code>,<code>gulp.watch()</code></p>
-<h2 id="gulp-src"><a href="#gulp-src" class="headerlink" title="gulp.src"></a>gulp.src</h2><p>这个方法用来读取你需要操作的文件</p>
-<p><code>gulp.src()</code>方法正是用来获取流的，但是要注意这个流里的内容不是原始的文件流，而是一个虚拟文件对象流，这个虚拟文件对象中存储着原始文件的路径、文件名、内容信息等，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.src(globs[,options])</div></pre></td></tr></table></figure>
-<p>globs参数是文件匹配模式，用来匹配文件路径（包括文件名），当然这里也可以直接指定某个具体的文件路径，当有多个匹配模式时，该参数可以为一个数组</p>
-<p>option是可选参数，通常情况下我们不需要用到</p>
-<h1 id="gulp-dest"><a href="#gulp-dest" class="headerlink" title="gulp.dest()"></a>gulp.dest()</h1><p><code>gulp.dest()</code>是用来写文件的，其语法为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.dest(path[,option])</div></pre></td></tr></table></figure></p>
-<p><code>path</code>为写入文件的路径<br>option为一个可选的参数，通常我们不需要用到</p>
+        <p>在Git的使用过程中，难免会有这样那样的错误，对于刚开始使用git的小白来说，来记录一下使用过程中报错情况以及怎么处理的<br><a id="more"></a></p>
+<p>#　<code>git pull</code>时报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$ git pull</div><div class="line">remote: Counting objects: 100, done.</div><div class="line">remote: Compressing objects: 100% (57/57), done.</div><div class="line">remote: Total 60 (delta 36), reused 3 (delta 0)</div><div class="line">Unpacking objects: 100% (60/60), done.</div><div class="line">From 180.166.124.26:/var/git/fzc</div><div class="line">   d8ec768..7c13661  master     -&gt; origin/master</div><div class="line">Updating d8ec768..7c13661</div><div class="line">error: Your local changes to the following files would be overwritten by merge:</div><div class="line">        protected/modules/m/views/detail/house.php</div><div class="line">        protected/modules/m/views/list/house.php</div><div class="line">        protected/modules/web/views/default/list.php</div><div class="line">        protected/modules/web/views/detail/house.php</div><div class="line">        protected/modules/web/views/list/house.php</div><div class="line">        static_src/web/js/houseList/nprogress.js</div><div class="line">        static_src/web/js/list/nprogress.js</div><div class="line">Please commit your changes or stash them before you can merge.</div><div class="line">error: The following untracked working tree files would be overwritten by merge:</div><div class="line">        static_dist/web/js/houseList/houseList-min-50ae65dad4.js</div><div class="line">        static_dist/web/js/list/list-min-dd27ec4ef4.js</div><div class="line">Please move or remove them before you can merge.</div><div class="line">Aborting</div></pre></td></tr></table></figure></p>
+<p>大意就是说你修改的文件在之前的commit中没有提交，远端的文件和本地的文件冲突<br>解决方法</p>
+<ol>
+<li><p>昨天遇到这个问题的时候是本地修改的文件不需要提交了，直接放弃就可以了，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout --filename</div></pre></td></tr></table></figure>
+<p>然后远端的文件就覆盖了你的本地文件，然后在<code>git pull</code>,之后就可以<code>git add</code>、<code>git commit</code>、<code>git push</code>三部曲了</p>
+<ol>
+<li>还可以保存本地的状态<br><code>git stash</code><br>然后再<br><code>git pull  origin master</code><br>但是提示我<code>No local changes to save</code></li>
+</ol>
+</li>
+</ol>
+<p>然后我再pull的时候提示我<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git pull</div><div class="line">Updating d8ec768..7c13661</div><div class="line">error: The following untracked working tree files would be overwritten by merge:</div><div class="line">        static_dist/web/js/houseList/houseList-min-50ae65dad4.js</div><div class="line">        static_dist/web/js/list/list-min-dd27ec4ef4.js</div><div class="line">Please move or remove them before you can merge.</div><div class="line">Aborting</div></pre></td></tr></table></figure></p>
+<p>然后我想放弃这两个文件就报错了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout  static_dist/web/js/houseList/houseList-min-50ae65dad4.js</div><div class="line">error: pathspec &apos;static_dist/web/js/houseList/houseList-min-50ae65dad4.js&apos; did not match any fi         le(s) known to git.</div></pre></td></tr></table></figure></p>
+<ol>
+<li>所以我请来了我们的phper，他说可以直接提交 = =<br>先是查看一下现在的状态<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">On branch master</div><div class="line">Your branch is behind &apos;origin/master&apos; by 3 commits, and can be fast-forwarded.</div><div class="line">  (use &quot;git pull&quot; to update your local branch)</div><div class="line">Untracked files:</div><div class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</div><div class="line"></div><div class="line">        static_dist/m/css/about/about-min-e5159328af.css</div><div class="line">        static_dist/m/css/authentication/authentication-min-2315b81179.css</div><div class="line">        static_dist/m/css/defaultIndex/defaultIndex-min-ecc8a57574.css</div><div class="line">        static_dist/m/css/defaultList/defaultList-min-df3ee5323b.css</div><div class="line">        static_dist/m/css/detailHouse/detailHouse-min-8f6835d719.css</div><div class="line">        static_dist/m/css/detailIndex/detailIndex-min-24e3587ee2.css</div><div class="line">        static_dist/m/css/detailOrder/detailOrder-min-ffa8b47793.css</div><div class="line">        static_dist/m/css/listHouse/listHouse-min-53c056c915.css</div><div class="line">        static_dist/m/css/payIndex/payIndex-min-78a3d6e471.css</div><div class="line">        static_dist/m/css/publicMain/publicMain-min-243df56309.css</div><div class="line">        static_dist/m/css/userDetail/userDetail-min-bf3f5d072e.css</div><div class="line">        static_dist/m/css/userIndex/userIndex-min-7898459c71.css</div><div class="line">        static_dist/m/css/userLogin_reg/userLogin_reg-min-718b2d35d8.css</div><div class="line">        static_dist/m/css/userOrder/userOrder-min-5f18d80c90.css</div><div class="line">        static_dist/m/css/userProject/userProject-min-fcc2e92ff7.css</div><div class="line">        static_dist/web/css/bankguide/bankguide-min-eb72d15494.css</div><div class="line">        static_dist/web/css/defaultIndex/defaultIndex-min-ccc49d9d39.css</div><div class="line">        static_dist/web/css/detail/detail-min-714ac29c22.css</div><div class="line">        static_dist/web/css/houseDetail/houseDetail-min-ea5da2d35e.css</div><div class="line">        static_dist/web/css/houseList/houseList-min-5ad0e311df.css</div><div class="line">        static_dist/web/css/list/list-min-7b339899d6.css</div><div class="line">        static_dist/web/css/publicMain/publicMain-min-51e7cfd8d2.css</div><div class="line">        static_dist/web/js/houseList/houseList-min-50ae65dad4.js</div><div class="line">        static_dist/web/js/list/list-min-dd27ec4ef4.js</div><div class="line"></div><div class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>然后确认这些文件都不需要了，在checkout一遍<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout .</div></pre></td></tr></table></figure></p>
+<p>然后在发布三部曲</p>
 
       
     </div>
@@ -367,7 +364,9 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
       
         <div class="post-tags">
           
-            <a href="/tags/gulp/" rel="tag">#gulp</a>
+            <a href="/tags/git/" rel="tag">#git</a>
+          
+            <a href="/tags/实战经验/" rel="tag">#实战经验</a>
           
         </div>
       
@@ -376,16 +375,16 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/15/Git常用命令-完成一个小工作流/" rel="next" title="Git常用命令&完成一个小工作流">
-                <i class="fa fa-chevron-left"></i> Git常用命令&完成一个小工作流
+              <a href="/2017/03/11/javascript设计模式（一）/" rel="next" title="javascript设计模式（一）">
+                <i class="fa fa-chevron-left"></i> javascript设计模式（一）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/24/javascript模块化编程（二）：模块化模式/" rel="prev" title="javascript设计模式（二）：模块化模式">
-                javascript设计模式（二）：模块化模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/15/Git常用命令-完成一个小工作流/" rel="prev" title="Git常用命令&完成一个小工作流">
+                Git常用命令&完成一个小工作流 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -401,10 +400,10 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/03/18/gulp（一）/"
-     data-title="gulp（一）"
+        <div class="ds-share flat" data-thread-key="2017/03/11/Git使用中的报错情况/"
+     data-title="Git使用中的报错情况"
      data-content=""
-     data-url="http://yoursite.com/2017/03/18/gulp（一）/">
+     data-url="http://yoursite.com/2017/03/11/Git使用中的报错情况/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -431,8 +430,8 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/18/gulp（一）/"
-           data-title="gulp（一）" data-url="http://yoursite.com/2017/03/18/gulp（一）/">
+      <div class="ds-thread" data-thread-key="2017/03/11/Git使用中的报错情况/"
+           data-title="Git使用中的报错情况" data-url="http://yoursite.com/2017/03/11/Git使用中的报错情况/">
       </div>
     
   </div>
@@ -543,7 +542,7 @@ grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp的工作原理简述"><span class="nav-number">1.</span> <span class="nav-text">gulp的工作原理简述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下Grunt-js和Gulp-js工作方式的区别"><span class="nav-number">1.1.</span> <span class="nav-text">下Grunt.js和Gulp.js工作方式的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp传入的路径参数与最终生成文件的关系"><span class="nav-number">1.2.</span> <span class="nav-text">gulp传入的路径参数与最终生成文件的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp安装"><span class="nav-number">2.</span> <span class="nav-text">gulp安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用gulp"><span class="nav-number">3.</span> <span class="nav-text">开始使用gulp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立gulpfile-js文件"><span class="nav-number">3.1.</span> <span class="nav-text">建立gulpfile.js文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行gulp任务"><span class="nav-number">3.2.</span> <span class="nav-text">运行gulp任务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp的api"><span class="nav-number">4.</span> <span class="nav-text">gulp的api</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp-src"><span class="nav-number">4.1.</span> <span class="nav-text">gulp.src</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp-dest"><span class="nav-number">5.</span> <span class="nav-text">gulp.dest()</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
