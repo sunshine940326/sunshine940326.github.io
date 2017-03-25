@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="脑子里的小想法," />
+  <meta name="keywords" content="js,js设计模式," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="我们公司每个周五都要做一个分享会，这个周五轮到我了，/(ㄒoㄒ)/~~因为要演讲20分钟左右的时间，考虑了下最终决定主题是“自律才有自由”">
+<meta name="description" content="原型模式就是通过javascript中的原型链的思想来实现继承的，当调用函数的方法时，首先会寻找本身是否有该方法，如果没有就寻找其原型链上是否有，一共有两种方式来实现原型模式：1、使用Object.create(prototype)方法或者是使用字面量的方式创建对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自律才能自由">
-<meta property="og:url" content="http://yoursite.com/2017/03/02/自律才能自由/index.html">
+<meta property="og:title" content="javascript设计模式（三）：原型模式">
+<meta property="og:url" content="http://yoursite.com/2017/03/25/javascript设计模式（三）：原型模式/index.html">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="我们公司每个周五都要做一个分享会，这个周五轮到我了，/(ㄒoㄒ)/~~因为要演讲20分钟左右的时间，考虑了下最终决定主题是“自律才有自由”">
-<meta property="og:updated_time" content="2017-03-02T14:17:46.271Z">
+<meta property="og:description" content="原型模式就是通过javascript中的原型链的思想来实现继承的，当调用函数的方法时，首先会寻找本身是否有该方法，如果没有就寻找其原型链上是否有，一共有两种方式来实现原型模式：1、使用Object.create(prototype)方法或者是使用字面量的方式创建对象">
+<meta property="og:updated_time" content="2017-03-25T15:06:32.737Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自律才能自由">
-<meta name="twitter:description" content="我们公司每个周五都要做一个分享会，这个周五轮到我了，/(ㄒoㄒ)/~~因为要演讲20分钟左右的时间，考虑了下最终决定主题是“自律才有自由”">
+<meta name="twitter:title" content="javascript设计模式（三）：原型模式">
+<meta name="twitter:description" content="原型模式就是通过javascript中的原型链的思想来实现继承的，当调用函数的方法时，首先会寻找本身是否有该方法，如果没有就寻找其原型链上是否有，一共有两种方式来实现原型模式：1、使用Object.create(prototype)方法或者是使用字面量的方式创建对象">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/02/自律才能自由/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/25/javascript设计模式（三）：原型模式/"/>
 
-  <title> 自律才能自由 | Cherry's Blog </title>
+  <title> javascript设计模式（三）：原型模式 | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +256,7 @@
             
             
               
-                自律才能自由
+                javascript设计模式（三）：原型模式
               
             
           </h1>
@@ -268,8 +268,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-02T21:55:57+08:00" content="2017-03-02">
-              2017-03-02
+            <time itemprop="dateCreated" datetime="2017-03-25T23:05:28+08:00" content="2017-03-25">
+              2017-03-25
             </time>
           </span>
 
@@ -282,8 +282,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -298,8 +298,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/03/02/自律才能自由/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/02/自律才能自由/" itemprop="commentsCount"></span>
+                <a href="/2017/03/25/javascript设计模式（三）：原型模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/25/javascript设计模式（三）：原型模式/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -322,23 +322,16 @@
       
 
       
-        <p>我们公司每个周五都要做一个分享会，这个周五轮到我了，/(ㄒoㄒ)/~~<br>因为要演讲20分钟左右的时间，考虑了下最终决定主题是“自律才有自由”</p>
-<a id="more"></a>
-<h1 id="初识“自律才有自由”"><a href="#初识“自律才有自由”" class="headerlink" title="初识“自律才有自由”"></a>初识“自律才有自由”</h1><p>第一次听到“自律才有自由”这句话大概是在一个难眠的页面，因为励志要减肥已经说了有好久了，但是一直都没有减掉多少，捂脸ing，然后我惯用的方式就是去知乎上找话题，受受刺激。然后发现了一个话题是 <a href="https://www.zhihu.com/question/28656794?utm_campaign=official_account&amp;utm_source=weibo&amp;utm_medium=zhihu&amp;utm_content=question" target="_blank" rel="external">坚持跑步到底有什么改变</a></p>
-<p>看了回答后久久不能入睡，原来很多人坚持跑步并不是为了减肥，并且有那么多人坚持数年的长跑。然后就感觉很羞愧，觉得自己并没有为了什么事情全身心100%的投入过，从来没有。</p>
-<p>其中有一个answer回答中有一话给我的印象最深“自律才有自由”，忘记他当时是怎么说的了，然后为了分享会，我自己又找了一些资料，在这里与大家分享一下</p>
-<h1 id="什么是自律和自由"><a href="#什么是自律和自由" class="headerlink" title="什么是自律和自由"></a>什么是自律和自由</h1><p>其实看起来自律和自由是相反的概念，自律是自我约束，而自由又是随心所欲，这两个怎么会有因果关系？！</p>
-<p>但其实不然</p>
-<p><strong>自律 – 懂得约束自己的欲望、自己管理自己</strong></p>
-<p><strong>自由 – 只听从本心意愿，不受他人摆布</strong></p>
-<h1 id="为什么说自律才有自由"><a href="#为什么说自律才有自由" class="headerlink" title="为什么说自律才有自由"></a>为什么说自律才有自由</h1><p>其实有很多人都对自由有不同的看法，这里所说的自由并不是随心所欲的肤浅任性，不是单纯的想做什么就做什么，而是不想做什么就可以不做什么，是自己可以有选择的权利，能够自主，在一定程度上掌握自己的命运，这才是我们讨论的自由，然而真正实现这种自由，靠的是自律。所以说自律才有自由</p>
-<p>举个例子，就比如你既想随心所欲的吃东西，又想保持苗条的身材，甚至还有一点小腹肌。那么通常情况下这两个事不可兼得的，所以就需要自律来满足我们的欲望</p>
-<h1 id="为什么要自律"><a href="#为什么要自律" class="headerlink" title="为什么要自律"></a>为什么要自律</h1><h2 id="达到自由"><a href="#达到自由" class="headerlink" title="达到自由"></a>达到自由</h2><p>我们有太多的欲望（随心所欲的吃和苗条的身材），我们要想达到我们想要的自由，就必须约束自己</p>
-<h2 id="成长"><a href="#成长" class="headerlink" title="成长"></a>成长</h2><p>人的懒惰本质 – 人们总是愿意在把握程度高的事情上反复花时间，而在真正重要的事情上不用力，慢慢的，他们自己停止了成长，然后找几个借口把重要的事情敷衍过去（带入到自己的工作当中）</p>
-<p>只要做让自己感觉不舒服的事情才能成长（出自唐宁）</p>
-<h1 id="自律需要怎么做"><a href="#自律需要怎么做" class="headerlink" title="自律需要怎么做"></a>自律需要怎么做</h1><p><strong>发自内心的想要到达哪一种自由</strong></p>
-<p>“突然有一天被自己肚子上的肥肉恶心到了，对于肌肉的痴迷。一旦有了这些动机，迈开步子好像也不再是什么难事，难的是能迈开多大的步子，能坚持多久”<br>– 坚持数年长跑的runner</p>
-<p>只有自己发布内心想要一种什么样的自由才是最有效的语言，胜过旁人的千言万语</p>
+        <p>原型模式就是通过javascript中的原型链的思想来实现继承的，当调用函数的方法时，首先会寻找本身是否有该方法，如果没有就寻找其原型链上是否有，一共有两种方式来实现原型模式：1、使用<code>Object.create(prototype)</code>方法或者是使用字面量的方式创建对象<br><a id="more"></a></p>
+<h1 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h1><p>原型模式应该是我们比较熟悉的，其实原型模式不需要去模拟其他语言的概念，而是使用javascript提供的原生能力–原型链，使用原型链来实现继承。</p>
+<p>我们能够将原型模式认作是基于原型的继承中，我们创建作为其他对象原型的对象，原型对象自身被当作构造器创建的每一个对象的蓝本高效的使用着，如果构造器函数使用的原型包含例如叫作name的属性，那么每一个通过同一个构造器创建的对象都有name属性</p>
+<p>##　使用<code>Object.create(prototype)</code>方法<br>举个栗子~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var myCar = &#123;</div><div class="line"></div><div class="line">  name: &quot;Ford Escort&quot;,</div><div class="line"></div><div class="line">  drive: function () &#123;</div><div class="line">    console.log( &quot;Weeee. I&apos;m driving!&quot; );</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  panic: function () &#123;</div><div class="line">    console.log( &quot;Wait. How do you stop this thing?&quot; );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">// Use Object.create to instantiate a new car</div><div class="line">var yourCar = Object.create( myCar );</div><div class="line"></div><div class="line">// Now we can see that one is a prototype of the other</div><div class="line">console.log( yourCar.name );</div></pre></td></tr></table></figure></p>
+<p>在这个例子中，我们定义了一个作为原型的对象<code>myCar</code>，这个对象中有两个属性<code>name</code>和<code>drive</code>，然后用<code>Object.create()</code>方法来创建了一个拥有<code>myCar</code>原型的对象<code>yourCar</code>，这样新创建的<code>yourCar</code>就继承了<code>myCar</code>中的属性和方法，我们可以直接调用</p>
+<p>当然，<code>Object.create()</code>方法也可以传入第二个参数(第一个参数是要继承的原型)<code>Object.create(prototype,optionalDescriptorObject))。</code>第二个参数来初始化对象的属性，我认为这个属性就是可以为其创建新的属性，不知道理解的对不对</p>
+<h2 id="使用面向字面量方法创建"><a href="#使用面向字面量方法创建" class="headerlink" title="使用面向字面量方法创建"></a>使用面向字面量方法创建</h2><p>如果不希望在不直接使用<code>Object.create</code>的前提下实现原型链，我们可以模拟原型链实现继承<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">var vehiclePrototype = &#123;</div><div class="line"></div><div class="line">  init: function ( carModel ) &#123;</div><div class="line">    this.model = carModel;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  getModel: function () &#123;</div><div class="line">    console.log( &quot;The model of this vehicle is..&quot; + this.model);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">function vehicle( model ) &#123;</div><div class="line"></div><div class="line">  function F() &#123;&#125;;</div><div class="line">  </div><div class="line">  var f = new F();</div><div class="line"></div><div class="line">  f.init( model );</div><div class="line">  return f;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">var car = vehicle( &quot;Ford Escort&quot; );</div><div class="line">car.getModel();</div></pre></td></tr></table></figure></p>
+<p>这个栗子中，对象<code>vehiclePrototype</code>中有两个方法<code>init</code>和<code>getModel</code>,然后<code>vehicle</code>继承了<code>vehiclePrototype</code>，继承的方法是先创建一个空函数<code>F</code>然后<code>F</code>的<code>prototype</code>属性指向<code>vehiclePrototype</code>，然后创建<code>F</code>类的一个实例<code>f</code>,<code>f</code>使用了<code>vehiclePrototype</code>的<code>init</code>方法，最后返回<code>f</code>,所以<code>vehicle</code>函数内部就完成了对<code>vehiclePrototype</code>的继承，最后将对象<code>f</code>返回.</p>
+<p><strong>其实<code>var f = new F();</code>就相当于<code>f = Object.create(F.prototype);</code></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">o = &#123;&#125;;</div><div class="line">// 以字面量方式创建的空对象就相当于:</div><div class="line">o = Object.create(Object.prototype);</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -361,7 +354,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/脑子里的小想法/" rel="tag">#脑子里的小想法</a>
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/js设计模式/" rel="tag">#js设计模式</a>
           
         </div>
       
@@ -370,17 +365,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/02/react（二）：用实例认识react/" rel="next" title="react（二）：用实例认识react">
-                <i class="fa fa-chevron-left"></i> react（二）：用实例认识react
+              <a href="/2017/03/24/javascript模块化编程（二）：模块化模式/" rel="next" title="javascript设计模式（二）：模块化模式">
+                <i class="fa fa-chevron-left"></i> javascript设计模式（二）：模块化模式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/06/面试题/" rel="prev" title="前端面试">
-                前端面试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -395,10 +386,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/03/02/自律才能自由/"
-     data-title="自律才能自由"
+        <div class="ds-share flat" data-thread-key="2017/03/25/javascript设计模式（三）：原型模式/"
+     data-title="javascript设计模式（三）：原型模式"
      data-content=""
-     data-url="http://yoursite.com/2017/03/02/自律才能自由/">
+     data-url="http://yoursite.com/2017/03/25/javascript设计模式（三）：原型模式/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -425,8 +416,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/02/自律才能自由/"
-           data-title="自律才能自由" data-url="http://yoursite.com/2017/03/02/自律才能自由/">
+      <div class="ds-thread" data-thread-key="2017/03/25/javascript设计模式（三）：原型模式/"
+           data-title="javascript设计模式（三）：原型模式" data-url="http://yoursite.com/2017/03/25/javascript设计模式（三）：原型模式/">
       </div>
     
   </div>
@@ -537,7 +528,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识“自律才有自由”"><span class="nav-number">1.</span> <span class="nav-text">初识“自律才有自由”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是自律和自由"><span class="nav-number">2.</span> <span class="nav-text">什么是自律和自由</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么说自律才有自由"><span class="nav-number">3.</span> <span class="nav-text">为什么说自律才有自由</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要自律"><span class="nav-number">4.</span> <span class="nav-text">为什么要自律</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#达到自由"><span class="nav-number">4.1.</span> <span class="nav-text">达到自由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成长"><span class="nav-number">4.2.</span> <span class="nav-text">成长</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自律需要怎么做"><span class="nav-number">5.</span> <span class="nav-text">自律需要怎么做</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原型模式"><span class="nav-number">1.</span> <span class="nav-text">原型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用面向字面量方法创建"><span class="nav-number">1.1.</span> <span class="nav-text">使用面向字面量方法创建</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
