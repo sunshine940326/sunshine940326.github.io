@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="原型模式就是通过javascript中的原型链的思想来实现继承的，当调用函数的方法时，首先会寻找本身是否有该方法，如果没有就寻找其原型链上是否有，一共有两种方式来实现原型模式：1、使用Object.create(prototype)方法或者是使用字面量的方式创建对象">
+<meta name="description" content="我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript设计模式（三）：原型模式">
-<meta property="og:url" content="http://yoursite.com/2017/03/25/javascript设计模式（三）：原型模式/index.html">
+<meta property="og:title" content="javascript设计模式（四）：工厂模式">
+<meta property="og:url" content="http://yoursite.com/2017/03/26/javascript设计模式（四）：工厂模式/index.html">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="原型模式就是通过javascript中的原型链的思想来实现继承的，当调用函数的方法时，首先会寻找本身是否有该方法，如果没有就寻找其原型链上是否有，一共有两种方式来实现原型模式：1、使用Object.create(prototype)方法或者是使用字面量的方式创建对象">
-<meta property="og:updated_time" content="2017-03-25T15:06:32.737Z">
+<meta property="og:description" content="我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。">
+<meta property="og:updated_time" content="2017-03-26T14:02:49.912Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript设计模式（三）：原型模式">
-<meta name="twitter:description" content="原型模式就是通过javascript中的原型链的思想来实现继承的，当调用函数的方法时，首先会寻找本身是否有该方法，如果没有就寻找其原型链上是否有，一共有两种方式来实现原型模式：1、使用Object.create(prototype)方法或者是使用字面量的方式创建对象">
+<meta name="twitter:title" content="javascript设计模式（四）：工厂模式">
+<meta name="twitter:description" content="我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/25/javascript设计模式（三）：原型模式/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/26/javascript设计模式（四）：工厂模式/"/>
 
-  <title> javascript设计模式（三）：原型模式 | Cherry's Blog </title>
+  <title> javascript设计模式（四）：工厂模式 | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +256,7 @@
             
             
               
-                javascript设计模式（三）：原型模式
+                javascript设计模式（四）：工厂模式
               
             
           </h1>
@@ -268,8 +268,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-25T23:05:28+08:00" content="2017-03-25">
-              2017-03-25
+            <time itemprop="dateCreated" datetime="2017-03-26T22:01:41+08:00" content="2017-03-26">
+              2017-03-26
             </time>
           </span>
 
@@ -298,8 +298,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/03/25/javascript设计模式（三）：原型模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/25/javascript设计模式（三）：原型模式/" itemprop="commentsCount"></span>
+                <a href="/2017/03/26/javascript设计模式（四）：工厂模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/26/javascript设计模式（四）：工厂模式/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -322,16 +322,10 @@
       
 
       
-        <p>原型模式就是通过javascript中的原型链的思想来实现继承的，当调用函数的方法时，首先会寻找本身是否有该方法，如果没有就寻找其原型链上是否有，一共有两种方式来实现原型模式：1、使用<code>Object.create(prototype)</code>方法或者是使用字面量的方式创建对象<br><a id="more"></a></p>
-<h1 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h1><p>原型模式应该是我们比较熟悉的，其实原型模式不需要去模拟其他语言的概念，而是使用javascript提供的原生能力–原型链，使用原型链来实现继承。</p>
-<p>我们能够将原型模式认作是基于原型的继承中，我们创建作为其他对象原型的对象，原型对象自身被当作构造器创建的每一个对象的蓝本高效的使用着，如果构造器函数使用的原型包含例如叫作name的属性，那么每一个通过同一个构造器创建的对象都有name属性</p>
-<p>##　使用<code>Object.create(prototype)</code>方法<br>举个栗子~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var myCar = &#123;</div><div class="line"></div><div class="line">  name: &quot;Ford Escort&quot;,</div><div class="line"></div><div class="line">  drive: function () &#123;</div><div class="line">    console.log( &quot;Weeee. I&apos;m driving!&quot; );</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  panic: function () &#123;</div><div class="line">    console.log( &quot;Wait. How do you stop this thing?&quot; );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">// Use Object.create to instantiate a new car</div><div class="line">var yourCar = Object.create( myCar );</div><div class="line"></div><div class="line">// Now we can see that one is a prototype of the other</div><div class="line">console.log( yourCar.name );</div></pre></td></tr></table></figure></p>
-<p>在这个例子中，我们定义了一个作为原型的对象<code>myCar</code>，这个对象中有两个属性<code>name</code>和<code>drive</code>，然后用<code>Object.create()</code>方法来创建了一个拥有<code>myCar</code>原型的对象<code>yourCar</code>，这样新创建的<code>yourCar</code>就继承了<code>myCar</code>中的属性和方法，我们可以直接调用</p>
-<p>当然，<code>Object.create()</code>方法也可以传入第二个参数(第一个参数是要继承的原型)<code>Object.create(prototype,optionalDescriptorObject))。</code>第二个参数来初始化对象的属性，我认为这个属性就是可以为其创建新的属性，不知道理解的对不对</p>
-<h2 id="使用面向字面量方法创建"><a href="#使用面向字面量方法创建" class="headerlink" title="使用面向字面量方法创建"></a>使用面向字面量方法创建</h2><p>如果不希望在不直接使用<code>Object.create</code>的前提下实现原型链，我们可以模拟原型链实现继承<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">var vehiclePrototype = &#123;</div><div class="line"></div><div class="line">  init: function ( carModel ) &#123;</div><div class="line">    this.model = carModel;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  getModel: function () &#123;</div><div class="line">    console.log( &quot;The model of this vehicle is..&quot; + this.model);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">function vehicle( model ) &#123;</div><div class="line"></div><div class="line">  function F() &#123;&#125;;</div><div class="line">  </div><div class="line">  var f = new F();</div><div class="line"></div><div class="line">  f.init( model );</div><div class="line">  return f;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">var car = vehicle( &quot;Ford Escort&quot; );</div><div class="line">car.getModel();</div></pre></td></tr></table></figure></p>
-<p>这个栗子中，对象<code>vehiclePrototype</code>中有两个方法<code>init</code>和<code>getModel</code>,然后<code>vehicle</code>继承了<code>vehiclePrototype</code>，继承的方法是先创建一个空函数<code>F</code>然后<code>F</code>的<code>prototype</code>属性指向<code>vehiclePrototype</code>，然后创建<code>F</code>类的一个实例<code>f</code>,<code>f</code>使用了<code>vehiclePrototype</code>的<code>init</code>方法，最后返回<code>f</code>,所以<code>vehicle</code>函数内部就完成了对<code>vehiclePrototype</code>的继承，最后将对象<code>f</code>返回.</p>
-<p><strong>其实<code>var f = new F();</code>就相当于<code>f = Object.create(F.prototype);</code></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">o = &#123;&#125;;</div><div class="line">// 以字面量方式创建的空对象就相当于:</div><div class="line">o = Object.create(Object.prototype);</div></pre></td></tr></table></figure>
+        <p>我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。<br><a id="more"></a></p>
+<h2 id="使用工厂模式"><a href="#使用工厂模式" class="headerlink" title="使用工厂模式"></a>使用工厂模式</h2><p>下面通过使用构造器模式逻辑来定义一个汽车。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">// Types.js - Constructors used behind the scenes</div><div class="line"></div><div class="line">// A constructor for defining new cars</div><div class="line">function Car( options ) &#123;</div><div class="line"></div><div class="line">  // some defaults</div><div class="line">  this.doors = options.doors || 4;</div><div class="line">  this.state = options.state || &quot;brand new&quot;;</div><div class="line">  this.color = options.color || &quot;silver&quot;;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">// A constructor for defining new trucks</div><div class="line">function Truck( options)&#123;</div><div class="line"></div><div class="line">  this.state = options.state || &quot;used&quot;;</div><div class="line">  this.wheelSize = options.wheelSize || &quot;large&quot;;</div><div class="line">  this.color = options.color || &quot;blue&quot;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// FactoryExample.js</div><div class="line"></div><div class="line">// Define a skeleton vehicle factory</div><div class="line">function VehicleFactory() &#123;&#125;</div><div class="line"></div><div class="line">// Define the prototypes and utilities for this factory</div><div class="line"></div><div class="line">// Our default vehicleClass is Car</div><div class="line">VehicleFactory.prototype.vehicleClass = Car;</div><div class="line"></div><div class="line">// Our Factory method for creating new Vehicle instances</div><div class="line">VehicleFactory.prototype.createVehicle = function ( options ) &#123;</div><div class="line"></div><div class="line">  if( options.vehicleType === &quot;car&quot; )&#123;</div><div class="line">    this.vehicleClass = Car;</div><div class="line">  &#125;else&#123;</div><div class="line">    this.vehicleClass = Truck;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return new this.vehicleClass( options );</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">// Create an instance of our factory that makes cars</div><div class="line">var carFactory = new VehicleFactory();</div><div class="line">var car = carFactory.createVehicle( &#123;</div><div class="line">            vehicleType: &quot;car&quot;,</div><div class="line">            color: &quot;yellow&quot;,</div><div class="line">            doors: 6 &#125; );</div><div class="line"></div><div class="line">// Test to confirm our car was created using the vehicleClass/prototype Car</div><div class="line"></div><div class="line">// Outputs: true</div><div class="line">console.log( car instanceof Car );</div><div class="line"></div><div class="line">// Outputs: Car object of color &quot;yellow&quot;, doors: 6 in a &quot;brand new&quot; state</div><div class="line">console.log( car );</div></pre></td></tr></table></figure></p>
+<p>在这个例子中，我们首先定义了两个函数：Car 和 Trucks，这两个类中有Car和Trucks的属性默认值并且也可以自己传入参数，就是相当于造Car和Trucks的方法</p>
+<p>然后我们定义了一个工厂，将创造Car和Trucks 的方法放到工厂里面（通过给VehicleFactory的prototype上增加Car和Trucks方法），默认是要创建一个Car，</p>
 
       
     </div>
@@ -365,17 +359,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/24/javascript模块化编程（二）：模块化模式/" rel="next" title="javascript设计模式（二）：模块化模式">
-                <i class="fa fa-chevron-left"></i> javascript设计模式（二）：模块化模式
+              <a href="/2017/03/25/javascript设计模式（三）：原型模式/" rel="next" title="javascript设计模式（三）：原型模式">
+                <i class="fa fa-chevron-left"></i> javascript设计模式（三）：原型模式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/26/javascript设计模式（四）：工厂模式/" rel="prev" title="javascript设计模式（四）：工厂模式">
-                javascript设计模式（四）：工厂模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -390,10 +380,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/03/25/javascript设计模式（三）：原型模式/"
-     data-title="javascript设计模式（三）：原型模式"
+        <div class="ds-share flat" data-thread-key="2017/03/26/javascript设计模式（四）：工厂模式/"
+     data-title="javascript设计模式（四）：工厂模式"
      data-content=""
-     data-url="http://yoursite.com/2017/03/25/javascript设计模式（三）：原型模式/">
+     data-url="http://yoursite.com/2017/03/26/javascript设计模式（四）：工厂模式/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -420,8 +410,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/25/javascript设计模式（三）：原型模式/"
-           data-title="javascript设计模式（三）：原型模式" data-url="http://yoursite.com/2017/03/25/javascript设计模式（三）：原型模式/">
+      <div class="ds-thread" data-thread-key="2017/03/26/javascript设计模式（四）：工厂模式/"
+           data-title="javascript设计模式（四）：工厂模式" data-url="http://yoursite.com/2017/03/26/javascript设计模式（四）：工厂模式/">
       </div>
     
   </div>
@@ -532,7 +522,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原型模式"><span class="nav-number">1.</span> <span class="nav-text">原型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用面向字面量方法创建"><span class="nav-number">1.1.</span> <span class="nav-text">使用面向字面量方法创建</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用工厂模式"><span class="nav-number">1.</span> <span class="nav-text">使用工厂模式</span></a></li></ol></div>
             
           </div>
         </section>
