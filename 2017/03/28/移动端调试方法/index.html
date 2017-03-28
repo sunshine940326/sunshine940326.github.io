@@ -1,0 +1,721 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="调试," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="在开发中前端免不了要进行移动端的开发，然而在电脑上看的样式和手机上还是有一定的差距的，因为手机上有顶部的状态栏和底部的菜单栏，特别是在qq中打开，差距还是蛮大的，所以在chrom中模拟手机显示的情况虽然有一定的效果，但是还是不能完全模拟，我们还需要在真机环境下测试。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端调试方法">
+<meta property="og:url" content="http://yoursite.com/2017/03/28/移动端调试方法/index.html">
+<meta property="og:site_name" content="Cherry's Blog">
+<meta property="og:description" content="在开发中前端免不了要进行移动端的开发，然而在电脑上看的样式和手机上还是有一定的差距的，因为手机上有顶部的状态栏和底部的菜单栏，特别是在qq中打开，差距还是蛮大的，所以在chrom中模拟手机显示的情况虽然有一定的效果，但是还是不能完全模拟，我们还需要在真机环境下测试。">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328162341695?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://www.2cto.com/uploadfile/Collfiles/20140305/20140305134405455.jpg">
+<meta property="og:image" content="http://www.2cto.com/uploadfile/Collfiles/20140305/20140305134407464.jpg">
+<meta property="og:image" content="http://img0.tuicool.com/JZjuMnM.png!web">
+<meta property="og:image" content="http://img2.tuicool.com/AbE3E3.png!web">
+<meta property="og:image" content="http://img0.tuicool.com/IzM7Bnv.png!web">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/685375/201512/685375-20151230203417729-842406358.png">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/436120/2012102818102951.gif">
+<meta property="og:image" content="http://static.oschina.net/uploads/space/2014/0808/121953_40hW_115312.png">
+<meta property="og:image" content="http://static.oschina.net/uploads/space/2014/0808/122132_FRON_115312.png">
+<meta property="og:updated_time" content="2017-03-28T15:24:30.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端调试方法">
+<meta name="twitter:description" content="在开发中前端免不了要进行移动端的开发，然而在电脑上看的样式和手机上还是有一定的差距的，因为手机上有顶部的状态栏和底部的菜单栏，特别是在qq中打开，差距还是蛮大的，所以在chrom中模拟手机显示的情况虽然有一定的效果，但是还是不能完全模拟，我们还需要在真机环境下测试。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170328162341695?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/28/移动端调试方法/"/>
+
+  <title> 移动端调试方法 | Cherry's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Cherry's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">自律才能自由</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                移动端调试方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-28T23:21:55+08:00" content="2017-03-28">
+              2017-03-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/日积月累/" itemprop="url" rel="index">
+                    <span itemprop="name">日积月累</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/28/移动端调试方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/28/移动端调试方法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在开发中前端免不了要进行移动端的开发，然而在电脑上看的样式和手机上还是有一定的差距的，因为手机上有顶部的状态栏和底部的菜单栏，特别是在qq中打开，差距还是蛮大的，所以在chrom中模拟手机显示的情况虽然有一定的效果，但是还是不能完全模拟，我们还需要在真机环境下测试。<br><a id="more"></a></p>
+<h1 id="iphone-safari"><a href="#iphone-safari" class="headerlink" title="iphone+safari"></a>iphone+safari</h1><p>之前使用的是mac，所以一直都是用的iphone+safari模拟真机环境，这种方法简单明了，只需要简单的设置一下以后都不要设置，插上数据线，打开mac上的safari就可以了，(๑•̀ㅂ•́)و，<br>✧，但是对设备有要求，必须是iphone+mac的组合</p>
+<h2 id="iphone上设置"><a href="#iphone上设置" class="headerlink" title="iphone上设置"></a>iphone上设置</h2><p>设置 → Safari → 高级 → Web 检查器 → 开。<br><img src="http://img.blog.csdn.net/20170328162341695?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="pc端safari设置"><a href="#pc端safari设置" class="headerlink" title="pc端safari设置"></a>pc端safari设置</h2><p>Safari → 偏好设置 → 高级 → 在菜单栏中显示“开发”菜单<br><img src="http://www.2cto.com/uploadfile/Collfiles/20140305/20140305134405455.jpg" alt="这里写图片描述"></p>
+<p>设置完之后用数据线连接电脑，然后在iphone上用打开safari需要调试的网址，然后在pc端打开safari，最上面的菜单栏中的“开发”然后就可以看到有iphone设备的名称显示然后就可以看见你在iphone中的safari中打开了哪些网址，之后就和调试网页版的一样了</p>
+<p><img src="http://www.2cto.com/uploadfile/Collfiles/20140305/20140305134407464.jpg" alt=""></p>
+<h1 id="android手机-pc"><a href="#android手机-pc" class="headerlink" title="android手机+pc"></a>android手机+pc</h1><p>安卓手机只需要下载chrom浏览器，就可以再电脑上用chrom调试了，是不是很赞(づ￣3￣)づ╭</p>
+<ol>
+<li>首先需要装chrom浏览器</li>
+<li>打开手机的开发者模式，一般是：设置-&gt;关于手机-&gt;版本号连按5次，之后设置菜单中会多出一个开发人员选项，进入将其中的“usb调试”打开<img src="http://img0.tuicool.com/JZjuMnM.png!web" alt=""></li>
+<li>将手机与电脑通过usb连接，弹出对话框“是否允许usb调试”，选择确定<img src="http://img2.tuicool.com/AbE3E3.png!web" alt=""></li>
+<li>在手机chrom上打开要调试的页面</li>
+<li>在电脑上打开chrom，新开一地址栏为<code>chrome://inspect/</code>的页面,然后就可以调试了<img src="http://img0.tuicool.com/IzM7Bnv.png!web" alt=""></li>
+<li>点击inspect弹出chrom调试工具</li>
+</ol>
+<h1 id="微信开发者工具"><a href="#微信开发者工具" class="headerlink" title="微信开发者工具"></a>微信开发者工具</h1><p>由于不可描述原因，有些页面只在微信里面出错，并且好多涉及到了微信相关的接口必须要使用微信环境的，比如自定义分享</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>这个使用起来很方便。（我记得之前使用的时候（2016年），你要调试的页面必须是你是管理员的微信公众号下面的js安全域名下的地址），但是刚刚下载一个新版本的开发者工具（v0.7.0），现在的时间是2017年3月28日，发现好像没有这个限制了。所以这样开发起来就方便多了。</p>
+<h2 id="官方文档-amp-下载地址"><a href="#官方文档-amp-下载地址" class="headerlink" title="官方文档&amp;下载地址"></a>官方文档&amp;下载地址</h2><p><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1455784140&amp;token=&amp;lang=zh_CN" target="_blank" rel="external">官方文档</a>其中有下载地址</p>
+<h2 id="模拟微信环境调试"><a href="#模拟微信环境调试" class="headerlink" title="模拟微信环境调试"></a>模拟微信环境调试</h2><p>直接在地址栏输入地址就可以模拟微信环境调试，是不是很方便~这种方式可以满足大部分的需求</p>
+<h2 id="真机调试"><a href="#真机调试" class="headerlink" title="真机调试"></a>真机调试</h2><p>在开发者工具中的移动调试中可以有详细的ios和安卓的调试方式，主要是使用代理，这里我没有调试成功，在手机微信中一直打不开网页，所以就不详细写了╥﹏╥…</p>
+<h1 id="weinre"><a href="#weinre" class="headerlink" title="weinre"></a>weinre</h1><p>跟着我念三遍weinre大法好，weinre大法好，weinre大法好~<br>之前介绍的几种方式或多或少都有一些条件限制，但是weinre没有啊喂！就比如我是ios+windows的组合，就不能使用iphone+safari和安卓+pc的方式调试，所以使用weinre就可以！！<br>缺点就是配置起来有削微的麻烦~</p>
+<h2 id="安装weinre"><a href="#安装weinre" class="headerlink" title="安装weinre"></a>安装weinre</h2><p>目前安装weinre我了解到有两种方式：node和java两种方式</p>
+<h3 id="node方式安装weinre"><a href="#node方式安装weinre" class="headerlink" title="node方式安装weinre"></a>node方式安装weinre</h3><p>首先确保你的电脑上有node环境，然后使用npm来安装<br>windows下<br><code>npm install weinre -g --registry=https://registry.npm.taobao.org</code><br>mac下<br><code>sudo npm install weinre -g --registry=https://registry.npm.taobao.org</code></p>
+<h3 id="java环境下安装weinre"><a href="#java环境下安装weinre" class="headerlink" title="java环境下安装weinre"></a>java环境下安装weinre</h3><p>首先确认你电脑上装好的java环境，然后下载weinre的jar包，上百度云盘的链接：链接: <a href="https://pan.baidu.com/s/1slRiOl3" target="_blank" rel="external">https://pan.baidu.com/s/1slRiOl3</a> 密码: dsmp</p>
+<h2 id="运行weinre"><a href="#运行weinre" class="headerlink" title="运行weinre"></a>运行weinre</h2><h3 id="node环境下"><a href="#node环境下" class="headerlink" title="node环境下"></a>node环境下</h3><p><code>weinre --httpPort 8081 --boundHost -all-</code><br><code>8081</code>是调试服务器运行的端口号，<br><code>boundHost</code>是调试服务器绑定的ip地址或域名，默认是localhost</p>
+<h3 id="java环境下"><a href="#java环境下" class="headerlink" title="java环境下"></a>java环境下</h3><p>在weinre所在文件夹的地址栏输入代码：<code>java -jar weinre.jar --httpPort 8081 --boundHost -all-</code><br><img src="http://images2015.cnblogs.com/blog/685375/201512/685375-20151230203417729-842406358.png" alt=""></p>
+<h2 id="开始调试"><a href="#开始调试" class="headerlink" title="开始调试"></a>开始调试</h2><p>设置好端口之后我们在本地打开<code>http://localhost:8081</code>然后就可以看见weinre的基本信息<br><img src="http://pic002.cnblogs.com/images/2012/436120/2012102818102951.gif" alt=""></p>
+<p>之后我们需要在需要调试的页面上加上一段script标签<br><code>&lt;script src=&quot;http://192.168.0.126:8081/target/target-script-min.js#anonymous&quot;&gt;&lt;/script&gt;</code><br>需要改为你自己的ip地址</p>
+<h3 id="ip的查询方式"><a href="#ip的查询方式" class="headerlink" title="ip的查询方式"></a>ip的查询方式</h3><p>在cmd输入<code>ipconfig</code>，然后ipv4中后面跟的就是本机的ip地址</p>
+<h2 id="手机打开需要调试的链接"><a href="#手机打开需要调试的链接" class="headerlink" title="手机打开需要调试的链接"></a>手机打开需要调试的链接</h2><h3 id="在staticWebDir目录下"><a href="#在staticWebDir目录下" class="headerlink" title="在staticWebDir目录下"></a>在staticWebDir目录下</h3><p>本地的源文件貌似只能在staticWebDir目录下才可以访问到，将你的源文件放在staticWebDir目录下，然后手机访问:<code>http://192.168.0.126/contact_page/index.html</code>，然后在电脑上打开刚刚的页面<code>http://localhost:8081</code><img src="http://static.oschina.net/uploads/space/2014/0808/121953_40hW_115312.png" alt="">点击<code>debug client user interface</code>之后出现<br><img src="http://static.oschina.net/uploads/space/2014/0808/122132_FRON_115312.png" alt="">，点击蓝色的链接，变为绿色的之后就说明链接成功了。在后面的<code>elements</code>和其他的tag就可以进行调试</p>
+<h3 id="在xampp下"><a href="#在xampp下" class="headerlink" title="在xampp下"></a>在xampp下</h3><p>因为公司的项目是在xampp下的，所以不能放在staticWebDir目录下，可以直接将路由换成本地的ip，然后在手机上访问就好。<br>项目存放的地址是<code>xampp\htdocs\app</code><br>修改配置：<br><code>C:\Windows\System32\drivers\etc\hosts</code>文件下<br>最后一行<br><code>127.0.0.1       localhost ltrip.com fzc.com  m.fzc.com m.ltrip.com</code><br>然后在<code>C:\xampp\apache\conf\extra</code>文件里面修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;VirtualHost *:80&gt;</div><div class="line">    DocumentRoot &quot;C:\xampp\htdocs\ltrip&quot;</div><div class="line">    ServerName ltrip.com </div><div class="line">    ServerAlias </div><div class="line">  &lt;Directory &quot;C:\xampp\htdocs\ltrip&quot;&gt;</div><div class="line">      Options FollowSymLinks ExecCGI</div><div class="line">      AllowOverride All</div><div class="line">      Order allow,deny</div><div class="line">      Allow from all</div><div class="line">      Require all granted</div><div class="line">  &lt;/Directory&gt;</div><div class="line">&lt;/VirtualHost&gt;</div></pre></td></tr></table></figure></p>
+<p>其中的<code>ServerName ltrip.com</code>中的<code>ltrip.com</code>就代替了<code>&quot;C:\xampp\htdocs\ltrip&quot;</code>这个路径，<br>所以就不需要放在staticWebDir目录下了，这样手机打开的地址就变成了:<code>http://192.168.0.168/ltrip.com</code></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/调试/" rel="tag">#调试</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/26/javascript设计模式（四）：工厂模式/" rel="next" title="javascript设计模式（四）：工厂模式">
+                <i class="fa fa-chevron-left"></i> javascript设计模式（四）：工厂模式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/28/移动端调试方法/"
+     data-title="移动端调试方法"
+     data-content=""
+     data-url="http://yoursite.com/2017/03/28/移动端调试方法/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/28/移动端调试方法/"
+           data-title="移动端调试方法" data-url="http://yoursite.com/2017/03/28/移动端调试方法/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Cherry" />
+          <p class="site-author-name" itemprop="name">Cherry</p>
+          <p class="site-description motion-element" itemprop="description">记录学习道路上的一点一滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/sunshine940326" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5094854684/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#iphone-safari"><span class="nav-number">1.</span> <span class="nav-text">iphone+safari</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#iphone上设置"><span class="nav-number">1.1.</span> <span class="nav-text">iphone上设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pc端safari设置"><span class="nav-number">1.2.</span> <span class="nav-text">pc端safari设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#android手机-pc"><span class="nav-number">2.</span> <span class="nav-text">android手机+pc</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微信开发者工具"><span class="nav-number">3.</span> <span class="nav-text">微信开发者工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">3.1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官方文档-amp-下载地址"><span class="nav-number">3.2.</span> <span class="nav-text">官方文档&下载地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟微信环境调试"><span class="nav-number">3.3.</span> <span class="nav-text">模拟微信环境调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#真机调试"><span class="nav-number">3.4.</span> <span class="nav-text">真机调试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#weinre"><span class="nav-number">4.</span> <span class="nav-text">weinre</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装weinre"><span class="nav-number">4.1.</span> <span class="nav-text">安装weinre</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#node方式安装weinre"><span class="nav-number">4.1.1.</span> <span class="nav-text">node方式安装weinre</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java环境下安装weinre"><span class="nav-number">4.1.2.</span> <span class="nav-text">java环境下安装weinre</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行weinre"><span class="nav-number">4.2.</span> <span class="nav-text">运行weinre</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#node环境下"><span class="nav-number">4.2.1.</span> <span class="nav-text">node环境下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java环境下"><span class="nav-number">4.2.2.</span> <span class="nav-text">java环境下</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始调试"><span class="nav-number">4.3.</span> <span class="nav-text">开始调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ip的查询方式"><span class="nav-number">4.3.1.</span> <span class="nav-text">ip的查询方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手机打开需要调试的链接"><span class="nav-number">4.4.</span> <span class="nav-text">手机打开需要调试的链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在staticWebDir目录下"><span class="nav-number">4.4.1.</span> <span class="nav-text">在staticWebDir目录下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在xampp下"><span class="nav-number">4.4.2.</span> <span class="nav-text">在xampp下</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cherry</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunshine940326"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
