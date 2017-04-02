@@ -1464,10 +1464,26 @@ pre .javascript .function {
 .site-author-image {
   display: block;
   margin: 0 auto;
-  padding: 2px;
+/*padding: $site-author-image-padding;*/
   max-width: 120px;
   height: auto;
-  border: 1px solid #eee;
+/*
+  border: $site-author-image-border-width solid $site-author-image-border-color;
+  */
+  -webkit-transform: 5s all;
+  -moz-transform: 5s all;
+  -ms-transform: 5s all;
+  -o-transform: 5s all;
+  -webkit-transform: 5s all;
+  -moz-transform: 5s all;
+  -ms-transform: 5s all;
+  -o-transform: 5s all;
+  transform: 5s all;
+}
+.site-author-image:hover {
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 .site-author-name {
   margin: 0;
@@ -1549,7 +1565,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4933ff;
+  background: #6effff;
 }
 .links-of-blogroll {
   font-size: 13px;
