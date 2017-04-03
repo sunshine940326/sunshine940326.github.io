@@ -1569,7 +1569,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1f3e0a;
+  background: #ff3dff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2241,6 +2241,7 @@ a.search-result {
 }
 #canvas {
   width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
