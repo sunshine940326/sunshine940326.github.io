@@ -1569,7 +1569,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #04a3ff;
+  background: #0dd40a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2238,4 +2238,8 @@ a.search-result {
 }
 .links-of-author a:before {
   color: #fff;
+}
+#canvas {
+  width: 100%;
+  height: 100%;
 }
