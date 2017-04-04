@@ -931,7 +931,7 @@ pre .javascript .function {
   display: none;
   position: absolute;
   top: 10px;
-  left: 10px;
+  right: 10px;
 }
 @media (max-width: 767px) {
   .site-nav-toggle {
@@ -1569,7 +1569,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f9ff0e;
+  background: #cbffff;
 }
 .links-of-blogroll {
   font-size: 13px;
