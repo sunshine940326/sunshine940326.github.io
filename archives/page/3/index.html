@@ -547,13 +547,12 @@
   
 
   
+  <a href="https://github.com/sunshine940326"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
 
-<a href="https://github.com/sunshine940326"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
-<canvas id="canvas"></canvas>
+  <div class="bg_content">
+        <canvas id="canvas"></canvas>
+  </div>
 <script>
-/**
- * Created by 晓倩 on 2017/4/3.
- */
 class Circle {
     //创建对象
     //以一个圆为对象
@@ -564,8 +563,8 @@ class Circle {
         this.x = x;
         this.y = y;
         this.r = Math.random() * 10 ;
-        this._mx = Math.random() * 2;
-        this._my = Math.random() * 2;
+        this._mx = Math.random() ;
+        this._my = Math.random() ;
 
     }
 
@@ -615,7 +614,7 @@ class currentCirle extends Circle {
         ctx.beginPath();
         //注释内容为鼠标焦点的地方圆圈半径变化
         //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
-        this.r = 5;
+        this.r = 8;
         ctx.arc(this.x, this.y, this.r, 0, 360);
         ctx.closePath();
         //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
@@ -658,7 +657,7 @@ let init = function (num) {
     }
     draw();
 }
-window.addEventListener('load', init(90));
+window.addEventListener('load', init(60));
 window.onmousemove = function (e) {
     e = e || window.event;
     current_circle.x = e.clientX;
