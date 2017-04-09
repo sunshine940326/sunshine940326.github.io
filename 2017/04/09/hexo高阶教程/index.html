@@ -1,0 +1,1224 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="git,hexo教程," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="#前言本篇文章是在已经搭建好gitpage+hexo的博客的前提下（不懂怎么搭建的可以参考我的另一篇博文：了解githubPages+hexo搭建博客的原理 或者利用Gitpage+hexo开发自己的博客，这两篇博文都比较详细的教大家最基础的怎么将博客搭建起来。本篇博文是使用next主题的进击版本，主要是有以下内容
+
+域名绑定，将github博客和你的独有域名绑定
+添加更多的menu内容
+添加头像">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能">
+<meta property="og:url" content="http://yoursite.com/2017/04/09/hexo高阶教程/index.html">
+<meta property="og:site_name" content="Cherry's Blog">
+<meta property="og:description" content="#前言本篇文章是在已经搭建好gitpage+hexo的博客的前提下（不懂怎么搭建的可以参考我的另一篇博文：了解githubPages+hexo搭建博客的原理 或者利用Gitpage+hexo开发自己的博客，这两篇博文都比较详细的教大家最基础的怎么将博客搭建起来。本篇博文是使用next主题的进击版本，主要是有以下内容
+
+域名绑定，将github博客和你的独有域名绑定
+添加更多的menu内容
+添加头像">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409220356907?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409132041051?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409141726073?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409142438270?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409165246422?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409143920151?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409151941047?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409152554707?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409153513929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409153837056?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409154335951?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409171442363?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409172519879?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409172733268?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409173222538?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409174107213?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170409180317491?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-04-09T15:18:12.835Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能">
+<meta name="twitter:description" content="#前言本篇文章是在已经搭建好gitpage+hexo的博客的前提下（不懂怎么搭建的可以参考我的另一篇博文：了解githubPages+hexo搭建博客的原理 或者利用Gitpage+hexo开发自己的博客，这两篇博文都比较详细的教大家最基础的怎么将博客搭建起来。本篇博文是使用next主题的进击版本，主要是有以下内容
+
+域名绑定，将github博客和你的独有域名绑定
+添加更多的menu内容
+添加头像">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170409220356907?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/09/hexo高阶教程/"/>
+
+
+
+
+
+  <title> hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能 | Cherry's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <a href="https://github.com/sunshine940326"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cherry's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">To Be a Batter Me</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            生活中的美好
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br />
+            
+            照片
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/09/hexo高阶教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-09T22:32:30+08:00">
+                2017-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/04/09/hexo高阶教程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/09/hexo高阶教程/" class="leancloud_visitors" data-flag-title="hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+               
+                     <span class="post-meta-item-icon">
+                       <i class="fa fa-edit"></i>
+                     </span>
+                 
+                     <span class="post-meta-item-text">字数统计</span>
+                       
+                     <span title="字数统计" }}">
+                       4,605 字
+                     </span>
+                  
+                 
+                  <span class="post-meta-divider">|</span>
+                 
+                 
+                 <span class="post-meta-item-icon">
+                     <i class="fa fa-clock-o"></i>
+                     </span>
+                 
+                      <span class="post-meta-item-text">阅读时长</span>
+                 
+                   <span title="阅读时长" }}">
+                 18 分钟
+                 </span>
+               
+            </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#前言<br>本篇文章是在已经搭建好gitpage+hexo的博客的前提下（不懂怎么搭建的可以参考我的另一篇博文：<a href="http://cherryblog.site/2017/02/26/%E4%BA%86%E8%A7%A3githubPages-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%8E%9F%E7%90%86/" target="_blank" rel="external">了解githubPages+hexo搭建博客的原理</a> 或者<a href="http://cherryblog.site/2016/09/16/%E5%88%A9%E7%94%A8Gitpage-hexo%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">利用Gitpage+hexo开发自己的博客</a>，这两篇博文都比较详细的教大家最基础的怎么将博客搭建起来。本篇博文是使用next主题的进击版本，主要是有以下内容</p>
+<ul>
+<li>域名绑定，将github博客和你的独有域名绑定</li>
+<li>添加更多的menu内容</li>
+<li>添加头像</li>
+<li>定义网站个性logo</li>
+<li>自定义样式，重写默认样式，个性化定制你的博客</li>
+<li>炫酷动态背景制作</li>
+<li>添加网易云音乐</li>
+<li>添加网易云跟帖</li>
+<li>添加leancloud阅读次数统计功能</li>
+<li>添加wordcount页面字数统计</li>
+<li>添加fork me on github功能</li>
+</ul>
+<p>要想最快的知道这些功能的效果，请移步我的个人博客：<a href="http://cherryblog.site/" target="_blank" rel="external">http://cherryblog.site/</a> ，顺便求个fork，大爷们看过可以评论一下，试一下新加上的网易云跟帖效果怎么样ヽ(●´ε｀●)ノ<br><a id="more"></a><br>首先要说一下我使用的版本，这个是很重要的，我的博客最先创建于2016年的9月份，距离现在已经有大半年了，所以好多版本都已经进行了更新，特别是next主题集成了更多的插件，简直不要太爽＼（＠￣∇￣＠）／</p>
+<blockquote>
+<p>hexo  v3.2.2<br>next  v5.1.0<br>node v4.5.0</p>
+</blockquote>
+<p>在改成自己想要的效果之后，对整体的hexo的next主题我有了一个大概的了解，其实next主题的最新版（5.1）已经集成了大部分我们需要的插件，只需要在主题配置文件中将默认的false改为true即可，但是我们也仍然需要知道都有哪些新的功能，最有效的方法是直接去查看官网的api：<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">next官网</a><img src="http://img.blog.csdn.net/20170409220356907?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<blockquote>
+<p>授之于鱼不如授之于渔<br>希望我们都能够理解其源码，制作出属于自己专属的个性化博客(•̀ᴗ•́)</p>
+</blockquote>
+<p> 我们需要改的文件其实也就那么几个，大部分是不需要更改，next都已经帮我们配置好了~<br> 默认目录结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── .deploy</div><div class="line">├── public</div><div class="line">├── scaffolds</div><div class="line">├── scripts</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">├── themes</div><div class="line">├── _config.yml</div><div class="line">└── package.json</div></pre></td></tr></table></figure></p>
+<ul>
+<li>deploy：执行hexo deploy命令部署到GitHub上的内容目录</li>
+<li>public：执行hexo generate命令，输出的静态网页内容目录</li>
+<li>scaffolds：layout模板文件目录，其中的md文件可以添加编辑</li>
+<li>scripts：扩展脚本目录，这里可以自定义一些javascript脚本</li>
+<li>source：文章源码目录，该目录下的markdown和html文件均会被hexo处理。该页面对应repo的根目录，404文件、favicon.ico文件，CNAME文件等都应该放这里，该目录下可新建页面目录。<ul>
+<li>drafts：草稿文章</li>
+<li>posts：发布文章</li>
+</ul>
+</li>
+<li>themes：主题文件目录</li>
+<li>_config.yml：全局配置文件，大多数的设置都在这里</li>
+<li>package.json：应用程序数据，指明hexo的版本等信息，类似于一般软件中的关于按钮</li>
+</ul>
+<p>我们最先修改的应该是在hexo根目录下的配置文件<code>_config.yml</code>文件，这里是配置整个站点的配置信息，在文章的最后贴出我的配置文件，有兴趣的朋友可以参考一下~<br> 其次就是我们的主题配置文件<br> 在对应的主题下的<code>_config.yml</code> 因为我使用的是next主题，所以目录的路径为<code>C:\Hexo\themes\next\_config.yml</code> 这里配置的是使用主题的配置文件，这个配置文件的东西就有点多了，我们大部分的修改也是在这个文件下完成的。比如说使用集成的第三方插件，默认为false，我们需要将其改为true并且配置相应的app_key就可以使用该插件了~有木有很方便(^ ◕ᴥ◕ ^)<br> 然后我们需要修改样式的话是需要设置css和甚至是修改模板，<br> 页面展现的全部逻辑都在每个主题中控制，源代码在hexo\themes\你使用的主题\中，以next主题为例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">├── .github            #git信息</div><div class="line">├── languages          #多语言</div><div class="line">|   ├── default.yml    #默认语言</div><div class="line">|   └── zh-Hans.yml      #简体中文</div><div class="line">|   └── zh-tw.yml      #繁体中文</div><div class="line">├── layout             #布局，根目录下的*.ejs文件是对主页，分页，存档等的控制</div><div class="line">|   ├── _custom        #可以自己修改的模板，覆盖原有模板</div><div class="line">|   |   ├── _header.swig    #头部样式</div><div class="line">|   |   ├── _sidebar.swig   #侧边栏样式</div><div class="line">|   ├── _macro        #可以自己修改的模板，覆盖原有模板</div><div class="line">|   |   ├── post.swig    #文章模板</div><div class="line">|   |   ├── reward.swig    #打赏模板</div><div class="line">|   |   ├── sidebar.swig   #侧边栏模板</div><div class="line">|   ├── _partial       #局部的布局</div><div class="line">|   |   ├── head       #头部模板</div><div class="line">|   |   ├── search     #搜索模板</div><div class="line">|   |   ├── share      #分享模板</div><div class="line">|   ├── _script        #局部的布局</div><div class="line">|   ├── _third-party   #第三方模板</div><div class="line">|   ├── _layout.swig   #主页面模板</div><div class="line">|   ├── index.swig     #主页面模板</div><div class="line">|   ├── page           #页面模板</div><div class="line">|   └── tag.swig       #tag模板</div><div class="line">├── scripts            #script源码</div><div class="line">|   ├── tags           #tags的script源码</div><div class="line">|   ├── marge.js       #页面模板</div><div class="line">├── source             #源码</div><div class="line">|   ├── css            #css源码</div><div class="line">|   |   ├── _common    #*.styl基础css</div><div class="line">|   |   ├── _custom    #*.styl局部css</div><div class="line">|   |   └── _mixins    #mixins的css</div><div class="line">|   ├── fonts          #字体</div><div class="line">|   ├── images         #图片</div><div class="line">|   ├── uploads        #添加的文件</div><div class="line">|   └── js             #javascript源代码</div><div class="line">├── _config.yml        #主题配置文件</div><div class="line">└── README.md          #用GitHub的都知道</div></pre></td></tr></table></figure></p>
+<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><p>绑定域名的思路如下：</p>
+<ul>
+<li>在万网购买自己喜欢的域名（.com的会贵一点，.site和.xyz的相对便宜一些，有的只需要几块钱一年就可以）</li>
+<li>解析DNS</li>
+<li>在hexo中添加CNAME文件</li>
+</ul>
+<h2 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h2><p>之前没有买域名的时候我想使用网易云跟帖，发现在注册网易云跟帖的时候使用原来的域名提示“url已被使用”，这是因为网易云跟帖不认可二级域名，所以要自己买域名。<br>我选择的是<a href="https://wanwang.aliyun.com/" target="_blank" rel="external">万网</a>，阿里下面的。我选择了一个<code>.site</code>的域名，原价8元，使用阿里云app支付还优惠5元，等于3元到手一个域名（一年）~<br>按照官网的步骤一步一来就可以了~</p>
+<h2 id="解析DNS"><a href="#解析DNS" class="headerlink" title="解析DNS"></a>解析DNS</h2><p>购买完域名之后我们需要解析DNS地址，在管理控制台中的左侧有域名选项，然后找到你的域名，点击后面的“解析”<br><img src="http://img.blog.csdn.net/20170409132041051?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>  点击添加解析，记录类型选A或CNAME，</p>
+<blockquote>
+<p>A记录的记录值就是ip地址，github(官方文档)提供了两个IP地址，192.30.252.153和192.30.252.154，这两个IP地址为github的服务器地址，两个都要填上，<br>解析记录设置两个www和@，线路就默认就行了，CNAME记录值填你的github博客网址。如我的是sunshine940326.github.io。</p>
+</blockquote>
+<h2 id="在hexo中添加CNAME文件"><a href="#在hexo中添加CNAME文件" class="headerlink" title="在hexo中添加CNAME文件"></a>在hexo中添加CNAME文件</h2><p>接下来在你的hexo文件夹下source文件夹下新建一个CANME文件,里面加上你刚刚购买的域名比如我的<code>cherryblog.site</code><br><img src="http://img.blog.csdn.net/20170409141726073?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>然后你就可以<code>hexo clean</code>,<code>hexo g</code>，<code>hexo d</code> 发布你的博客看看效果啦~<br><img src="http://img.blog.csdn.net/20170409142438270?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><strong>在这里我出现一个问题，就是单独输入域名是可以访问的，但是前面加上www之后就访问不聊了= =了，我感觉应该是可以的，但是不行，再等几天看看效果= =</strong> </p>
+<h1 id="添加菜单页"><a href="#添加菜单页" class="headerlink" title="添加菜单页"></a>添加菜单页</h1><p>添加菜单页的思路（添加菜单页就是添加一个页面，有两种方式）：第一种是使用git命令<code>hexo new page &quot;photo&quot;</code> 就直接创建了<code>C:\Hexo\source\photo\index.md</code>文件，然后编辑index.md 文件就可以了~<br><img src="http://img.blog.csdn.net/20170409165246422?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>第二种：手动创建上面的文件= =</p>
+<ul>
+<li>在主题的配置文件添加menu索引路径（根路径是hexo/source）,所以你如果想要更改页面的内容就去hexo/source下找到对应的文件夹，默认内容是在其index.md文件下</li>
+<li>在hexo的source文件下添加对应的文件夹</li>
+<li>在主题的配置文件添加menu_icon字段设置对应的icon</li>
+<li>修改language文件下zh-hans语言包</li>
+<li>在发表文章的时候添加对应的menu字段就可以看到</li>
+</ul>
+<p>刚开始的时候不理解怎么添加分类页和添加文章的区别，公司有一个项目用到了wordpress，然后发现两者有相似的地方，不同的就是wordpress是有可视化的操作后台，而hexo是需要git bash自己创建<strong>首先我们要分清什么是页面，什么是文章，</strong><br><strong>在hexo中menu下的内容都是新的页面</strong>我们可以通过<code>hexo new page &quot;pagename&quot;</code> 创建，hexo默认的页面只有<code>home</code>,<code>archives</code>,<code>tags</code> 三个，之后我们写的博文就是文章，通过<code>hexo new &quot;name&quot;</code> 创建的<code>name.md</code> 文件在根目录的<code>source\_posts</code> 下，在每一个文章的头部，我们可以配置其tags或者categories内容，相当于文章是页面的下一级 </p>
+<h2 id="在配置文件中添加menu索引路径"><a href="#在配置文件中添加menu索引路径" class="headerlink" title="在配置文件中添加menu索引路径"></a>在配置文件中添加menu索引路径</h2><p>我们可以在主题配置的_config文件下找到相应的字段，字段前加<code>#</code> 表示被注释掉，我们也可以自己添加menu的内容，比如我又新增了两个menu<code>life</code> 和<code>photo</code><br><img src="http://img.blog.csdn.net/20170409143920151?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>这里添加的字段其实是加上文件索引的路径，这里hexo设置的根路径是<code>hexo/source</code> 接下来我们在这个根路径下建立相应的文件夹就可以实现点击mune跳转到相应的页面上了<br><img src="http://img.blog.csdn.net/20170409151941047?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">,<br>没有明白什么意思的同学看下图</p>
+<h2 id="在source文件添加menu文件夹"><a href="#在source文件添加menu文件夹" class="headerlink" title="在source文件添加menu文件夹"></a>在source文件添加menu文件夹</h2><p>我们需要在这个路径下自己建立对应的页面，比如说我新建了menu<code>life</code> 和<code>photos</code>，然后再source文件夹下面新建两个名字为<code>life</code> 和<code>photo</code> 的文件夹，里面添加一个<code>index.md</code> markdown文件，内容是类似这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: photo</div><div class="line">date: 2017-04-04 22:14:07</div><div class="line">type: &quot;photo&quot;</div><div class="line">comments: false</div><div class="line">---</div><div class="line">啦啦啦~</div></pre></td></tr></table></figure></p>
+<p><img src="http://img.blog.csdn.net/20170409152554707?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>这是一个markdown文件，你可以自己编写，但是我还不知道怎么把添加html文件= =，回来研究一下</p>
+<h2 id="给menu添加icon"><a href="#给menu添加icon" class="headerlink" title="给menu添加icon"></a>给menu添加icon</h2><p>如果只是上面的步骤，那么你可能会创建出一个新的页面，但是显示的效果会是这样：<img src="http://img.blog.csdn.net/20170409153513929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>怎么icon没有换？？？其实hexo中换icon是一个很简单的事情，因为hexo集成了<code>FontAwsome</code> 所以我们只需要在主题的配置文件中加入相应的icon名字即可<br><img src="http://img.blog.csdn.net/20170409153837056?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="查找FontAwsome-icon"><a href="#查找FontAwsome-icon" class="headerlink" title="查找FontAwsome icon"></a>查找<code>FontAwsome</code> icon</h2><p> 这时候你想要换一个自己喜欢的icon怎么办，这就需要自己动手，丰衣足食了，你需要自己到<a href="http://www.bootcss.com/p/font-awesome/#" target="_blank" rel="external">FontAwsome官网</a>，然后鼠标往下拉，在图标集中选择自己喜欢的icon，然后记住名字，保存在上面的menu_icon字段中就可以啦~<br> <img src="http://img.blog.csdn.net/20170409154335951?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">tips ：在字段中只需要填写icon-name后面跟的name即可，不需要加上前面的”icon-“</p>
+<h2 id="在language添加zh-hans翻译字段"><a href="#在language添加zh-hans翻译字段" class="headerlink" title="在language添加zh-hans翻译字段"></a>在language添加zh-hans翻译字段</h2><p>上面的步骤完成之后你会发现，在你的博客首页显示的仍然是英文名，而我们想要有一个中文的名字，并且想要个性化定制我们的页面，我们可以在主题的language文件下的zh-hans（中文）语言包下增加相应的字段（做过翻译的童鞋应该都知道什么意思~）还可以修改其他的字段，这样就可以定制我们的博客了呢~<br> <img src="http://img.blog.csdn.net/20170409171442363?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="在发表文章的时候添加对应的menu字段"><a href="#在发表文章的时候添加对应的menu字段" class="headerlink" title="在发表文章的时候添加对应的menu字段"></a>在发表文章的时候添加对应的menu字段</h2><p>在我们写文章的时候只要在头部信息添加相应的字段就在tags页面和categories中显示相应的分类，例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Git使用中的报错情况</div><div class="line">date: 2017-03-11 23:54:11</div><div class="line">tags: [git,实战经验] </div><div class="line">categories: git</div><div class="line">---</div></pre></td></tr></table></figure></p>
+<p>tags、categories都是支持数组的形式的，可以添加多个tags、categories。这样我们在tags、categories页面就可以看见相应的分类了<br><img src="http://img.blog.csdn.net/20170409172519879?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h1 id="添加头像"><a href="#添加头像" class="headerlink" title="添加头像"></a>添加头像</h1><p>我使用的主题头像是位于侧边栏，显示的效果如下，<br><img src="http://img.blog.csdn.net/20170409172733268?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">要添加一个这个的头像要怎么操作呢，其实思路就是将你要上传的头像放在你的文件夹中，然后再配置文件中引用正确的路径即可，当然也可以上传绝对路径。在你的主题配置文件找到avatar字段，然后将你得图片路径写在后面，我是新建了一个uploads文件夹，将图片放在下面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Sidebar Avatar</div><div class="line"># in theme directory(source/images): /images/avatar.jpg</div><div class="line"># in site  directory(source/uploads): /uploads/avatar.jpg</div><div class="line">avatar: /uploads/avatar.png</div></pre></td></tr></table></figure></p>
+<p><img src="http://img.blog.csdn.net/20170409173222538?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h1 id="设置网站logo"><a href="#设置网站logo" class="headerlink" title="设置网站logo"></a>设置网站logo</h1><p>跟设置头像其实是一个思路，都是在配置文件中引入正确的地址就可以了，不过网站的logo是对图片有要求的，我们需要在<a href="http://tool.lu/favicon/" target="_blank" rel="external">Favicon在线制作</a>工具中制作32*32的.ico图片，然后放在source/images下面。然后在主题配置文件下添加主题配置文件中添加：<code>favicon: images/favicon.ico</code></p>
+<h1 id="自定义样式"><a href="#自定义样式" class="headerlink" title="自定义样式"></a>自定义样式</h1><p>不得不说next还是很人性化的，你可以个性化定制你的网站，你所有的改动（css）需要放在主题文件的source/css/_costum/costum.styl文件中，会覆盖原来的css，所以只要你不想要你修改的样式，只需要删除这个文件夹就可以了，再也不用担心还原不回去了~<br><img src="http://img.blog.csdn.net/20170409174107213?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h1 id="炫酷动态背景"><a href="#炫酷动态背景" class="headerlink" title="炫酷动态背景"></a>炫酷动态背景</h1><p>之前做过一个类似的canvas-nest的效果。新版本的next已经支持canvas-nest了，但是效果不怎么样，就不用了，但是也介绍一下，毕竟简单，只有两步就可以了。<br>添加修改代码<code>next/layout/_layout.swig</code>在<code>&lt;/body&gt;</code>之前加上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% if theme.canvas_nest %&#125;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
+<p>打开<code>next/_config.yml</code>，添加以下代码就可以了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> # Canvas-nest</div><div class="line">canvas_nest: true</div></pre></td></tr></table></figure></p>
+<p>这种虽然简单，但是我认为效果不够好，于是我决定添加原生的js来仿知乎的登录界面做背景，这就需要修改模板来实现了。首先我们要知道next文件的结构，这样我们想改什么就知道在什么位置了~<br><img src="http://img.blog.csdn.net/20170409180317491?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>所以我们需要在layout下面的<code>_layout.swig</code> 添加一个canvas<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;bg_content&quot;&gt;</div><div class="line">    &lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">``` </div><div class="line">然后使用原生js写一个仿知乎页面</div></pre></td></tr></table></figure></p>
+<p><script><br>class Circle {<br>    //创建对象<br>    //以一个圆为对象<br>    //设置随机的 x，y坐标，r半径，_mx，_my移动的距离<br>    //this.r是创建圆的半径，参数越大半径越大<br>    //this._mx,this._my是移动的距离，参数越大移动<br>    constructor(x, y) {<br>        this.x = x;<br>        this.y = y;<br>        this.r = Math.random() * 10 ;<br>        this._mx = Math.random() ;<br>        this._my = Math.random() ;</p>
+<pre><code>}
+
+//canvas 画圆和画直线
+//画圆就是正常的用canvas画一个圆
+//画直线是两个圆连线，为了避免直线过多，给圆圈距离设置了一个值，距离很远的圆圈，就不做连线处理
+drawCircle(ctx) {
+    ctx.beginPath();
+    //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
+    ctx.arc(this.x, this.y, this.r, 0, 360)
+    ctx.closePath();
+    ctx.fillStyle = &apos;rgba(204, 204, 204, 0.3)&apos;;
+    ctx.fill();
+}
+
+drawLine(ctx, _circle) {
+    let dx = this.x - _circle.x;
+    let dy = this.y - _circle.y;
+    let d = Math.sqrt(dx * dx + dy * dy)
+    if (d &lt; 150) {
+        ctx.beginPath();
+        //开始一条路径，移动到位置 this.x,this.y。创建到达位置 _circle.x,_circle.y 的一条线：
+        ctx.moveTo(this.x, this.y);   //起始点
+        ctx.lineTo(_circle.x, _circle.y);   //终点
+        ctx.closePath();
+        ctx.strokeStyle = &apos;rgba(204, 204, 204, 0.3)&apos;;
+        ctx.stroke();
+    }
+}
+
+// 圆圈移动
+// 圆圈移动的距离必须在屏幕范围内
+move(w, h) {
+    this._mx = (this.x &lt; w &amp;&amp; this.x &gt; 0) ? this._mx : (-this._mx);
+    this._my = (this.y &lt; h &amp;&amp; this.y &gt; 0) ? this._my : (-this._my);
+    this.x += this._mx / 2;
+    this.y += this._my / 2;
+}
+</code></pre><p>}<br>//鼠标点画圆闪烁变动<br>class currentCirle extends Circle {<br>    constructor(x, y) {<br>        super(x, y)<br>    }</p>
+<pre><code>drawCircle(ctx) {
+    ctx.beginPath();
+    //注释内容为鼠标焦点的地方圆圈半径变化
+    //this.r = (this.r &lt; 14 &amp;&amp; this.r &gt; 1) ? this.r + (Math.random() * 2 - 1) : 2;
+    this.r = 8;
+    ctx.arc(this.x, this.y, this.r, 0, 360);
+    ctx.closePath();
+    //ctx.fillStyle = &apos;rgba(0,0,0,&apos; + (parseInt(Math.random() * 100) / 100) + &apos;)&apos;
+    ctx.fillStyle = &apos;rgba(255, 77, 54, 0.3)&apos;
+    ctx.fill();
+
+}
+</code></pre><p>}<br>//更新页面用requestAnimationFrame替代setTimeout<br>window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;</p>
+<p>let canvas = document.getElementById(‘canvas’);<br>let ctx = canvas.getContext(‘2d’);<br>let w = canvas.width = canvas.offsetWidth;<br>let h = canvas.height = canvas.offsetHeight;<br>let circles = [];<br>let current_circle = new currentCirle(0, 0)</p>
+<p>let draw = function () {<br>    ctx.clearRect(0, 0, w, h);<br>    for (let i = 0; i &lt; circles.length; i++) {<br>        circles[i].move(w, h);<br>        circles[i].drawCircle(ctx);<br>        for (j = i + 1; j &lt; circles.length; j++) {<br>            circles[i].drawLine(ctx, circles[j])<br>        }<br>    }<br>    if (current_circle.x) {<br>        current_circle.drawCircle(ctx);<br>        for (var k = 1; k &lt; circles.length; k++) {<br>            current_circle.drawLine(ctx, circles[k])<br>        }<br>    }<br>    requestAnimationFrame(draw)<br>}</p>
+<p>let init = function (num) {<br>    for (var i = 0; i &lt; num; i++) {<br>        circles.push(new Circle(Math.random() <em> w, Math.random() </em> h));<br>    }<br>    draw();<br>}<br>window.addEventListener(‘load’, init(60));<br>window.onmousemove = function (e) {<br>    e = e || window.event;<br>    current_circle.x = e.clientX;<br>    current_circle.y = e.clientY;<br>}<br>window.onmouseout = function () {<br>    current_circle.x = null;<br>    current_circle.y = null;</p>
+<p>};<br></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 添加网易云音乐</div><div class="line">在知道了页面的结构之后，你就可以将你的播放器添加在页面的任意位置，开始我是放在了首页，然后发现一上来就自动播放太吵了，于是就放在了侧边栏，想要听得朋友可以手动点击播放，</div><div class="line">我们可以直接在网易云音乐中搜索我们想要插入的音乐，然后点击生成外链播放器</div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20170409181717791?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)</div><div class="line">然后可以根据你得设置生成相应的html代码，将获得的html代码插入到你想要插入的位置即可</div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20170409181941920?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)</div><div class="line">我放在了`layout/_macro/sidebar.swig` 文件下</div></pre></td></tr></table></figure></p>
+<p><div id="music163player"><br>    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66"><br>    </iframe><br></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">然后就可以在侧边栏看见我的播放器了~</div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20170409191354574?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)</div><div class="line"># 网易云跟帖</div><div class="line">之前用的是多说，但是多说在2017年6月1日就关闭评论服务了= =，很忧伤，于是转到了网易云跟帖。由于最新版（5.1）版本的next已经集成了网易云跟帖，所以只需要在主题的设置文件中配置你的productKey就可以了。获取productKey也很简单，在官网[网易云跟帖](https://manage.gentie.163.com/)中注册，然后在获取代码&gt;通用代码中拿到productKey，之后在你的主题配置文件中的gentie_productKey字段后添加即可~</div><div class="line">#添加Fork me on GitHub</div><div class="line">去网址https://github.com/blog/273-github-ribbons 挑选自己喜欢的样式，并复制代码，添加到themes\next\layout_layout.swig的body标签之内即可</div><div class="line">记得把里面的url换成自己的!</div><div class="line"># hexo-wordcount实现统计功能 </div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20170409212441592?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)</div><div class="line">wordcount可以实现字数统计，阅读时常还有总字数的统计功能</div><div class="line">只需要`npm install hexo-wordcount --save` 就可以安装wordcount插件，</div><div class="line">主要功能</div><div class="line">字数统计:WordCount</div><div class="line">阅读时长预计:Min2Read</div><div class="line">总字数统计: TotalCount</div><div class="line">安装完插件之后在主题的配置文件中开启该功能就可以~</div></pre></td></tr></table></figure></p>
+<h1 id="Post-wordcount-display-settings"><a href="#Post-wordcount-display-settings" class="headerlink" title="Post wordcount display settings"></a>Post wordcount display settings</h1><h1 id="Dependencies-https-github-com-willin-hexo-wordcount"><a href="#Dependencies-https-github-com-willin-hexo-wordcount" class="headerlink" title="Dependencies: https://github.com/willin/hexo-wordcount"></a>Dependencies: <a href="https://github.com/willin/hexo-wordcount" target="_blank" rel="external">https://github.com/willin/hexo-wordcount</a></h1><p>post_wordcount:<br>  item_text: true<br>  wordcount: true<br>  min2read: true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># leancloud阅读次数统计</div><div class="line">next也集成了leancloud，在[leancloud官网](https://leancloud.cn/)</div><div class="line">中注册账号等一步一步的操作就不说了哈~，我们主要是为了拿到app_key和app_id,然后在主题配置文件做一下配置</div></pre></td></tr></table></figure></p>
+<h1 id="Show-number-of-visitors-to-each-article"><a href="#Show-number-of-visitors-to-each-article" class="headerlink" title="Show number of visitors to each article."></a>Show number of visitors to each article.</h1><h1 id="You-can-visit-https-leancloud-cn-get-AppID-and-AppKey"><a href="#You-can-visit-https-leancloud-cn-get-AppID-and-AppKey" class="headerlink" title="You can visit https://leancloud.cn get AppID and AppKey."></a>You can visit <a href="https://leancloud.cn" target="_blank" rel="external">https://leancloud.cn</a> get AppID and AppKey.</h1><p>leancloud_visitors:<br>  enable: true<br>  app_id: yourapp_id<br>  app_key: yourapp_key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">然后再leancloud的控制台中的存储添加一个counter的class就可以检测到我们的浏览量了，同时在你文章的副标题也可以看到有阅读次数的显示</div><div class="line">![这里写图片描述](http://img.blog.csdn.net/20170409213510970?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)</div><div class="line"></div><div class="line"># 个人网站地址：http://cherryblog.site/，顺便求个fork</div><div class="line"># 附录1：站点配置文件</div></pre></td></tr></table></figure></p>
+<h1 id="Hexo-Configuration"><a href="#Hexo-Configuration" class="headerlink" title="Hexo Configuration"></a>Hexo Configuration</h1><h2 id="Docs-https-hexo-io-docs-configuration-html"><a href="#Docs-https-hexo-io-docs-configuration-html" class="headerlink" title="Docs: https://hexo.io/docs/configuration.html"></a>Docs: <a href="https://hexo.io/docs/configuration.html" target="_blank" rel="external">https://hexo.io/docs/configuration.html</a></h2><h2 id="Source-https-github-com-hexojs-hexo"><a href="#Source-https-github-com-hexojs-hexo" class="headerlink" title="Source: https://github.com/hexojs/hexo/"></a>Source: <a href="https://github.com/hexojs/hexo/" target="_blank" rel="external">https://github.com/hexojs/hexo/</a></h2><h1 id="Site-站点信息"><a href="#Site-站点信息" class="headerlink" title="Site   站点信息"></a>Site   站点信息</h1><p>title: Cherry’s Blog    #站点名字<br>subtitle: To Be a Batter Me  #副标题<br>description: 做更好的自己   #站点描述，在侧边栏显示<br>author: Cherry   #博主名字<br>email: 991939332@qq.com #联系邮箱<br>language: zh-Hans   #使用的语言包，语言包在主题文件的language文件夹下，可以更改网站显示出的文案<br>timezone:</p>
+<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><h2 id="If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘"><a href="#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘" class="headerlink" title="If your site is put in a subdirectory, set url as ‘http://yoursite.com/child‘ and root as ‘/child/‘"></a>If your site is put in a subdirectory, set url as ‘<a href="http://yoursite.com/child">http://yoursite.com/child</a>‘ and root as ‘/child/‘</h2><p>url: <a href="http://yoursite.com">http://yoursite.com</a><br>root: /<br>permalink: :year/:month/:day/:title/<br>permalink_defaults:</p>
+<h1 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h1><p>source_dir: source<br>public_dir: public<br>tag_dir: tags<br>archive_dir: archives<br>category_dir: categories<br>code_dir: downloads/code<br>i18n_dir: :lang<br>skip_render:</p>
+<h1 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h1><p>new_post_name: :title.md # File name of new posts<br>default_layout: post<br>titlecase: false # Transform title into titlecase<br>external_link: true # Open external links in new tab<br>filename_case: 0<br>render_drafts: false<br>post_asset_folder: true  #新建一个页面后自动生成一个同名文件夹（默认为false）<br>relative_link: false<br>future: true<br>highlight:<br>  enable: true<br>  line_number: true<br>  auto_detect: false<br>  tab_replace:</p>
+<h1 id="Category-amp-Tag"><a href="#Category-amp-Tag" class="headerlink" title="Category &amp; Tag"></a>Category &amp; Tag</h1><p>default_category: uncategorized<br>category_map:<br>tag_map:</p>
+<h1 id="Date-Time-format"><a href="#Date-Time-format" class="headerlink" title="Date / Time format"></a>Date / Time format</h1><h2 id="Hexo-uses-Moment-js-to-parse-and-display-date"><a href="#Hexo-uses-Moment-js-to-parse-and-display-date" class="headerlink" title="Hexo uses Moment.js to parse and display date"></a>Hexo uses Moment.js to parse and display date</h2><h2 id="You-can-customize-the-date-format-as-defined-in"><a href="#You-can-customize-the-date-format-as-defined-in" class="headerlink" title="You can customize the date format as defined in"></a>You can customize the date format as defined in</h2><h2 id="http-momentjs-com-docs-displaying-format"><a href="#http-momentjs-com-docs-displaying-format" class="headerlink" title="http://momentjs.com/docs/#/displaying/format/"></a><a href="http://momentjs.com/docs/#/displaying/format/" target="_blank" rel="external">http://momentjs.com/docs/#/displaying/format/</a></h2><p>date_format: YYYY-MM-DD<br>time_format: HH:mm:ss</p>
+<h1 id="Pagination"><a href="#Pagination" class="headerlink" title="Pagination"></a>Pagination</h1><h2 id="Set-per-page-to-0-to-disable-pagination"><a href="#Set-per-page-to-0-to-disable-pagination" class="headerlink" title="Set per_page to 0 to disable pagination"></a>Set per_page to 0 to disable pagination</h2><p>per_page: 10<br>pagination_dir: page</p>
+<h1 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h1><h2 id="Plugins-https-hexo-io-plugins"><a href="#Plugins-https-hexo-io-plugins" class="headerlink" title="Plugins: https://hexo.io/plugins/"></a>Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="external">https://hexo.io/plugins/</a></h2><h2 id="Themes-https-hexo-io-themes"><a href="#Themes-https-hexo-io-themes" class="headerlink" title="Themes: https://hexo.io/themes/"></a>Themes: <a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a></h2><p>theme: next</p>
+<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">https://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>  type: git<br>  repository: <a href="https://github.com/sunshine940326/sunshine940326.github.io.git" target="_blank" rel="external">https://github.com/sunshine940326/sunshine940326.github.io.git</a></p>
+<p>  #repository: ssh://git@github.com/sunshine940326/sunshine940326.github.io<br>```</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+            <a href="/tags/hexo教程/" rel="tag"># hexo教程</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/28/移动端调试方法/" rel="next" title="移动端调试方法">
+                <i class="fa fa-chevron-left"></i> 移动端调试方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/09/hexo之next主题优化/" rel="prev" title="hexo之next主题优化">
+                hexo之next主题优化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Cherry" />
+          <p class="site-author-name" itemprop="name">Cherry</p>
+           
+              <p class="site-description motion-element" itemprop="description">做更好的自己</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/sunshine940326" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5094854684/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定域名"><span class="nav-number">1.</span> <span class="nav-text">绑定域名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#购买域名"><span class="nav-number">1.1.</span> <span class="nav-text">购买域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析DNS"><span class="nav-number">1.2.</span> <span class="nav-text">解析DNS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在hexo中添加CNAME文件"><span class="nav-number">1.3.</span> <span class="nav-text">在hexo中添加CNAME文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加菜单页"><span class="nav-number">2.</span> <span class="nav-text">添加菜单页</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在配置文件中添加menu索引路径"><span class="nav-number">2.1.</span> <span class="nav-text">在配置文件中添加menu索引路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在source文件添加menu文件夹"><span class="nav-number">2.2.</span> <span class="nav-text">在source文件添加menu文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给menu添加icon"><span class="nav-number">2.3.</span> <span class="nav-text">给menu添加icon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找FontAwsome-icon"><span class="nav-number">2.4.</span> <span class="nav-text">查找FontAwsome icon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在language添加zh-hans翻译字段"><span class="nav-number">2.5.</span> <span class="nav-text">在language添加zh-hans翻译字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在发表文章的时候添加对应的menu字段"><span class="nav-number">2.6.</span> <span class="nav-text">在发表文章的时候添加对应的menu字段</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加头像"><span class="nav-number">3.</span> <span class="nav-text">添加头像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置网站logo"><span class="nav-number">4.</span> <span class="nav-text">设置网站logo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义样式"><span class="nav-number">5.</span> <span class="nav-text">自定义样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#炫酷动态背景"><span class="nav-number">6.</span> <span class="nav-text">炫酷动态背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Post-wordcount-display-settings"><span class="nav-number">7.</span> <span class="nav-text">Post wordcount display settings</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dependencies-https-github-com-willin-hexo-wordcount"><span class="nav-number">8.</span> <span class="nav-text">Dependencies: https://github.com/willin/hexo-wordcount</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Show-number-of-visitors-to-each-article"><span class="nav-number">9.</span> <span class="nav-text">Show number of visitors to each article.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#You-can-visit-https-leancloud-cn-get-AppID-and-AppKey"><span class="nav-number">10.</span> <span class="nav-text">You can visit https://leancloud.cn get AppID and AppKey.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-Configuration"><span class="nav-number">11.</span> <span class="nav-text">Hexo Configuration</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docs-https-hexo-io-docs-configuration-html"><span class="nav-number">11.1.</span> <span class="nav-text">Docs: https://hexo.io/docs/configuration.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-https-github-com-hexojs-hexo"><span class="nav-number">11.2.</span> <span class="nav-text">Source: https://github.com/hexojs/hexo/</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Site-站点信息"><span class="nav-number">12.</span> <span class="nav-text">Site   站点信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#URL"><span class="nav-number">13.</span> <span class="nav-text">URL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘"><span class="nav-number">13.1.</span> <span class="nav-text">If your site is put in a subdirectory, set url as ‘http://yoursite.com/child‘ and root as ‘/child/‘</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Directory"><span class="nav-number">14.</span> <span class="nav-text">Directory</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Writing"><span class="nav-number">15.</span> <span class="nav-text">Writing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Category-amp-Tag"><span class="nav-number">16.</span> <span class="nav-text">Category & Tag</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Date-Time-format"><span class="nav-number">17.</span> <span class="nav-text">Date / Time format</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-uses-Moment-js-to-parse-and-display-date"><span class="nav-number">17.1.</span> <span class="nav-text">Hexo uses Moment.js to parse and display date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#You-can-customize-the-date-format-as-defined-in"><span class="nav-number">17.2.</span> <span class="nav-text">You can customize the date format as defined in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http-momentjs-com-docs-displaying-format"><span class="nav-number">17.3.</span> <span class="nav-text">http://momentjs.com/docs/#/displaying/format/</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pagination"><span class="nav-number">18.</span> <span class="nav-text">Pagination</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-per-page-to-0-to-disable-pagination"><span class="nav-number">18.1.</span> <span class="nav-text">Set per_page to 0 to disable pagination</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Extensions"><span class="nav-number">19.</span> <span class="nav-text">Extensions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Plugins-https-hexo-io-plugins"><span class="nav-number">19.1.</span> <span class="nav-text">Plugins: https://hexo.io/plugins/</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Themes-https-hexo-io-themes"><span class="nav-number">19.2.</span> <span class="nav-text">Themes: https://hexo.io/themes/</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deployment"><span class="nav-number">20.</span> <span class="nav-text">Deployment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docs-https-hexo-io-docs-deployment-html"><span class="nav-number">20.1.</span> <span class="nav-text">Docs: https://hexo.io/docs/deployment.html</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+    <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66"></iframe>
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cherry</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "8e7fb6982ddb4d13ad9daf445e511984",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("SXu3fAQtWilv2Jtsr5eHvgCH-gzGzoHsz", "R79G2KT1xhiu9Ngp3Dnjsn7k");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+
+  <div class="bg_content">
+          <canvas id="canvas"></canvas>
+    </div>
+  <script>
+  class Circle {
+      //创建对象
+      //以一个圆为对象
+      //设置随机的 x，y坐标，r半径，_mx，_my移动的距离
+      //this.r是创建圆的半径，参数越大半径越大
+      //this._mx,this._my是移动的距离，参数越大移动
+      constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.r = Math.random() * 10 ;
+          this._mx = Math.random() ;
+          this._my = Math.random() ;
+
+      }
+
+      //canvas 画圆和画直线
+      //画圆就是正常的用canvas画一个圆
+      //画直线是两个圆连线，为了避免直线过多，给圆圈距离设置了一个值，距离很远的圆圈，就不做连线处理
+      drawCircle(ctx) {
+          ctx.beginPath();
+          //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
+          ctx.arc(this.x, this.y, this.r, 0, 360)
+          ctx.closePath();
+          ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
+          ctx.fill();
+      }
+
+      drawLine(ctx, _circle) {
+          let dx = this.x - _circle.x;
+          let dy = this.y - _circle.y;
+          let d = Math.sqrt(dx * dx + dy * dy)
+          if (d < 150) {
+              ctx.beginPath();
+              //开始一条路径，移动到位置 this.x,this.y。创建到达位置 _circle.x,_circle.y 的一条线：
+              ctx.moveTo(this.x, this.y);   //起始点
+              ctx.lineTo(_circle.x, _circle.y);   //终点
+              ctx.closePath();
+              ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+              ctx.stroke();
+          }
+      }
+
+      // 圆圈移动
+      // 圆圈移动的距离必须在屏幕范围内
+      move(w, h) {
+          this._mx = (this.x < w && this.x > 0) ? this._mx : (-this._mx);
+          this._my = (this.y < h && this.y > 0) ? this._my : (-this._my);
+          this.x += this._mx / 2;
+          this.y += this._my / 2;
+      }
+  }
+  //鼠标点画圆闪烁变动
+  class currentCirle extends Circle {
+      constructor(x, y) {
+          super(x, y)
+      }
+
+      drawCircle(ctx) {
+          ctx.beginPath();
+          //注释内容为鼠标焦点的地方圆圈半径变化
+          //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
+          this.r = 8;
+          ctx.arc(this.x, this.y, this.r, 0, 360);
+          ctx.closePath();
+          //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
+          ctx.fillStyle = 'rgba(255, 77, 54, 0.3)'
+          ctx.fill();
+
+      }
+  }
+  //更新页面用requestAnimationFrame替代setTimeout
+  window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+  let canvas = document.getElementById('canvas');
+  let ctx = canvas.getContext('2d');
+  let w = canvas.width = canvas.offsetWidth;
+  let h = canvas.height = canvas.offsetHeight;
+  let circles = [];
+  let current_circle = new currentCirle(0, 0)
+
+  let draw = function () {
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < circles.length; i++) {
+          circles[i].move(w, h);
+          circles[i].drawCircle(ctx);
+          for (j = i + 1; j < circles.length; j++) {
+              circles[i].drawLine(ctx, circles[j])
+          }
+      }
+      if (current_circle.x) {
+          current_circle.drawCircle(ctx);
+          for (var k = 1; k < circles.length; k++) {
+              current_circle.drawLine(ctx, circles[k])
+          }
+      }
+      requestAnimationFrame(draw)
+  }
+
+  let init = function (num) {
+      for (var i = 0; i < num; i++) {
+          circles.push(new Circle(Math.random() * w, Math.random() * h));
+      }
+      draw();
+  }
+  window.addEventListener('load', init(60));
+  window.onmousemove = function (e) {
+      e = e || window.event;
+      current_circle.x = e.clientX;
+      current_circle.y = e.clientY;
+  }
+  window.onmouseout = function () {
+      current_circle.x = null;
+      current_circle.y = null;
+
+  };
+  </script>
+</body>
+</html>
