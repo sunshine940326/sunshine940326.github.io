@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/16/利用Gitpage-hexo开发自己的博客/index.html">
 <meta property="og:site_name" content="Cherry's Blog">
 <meta property="og:description" content="进入程序员这个坑之后就开始自己在网上扒资料，然而资料太多，情况太复杂，主要是看见别人的博客，感觉好高大上，并且感觉在茫茫的互联网有自己的小天地感觉也是极好的。不是为了给别人看，而是为了 记录自己的成长，记录自己的每一个脚印。">
-<meta property="og:updated_time" content="2017-02-26T11:33:53.985Z">
+<meta property="og:updated_time" content="2017-04-09T14:29:05.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Gitpage+hexo开发自己的博客">
 <meta name="twitter:description" content="进入程序员这个坑之后就开始自己在网上扒资料，然而资料太多，情况太复杂，主要是看见别人的博客，感觉好高大上，并且感觉在茫茫的互联网有自己的小天地感觉也是极好的。不是为了给别人看，而是为了 记录自己的成长，记录自己的每一个脚印。">
@@ -376,6 +376,17 @@
 
           
           
+             <span id="/2016/09/16/利用Gitpage-hexo开发自己的博客/" class="leancloud_visitors" data-flag-title="利用Gitpage+hexo开发自己的博客">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -389,7 +400,7 @@
                      <span class="post-meta-item-text">字数统计</span>
                        
                      <span title="字数统计" }}">
-                       6,618 字  
+                       6,618 字
                      </span>
                   
                  
@@ -565,7 +576,7 @@
 <p>192.30.252.154</p>
 <h2 id="制作ICO图标"><a href="#制作ICO图标" class="headerlink" title="制作ICO图标"></a>制作ICO图标</h2><p>favicon.ico一般用于作为缩略图的网站标志，<a href="http://www.bitbug.net/" target="_blank" rel="external">在线制作网站</a><br>关于是否绑定域名</p>
 <p>经过这几天的试用，关于是否绑定域名，发表一下自己的看法，如果你仅仅是使用个人主页来托管个人博客。绑定与否看你自己的想法，如果你还想使用github的项目主页来展示平时写的一些小练习demo，那我劝你不要绑定个人域名了，关于如何使用github的项目主页，请参考<a href="http://chitanda.me/2015/11/03/multiple-git-pages-in-one-github-account/" target="_blank" rel="external">单个GitHub帐号下添加多个GitHub Pages的相关问题</a>,这样你就可以直接在需要展示的项目下添加gh-pages分支，然后通过访问“用户名。github.io/项目名/*.html”来查看页面展示效果了。这多方便，不用自己在上传云空间了，省去了一堆麻烦事！</p>
-<p>##至此，基本操作介绍完毕，以下内容普通用户无需了解。<br>默认目录结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── .deploy</div><div class="line">├── public</div><div class="line">├── scaffolds</div><div class="line">├── scripts</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">├── themes</div><div class="line">├── _config.yml</div><div class="line">└── package.json</div></pre></td></tr></table></figure></p>
+<p>#至此，基本操作介绍完毕，以下内容普通用户无需了解。<br>默认目录结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── .deploy</div><div class="line">├── public</div><div class="line">├── scaffolds</div><div class="line">├── scripts</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">├── themes</div><div class="line">├── _config.yml</div><div class="line">└── package.json</div></pre></td></tr></table></figure></p>
 <ul>
 <li>deploy：执行hexo deploy命令部署到GitHub上的内容目录</li>
 <li>public：执行hexo generate命令，输出的静态网页内容目录</li>
@@ -1035,6 +1046,113 @@
 
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("SXu3fAQtWilv2Jtsr5eHvgCH-gzGzoHsz", "R79G2KT1xhiu9Ngp3Dnjsn7k");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
