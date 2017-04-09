@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f7d7ff;
+  background: #033444;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2627,4 +2627,12 @@ body {
   -ms-transform: rotate(360deg) scale(1.1);
   -o-transform: rotate(360deg) scale(1.1);
   transform: rotate(360deg) scale(1.1);
+}
+@media (max-width: 767px) {
+  .site-nav-toggle {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 }
