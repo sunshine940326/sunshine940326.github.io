@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -27,9 +27,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -63,9 +66,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -77,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico?v=5.1.0" />
 
 
 
@@ -96,43 +99,48 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: undefined,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
-  <title> Cherry's Blog </title>
 
+
+
+
+  <title> Cherry's Blog </title>
 </head>
+
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?4fade18130461235bfeaf88602c6e688";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
+
+
+
 
 
 
@@ -146,31 +154,35 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Cherry's Blog</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cherry's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">To Be a Batter Me</p>
+      
   </div>
-  <p class="site-subtitle">To Be a Batter Me</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -257,6 +269,8 @@
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -270,13 +284,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/07/javascript模块化编程（二）：js模块化的发展史/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
 
     
       <header class="post-header">
@@ -298,26 +322,36 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <span></span>
-            <time itemprop="dateCreated" datetime="2017-03-07T23:04:40+08:00" content="2017-03-07">
-              2017-03-07
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T23:04:40+08:00">
+                2017-03-07
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/js/" itemprop="url" rel="index">
                     <span itemprop="name">js</span>
                   </a>
@@ -325,7 +359,6 @@
 
                 
                 
-
               
             </span>
           
@@ -335,37 +368,14 @@
           
 
           
+          
 
           
-                    
-                       <span id="/2017/03/07/javascript模块化编程（二）：js模块化的发展史/" class="leancloud_visitors" data-flag-title="javascript模块化编程（二）：js模块化发展史">
-
-                         <span class="post-meta-item-icon">
-                           <i class="fa fa-eye"></i>
-                         </span>
-                         <span class="post-meta-item-text">阅读次数 </span>
-                         <span class="leancloud-visitors-count"></span>
-                        </span>
-                    
-
-
-          <div class="post-wordcount">
-             <span class="post-meta-item-icon">
-                <i class="fa fa-edit"></i>
-             </span>
-             <span class="post-count">字数统计2,284字
-             </span>
-
-             <span class="post-meta-divider">&nbsp; | &nbsp;</span>
-
-             <span class="post-meta-item-icon">
-                 <i class="fa fa-clock-o"></i>
-             </span>
-             <span class="post-count">阅读时长9分钟
-             </span>
-          </div>
 
           
+
+          
+
         </div>
       </header>
     
@@ -379,12 +389,18 @@
       
         
           <p>在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下javascrip的模块化发展史，主要是commonJS、AMD和应用AMD的requireJS、CMD和应用CMD的seaJS（不过现在seaJS貌似用的人挺少的，就不详细说明了）<br>
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/03/07/javascript模块化编程（二）：js模块化的发展史/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -402,6 +418,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -413,13 +431,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/07/Javascript模块化编程（一）：初识js模块化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
 
     
       <header class="post-header">
@@ -441,26 +469,36 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <span></span>
-            <time itemprop="dateCreated" datetime="2017-03-07T22:40:16+08:00" content="2017-03-07">
-              2017-03-07
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T22:40:16+08:00">
+                2017-03-07
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/js/" itemprop="url" rel="index">
                     <span itemprop="name">js</span>
                   </a>
@@ -468,7 +506,6 @@
 
                 
                 
-
               
             </span>
           
@@ -478,37 +515,14 @@
           
 
           
+          
 
           
-                    
-                       <span id="/2017/03/07/Javascript模块化编程（一）：初识js模块化/" class="leancloud_visitors" data-flag-title="Javascript模块化编程（一）：模块的写法">
-
-                         <span class="post-meta-item-icon">
-                           <i class="fa fa-eye"></i>
-                         </span>
-                         <span class="post-meta-item-text">阅读次数 </span>
-                         <span class="leancloud-visitors-count"></span>
-                        </span>
-                    
-
-
-          <div class="post-wordcount">
-             <span class="post-meta-item-icon">
-                <i class="fa fa-edit"></i>
-             </span>
-             <span class="post-count">字数统计921字
-             </span>
-
-             <span class="post-meta-divider">&nbsp; | &nbsp;</span>
-
-             <span class="post-meta-item-icon">
-                 <i class="fa fa-clock-o"></i>
-             </span>
-             <span class="post-count">阅读时长3分钟
-             </span>
-          </div>
 
           
+
+          
+
         </div>
       </header>
     
@@ -522,12 +536,18 @@
       
         
           <p>不得不说现在“前端”的知识点实在是太多了，(ಥ<em>ಥ)<br>就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥ</em>ಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成</p>
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/03/07/Javascript模块化编程（一）：初识js模块化/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -545,6 +565,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -556,13 +578,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/06/面试题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
 
     
       <header class="post-header">
@@ -584,26 +616,36 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <span></span>
-            <time itemprop="dateCreated" datetime="2017-03-06T23:15:56+08:00" content="2017-03-06">
-              2017-03-06
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-06T23:15:56+08:00">
+                2017-03-06
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/面试题库/" itemprop="url" rel="index">
                     <span itemprop="name">面试题库</span>
                   </a>
@@ -611,7 +653,6 @@
 
                 
                 
-
               
             </span>
           
@@ -621,37 +662,14 @@
           
 
           
+          
 
           
-                    
-                       <span id="/2017/03/06/面试题/" class="leancloud_visitors" data-flag-title="前端面试">
-
-                         <span class="post-meta-item-icon">
-                           <i class="fa fa-eye"></i>
-                         </span>
-                         <span class="post-meta-item-text">阅读次数 </span>
-                         <span class="leancloud-visitors-count"></span>
-                        </span>
-                    
-
-
-          <div class="post-wordcount">
-             <span class="post-meta-item-icon">
-                <i class="fa fa-edit"></i>
-             </span>
-             <span class="post-count">字数统计1,809字
-             </span>
-
-             <span class="post-meta-divider">&nbsp; | &nbsp;</span>
-
-             <span class="post-meta-item-icon">
-                 <i class="fa fa-clock-o"></i>
-             </span>
-             <span class="post-count">阅读时长7分钟
-             </span>
-          </div>
 
           
+
+          
+
         </div>
       </header>
     
@@ -665,12 +683,18 @@
       
         
           <p>最近准备找工作受受刺激好好学习= =，趁着现在有些问题还能想起来记录一下<br>某在线教育网站前端岗位面试和某金融公司面试题，总得来说前者理论性的东西问的更多一点，可以很清楚的了解你的实力，后者问的开放性的问题比较多一点，大部分都是问什么什么你用过吗，而不是去问是咸的原理</p>
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/03/06/面试题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -688,6 +712,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -699,13 +725,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/02/自律才能自由/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
 
     
       <header class="post-header">
@@ -727,26 +763,36 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <span></span>
-            <time itemprop="dateCreated" datetime="2017-03-02T21:55:57+08:00" content="2017-03-02">
-              2017-03-02
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-02T21:55:57+08:00">
+                2017-03-02
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/随笔/" itemprop="url" rel="index">
                     <span itemprop="name">随笔</span>
                   </a>
@@ -754,7 +800,6 @@
 
                 
                 
-
               
             </span>
           
@@ -764,37 +809,14 @@
           
 
           
+          
 
           
-                    
-                       <span id="/2017/03/02/自律才能自由/" class="leancloud_visitors" data-flag-title="自律才能自由">
-
-                         <span class="post-meta-item-icon">
-                           <i class="fa fa-eye"></i>
-                         </span>
-                         <span class="post-meta-item-text">阅读次数 </span>
-                         <span class="leancloud-visitors-count"></span>
-                        </span>
-                    
-
-
-          <div class="post-wordcount">
-             <span class="post-meta-item-icon">
-                <i class="fa fa-edit"></i>
-             </span>
-             <span class="post-count">字数统计865字
-             </span>
-
-             <span class="post-meta-divider">&nbsp; | &nbsp;</span>
-
-             <span class="post-meta-item-icon">
-                 <i class="fa fa-clock-o"></i>
-             </span>
-             <span class="post-count">阅读时长3分钟
-             </span>
-          </div>
 
           
+
+          
+
         </div>
       </header>
     
@@ -808,12 +830,18 @@
       
         
           <p>我们公司每个周五都要做一个分享会，这个周五轮到我了，/(ㄒoㄒ)/~~<br>因为要演讲20分钟左右的时间，考虑了下最终决定主题是“自律才有自由”</p>
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/03/02/自律才能自由/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -831,6 +859,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -842,13 +872,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/02/react（二）：用实例认识react/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
 
     
       <header class="post-header">
@@ -870,26 +910,36 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <span></span>
-            <time itemprop="dateCreated" datetime="2017-03-02T21:34:44+08:00" content="2017-03-02">
-              2017-03-02
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-02T21:34:44+08:00">
+                2017-03-02
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
                     <span itemprop="name">react</span>
                   </a>
@@ -897,7 +947,6 @@
 
                 
                 
-
               
             </span>
           
@@ -907,37 +956,14 @@
           
 
           
+          
 
           
-                    
-                       <span id="/2017/03/02/react（二）：用实例认识react/" class="leancloud_visitors" data-flag-title="react（二）：用实例认识react">
-
-                         <span class="post-meta-item-icon">
-                           <i class="fa fa-eye"></i>
-                         </span>
-                         <span class="post-meta-item-text">阅读次数 </span>
-                         <span class="leancloud-visitors-count"></span>
-                        </span>
-                    
-
-
-          <div class="post-wordcount">
-             <span class="post-meta-item-icon">
-                <i class="fa fa-edit"></i>
-             </span>
-             <span class="post-count">字数统计4,196字
-             </span>
-
-             <span class="post-meta-divider">&nbsp; | &nbsp;</span>
-
-             <span class="post-meta-item-icon">
-                 <i class="fa fa-clock-o"></i>
-             </span>
-             <span class="post-count">阅读时长18分钟
-             </span>
-          </div>
 
           
+
+          
+
         </div>
       </header>
     
@@ -951,12 +977,18 @@
       
         
           <p>昨天在认识了什么是react之后，今天开始用代码来写一些demo，跟着慕课网的视频一起写demo发现运行不出来，找其原因是视频太老了，react已经更新换代了，摔！！<br>然后跟着阮一峰老师一起写12个demo，阮一峰老师的教程：<a href="http://note.youdao.com/http://www.ruanyifeng.com/blog/2015/03/react.html">React 入门实例教程</a>，希望大家可以看一下老师写的demo<br><a href="https://github.com/sunshine940326/reactDemo/tree/master">github地址</a>，求fork，求star，(～￣▽￣)～<br>
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/03/02/react（二）：用实例认识react/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -974,6 +1006,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -985,13 +1019,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/01/react（一）：初识react/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
 
     
       <header class="post-header">
@@ -1013,26 +1057,36 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <span></span>
-            <time itemprop="dateCreated" datetime="2017-03-01T22:01:40+08:00" content="2017-03-01">
-              2017-03-01
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-01T22:01:40+08:00">
+                2017-03-01
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
                     <span itemprop="name">react</span>
                   </a>
@@ -1040,7 +1094,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1050,37 +1103,14 @@
           
 
           
+          
 
           
-                    
-                       <span id="/2017/03/01/react（一）：初识react/" class="leancloud_visitors" data-flag-title="react（一）：初识react">
-
-                         <span class="post-meta-item-icon">
-                           <i class="fa fa-eye"></i>
-                         </span>
-                         <span class="post-meta-item-text">阅读次数 </span>
-                         <span class="leancloud-visitors-count"></span>
-                        </span>
-                    
-
-
-          <div class="post-wordcount">
-             <span class="post-meta-item-icon">
-                <i class="fa fa-edit"></i>
-             </span>
-             <span class="post-count">字数统计635字
-             </span>
-
-             <span class="post-meta-divider">&nbsp; | &nbsp;</span>
-
-             <span class="post-meta-item-icon">
-                 <i class="fa fa-clock-o"></i>
-             </span>
-             <span class="post-count">阅读时长2分钟
-             </span>
-          </div>
 
           
+
+          
+
         </div>
       </header>
     
@@ -1094,12 +1124,18 @@
       
         
           <p>这里只是读书笔记，因为刚开始接触react，概况的说一下什么是react，并且使用react完成hello world</p>
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/03/01/react（一）：初识react/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1117,6 +1153,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1128,13 +1166,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/26/了解githubPages-hexo搭建博客的原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
 
     
       <header class="post-header">
@@ -1156,26 +1204,36 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <span></span>
-            <time itemprop="dateCreated" datetime="2017-02-26T14:30:15+08:00" content="2017-02-26">
-              2017-02-26
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-26T14:30:15+08:00">
+                2017-02-26
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/git/" itemprop="url" rel="index">
                     <span itemprop="name">git</span>
                   </a>
@@ -1183,7 +1241,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1193,37 +1250,14 @@
           
 
           
+          
 
           
-                    
-                       <span id="/2017/02/26/了解githubPages-hexo搭建博客的原理/" class="leancloud_visitors" data-flag-title="了解githubPages+hexo搭建博客的原理">
-
-                         <span class="post-meta-item-icon">
-                           <i class="fa fa-eye"></i>
-                         </span>
-                         <span class="post-meta-item-text">阅读次数 </span>
-                         <span class="leancloud-visitors-count"></span>
-                        </span>
-                    
-
-
-          <div class="post-wordcount">
-             <span class="post-meta-item-icon">
-                <i class="fa fa-edit"></i>
-             </span>
-             <span class="post-count">字数统计1,846字
-             </span>
-
-             <span class="post-meta-divider">&nbsp; | &nbsp;</span>
-
-             <span class="post-meta-item-icon">
-                 <i class="fa fa-clock-o"></i>
-             </span>
-             <span class="post-count">阅读时长7分钟
-             </span>
-          </div>
 
           
+
+          
+
         </div>
       </header>
     
@@ -1237,12 +1271,18 @@
       
         
           <p>之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。<br>
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/02/26/了解githubPages-hexo搭建博客的原理/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1260,6 +1300,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1271,13 +1313,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/25/将项目上传至github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
 
     
       <header class="post-header">
@@ -1299,26 +1351,36 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <span></span>
-            <time itemprop="dateCreated" datetime="2017-02-25T17:35:35+08:00" content="2017-02-25">
-              2017-02-25
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-25T17:35:35+08:00">
+                2017-02-25
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/git/" itemprop="url" rel="index">
                     <span itemprop="name">git</span>
                   </a>
@@ -1326,7 +1388,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1336,37 +1397,14 @@
           
 
           
+          
 
           
-                    
-                       <span id="/2017/02/25/将项目上传至github/" class="leancloud_visitors" data-flag-title="将项目上传至github">
-
-                         <span class="post-meta-item-icon">
-                           <i class="fa fa-eye"></i>
-                         </span>
-                         <span class="post-meta-item-text">阅读次数 </span>
-                         <span class="leancloud-visitors-count"></span>
-                        </span>
-                    
-
-
-          <div class="post-wordcount">
-             <span class="post-meta-item-icon">
-                <i class="fa fa-edit"></i>
-             </span>
-             <span class="post-count">字数统计1,514字
-             </span>
-
-             <span class="post-meta-divider">&nbsp; | &nbsp;</span>
-
-             <span class="post-meta-item-icon">
-                 <i class="fa fa-clock-o"></i>
-             </span>
-             <span class="post-count">阅读时长6分钟
-             </span>
-          </div>
 
           
+
+          
+
         </div>
       </header>
     
@@ -1380,12 +1418,18 @@
       
         
           <p>概括的说明什么是git和github，以及怎么上传你的项目到github。主要说明在使用github时遇到的问题<br>
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/02/25/将项目上传至github/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1403,6 +1447,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1414,13 +1460,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/24/使用webstorm连接github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
 
     
       <header class="post-header">
@@ -1442,26 +1498,36 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <span></span>
-            <time itemprop="dateCreated" datetime="2017-02-24T10:40:20+08:00" content="2017-02-24">
-              2017-02-24
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-24T10:40:20+08:00">
+                2017-02-24
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/git/" itemprop="url" rel="index">
                     <span itemprop="name">git</span>
                   </a>
@@ -1469,7 +1535,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1479,37 +1544,14 @@
           
 
           
+          
 
           
-                    
-                       <span id="/2017/02/24/使用webstorm连接github/" class="leancloud_visitors" data-flag-title="使用webstorm连接github">
-
-                         <span class="post-meta-item-icon">
-                           <i class="fa fa-eye"></i>
-                         </span>
-                         <span class="post-meta-item-text">阅读次数 </span>
-                         <span class="leancloud-visitors-count"></span>
-                        </span>
-                    
-
-
-          <div class="post-wordcount">
-             <span class="post-meta-item-icon">
-                <i class="fa fa-edit"></i>
-             </span>
-             <span class="post-count">字数统计867字
-             </span>
-
-             <span class="post-meta-divider">&nbsp; | &nbsp;</span>
-
-             <span class="post-meta-item-icon">
-                 <i class="fa fa-clock-o"></i>
-             </span>
-             <span class="post-count">阅读时长3分钟
-             </span>
-          </div>
 
           
+
+          
+
         </div>
       </header>
     
@@ -1523,12 +1565,18 @@
       
         
           <p>本文主要讲了怎么使用webstorm连接自己的github，从而做到版本控制自己的代码，用起来很方便，在coding完之后直接可以commit和push，但是时间长了发现还是有一定的不方便（应该是自己还不会用= =），本文持续更新，<em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em>。撒花！~<br>
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2017/02/24/使用webstorm连接github/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1546,6 +1594,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1557,13 +1607,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/17/hexo高级进阶/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
 
     
       <header class="post-header">
@@ -1585,26 +1645,36 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <span></span>
-            <time itemprop="dateCreated" datetime="2016-09-17T01:14:19+08:00" content="2016-09-17">
-              2016-09-17
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-17T01:14:19+08:00">
+                2016-09-17
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/git/" itemprop="url" rel="index">
                     <span itemprop="name">git</span>
                   </a>
@@ -1612,7 +1682,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1622,37 +1691,14 @@
           
 
           
+          
 
           
-                    
-                       <span id="/2016/09/17/hexo高级进阶/" class="leancloud_visitors" data-flag-title="hexo高级进阶">
-
-                         <span class="post-meta-item-icon">
-                           <i class="fa fa-eye"></i>
-                         </span>
-                         <span class="post-meta-item-text">阅读次数 </span>
-                         <span class="leancloud-visitors-count"></span>
-                        </span>
-                    
-
-
-          <div class="post-wordcount">
-             <span class="post-meta-item-icon">
-                <i class="fa fa-edit"></i>
-             </span>
-             <span class="post-count">字数统计4,632字
-             </span>
-
-             <span class="post-meta-divider">&nbsp; | &nbsp;</span>
-
-             <span class="post-meta-item-icon">
-                 <i class="fa fa-clock-o"></i>
-             </span>
-             <span class="post-count">阅读时长19分钟
-             </span>
-          </div>
 
           
+
+          
+
         </div>
       </header>
     
@@ -1666,11 +1712,13 @@
       
         
           <p>这一部分的主要是一些高级进阶的功能，想自定义自己的主题，就需要这部分的内容。<br>
-          <div class="post-more-link text-center">
+          <!--noindex-->
+          <div class="post-button text-center">
             <a class="btn" href="/2016/09/17/hexo高级进阶/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1683,7 +1731,13 @@
       
     </div>
 
+    <div>
+      
+    </div>
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -1721,7 +1775,6 @@
       <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
       <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
       <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-
     </div>
   </div>
 
@@ -1732,25 +1785,32 @@
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
                alt="Cherry" />
           <p class="site-author-name" itemprop="name">Cherry</p>
-          <p class="site-description motion-element" itemprop="description">做更好的自己</p>
+           
+              <p class="site-description motion-element" itemprop="description">做更好的自己</p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">22</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -1758,8 +1818,10 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -1800,15 +1862,21 @@
         
         
 
+        
+
+
       </section>
 
       
-      </div>
-<div id="music163player">
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66"></iframe>
-</div>
-  </aside>
 
+      
+
+    </div>
+
+    <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66"></iframe>
+    </div>
+  </aside>
 
 
         
@@ -1827,6 +1895,7 @@
   <span class="author" itemprop="copyrightHolder">Cherry</span>
 </div>
 
+
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
@@ -1838,15 +1907,20 @@
   </a>
 </div>
 
+
         
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -1869,52 +1943,34 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
   
-  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
-  
-
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
 
 
@@ -1925,235 +1981,181 @@
 
   
 
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("SXu3fAQtWilv2Jtsr5eHvgCH-gzGzoHsz", "R79G2KT1xhiu9Ngp3Dnjsn7k");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 
   
-  <a href="https://github.com/sunshine940326"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "8e7fb6982ddb4d13ad9daf445e511984",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
 
   <div class="bg_content">
-        <canvas id="canvas"></canvas>
-  </div>
-<script>
-class Circle {
-    //创建对象
-    //以一个圆为对象
-    //设置随机的 x，y坐标，r半径，_mx，_my移动的距离
-    //this.r是创建圆的半径，参数越大半径越大
-    //this._mx,this._my是移动的距离，参数越大移动
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.r = Math.random() * 10 ;
-        this._mx = Math.random() ;
-        this._my = Math.random() ;
+          <canvas id="canvas"></canvas>
+    </div>
+  <script>
+  class Circle {
+      //创建对象
+      //以一个圆为对象
+      //设置随机的 x，y坐标，r半径，_mx，_my移动的距离
+      //this.r是创建圆的半径，参数越大半径越大
+      //this._mx,this._my是移动的距离，参数越大移动
+      constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.r = Math.random() * 10 ;
+          this._mx = Math.random() ;
+          this._my = Math.random() ;
 
-    }
+      }
 
-    //canvas 画圆和画直线
-    //画圆就是正常的用canvas画一个圆
-    //画直线是两个圆连线，为了避免直线过多，给圆圈距离设置了一个值，距离很远的圆圈，就不做连线处理
-    drawCircle(ctx) {
-        ctx.beginPath();
-        //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
-        ctx.arc(this.x, this.y, this.r, 0, 360)
-        ctx.closePath();
-        ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
-        ctx.fill();
-    }
+      //canvas 画圆和画直线
+      //画圆就是正常的用canvas画一个圆
+      //画直线是两个圆连线，为了避免直线过多，给圆圈距离设置了一个值，距离很远的圆圈，就不做连线处理
+      drawCircle(ctx) {
+          ctx.beginPath();
+          //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
+          ctx.arc(this.x, this.y, this.r, 0, 360)
+          ctx.closePath();
+          ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
+          ctx.fill();
+      }
 
-    drawLine(ctx, _circle) {
-        let dx = this.x - _circle.x;
-        let dy = this.y - _circle.y;
-        let d = Math.sqrt(dx * dx + dy * dy)
-        if (d < 150) {
-            ctx.beginPath();
-            //开始一条路径，移动到位置 this.x,this.y。创建到达位置 _circle.x,_circle.y 的一条线：
-            ctx.moveTo(this.x, this.y);   //起始点
-            ctx.lineTo(_circle.x, _circle.y);   //终点
-            ctx.closePath();
-            ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
-            ctx.stroke();
-        }
-    }
+      drawLine(ctx, _circle) {
+          let dx = this.x - _circle.x;
+          let dy = this.y - _circle.y;
+          let d = Math.sqrt(dx * dx + dy * dy)
+          if (d < 150) {
+              ctx.beginPath();
+              //开始一条路径，移动到位置 this.x,this.y。创建到达位置 _circle.x,_circle.y 的一条线：
+              ctx.moveTo(this.x, this.y);   //起始点
+              ctx.lineTo(_circle.x, _circle.y);   //终点
+              ctx.closePath();
+              ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+              ctx.stroke();
+          }
+      }
 
-    // 圆圈移动
-    // 圆圈移动的距离必须在屏幕范围内
-    move(w, h) {
-        this._mx = (this.x < w && this.x > 0) ? this._mx : (-this._mx);
-        this._my = (this.y < h && this.y > 0) ? this._my : (-this._my);
-        this.x += this._mx / 2;
-        this.y += this._my / 2;
-    }
-}
-//鼠标点画圆闪烁变动
-class currentCirle extends Circle {
-    constructor(x, y) {
-        super(x, y)
-    }
+      // 圆圈移动
+      // 圆圈移动的距离必须在屏幕范围内
+      move(w, h) {
+          this._mx = (this.x < w && this.x > 0) ? this._mx : (-this._mx);
+          this._my = (this.y < h && this.y > 0) ? this._my : (-this._my);
+          this.x += this._mx / 2;
+          this.y += this._my / 2;
+      }
+  }
+  //鼠标点画圆闪烁变动
+  class currentCirle extends Circle {
+      constructor(x, y) {
+          super(x, y)
+      }
 
-    drawCircle(ctx) {
-        ctx.beginPath();
-        //注释内容为鼠标焦点的地方圆圈半径变化
-        //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
-        this.r = 8;
-        ctx.arc(this.x, this.y, this.r, 0, 360);
-        ctx.closePath();
-        //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
-        ctx.fillStyle = 'rgba(255, 77, 54, 0.3)'
-        ctx.fill();
+      drawCircle(ctx) {
+          ctx.beginPath();
+          //注释内容为鼠标焦点的地方圆圈半径变化
+          //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
+          this.r = 8;
+          ctx.arc(this.x, this.y, this.r, 0, 360);
+          ctx.closePath();
+          //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
+          ctx.fillStyle = 'rgba(255, 77, 54, 0.3)'
+          ctx.fill();
 
-    }
-}
-//更新页面用requestAnimationFrame替代setTimeout
-window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      }
+  }
+  //更新页面用requestAnimationFrame替代setTimeout
+  window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
-let canvas = document.getElementById('canvas');
-let ctx = canvas.getContext('2d');
-let w = canvas.width = canvas.offsetWidth;
-let h = canvas.height = canvas.offsetHeight;
-let circles = [];
-let current_circle = new currentCirle(0, 0)
+  let canvas = document.getElementById('canvas');
+  let ctx = canvas.getContext('2d');
+  let w = canvas.width = canvas.offsetWidth;
+  let h = canvas.height = canvas.offsetHeight;
+  let circles = [];
+  let current_circle = new currentCirle(0, 0)
 
-let draw = function () {
-    ctx.clearRect(0, 0, w, h);
-    for (let i = 0; i < circles.length; i++) {
-        circles[i].move(w, h);
-        circles[i].drawCircle(ctx);
-        for (j = i + 1; j < circles.length; j++) {
-            circles[i].drawLine(ctx, circles[j])
-        }
-    }
-    if (current_circle.x) {
-        current_circle.drawCircle(ctx);
-        for (var k = 1; k < circles.length; k++) {
-            current_circle.drawLine(ctx, circles[k])
-        }
-    }
-    requestAnimationFrame(draw)
-}
+  let draw = function () {
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < circles.length; i++) {
+          circles[i].move(w, h);
+          circles[i].drawCircle(ctx);
+          for (j = i + 1; j < circles.length; j++) {
+              circles[i].drawLine(ctx, circles[j])
+          }
+      }
+      if (current_circle.x) {
+          current_circle.drawCircle(ctx);
+          for (var k = 1; k < circles.length; k++) {
+              current_circle.drawLine(ctx, circles[k])
+          }
+      }
+      requestAnimationFrame(draw)
+  }
 
-let init = function (num) {
-    for (var i = 0; i < num; i++) {
-        circles.push(new Circle(Math.random() * w, Math.random() * h));
-    }
-    draw();
-}
-window.addEventListener('load', init(60));
-window.onmousemove = function (e) {
-    e = e || window.event;
-    current_circle.x = e.clientX;
-    current_circle.y = e.clientY;
-}
-window.onmouseout = function () {
-    current_circle.x = null;
-    current_circle.y = null;
+  let init = function (num) {
+      for (var i = 0; i < num; i++) {
+          circles.push(new Circle(Math.random() * w, Math.random() * h));
+      }
+      draw();
+  }
+  window.addEventListener('load', init(60));
+  window.onmousemove = function (e) {
+      e = e || window.event;
+      current_circle.x = e.clientX;
+      current_circle.y = e.clientY;
+  }
+  window.onmouseout = function () {
+      current_circle.x = null;
+      current_circle.y = null;
 
-};
-</script>
+  };
+  </script>
 </body>
 </html>
