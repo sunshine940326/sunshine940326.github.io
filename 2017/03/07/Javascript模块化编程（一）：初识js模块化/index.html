@@ -1,0 +1,1077 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js模块化,js," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript模块化编程（一）：模块的写法">
+<meta property="og:url" content="http://yoursite.com/2017/03/07/Javascript模块化编程（一）：初识js模块化/index.html">
+<meta property="og:site_name" content="Cherry's Blog">
+<meta property="og:description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
+<meta property="og:updated_time" content="2017-03-07T14:42:38.175Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript模块化编程（一）：模块的写法">
+<meta name="twitter:description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/07/Javascript模块化编程（一）：初识js模块化/"/>
+
+
+
+
+
+  <title> Javascript模块化编程（一）：模块的写法 | Cherry's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <a href="https://github.com/sunshine940326"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cherry's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">To Be a Batter Me</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            生活中的美好
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br />
+            
+            照片
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/07/Javascript模块化编程（一）：初识js模块化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Javascript模块化编程（一）：模块的写法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T22:40:16+08:00">
+                2017-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/03/07/Javascript模块化编程（一）：初识js模块化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/03/07/Javascript模块化编程（一）：初识js模块化/" class="leancloud_visitors" data-flag-title="Javascript模块化编程（一）：模块的写法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+               
+                     <span class="post-meta-item-icon">
+                       <i class="fa fa-edit"></i>
+                     </span>
+                 
+                     <span class="post-meta-item-text">字数统计</span>
+                       
+                     <span title="字数统计" }}">
+                       921 字
+                     </span>
+                  
+                 
+                  <span class="post-meta-divider">|</span>
+                 
+                 
+                 <span class="post-meta-item-icon">
+                     <i class="fa fa-clock-o"></i>
+                     </span>
+                 
+                      <span class="post-meta-item-text">阅读时长</span>
+                 
+                   <span title="阅读时长" }}">
+                 3 分钟
+                 </span>
+               
+            </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>不得不说现在“前端”的知识点实在是太多了，(ಥ<em>ಥ)<br>就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥ</em>ಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成</p>
+<a id="more"></a>
+<h1 id="了解基本概念：AMD-CMD-commonJS"><a href="#了解基本概念：AMD-CMD-commonJS" class="headerlink" title="了解基本概念：AMD/CMD/commonJS"></a>了解基本概念：AMD/CMD/commonJS</h1><p>先来大体说一些这些都是什么东西：<br>AMD/CMD/commonJS都是JavaScript模块化变的规范</p>
+<blockquote>
+<p>因为有了模块，我们就可以更方便地使用别人的代码，想要什么功能，就加载什么模块。<br>但是，这样做有一个前提，那就是大家必须以同样的方式编写模块，否则你有你的写法，我有我的写法，岂不是乱了套！考虑到Javascript模块现在还没有官方规范，这一点就更重要了。</p>
+</blockquote>
+<ul>
+<li>AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。</li>
+<li>CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。</li>
+<li>commonJS是nodejs在推广过程中对模块定义的规范化产出。</li>
+</ul>
+<p>因为node主要是将javascript语言用于服务器端编程，所以对应的commonJS主要是针对服务端，AMD/CMD主要是针对浏览器端。</p>
+<h2 id="AMD-Asynchronous-Module-Definition"><a href="#AMD-Asynchronous-Module-Definition" class="headerlink" title="AMD(Asynchronous Module Definition)"></a>AMD(Asynchronous Module Definition)</h2><p>全称是Asynchronous Module Definition，即异步模块加载机制。</p>
+<h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><p>CommonJS 的目标是定义一套普通应用程序使用的API，从而填补原生JavaScript标准库过少的缺点。终极目标是实现一个像python，java中含有的标准库。现在非常火爆的node.js实际上就是CommonJS 的一个实现。</p>
+<p>通过 CommonJS 的规范和代码可以看出，require 是同步的，模块系统需要同步读取模块文件内容，并编译执行以得到模块接口。在服务端，比如node.js，这一般来说没有问题，文件请求都是本地获取，对性能没有什么影响。但是放在浏览器端，问题就出来了，等到所有模块同步加载完毕，时间不知道要过去多久了。</p>
+<blockquote>
+<p>CommonJS 最早叫做 ServerJS，Modules 1.0规范在node.js上实践的很好，由于知道自身在浏览器中的不足，CommonJS社区把名字改为CommonJS，意为想统一服务器端和浏览器端，但是要实现浏览器端，就要有新的版本的标准，在新的版本制定过程中，社区出现了分歧，在这个分歧中，分出了AMD规范。</p>
+<p>由于风格和机制的差异，最终，AMD从CommonJS社区中独立了出来<br>–<a href="http://www.feeldesignstudio.com/2013/09/javascript-module-pattern-commonjs/?utm_source=caibaojian.com" target="_blank" rel="external">JavaScript模块化开发（二）——CommonJS规范</a></p>
+</blockquote>
+<h1 id="那么AMD-CMD又有什么区别呢？"><a href="#那么AMD-CMD又有什么区别呢？" class="headerlink" title="那么AMD/CMD又有什么区别呢？"></a>那么AMD/CMD又有什么区别呢？</h1><p>AMD和CMD的区别 </p>
+<ol>
+<li>对于依赖的模块，AMD 是 提前执行 ，CMD 是 延迟执行 。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible. </li>
+<li>CMD 推崇 依赖就近 ，AMD 推崇 依赖前置 。（这一点是非常重要的区别） </li>
+<li>AMD 的 API 默认是 一个当多个用 ，CMD 的 API 严格区分，推崇 职责单一 。</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>不得不说，其实这篇文章大部分都是摘录的，反思了一下，归根结底还是自己对这些概念理解的不清，首先是没有找到系统的讲解文章，其次是自己没有用到项目中去，自我批评。</p>
+<p>先挖个坑，以后我胡汉三还会回来的~</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js模块化/" rel="tag"># js模块化</a>
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/06/面试题/" rel="next" title="前端面试">
+                <i class="fa fa-chevron-left"></i> 前端面试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/07/javascript模块化编程（二）：js模块化的发展史/" rel="prev" title="javascript模块化编程（二）：js模块化发展史">
+                javascript模块化编程（二）：js模块化发展史 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Cherry" />
+          <p class="site-author-name" itemprop="name">Cherry</p>
+           
+              <p class="site-description motion-element" itemprop="description">做更好的自己</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/sunshine940326" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5094854684/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#了解基本概念：AMD-CMD-commonJS"><span class="nav-number">1.</span> <span class="nav-text">了解基本概念：AMD/CMD/commonJS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AMD-Asynchronous-Module-Definition"><span class="nav-number">1.1.</span> <span class="nav-text">AMD(Asynchronous Module Definition)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#commonJS"><span class="nav-number">1.2.</span> <span class="nav-text">commonJS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#那么AMD-CMD又有什么区别呢？"><span class="nav-number">2.</span> <span class="nav-text">那么AMD/CMD又有什么区别呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+    <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66"></iframe>
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cherry</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "8e7fb6982ddb4d13ad9daf445e511984",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("SXu3fAQtWilv2Jtsr5eHvgCH-gzGzoHsz", "R79G2KT1xhiu9Ngp3Dnjsn7k");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+
+  <div class="bg_content">
+          <canvas id="canvas"></canvas>
+    </div>
+  <script>
+  class Circle {
+      //创建对象
+      //以一个圆为对象
+      //设置随机的 x，y坐标，r半径，_mx，_my移动的距离
+      //this.r是创建圆的半径，参数越大半径越大
+      //this._mx,this._my是移动的距离，参数越大移动
+      constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.r = Math.random() * 10 ;
+          this._mx = Math.random() ;
+          this._my = Math.random() ;
+
+      }
+
+      //canvas 画圆和画直线
+      //画圆就是正常的用canvas画一个圆
+      //画直线是两个圆连线，为了避免直线过多，给圆圈距离设置了一个值，距离很远的圆圈，就不做连线处理
+      drawCircle(ctx) {
+          ctx.beginPath();
+          //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
+          ctx.arc(this.x, this.y, this.r, 0, 360)
+          ctx.closePath();
+          ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
+          ctx.fill();
+      }
+
+      drawLine(ctx, _circle) {
+          let dx = this.x - _circle.x;
+          let dy = this.y - _circle.y;
+          let d = Math.sqrt(dx * dx + dy * dy)
+          if (d < 150) {
+              ctx.beginPath();
+              //开始一条路径，移动到位置 this.x,this.y。创建到达位置 _circle.x,_circle.y 的一条线：
+              ctx.moveTo(this.x, this.y);   //起始点
+              ctx.lineTo(_circle.x, _circle.y);   //终点
+              ctx.closePath();
+              ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+              ctx.stroke();
+          }
+      }
+
+      // 圆圈移动
+      // 圆圈移动的距离必须在屏幕范围内
+      move(w, h) {
+          this._mx = (this.x < w && this.x > 0) ? this._mx : (-this._mx);
+          this._my = (this.y < h && this.y > 0) ? this._my : (-this._my);
+          this.x += this._mx / 2;
+          this.y += this._my / 2;
+      }
+  }
+  //鼠标点画圆闪烁变动
+  class currentCirle extends Circle {
+      constructor(x, y) {
+          super(x, y)
+      }
+
+      drawCircle(ctx) {
+          ctx.beginPath();
+          //注释内容为鼠标焦点的地方圆圈半径变化
+          //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
+          this.r = 8;
+          ctx.arc(this.x, this.y, this.r, 0, 360);
+          ctx.closePath();
+          //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
+          ctx.fillStyle = 'rgba(255, 77, 54, 0.3)'
+          ctx.fill();
+
+      }
+  }
+  //更新页面用requestAnimationFrame替代setTimeout
+  window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+  let canvas = document.getElementById('canvas');
+  let ctx = canvas.getContext('2d');
+  let w = canvas.width = canvas.offsetWidth;
+  let h = canvas.height = canvas.offsetHeight;
+  let circles = [];
+  let current_circle = new currentCirle(0, 0)
+
+  let draw = function () {
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < circles.length; i++) {
+          circles[i].move(w, h);
+          circles[i].drawCircle(ctx);
+          for (j = i + 1; j < circles.length; j++) {
+              circles[i].drawLine(ctx, circles[j])
+          }
+      }
+      if (current_circle.x) {
+          current_circle.drawCircle(ctx);
+          for (var k = 1; k < circles.length; k++) {
+              current_circle.drawLine(ctx, circles[k])
+          }
+      }
+      requestAnimationFrame(draw)
+  }
+
+  let init = function (num) {
+      for (var i = 0; i < num; i++) {
+          circles.push(new Circle(Math.random() * w, Math.random() * h));
+      }
+      draw();
+  }
+  window.addEventListener('load', init(60));
+  window.onmousemove = function (e) {
+      e = e || window.event;
+      current_circle.x = e.clientX;
+      current_circle.y = e.clientY;
+  }
+  window.onmouseout = function () {
+      current_circle.x = null;
+      current_circle.y = null;
+
+  };
+  </script>
+</body>
+</html>
