@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js,js设计模式," />
 
 
 
@@ -87,15 +87,16 @@
 
 
 
-<meta name="description" content="做更好的自己">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cherry's Blog">
-<meta property="og:url" content="http://cherryblog.site/page/3/index.html">
+<meta name="description" content="在javascript中，是没有类的概念的，也没有私有变量和全局变量的区别，这样的话，我们很有可能会遇到命名冲突的问题，然后就是我们希望能跟其他面向对象编程语言一样，能够将一个方法封装成一个类，这样的话别人在引用这个方法的时候只需要调用接口就可以了，不需要知道内部是怎么实现的，我们也往往不想让外部访问到类中的成员变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript设计模式（二）：模块化模式">
+<meta property="og:url" content="http://cherryblog.site/javascript模块化编程（二）：模块化模式">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="做更好的自己">
+<meta property="og:description" content="在javascript中，是没有类的概念的，也没有私有变量和全局变量的区别，这样的话，我们很有可能会遇到命名冲突的问题，然后就是我们希望能跟其他面向对象编程语言一样，能够将一个方法封装成一个类，这样的话别人在引用这个方法的时候只需要调用接口就可以了，不需要知道内部是怎么实现的，我们也往往不想让外部访问到类中的成员变量">
+<meta property="og:updated_time" content="2017-03-24T15:12:21.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cherry's Blog">
-<meta name="twitter:description" content="做更好的自己">
+<meta name="twitter:title" content="javascript设计模式（二）：模块化模式">
+<meta name="twitter:description" content="在javascript中，是没有类的概念的，也没有私有变量和全局变量的区别，这样的话，我们很有可能会遇到命名冲突的问题，然后就是我们希望能跟其他面向对象编程语言一样，能够将一个方法封装成一个类，这样的话别人在引用这个方法的时候只需要调用接口就可以了，不需要知道内部是怎么实现的，我们也往往不想让外部访问到类中的成员变量">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://cherryblog.site/page/3/"/>
+  <link rel="canonical" href="http://cherryblog.site/javascript模块化编程（二）：模块化模式"/>
 
 
 
 
 
-  <title> Hexo, NexT - Cherry's Blog做更好的自己 </title>
+  <title> javascript设计模式（二）：模块化模式 | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,9 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -290,9 +289,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -301,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/hexo附件插入音乐、分享、评论、标签页、搜索">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/javascript模块化编程（二）：模块化模式">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cherry">
@@ -322,10 +321,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/hexo附件插入音乐、分享、评论、标签页、搜索" itemprop="url">
-                  hexo附件插入音乐、分享、评论、标签页、搜索
-                </a>
+                javascript设计模式（二）：模块化模式
               
             
           </h1>
@@ -340,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-17T01:01:48+08:00">
-                2016-09-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T23:09:08+08:00">
+                2017-03-24
               </time>
             
 
@@ -363,8 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -376,11 +372,21 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/javascript模块化编程（二）：模块化模式#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
           
-             <span id="/hexo附件插入音乐、分享、评论、标签页、搜索" class="leancloud_visitors" data-flag-title="hexo附件插入音乐、分享、评论、标签页、搜索">
+             <span id="/javascript模块化编程（二）：模块化模式" class="leancloud_visitors" data-flag-title="javascript设计模式（二）：模块化模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -404,7 +410,7 @@
                      <span class="post-meta-item-text">字数统计</span>
                        
                      <span title="字数统计" }}">
-                       1,152 字
+                       887 字
                      </span>
                   
                  
@@ -418,7 +424,7 @@
                       <span class="post-meta-item-text">阅读时长</span>
                  
                    <span title="阅读时长" }}">
-                 5 分钟
+                 4 分钟
                  </span>
                
             </div>
@@ -436,239 +442,95 @@
       
 
       
+        <p>在javascript中，是没有类的概念的，也没有私有变量和全局变量的区别，这样的话，我们很有可能会遇到命名冲突的问题，然后就是我们希望能跟其他面向对象编程语言一样，能够将一个方法封装成一个类，这样的话别人在引用这个方法的时候只需要调用接口就可以了，不需要知道内部是怎么实现的，我们也往往不想让外部访问到类中的成员变量<br><a id="more"></a></p>
+<h1 id="模块化模式"><a href="#模块化模式" class="headerlink" title="模块化模式"></a>模块化模式</h1><p>所以模块化模式最先开始就是为了解决这个问题的，是用来模拟类的概念的，模拟私有变量的实现（模拟！！在js中是没有类和私有变量的说法的），对传统软件工程中的类提供私有和公共封装的方法</p>
+<p>通过这样的方式，我们可以在一个单一的对象中包含公有/私有的方法和变量</p>
+<p>模块模式使用“闭包”的方式来将不想让外部访问到的变量封装为“私有变量（private）”。提供一种将公有（pubilc）和私有（private）方法，变量封装混合在一起的方式，声明的变量或者方法只在模块内部有效，其他人可以调用return中的方法和变量。这种方式防止内部信息泄露到全局中，从而避免了和其他开发者接口发生冲突的可能。</p>
+<p>这种方式和立即调用函数表达式有相似的地方，不同的是这种模式返回的是一个对象，而立即调用表达式返回的是一个函数</p>
+<h2 id="闭包实现模块模式基础版"><a href="#闭包实现模块模式基础版" class="headerlink" title="闭包实现模块模式基础版"></a>闭包实现模块模式基础版</h2><p>下面就是一个最简单的用闭包实现模块模式的栗子~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var testModule = (function()&#123;</div><div class="line">    var counter = 0;</div><div class="line">    </div><div class="line">    return&#123;</div><div class="line">        incrementCounter:function()&#123;</div><div class="line">            return counter++;</div><div class="line">        &#125;</div><div class="line">        resetCounter:function()&#123;</div><div class="line">            console.log(&quot;counter value prior to reset:&quot;+counter);</div><div class="line">            counter = 0;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">//use</div><div class="line"></div><div class="line">testModule.incrementCounter();</div><div class="line"></div><div class="line">testModule.resetCounter();</div></pre></td></tr></table></figure></p>
+<p>这个栗子中，在函数体内定义的变量<code>counter</code>就是一个“私有变量”，在函数外部是不能直接访问到的。在<code>return</code>中给我们提供了这个函数的两个<code>public</code>方法：<code>incrementCounter()</code>和<code>resetCounter()</code>。我们想要使用这个函数的功能就直接调用<code>testModule.incrementCounter();</code>就可以了</p>
+<h2 id="包含命名空间、公有变量和私有变量"><a href="#包含命名空间、公有变量和私有变量" class="headerlink" title="包含命名空间、公有变量和私有变量"></a>包含命名空间、公有变量和私有变量</h2><p>下面是一个包含了命名空间、公有变量和私有变量的一个栗子~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var myNamespace = (function()&#123;</div><div class="line">    var myPrivateVar,myPrivateMethod</div><div class="line"></div><div class="line">    myPrivateVar = 0;</div><div class="line">    </div><div class="line">    myPrivateMethod = function(foo)&#123;</div><div class="line">        console.log(foo)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return&#123;</div><div class="line">        myPublicVar:&quot;foo&quot;,</div><div class="line">        myPublicFunction:function(bar)&#123;</div><div class="line">            myPrivateVar++;</div><div class="line">            </div><div class="line">            myPrivateMethod(bar)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)()</div></pre></td></tr></table></figure></p>
+<h2 id="升级版使用模块模式实现购物车"><a href="#升级版使用模块模式实现购物车" class="headerlink" title="升级版使用模块模式实现购物车"></a>升级版使用模块模式实现购物车</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">var basketModule = (function () &#123;</div><div class="line"></div><div class="line">  // privates</div><div class="line"></div><div class="line">  var basket = [];</div><div class="line"></div><div class="line">  function doSomethingPrivate() &#123;</div><div class="line">    //...</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  function doSomethingElsePrivate() &#123;</div><div class="line">    //...</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  // Return an object exposed to the public</div><div class="line">  return &#123;</div><div class="line"></div><div class="line">    // Add items to our basket</div><div class="line">    addItem: function( values ) &#123;</div><div class="line">      basket.push(values);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    // Get the count of items in the basket</div><div class="line">    getItemCount: function () &#123;</div><div class="line">      return basket.length;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    // Public alias to a  private function</div><div class="line">    doSomething: doSomethingPrivate,</div><div class="line"></div><div class="line">    // Get the total value of items in the basket</div><div class="line">    getTotal: function () &#123;</div><div class="line"></div><div class="line">      var q = this.getItemCount(),</div><div class="line">          p = 0;</div><div class="line"></div><div class="line">      while (q--) &#123;</div><div class="line">        p += basket[q].price;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      return p;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;());</div></pre></td></tr></table></figure>
+<p>在这个栗子中，这个模块完全自包含在<code>basketModule</code>这个模块中，其中的<code>basket</code>数组是私有的，在外部访问不到，我们需要访问<code>basketModule</code>中return的方法使用对应的功能，使用方法如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">// basketModule returns an object with a public API we can use</div><div class="line"></div><div class="line">basketModule.addItem(&#123;</div><div class="line">  item: &quot;bread&quot;,</div><div class="line">  price: 0.5</div><div class="line">&#125;);</div><div class="line"></div><div class="line">basketModule.addItem(&#123;</div><div class="line">  item: &quot;butter&quot;,</div><div class="line">  price: 0.3</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// Outputs: 2</div><div class="line">console.log( basketModule.getItemCount() );</div><div class="line"></div><div class="line">// Outputs: 0.8</div><div class="line">console.log( basketModule.getTotal() );</div><div class="line"></div><div class="line">// However, the following will not work:</div><div class="line"></div><div class="line">// Outputs: undefined</div><div class="line">// This is because the basket itself is not exposed as a part of our</div><div class="line">// the public API</div><div class="line">console.log( basketModule.basket );</div><div class="line"></div><div class="line">// This also won&apos;t work as it only exists within the scope of our</div><div class="line">// basketModule closure, but not the returned public object</div><div class="line">console.log( basket );</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
         
-          <p>hexo高阶教程，教你怎样在你的博客中插入音乐、分享、评论和标签页<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hexo附件插入音乐、分享、评论、标签页、搜索#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
-      
-    </div>
-
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/利用Gitpage-hexo开发自己的博客">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cherry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cherry's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/利用Gitpage-hexo开发自己的博客" itemprop="url">
-                  利用Gitpage+hexo开发自己的博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-16T01:07:17+08:00">
-                2016-09-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/js/" rel="tag"># js</a>
           
-
+            <a href="/tags/js设计模式/" rel="tag"># js设计模式</a>
           
-            
-          
-
-          
-          
-             <span id="/利用Gitpage-hexo开发自己的博客" class="leancloud_visitors" data-flag-title="利用Gitpage+hexo开发自己的博客">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-               
-                     <span class="post-meta-item-icon">
-                       <i class="fa fa-edit"></i>
-                     </span>
-                 
-                     <span class="post-meta-item-text">字数统计</span>
-                       
-                     <span title="字数统计" }}">
-                       6,618 字
-                     </span>
-                  
-                 
-                  <span class="post-meta-divider">|</span>
-                 
-                 
-                 <span class="post-meta-item-icon">
-                     <i class="fa fa-clock-o"></i>
-                     </span>
-                 
-                      <span class="post-meta-item-text">阅读时长</span>
-                 
-                   <span title="阅读时长" }}">
-                 26 分钟
-                 </span>
-               
-            </div>
-          
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          <p>进入程序员这个坑之后就开始自己在网上扒资料，然而资料太多，情况太复杂，主要是看见别人的博客，感觉好高大上，并且感觉在茫茫的互联网有自己的小天地感觉也是极好的。不是为了给别人看，而是为了 记录自己的成长，记录自己的每一个脚印。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/利用Gitpage-hexo开发自己的博客#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/gulp（一）" rel="next" title="gulp（一）">
+                <i class="fa fa-chevron-left"></i> gulp（一）
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/javascript设计模式（三）：原型模式" rel="prev" title="javascript设计模式（三）：原型模式">
+                javascript设计模式（三）：原型模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 
+      
+    </div>
+  </div>
 
 
           </div>
@@ -676,6 +538,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -695,8 +563,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -778,6 +655,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模块化模式"><span class="nav-number">1.</span> <span class="nav-text">模块化模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包实现模块模式基础版"><span class="nav-number">1.1.</span> <span class="nav-text">闭包实现模块模式基础版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包含命名空间、公有变量和私有变量"><span class="nav-number">1.2.</span> <span class="nav-text">包含命名空间、公有变量和私有变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级版使用模块模式实现购物车"><span class="nav-number">1.3.</span> <span class="nav-text">升级版使用模块模式实现购物车</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -909,6 +802,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 

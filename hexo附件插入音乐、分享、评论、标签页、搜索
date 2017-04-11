@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="hexo," />
 
 
 
@@ -87,15 +87,21 @@
 
 
 
-<meta name="description" content="做更好的自己">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cherry's Blog">
-<meta property="og:url" content="http://cherryblog.site/page/3/index.html">
+<meta name="description" content="hexo高阶教程，教你怎样在你的博客中插入音乐、分享、评论和标签页">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo附件插入音乐、分享、评论、标签页、搜索">
+<meta property="og:url" content="http://cherryblog.site/hexo附件插入音乐、分享、评论、标签页、搜索">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="做更好的自己">
+<meta property="og:description" content="hexo高阶教程，教你怎样在你的博客中插入音乐、分享、评论和标签页">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/966908-7aed60a7543e2571.png?imageMogr2/auto-orient/strip%7CimageView2/2">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/966908-8cfb4600366ab1c0.png?imageMogr2/auto-orient/strip%7CimageView2/2">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/966908-6673e77e95e084da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/966908-fd0c0885439ef44d.png?imageMogr2/auto-orient/strip%7CimageView2/2">
+<meta property="og:updated_time" content="2017-02-26T12:08:39.823Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cherry's Blog">
-<meta name="twitter:description" content="做更好的自己">
+<meta name="twitter:title" content="hexo附件插入音乐、分享、评论、标签页、搜索">
+<meta name="twitter:description" content="hexo高阶教程，教你怎样在你的博客中插入音乐、分享、评论和标签页">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/966908-7aed60a7543e2571.png?imageMogr2/auto-orient/strip%7CimageView2/2">
 
 
 
@@ -123,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://cherryblog.site/page/3/"/>
+  <link rel="canonical" href="http://cherryblog.site/hexo附件插入音乐、分享、评论、标签页、搜索"/>
 
 
 
 
 
-  <title> Hexo, NexT - Cherry's Blog做更好的自己 </title>
+  <title> hexo附件插入音乐、分享、评论、标签页、搜索 | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,9 +170,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -290,9 +294,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -322,10 +326,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/hexo附件插入音乐、分享、评论、标签页、搜索" itemprop="url">
-                  hexo附件插入音乐、分享、评论、标签页、搜索
-                </a>
+                hexo附件插入音乐、分享、评论、标签页、搜索
               
             
           </h1>
@@ -375,6 +376,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/hexo附件插入音乐、分享、评论、标签页、搜索#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -436,239 +447,133 @@
       
 
       
+        <p>hexo高阶教程，教你怎样在你的博客中插入音乐、分享、评论和标签页<br><a id="more"></a></p>
+<h2 id="博客中插入图片"><a href="#博客中插入图片" class="headerlink" title="博客中插入图片"></a>博客中插入图片</h2><p>基本分为两种办法</p>
+<ol>
+<li>放在本地文件<br>首先在username.github.io目录下确认 _config.yml 中有 post_asset_folder:true 。<br>在 hexo 目录，执行<code>$ npm install https://github.com/CodeFalling/hexo-asset-image --save</code></li>
+</ol>
+<p>之后再使用 hexo new ‘new’ 创建新博客的时候，会在source/_posts里面创建.md文件的同时生成一个相同的名字的文件夹。把该文章中需要使用的图片放在该文件夹下即可。<br>使用的时候<br><code>![“图片描述”（可以不写）](/文件夹名/你的图片名字.JPG)
+例如：
+！[ ] (new/text.jpg)</code></p>
+<ol>
+<li>放在七牛上，需要先注册，上传图片生成链接，直接在文章中使用链接即可。</li>
+<li>也可以放在服务器上，在图片链接输入绝对路径就可以</li>
+<li>我通常用的方法，因为在webstorm中写md格式的文章不能同时预览，所以我一般都是在csdn写博客的界面写好，在copy到webstorm上，这样就可以直接在其中插入图片，其实相当于你在引用你在csdn中发表文章里面图片的绝对路径</li>
+</ol>
+<h2 id="插入音乐"><a href="#插入音乐" class="headerlink" title="插入音乐"></a>插入音乐</h2><p>可以使用网易云音乐，搜索想要的歌曲，点击歌曲名字进入播放器页面，点击生成外链播放器；复制代码，直接粘贴到博文中即可。这样会显示一个网易的播放器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=298 height=52 src=&quot;http://music.163.com/outchain/player?type=2&amp;id=32192436&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;</div><div class="line"></div><div class="line">//其中的width=298 height=52 均改为0就看不到了，依然可以播放音乐</div></pre></td></tr></table></figure>
+<h2 id="集成多说评论，分享"><a href="#集成多说评论，分享" class="headerlink" title="集成多说评论，分享"></a>集成多说评论，分享</h2><p>申请多说帐号,打开页面点击我要安装注册帐号</p>
+<p>在themes/next目录下打开 _config.yml，设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">duoshuo_shortname:  nanshanyi //上面多说域名中填的内容</div><div class="line">需要分享的打开duoshuo_share: true 即可，支持分享到微博、QQ空间、微信</div></pre></td></tr></table></figure>
+<p>然后打开themes\landscape\layout_partial\article.ejs文件<br>把以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;div id=&quot;disqus_thread&quot;&gt;</div><div class="line">    &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure></p>
+<p>替换为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">  &lt;section id=&quot;comments&quot;&gt;</div><div class="line">    &lt;!-- 多说评论框 start --&gt;</div><div class="line">    &lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;!-- 多说评论框 end --&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var duoshuoQuery = &#123;short_name:&apos;&lt;%= config.duoshuo_shortname %&gt;&apos;&#125;;</div><div class="line">      (function() &#123;</div><div class="line">        var ds = document.createElement(&apos;script&apos;);</div><div class="line">        ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">        ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">        ds.charset = &apos;UTF-8&apos;;</div><div class="line">        (document.getElementsByTagName(&apos;head&apos;)[0]</div><div class="line">         || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">      &#125;)();</div><div class="line">      &lt;/script&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">  &lt;/section&gt;</div><div class="line">  &lt;% &#125; %&gt;</div></pre></td></tr></table></figure></p>
+<p>然后你hexo s ,打开<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 打开文章看一下，评论和分享已经静静的躺在那了</p>
+<h2 id="添加标签页"><a href="#添加标签页" class="headerlink" title="添加标签页"></a>添加标签页</h2><p>创建标签页或者创建分类页面方法具体请查看官方文档：<a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="external">hexo-主题引用</a></p>
+<p>概括一下分为三步：</p>
+<ol>
+<li>新建页面</li>
+<li>在菜单中将其显示</li>
+<li>给文章加标签，如果所有的文章都没有标签，那么标签页将显示空白<br><strong>分类页面同理</strong></li>
+</ol>
+<p>在username.github.io文件目录下执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new page tags //会在username.github.io/source下创建tags文件夹内部是一个index.md和index文件夹</div></pre></td></tr></table></figure></p>
+<p>修改username.github.io/themes/next/_config.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  home: /      //主页</div><div class="line">  #categories: /categories //分类</div><div class="line">  archives: /archives   //归档</div><div class="line">  tags: /tags   //标签（添加此行即可）</div><div class="line">  about: /about   //关于</div><div class="line">  #commonweal: /404.html</div></pre></td></tr></table></figure></p>
+<p>首页菜单就会有便签项，点击即可进入标签页。</p>
+<h2 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h2><p>next支持Swiftype 、微搜索和Local Search</p>
+<ol>
+<li>Swiftype （收费的没有免费版，进可以使用15天）是为网站和移动应用提供内部搜索的工具，点击进入Swiftype注册页面 ，注册之后需要填写自己的博客的网址<br>然后选择</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/966908-7aed60a7543e2571.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt="Swiftype注册页面"></p>
+<p>选择 install Search</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/966908-8cfb4600366ab1c0.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt="swiftype"></p>
+<p>途中的即为swiftype_key<br>修改nanshanyi.github.io/themes/next/_config.yml中的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">swiftype_key:上面红圈中的内容</div></pre></td></tr></table></figure></p>
+<p>点击 resume Configuration 选择 search field edit</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/966908-6673e77e95e084da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swiftype"></p>
+<p>save<br>发布即可看到效果</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/966908-fd0c0885439ef44d.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt="swiftype"></p>
+<ol>
+<li>添加本地搜索<br>安装 hexo-generator-search，在nanshanyi.github.io目录下执行以下命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-search --save</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在nanshanyi.github.io/themes/next/_config.yml添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">search:</div><div class="line">      path: search.xml</div><div class="line">      field: post</div></pre></td></tr></table></figure></p>
+<p>发布即可看到效果，和上面的 swiftType 效果差不多，就不再粘图片了。</p>
+<p>文／_南山忆（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/a52b68794a6b" target="_blank" rel="external">http://www.jianshu.com/p/a52b68794a6b</a><br>著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。</p>
+
+      
+    </div>
+
+    <div>
+      
         
-          <p>hexo高阶教程，教你怎样在你的博客中插入音乐、分享、评论和标签页<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hexo附件插入音乐、分享、评论、标签页、搜索#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
-      
-    </div>
-
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/利用Gitpage-hexo开发自己的博客">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cherry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cherry's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/利用Gitpage-hexo开发自己的博客" itemprop="url">
-                  利用Gitpage+hexo开发自己的博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-16T01:07:17+08:00">
-                2016-09-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
-
-          
-            
-          
-
-          
-          
-             <span id="/利用Gitpage-hexo开发自己的博客" class="leancloud_visitors" data-flag-title="利用Gitpage+hexo开发自己的博客">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-               
-                     <span class="post-meta-item-icon">
-                       <i class="fa fa-edit"></i>
-                     </span>
-                 
-                     <span class="post-meta-item-text">字数统计</span>
-                       
-                     <span title="字数统计" }}">
-                       6,618 字
-                     </span>
-                  
-                 
-                  <span class="post-meta-divider">|</span>
-                 
-                 
-                 <span class="post-meta-item-icon">
-                     <i class="fa fa-clock-o"></i>
-                     </span>
-                 
-                      <span class="post-meta-item-text">阅读时长</span>
-                 
-                   <span title="阅读时长" }}">
-                 26 分钟
-                 </span>
-               
-            </div>
-          
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          <p>进入程序员这个坑之后就开始自己在网上扒资料，然而资料太多，情况太复杂，主要是看见别人的博客，感觉好高大上，并且感觉在茫茫的互联网有自己的小天地感觉也是极好的。不是为了给别人看，而是为了 记录自己的成长，记录自己的每一个脚印。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/利用Gitpage-hexo开发自己的博客#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/利用Gitpage-hexo开发自己的博客" rel="next" title="利用Gitpage+hexo开发自己的博客">
+                <i class="fa fa-chevron-left"></i> 利用Gitpage+hexo开发自己的博客
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hexo高级进阶" rel="prev" title="hexo高级进阶">
+                hexo高级进阶 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 
+      
+    </div>
+  </div>
 
 
           </div>
@@ -676,6 +581,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -695,8 +606,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -778,6 +698,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客中插入图片"><span class="nav-number">1.</span> <span class="nav-text">博客中插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入音乐"><span class="nav-number">2.</span> <span class="nav-text">插入音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成多说评论，分享"><span class="nav-number">3.</span> <span class="nav-text">集成多说评论，分享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加标签页"><span class="nav-number">4.</span> <span class="nav-text">添加标签页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">5.</span> <span class="nav-text">添加搜索功能</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -909,6 +845,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 

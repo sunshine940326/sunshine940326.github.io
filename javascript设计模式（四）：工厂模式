@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js,js设计模式," />
 
 
 
@@ -87,15 +87,16 @@
 
 
 
-<meta name="description" content="做更好的自己">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cherry's Blog">
-<meta property="og:url" content="http://cherryblog.site/tags/js设计模式/index.html">
+<meta name="description" content="我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript设计模式（四）：工厂模式">
+<meta property="og:url" content="http://cherryblog.site/javascript设计模式（四）：工厂模式">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="做更好的自己">
+<meta property="og:description" content="我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。">
+<meta property="og:updated_time" content="2017-03-26T14:02:49.912Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cherry's Blog">
-<meta name="twitter:description" content="做更好的自己">
+<meta name="twitter:title" content="javascript设计模式（四）：工厂模式">
+<meta name="twitter:description" content="我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://cherryblog.site/tags/js设计模式/"/>
+  <link rel="canonical" href="http://cherryblog.site/javascript设计模式（四）：工厂模式"/>
 
 
 
 
 
-  <title> 标签: js设计模式 | Cherry's Blog </title>
+  <title> javascript设计模式（四）：工厂模式 | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,130 +290,241 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        js设计模式
-        <small>标签</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/javascript设计模式（四）：工厂模式" itemprop="url">
-              
-                <span itemprop="name">javascript设计模式（四）：工厂模式</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-26T22:01:41+08:00"
-              content="2017-03-26" >
-          03-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/javascript设计模式（三）：原型模式" itemprop="url">
-              
-                <span itemprop="name">javascript设计模式（三）：原型模式</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-25T23:05:28+08:00"
-              content="2017-03-25" >
-          03-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/javascript模块化编程（二）：模块化模式" itemprop="url">
-              
-                <span itemprop="name">javascript设计模式（二）：模块化模式</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-24T23:09:08+08:00"
-              content="2017-03-24" >
-          03-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/javascript设计模式（一）" itemprop="url">
-              
-                <span itemprop="name">javascript设计模式（一）</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-11T23:54:11+08:00"
-              content="2017-03-11" >
-          03-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </div>
 
   
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/javascript设计模式（四）：工厂模式">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                javascript设计模式（四）：工厂模式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T22:01:41+08:00">
+                2017-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/javascript设计模式（四）：工厂模式#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/javascript设计模式（四）：工厂模式" class="leancloud_visitors" data-flag-title="javascript设计模式（四）：工厂模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+               
+                     <span class="post-meta-item-icon">
+                       <i class="fa fa-edit"></i>
+                     </span>
+                 
+                     <span class="post-meta-item-text">字数统计</span>
+                       
+                     <span title="字数统计" }}">
+                       385 字
+                     </span>
+                  
+                 
+                  <span class="post-meta-divider">|</span>
+                 
+                 
+                 <span class="post-meta-item-icon">
+                     <i class="fa fa-clock-o"></i>
+                     </span>
+                 
+                      <span class="post-meta-item-text">阅读时长</span>
+                 
+                   <span title="阅读时长" }}">
+                 2 分钟
+                 </span>
+               
+            </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。<br><a id="more"></a></p>
+<h2 id="使用工厂模式"><a href="#使用工厂模式" class="headerlink" title="使用工厂模式"></a>使用工厂模式</h2><p>下面通过使用构造器模式逻辑来定义一个汽车。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">// Types.js - Constructors used behind the scenes</div><div class="line"></div><div class="line">// A constructor for defining new cars</div><div class="line">function Car( options ) &#123;</div><div class="line"></div><div class="line">  // some defaults</div><div class="line">  this.doors = options.doors || 4;</div><div class="line">  this.state = options.state || &quot;brand new&quot;;</div><div class="line">  this.color = options.color || &quot;silver&quot;;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">// A constructor for defining new trucks</div><div class="line">function Truck( options)&#123;</div><div class="line"></div><div class="line">  this.state = options.state || &quot;used&quot;;</div><div class="line">  this.wheelSize = options.wheelSize || &quot;large&quot;;</div><div class="line">  this.color = options.color || &quot;blue&quot;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// FactoryExample.js</div><div class="line"></div><div class="line">// Define a skeleton vehicle factory</div><div class="line">function VehicleFactory() &#123;&#125;</div><div class="line"></div><div class="line">// Define the prototypes and utilities for this factory</div><div class="line"></div><div class="line">// Our default vehicleClass is Car</div><div class="line">VehicleFactory.prototype.vehicleClass = Car;</div><div class="line"></div><div class="line">// Our Factory method for creating new Vehicle instances</div><div class="line">VehicleFactory.prototype.createVehicle = function ( options ) &#123;</div><div class="line"></div><div class="line">  if( options.vehicleType === &quot;car&quot; )&#123;</div><div class="line">    this.vehicleClass = Car;</div><div class="line">  &#125;else&#123;</div><div class="line">    this.vehicleClass = Truck;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return new this.vehicleClass( options );</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">// Create an instance of our factory that makes cars</div><div class="line">var carFactory = new VehicleFactory();</div><div class="line">var car = carFactory.createVehicle( &#123;</div><div class="line">            vehicleType: &quot;car&quot;,</div><div class="line">            color: &quot;yellow&quot;,</div><div class="line">            doors: 6 &#125; );</div><div class="line"></div><div class="line">// Test to confirm our car was created using the vehicleClass/prototype Car</div><div class="line"></div><div class="line">// Outputs: true</div><div class="line">console.log( car instanceof Car );</div><div class="line"></div><div class="line">// Outputs: Car object of color &quot;yellow&quot;, doors: 6 in a &quot;brand new&quot; state</div><div class="line">console.log( car );</div></pre></td></tr></table></figure></p>
+<p>在这个例子中，我们首先定义了两个函数：Car 和 Trucks，这两个类中有Car和Trucks的属性默认值并且也可以自己传入参数，就是相当于造Car和Trucks的方法</p>
+<p>然后我们定义了一个工厂，将创造Car和Trucks 的方法放到工厂里面（通过给VehicleFactory的prototype上增加Car和Trucks方法），默认是要创建一个Car，</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/js设计模式/" rel="tag"># js设计模式</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/javascript设计模式（三）：原型模式" rel="next" title="javascript设计模式（三）：原型模式">
+                <i class="fa fa-chevron-left"></i> javascript设计模式（三）：原型模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/移动端调试方法" rel="prev" title="移动端调试方法">
+                移动端调试方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -420,6 +532,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -439,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -522,6 +649,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用工厂模式"><span class="nav-number">1.</span> <span class="nav-text">使用工厂模式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -653,6 +796,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
