@@ -1,0 +1,1190 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="了解githubPages+hexo搭建博客的原理">
+<meta property="og:url" content="http://cherryblog.site/2017/02/26/了解githubPages-hexo搭建博客的原理/index.html">
+<meta property="og:site_name" content="Cherry's Blog">
+<meta property="og:description" content="之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。">
+<meta property="og:image" content="http://img.blog.csdn.net/20170226100516628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170226100803503?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170226101029145?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170226102946906?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-02-26T11:33:53.978Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="了解githubPages+hexo搭建博客的原理">
+<meta name="twitter:description" content="之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170226100516628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cherryblog.site/2017/02/26/了解githubPages-hexo搭建博客的原理/"/>
+
+
+
+
+
+  <title> 了解githubPages+hexo搭建博客的原理 | Cherry's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?71ddec12fb1172387f0bd6399e834274";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <a href="https://github.com/sunshine940326"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cherry's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">To Be a Batter Me</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            生活中的美好
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br />
+            
+            照片
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/2017/02/26/了解githubPages-hexo搭建博客的原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                了解githubPages+hexo搭建博客的原理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-26T14:30:15+08:00">
+                2017-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/02/26/了解githubPages-hexo搭建博客的原理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/02/26/了解githubPages-hexo搭建博客的原理/" class="leancloud_visitors" data-flag-title="了解githubPages+hexo搭建博客的原理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+               
+                     <span class="post-meta-item-icon">
+                       <i class="fa fa-edit"></i>
+                     </span>
+                 
+                     <span class="post-meta-item-text">字数统计</span>
+                       
+                     <span title="字数统计" }}">
+                       1,846 字
+                     </span>
+                  
+                 
+                  <span class="post-meta-divider">|</span>
+                 
+                 
+                 <span class="post-meta-item-icon">
+                     <i class="fa fa-clock-o"></i>
+                     </span>
+                 
+                      <span class="post-meta-item-text">阅读时长</span>
+                 
+                   <span title="阅读时长" }}">
+                 7 分钟
+                 </span>
+               
+            </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。<br><a id="more"></a></p>
+<h2 id="什么是github-pages"><a href="#什么是github-pages" class="headerlink" title="什么是github pages"></a>什么是github pages</h2><ol>
+<li><p>什么是github pages<br>github是项目托管网站，列出了项目的源文件，所以github  有一个pages功能，可以自定义主页，用来代替默认的列出源列表的这个页面</p>
+<blockquote>
+<p>所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。</p>
+</blockquote>
+</li>
+<li><p>下面是GitHub Pages 官方文档:</p>
+</li>
+</ol>
+<ul>
+<li><a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a> </li>
+<li><a href="http://help.github.com/pages" target="_blank" rel="external">http://help.github.com/pages</a></li>
+</ul>
+<ol>
+<li><p>GitHub提供两种类型的主页(<a href="https://help.github.com/articles/user-organization-and-project-pages" target="_blank" rel="external">https://help.github.com/articles/user-organization-and-project-pages</a>):</p>
+<ul>
+<li>个人或组织主页 - 页面内容位于 master 下 </li>
+<li>项目主页 - 页面内容位于每个项目的master下</li>
+</ul>
+<p>我们创建的博客属于个人页面（也可以创建为项目主页，不过默认的域名不一样，个人理解）</p>
+</li>
+</ol>
+<h2 id="怎么使用github-pages"><a href="#怎么使用github-pages" class="headerlink" title="怎么使用github pages"></a>怎么使用github pages</h2><ol>
+<li>使用个人或组织页面<br>使用个人或组织页面，需要先创建一个和你的账号同名的仓库，比我我的github账号是sunshine940326，那么我需要创建一个名为sunshine940326.github.io的repo，然后在master上提交你的项目代码，这样就可以通过网址：<a href="http://sunshine940326.github.io来访问我的个人博客。" target="_blank" rel="external">http://sunshine940326.github.io来访问我的个人博客。</a></li>
+<li><p>使用项目主页的方法如下</p>
+<ul>
+<li>设置的方法很简单，只需要在你项目的右上角点击setting<br><img src="http://img.blog.csdn.net/20170226100516628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
+<li>找到下方的pages，将默认的none改成master分支<img src="http://img.blog.csdn.net/20170226100803503?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
+<li>点击保存，之后就可以在github pages后面看到你的项目链接了，你可以直接通过这个链接查看你master分支中代码的html内容<img src="http://img.blog.csdn.net/20170226101029145?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>user pages只有一个, project pages可以有多个, 对于个人博客而言, 两种方式都可以.如果用户申请了自己的域名, 还可以使用CNAME文件自定义domain name, 这样访问你的域名就自动访问到github上的页面. 用户也可以自定义404页面.</p>
+</blockquote>
+<h2 id="什么是hexo以及安装hexo"><a href="#什么是hexo以及安装hexo" class="headerlink" title="什么是hexo以及安装hexo"></a>什么是hexo以及安装hexo</h2><p>说完了githubpages，继续来说一下什么是hexo</p>
+<ol>
+<li>什么是Hexo<br>google的第一条结果的解释是这样的<br><img src="http://img.blog.csdn.net/20170226102946906?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>点开这个链接就是中文版的官网了，<strong>强烈建议大家多看看官方教程</strong>，比看其他的教程有用多了</li>
+</ol>
+<p>hexo是基于node环境，所以你需要先安装node，进行一些操作需要用到命令行，所以建议大家直接装一个git bash<br>这是git for windows自带的一组程序，提供了Linux风格的shell，在该环境下，您可以直接用上面提到的命令来安装Node.js。打开它的方法很简单，在任意位置单击右键，选择“GitBash Here”即可。由于Hexo的很多操作都涉及到命令行，您可以考虑始终使用Git Bash来进行操作。</p>
+<ol>
+<li>安装 Git<ul>
+<li>Windows：下载并安装 git.<a href="https://github.com/waylau/git-for-win" target="_blank" rel="external">百度云git下载地址</a></li>
+<li>Mac：使用 Homebrew, MacPorts ：brew install git;或下载 安装程序 安装。</li>
+<li>Linux (Ubuntu, Debian)：sudo apt-get install git-core</li>
+<li>Linux (Fedora, Red Hat, CentOS)：sudo yum install git-core</li>
+</ul>
+</li>
+<li><p>安装node<br>安装node的方式有很多种，我建议直接使用安装程序安装<a href="https://nodejs.org/en/" target="_blank" rel="external">node安装程序</a></p>
+<blockquote>
+<p>对于windows用户来说，建议使用安装程序进行安装。安装时，请勾选Add to PATH选项。<br><strong>安装node是需要配置环境变量的</strong></p>
+</blockquote>
+<p>安装完成之后打开命令行，输入 node -v，如果有返回版本号，即说明安装成功</p>
+</li>
+<li>安装Hexo<br>当你安装好了git和node之后，就可以安装hexo了，好激动有没有，先不要激动的太早，这才刚开始= =<br>只需要输入下面的代码就可以安装hexo<br>在任意位置新建一个文件夹名为hexo <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ cd d:/hexo</div><div class="line">$ npm install hexo-cli -g</div><div class="line">$ hexo init blog</div><div class="line">$ cd blog</div><div class="line">$ npm install</div><div class="line">$ hexo g # 或者hexo generate</div><div class="line">$ hexo s # 或者hexo server可以在http://localhost:4000/ 查看</div></pre></td></tr></table></figure></li>
+</ol>
+<p>至此，你可以在浏览器输入<a href="http://localhost:4000/，预览你的博客了，通常都是一篇hello" target="_blank" rel="external">http://localhost:4000/，预览你的博客了，通常都是一篇hello</a> world= =<br>然后我们就需要将我们的项目部署到github上</p>
+<p><strong>首先需要明白所谓部署到github的原理。</strong><br><strong>之前步骤中在Github上创建的那个个人项目的repo（sunshine940326.github.io）一个最大的特点就是其master中的html静态文件，可以通过链接http:// .github.io来直接访问。</strong><br><strong>Hexo -g 会生成一个静态网站（第一次会生成一个public目录），这个静态文件可以直接访问。</strong><br><strong>需要将hexo生成的静态网站，提交(git commit)到github上。</strong><br>然后我们需要配置_config.yml配置文件<br>目前我安装所用的本地环境如下：(可以通过hexo -v查看)<code>$ hexo -v
+hexo: 3.2.2
+hexo-cli: 1.0.2
+os: Windows_NT 6.3.9600 win32 x64
+http_parser: 2.7.0
+node: 4.5.0
+v8: 4.5.103.37
+uv: 1.9.1
+zlib: 1.2.8
+ares: 1.10.1-DEV
+icu: 56.1
+modules: 46
+openssl: 1.0.2h</code><br>要想部署到github，我们需要作如下配置（貌似不同版本的hexo配置不同，主要是hexo2.0和hexo3.0，所以你需要先查看自己安装的hexo版本）<br><strong>注意type:后面有一个空格</strong><br>将repository后面的链接换成你的博客名字<code># Deployment
+ Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: https://github.com/sunshine940326/sunshine940326.github.io.git</code><br>然后在执行<br><code>$ hexo clean
+ $ hexo g
+ $ hexo s
+ $ hexo d</code></p>
+<ol>
+<li><p>命令解释：</p>
+<ul>
+<li>hexo clean：清除public，当 source文件夹中的部分资源更改过之后，特别是对文件进行了删除或者路径的改变之后，需要执行这个命令，然后重新编译。</li>
+<li>hexo generate (hexo g)： 编译，一般部署上去的时候都需要编译一下，编译后，会出现一个 public 文件夹，将所有的md文件编译成html文件 开启本地服务，</li>
+<li>hexo server (hexo s) 启动本地web服务，用于博客的预览</li>
+<li>hexo deploy (hexo d) 部署播客到远端（比如github, heroku等平台）：部署博客到github上，如果一切顺利，你就通过访问usename.github.io访问你的博客了！</li>
+<li>是的，现在你拥有了自己的博客！<br>然后你就可以输入<a href="http://sunshine940326.github.io来查看你的博客啦~" target="_blank" rel="external">http://sunshine940326.github.io来查看你的博客啦~</a><br>注意需要提前安装一个扩展：<code>$ npm install hexo-deployer-git --save</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="装饰你的个人博客"><a href="#装饰你的个人博客" class="headerlink" title="装饰你的个人博客"></a>装饰你的个人博客</h2><p>至此，已经完成了github pages+hexo搭建博客的步骤，现在需要装饰你的博客</p>
+<ol>
+<li>Hexo 主题配置<br>就和当时我们用的qq空间一样，我们可以直接用写好的主题，然后我们就只需要写文章就好<br>这里以主题NexT为例进行说明。</li>
+<li>安装主题 <code>$ hexo clean
+$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></li>
+<li>启用主题</li>
+</ol>
+<p>修改Hexo目录下的_config.yml配置文件中的theme属性，将其设置为next。</p>
+<ol>
+<li>更新主题<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd themes/next</div><div class="line">$ git pull</div><div class="line">$ hexo g # 生成</div><div class="line">$ hexo s # 启动本地web服务器</div></pre></td></tr></table></figure></li>
+</ol>
+<p>现在打开<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> ，会看到我们已经应用了一个新的主题。<br>你可以在<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes·Hexo</a>上选择你的主题，我使用的Next主题<br>参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">Next官方文档</a>,内容十分详尽</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/25/将项目上传至github/" rel="next" title="将项目上传至github">
+                <i class="fa fa-chevron-left"></i> 将项目上传至github
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/01/react（一）：初识react/" rel="prev" title="react（一）：初识react">
+                react（一）：初识react <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Cherry" />
+          <p class="site-author-name" itemprop="name">Cherry</p>
+           
+              <p class="site-description motion-element" itemprop="description">做更好的自己</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/sunshine940326" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5094854684/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是github-pages"><span class="nav-number">1.</span> <span class="nav-text">什么是github pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么使用github-pages"><span class="nav-number">2.</span> <span class="nav-text">怎么使用github pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是hexo以及安装hexo"><span class="nav-number">3.</span> <span class="nav-text">什么是hexo以及安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰你的个人博客"><span class="nav-number">4.</span> <span class="nav-text">装饰你的个人博客</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+    <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66"></iframe>
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cherry</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问用户：
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问次数：
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "8e7fb6982ddb4d13ad9daf445e511984",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("SXu3fAQtWilv2Jtsr5eHvgCH-gzGzoHsz", "R79G2KT1xhiu9Ngp3Dnjsn7k");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+
+  <div class="bg_content">
+          <canvas id="canvas"></canvas>
+    </div>
+  <script>
+  class Circle {
+      //创建对象
+      //以一个圆为对象
+      //设置随机的 x，y坐标，r半径，_mx，_my移动的距离
+      //this.r是创建圆的半径，参数越大半径越大
+      //this._mx,this._my是移动的距离，参数越大移动
+      constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.r = Math.random() * 10 ;
+          this._mx = Math.random() ;
+          this._my = Math.random() ;
+
+      }
+
+      //canvas 画圆和画直线
+      //画圆就是正常的用canvas画一个圆
+      //画直线是两个圆连线，为了避免直线过多，给圆圈距离设置了一个值，距离很远的圆圈，就不做连线处理
+      drawCircle(ctx) {
+          ctx.beginPath();
+          //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
+          ctx.arc(this.x, this.y, this.r, 0, 360)
+          ctx.closePath();
+          ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
+          ctx.fill();
+      }
+
+      drawLine(ctx, _circle) {
+          let dx = this.x - _circle.x;
+          let dy = this.y - _circle.y;
+          let d = Math.sqrt(dx * dx + dy * dy)
+          if (d < 150) {
+              ctx.beginPath();
+              //开始一条路径，移动到位置 this.x,this.y。创建到达位置 _circle.x,_circle.y 的一条线：
+              ctx.moveTo(this.x, this.y);   //起始点
+              ctx.lineTo(_circle.x, _circle.y);   //终点
+              ctx.closePath();
+              ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+              ctx.stroke();
+          }
+      }
+
+      // 圆圈移动
+      // 圆圈移动的距离必须在屏幕范围内
+      move(w, h) {
+          this._mx = (this.x < w && this.x > 0) ? this._mx : (-this._mx);
+          this._my = (this.y < h && this.y > 0) ? this._my : (-this._my);
+          this.x += this._mx / 2;
+          this.y += this._my / 2;
+      }
+  }
+  //鼠标点画圆闪烁变动
+  class currentCirle extends Circle {
+      constructor(x, y) {
+          super(x, y)
+      }
+
+      drawCircle(ctx) {
+          ctx.beginPath();
+          //注释内容为鼠标焦点的地方圆圈半径变化
+          //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
+          this.r = 8;
+          ctx.arc(this.x, this.y, this.r, 0, 360);
+          ctx.closePath();
+          //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
+          ctx.fillStyle = 'rgba(255, 77, 54, 0.3)'
+          ctx.fill();
+
+      }
+  }
+  //更新页面用requestAnimationFrame替代setTimeout
+  window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+  let canvas = document.getElementById('canvas');
+  let ctx = canvas.getContext('2d');
+  let w = canvas.width = canvas.offsetWidth;
+  let h = canvas.height = canvas.offsetHeight;
+  let circles = [];
+  let current_circle = new currentCirle(0, 0)
+
+  let draw = function () {
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < circles.length; i++) {
+          circles[i].move(w, h);
+          circles[i].drawCircle(ctx);
+          for (j = i + 1; j < circles.length; j++) {
+              circles[i].drawLine(ctx, circles[j])
+          }
+      }
+      if (current_circle.x) {
+          current_circle.drawCircle(ctx);
+          for (var k = 1; k < circles.length; k++) {
+              current_circle.drawLine(ctx, circles[k])
+          }
+      }
+      requestAnimationFrame(draw)
+  }
+
+  let init = function (num) {
+      for (var i = 0; i < num; i++) {
+          circles.push(new Circle(Math.random() * w, Math.random() * h));
+      }
+      draw();
+  }
+  window.addEventListener('load', init(60));
+  window.onmousemove = function (e) {
+      e = e || window.event;
+      current_circle.x = e.clientX;
+      current_circle.y = e.clientY;
+  }
+  window.onmouseout = function () {
+      current_circle.x = null;
+      current_circle.y = null;
+
+  };
+  </script>
+</body>
+</html>
