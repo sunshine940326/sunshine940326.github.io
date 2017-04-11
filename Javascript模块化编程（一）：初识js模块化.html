@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="js模块化,js," />
 
 
 
@@ -87,21 +87,16 @@
 
 
 
-<meta name="description" content="之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。">
+<meta name="description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="了解githubPages+hexo搭建博客的原理">
-<meta property="og:url" content="http://cherryblog.site/了解githubPages-hexo搭建博客的原理">
+<meta property="og:title" content="Javascript模块化编程（一）：模块的写法">
+<meta property="og:url" content="http://cherryblog.site/Javascript模块化编程（一）：初识js模块化.html">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。">
-<meta property="og:image" content="http://img.blog.csdn.net/20170226100516628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170226100803503?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170226101029145?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170226102946906?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-02-26T11:33:53.978Z">
+<meta property="og:description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
+<meta property="og:updated_time" content="2017-03-07T14:42:38.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="了解githubPages+hexo搭建博客的原理">
-<meta name="twitter:description" content="之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170226100516628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="Javascript模块化编程（一）：模块的写法">
+<meta name="twitter:description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
 
 
 
@@ -129,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://cherryblog.site/了解githubPages-hexo搭建博客的原理"/>
+  <link rel="canonical" href="http://cherryblog.site/Javascript模块化编程（一）：初识js模块化.html"/>
 
 
 
 
 
-  <title> 了解githubPages+hexo搭建博客的原理 | Cherry's Blog </title>
+  <title> Javascript模块化编程（一）：模块的写法 | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -305,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/了解githubPages-hexo搭建博客的原理">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/Javascript模块化编程（一）：初识js模块化.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cherry">
@@ -326,7 +321,7 @@
             
             
               
-                了解githubPages+hexo搭建博客的原理
+                Javascript模块化编程（一）：模块的写法
               
             
           </h1>
@@ -341,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-26T14:30:15+08:00">
-                2017-02-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T22:40:16+08:00">
+                2017-03-07
               </time>
             
 
@@ -364,8 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -382,7 +377,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/了解githubPages-hexo搭建博客的原理#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/Javascript模块化编程（一）：初识js模块化.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -391,7 +386,7 @@
 
           
           
-             <span id="/了解githubPages-hexo搭建博客的原理" class="leancloud_visitors" data-flag-title="了解githubPages+hexo搭建博客的原理">
+             <span id="/Javascript模块化编程（一）：初识js模块化.html" class="leancloud_visitors" data-flag-title="Javascript模块化编程（一）：模块的写法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -415,7 +410,7 @@
                      <span class="post-meta-item-text">字数统计</span>
                        
                      <span title="字数统计" }}">
-                       1,846 字
+                       921 字
                      </span>
                   
                  
@@ -429,7 +424,7 @@
                       <span class="post-meta-item-text">阅读时长</span>
                  
                    <span title="阅读时长" }}">
-                 7 分钟
+                 3 分钟
                  </span>
                
             </div>
@@ -447,107 +442,33 @@
       
 
       
-        <p>之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。<br><a id="more"></a></p>
-<h2 id="什么是github-pages"><a href="#什么是github-pages" class="headerlink" title="什么是github pages"></a>什么是github pages</h2><ol>
-<li><p>什么是github pages<br>github是项目托管网站，列出了项目的源文件，所以github  有一个pages功能，可以自定义主页，用来代替默认的列出源列表的这个页面</p>
+        <p>不得不说现在“前端”的知识点实在是太多了，(ಥ<em>ಥ)<br>就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥ</em>ಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成</p>
+<a id="more"></a>
+<h1 id="了解基本概念：AMD-CMD-commonJS"><a href="#了解基本概念：AMD-CMD-commonJS" class="headerlink" title="了解基本概念：AMD/CMD/commonJS"></a>了解基本概念：AMD/CMD/commonJS</h1><p>先来大体说一些这些都是什么东西：<br>AMD/CMD/commonJS都是JavaScript模块化变的规范</p>
 <blockquote>
-<p>所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。</p>
+<p>因为有了模块，我们就可以更方便地使用别人的代码，想要什么功能，就加载什么模块。<br>但是，这样做有一个前提，那就是大家必须以同样的方式编写模块，否则你有你的写法，我有我的写法，岂不是乱了套！考虑到Javascript模块现在还没有官方规范，这一点就更重要了。</p>
 </blockquote>
-</li>
-<li><p>下面是GitHub Pages 官方文档:</p>
-</li>
-</ol>
 <ul>
-<li><a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a> </li>
-<li><a href="http://help.github.com/pages" target="_blank" rel="external">http://help.github.com/pages</a></li>
+<li>AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。</li>
+<li>CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。</li>
+<li>commonJS是nodejs在推广过程中对模块定义的规范化产出。</li>
 </ul>
-<ol>
-<li><p>GitHub提供两种类型的主页(<a href="https://help.github.com/articles/user-organization-and-project-pages" target="_blank" rel="external">https://help.github.com/articles/user-organization-and-project-pages</a>):</p>
-<ul>
-<li>个人或组织主页 - 页面内容位于 master 下 </li>
-<li>项目主页 - 页面内容位于每个项目的master下</li>
-</ul>
-<p>我们创建的博客属于个人页面（也可以创建为项目主页，不过默认的域名不一样，个人理解）</p>
-</li>
-</ol>
-<h2 id="怎么使用github-pages"><a href="#怎么使用github-pages" class="headerlink" title="怎么使用github pages"></a>怎么使用github pages</h2><ol>
-<li>使用个人或组织页面<br>使用个人或组织页面，需要先创建一个和你的账号同名的仓库，比我我的github账号是sunshine940326，那么我需要创建一个名为sunshine940326.github.io的repo，然后在master上提交你的项目代码，这样就可以通过网址：<a href="http://sunshine940326.github.io来访问我的个人博客。" target="_blank" rel="external">http://sunshine940326.github.io来访问我的个人博客。</a></li>
-<li><p>使用项目主页的方法如下</p>
-<ul>
-<li>设置的方法很简单，只需要在你项目的右上角点击setting<br><img src="http://img.blog.csdn.net/20170226100516628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
-<li>找到下方的pages，将默认的none改成master分支<img src="http://img.blog.csdn.net/20170226100803503?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
-<li>点击保存，之后就可以在github pages后面看到你的项目链接了，你可以直接通过这个链接查看你master分支中代码的html内容<img src="http://img.blog.csdn.net/20170226101029145?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
-</ul>
-</li>
-</ol>
+<p>因为node主要是将javascript语言用于服务器端编程，所以对应的commonJS主要是针对服务端，AMD/CMD主要是针对浏览器端。</p>
+<h2 id="AMD-Asynchronous-Module-Definition"><a href="#AMD-Asynchronous-Module-Definition" class="headerlink" title="AMD(Asynchronous Module Definition)"></a>AMD(Asynchronous Module Definition)</h2><p>全称是Asynchronous Module Definition，即异步模块加载机制。</p>
+<h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><p>CommonJS 的目标是定义一套普通应用程序使用的API，从而填补原生JavaScript标准库过少的缺点。终极目标是实现一个像python，java中含有的标准库。现在非常火爆的node.js实际上就是CommonJS 的一个实现。</p>
+<p>通过 CommonJS 的规范和代码可以看出，require 是同步的，模块系统需要同步读取模块文件内容，并编译执行以得到模块接口。在服务端，比如node.js，这一般来说没有问题，文件请求都是本地获取，对性能没有什么影响。但是放在浏览器端，问题就出来了，等到所有模块同步加载完毕，时间不知道要过去多久了。</p>
 <blockquote>
-<p>user pages只有一个, project pages可以有多个, 对于个人博客而言, 两种方式都可以.如果用户申请了自己的域名, 还可以使用CNAME文件自定义domain name, 这样访问你的域名就自动访问到github上的页面. 用户也可以自定义404页面.</p>
+<p>CommonJS 最早叫做 ServerJS，Modules 1.0规范在node.js上实践的很好，由于知道自身在浏览器中的不足，CommonJS社区把名字改为CommonJS，意为想统一服务器端和浏览器端，但是要实现浏览器端，就要有新的版本的标准，在新的版本制定过程中，社区出现了分歧，在这个分歧中，分出了AMD规范。</p>
+<p>由于风格和机制的差异，最终，AMD从CommonJS社区中独立了出来<br>–<a href="http://www.feeldesignstudio.com/2013/09/javascript-module-pattern-commonjs/?utm_source=caibaojian.com" target="_blank" rel="external">JavaScript模块化开发（二）——CommonJS规范</a></p>
 </blockquote>
-<h2 id="什么是hexo以及安装hexo"><a href="#什么是hexo以及安装hexo" class="headerlink" title="什么是hexo以及安装hexo"></a>什么是hexo以及安装hexo</h2><p>说完了githubpages，继续来说一下什么是hexo</p>
+<h1 id="那么AMD-CMD又有什么区别呢？"><a href="#那么AMD-CMD又有什么区别呢？" class="headerlink" title="那么AMD/CMD又有什么区别呢？"></a>那么AMD/CMD又有什么区别呢？</h1><p>AMD和CMD的区别 </p>
 <ol>
-<li>什么是Hexo<br>google的第一条结果的解释是这样的<br><img src="http://img.blog.csdn.net/20170226102946906?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>点开这个链接就是中文版的官网了，<strong>强烈建议大家多看看官方教程</strong>，比看其他的教程有用多了</li>
+<li>对于依赖的模块，AMD 是 提前执行 ，CMD 是 延迟执行 。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible. </li>
+<li>CMD 推崇 依赖就近 ，AMD 推崇 依赖前置 。（这一点是非常重要的区别） </li>
+<li>AMD 的 API 默认是 一个当多个用 ，CMD 的 API 严格区分，推崇 职责单一 。</li>
 </ol>
-<p>hexo是基于node环境，所以你需要先安装node，进行一些操作需要用到命令行，所以建议大家直接装一个git bash<br>这是git for windows自带的一组程序，提供了Linux风格的shell，在该环境下，您可以直接用上面提到的命令来安装Node.js。打开它的方法很简单，在任意位置单击右键，选择“GitBash Here”即可。由于Hexo的很多操作都涉及到命令行，您可以考虑始终使用Git Bash来进行操作。</p>
-<ol>
-<li>安装 Git<ul>
-<li>Windows：下载并安装 git.<a href="https://github.com/waylau/git-for-win" target="_blank" rel="external">百度云git下载地址</a></li>
-<li>Mac：使用 Homebrew, MacPorts ：brew install git;或下载 安装程序 安装。</li>
-<li>Linux (Ubuntu, Debian)：sudo apt-get install git-core</li>
-<li>Linux (Fedora, Red Hat, CentOS)：sudo yum install git-core</li>
-</ul>
-</li>
-<li><p>安装node<br>安装node的方式有很多种，我建议直接使用安装程序安装<a href="https://nodejs.org/en/" target="_blank" rel="external">node安装程序</a></p>
-<blockquote>
-<p>对于windows用户来说，建议使用安装程序进行安装。安装时，请勾选Add to PATH选项。<br><strong>安装node是需要配置环境变量的</strong></p>
-</blockquote>
-<p>安装完成之后打开命令行，输入 node -v，如果有返回版本号，即说明安装成功</p>
-</li>
-<li>安装Hexo<br>当你安装好了git和node之后，就可以安装hexo了，好激动有没有，先不要激动的太早，这才刚开始= =<br>只需要输入下面的代码就可以安装hexo<br>在任意位置新建一个文件夹名为hexo <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ cd d:/hexo</div><div class="line">$ npm install hexo-cli -g</div><div class="line">$ hexo init blog</div><div class="line">$ cd blog</div><div class="line">$ npm install</div><div class="line">$ hexo g # 或者hexo generate</div><div class="line">$ hexo s # 或者hexo server可以在http://localhost:4000/ 查看</div></pre></td></tr></table></figure></li>
-</ol>
-<p>至此，你可以在浏览器输入<a href="http://localhost:4000/，预览你的博客了，通常都是一篇hello" target="_blank" rel="external">http://localhost:4000/，预览你的博客了，通常都是一篇hello</a> world= =<br>然后我们就需要将我们的项目部署到github上</p>
-<p><strong>首先需要明白所谓部署到github的原理。</strong><br><strong>之前步骤中在Github上创建的那个个人项目的repo（sunshine940326.github.io）一个最大的特点就是其master中的html静态文件，可以通过链接http:// .github.io来直接访问。</strong><br><strong>Hexo -g 会生成一个静态网站（第一次会生成一个public目录），这个静态文件可以直接访问。</strong><br><strong>需要将hexo生成的静态网站，提交(git commit)到github上。</strong><br>然后我们需要配置_config.yml配置文件<br>目前我安装所用的本地环境如下：(可以通过hexo -v查看)<code>$ hexo -v
-hexo: 3.2.2
-hexo-cli: 1.0.2
-os: Windows_NT 6.3.9600 win32 x64
-http_parser: 2.7.0
-node: 4.5.0
-v8: 4.5.103.37
-uv: 1.9.1
-zlib: 1.2.8
-ares: 1.10.1-DEV
-icu: 56.1
-modules: 46
-openssl: 1.0.2h</code><br>要想部署到github，我们需要作如下配置（貌似不同版本的hexo配置不同，主要是hexo2.0和hexo3.0，所以你需要先查看自己安装的hexo版本）<br><strong>注意type:后面有一个空格</strong><br>将repository后面的链接换成你的博客名字<code># Deployment
- Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repository: https://github.com/sunshine940326/sunshine940326.github.io.git</code><br>然后在执行<br><code>$ hexo clean
- $ hexo g
- $ hexo s
- $ hexo d</code></p>
-<ol>
-<li><p>命令解释：</p>
-<ul>
-<li>hexo clean：清除public，当 source文件夹中的部分资源更改过之后，特别是对文件进行了删除或者路径的改变之后，需要执行这个命令，然后重新编译。</li>
-<li>hexo generate (hexo g)： 编译，一般部署上去的时候都需要编译一下，编译后，会出现一个 public 文件夹，将所有的md文件编译成html文件 开启本地服务，</li>
-<li>hexo server (hexo s) 启动本地web服务，用于博客的预览</li>
-<li>hexo deploy (hexo d) 部署播客到远端（比如github, heroku等平台）：部署博客到github上，如果一切顺利，你就通过访问usename.github.io访问你的博客了！</li>
-<li>是的，现在你拥有了自己的博客！<br>然后你就可以输入<a href="http://sunshine940326.github.io来查看你的博客啦~" target="_blank" rel="external">http://sunshine940326.github.io来查看你的博客啦~</a><br>注意需要提前安装一个扩展：<code>$ npm install hexo-deployer-git --save</code></li>
-</ul>
-</li>
-</ol>
-<h2 id="装饰你的个人博客"><a href="#装饰你的个人博客" class="headerlink" title="装饰你的个人博客"></a>装饰你的个人博客</h2><p>至此，已经完成了github pages+hexo搭建博客的步骤，现在需要装饰你的博客</p>
-<ol>
-<li>Hexo 主题配置<br>就和当时我们用的qq空间一样，我们可以直接用写好的主题，然后我们就只需要写文章就好<br>这里以主题NexT为例进行说明。</li>
-<li>安装主题 <code>$ hexo clean
-$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></li>
-<li>启用主题</li>
-</ol>
-<p>修改Hexo目录下的_config.yml配置文件中的theme属性，将其设置为next。</p>
-<ol>
-<li>更新主题<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd themes/next</div><div class="line">$ git pull</div><div class="line">$ hexo g # 生成</div><div class="line">$ hexo s # 启动本地web服务器</div></pre></td></tr></table></figure></li>
-</ol>
-<p>现在打开<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> ，会看到我们已经应用了一个新的主题。<br>你可以在<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes·Hexo</a>上选择你的主题，我使用的Next主题<br>参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">Next官方文档</a>,内容十分详尽</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>不得不说，其实这篇文章大部分都是摘录的，反思了一下，归根结底还是自己对这些概念理解的不清，首先是没有找到系统的讲解文章，其次是自己没有用到项目中去，自我批评。</p>
+<p>先挖个坑，以后我胡汉三还会回来的~</p>
 
       
     </div>
@@ -577,7 +498,9 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></li>
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/js模块化/" rel="tag"># js模块化</a>
+          
+            <a href="/tags/js/" rel="tag"># js</a>
           
         </div>
       
@@ -590,8 +513,8 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></li>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/将项目上传至github" rel="next" title="将项目上传至github">
-                <i class="fa fa-chevron-left"></i> 将项目上传至github
+              <a href="/面试题.html" rel="next" title="前端面试">
+                <i class="fa fa-chevron-left"></i> 前端面试
               </a>
             
           </div>
@@ -600,8 +523,8 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></li>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/react（一）：初识react" rel="prev" title="react（一）：初识react">
-                react（一）：初识react <i class="fa fa-chevron-right"></i>
+              <a href="/javascript模块化编程（二）：js模块化的发展史.html" rel="prev" title="javascript模块化编程（二）：js模块化发展史">
+                javascript模块化编程（二）：js模块化发展史 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -759,7 +682,7 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是github-pages"><span class="nav-number">1.</span> <span class="nav-text">什么是github pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么使用github-pages"><span class="nav-number">2.</span> <span class="nav-text">怎么使用github pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是hexo以及安装hexo"><span class="nav-number">3.</span> <span class="nav-text">什么是hexo以及安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰你的个人博客"><span class="nav-number">4.</span> <span class="nav-text">装饰你的个人博客</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#了解基本概念：AMD-CMD-commonJS"><span class="nav-number">1.</span> <span class="nav-text">了解基本概念：AMD/CMD/commonJS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AMD-Asynchronous-Module-Definition"><span class="nav-number">1.1.</span> <span class="nav-text">AMD(Asynchronous Module Definition)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#commonJS"><span class="nav-number">1.2.</span> <span class="nav-text">commonJS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#那么AMD-CMD又有什么区别呢？"><span class="nav-number">2.</span> <span class="nav-text">那么AMD/CMD又有什么区别呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

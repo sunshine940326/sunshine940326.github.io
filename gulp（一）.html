@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="react," />
+  <meta name="keywords" content="gulp," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="这里只是读书笔记，因为刚开始接触react，概况的说一下什么是react，并且使用react完成hello world">
+<meta name="description" content="因为新的工作使用的是gulp，所以学习一下gulp，本文主要参考的是：http://www.cnblogs.com/2050/p/4198792.html.   以及gulp的官网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react（一）：初识react">
-<meta property="og:url" content="http://cherryblog.site/react（一）：初识react">
+<meta property="og:title" content="gulp（一）">
+<meta property="og:url" content="http://cherryblog.site/gulp（一）.html">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="这里只是读书笔记，因为刚开始接触react，概况的说一下什么是react，并且使用react完成hello world">
-<meta property="og:updated_time" content="2017-03-01T14:39:08.188Z">
+<meta property="og:description" content="因为新的工作使用的是gulp，所以学习一下gulp，本文主要参考的是：http://www.cnblogs.com/2050/p/4198792.html.   以及gulp的官网">
+<meta property="og:updated_time" content="2017-03-26T13:51:18.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react（一）：初识react">
-<meta name="twitter:description" content="这里只是读书笔记，因为刚开始接触react，概况的说一下什么是react，并且使用react完成hello world">
+<meta name="twitter:title" content="gulp（一）">
+<meta name="twitter:description" content="因为新的工作使用的是gulp，所以学习一下gulp，本文主要参考的是：http://www.cnblogs.com/2050/p/4198792.html.   以及gulp的官网">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://cherryblog.site/react（一）：初识react"/>
+  <link rel="canonical" href="http://cherryblog.site/gulp（一）.html"/>
 
 
 
 
 
-  <title> react（一）：初识react | Cherry's Blog </title>
+  <title> gulp（一） | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/react（一）：初识react">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/gulp（一）.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cherry">
@@ -321,7 +321,7 @@
             
             
               
-                react（一）：初识react
+                gulp（一）
               
             
           </h1>
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-01T22:01:40+08:00">
-                2017-03-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-18T20:00:06+08:00">
+                2017-03-18
               </time>
             
 
@@ -359,8 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
+                  <a href="/categories/gulp/" itemprop="url" rel="index">
+                    <span itemprop="name">gulp</span>
                   </a>
                 </span>
 
@@ -377,7 +377,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/react（一）：初识react#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/gulp（一）.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/react（一）：初识react" class="leancloud_visitors" data-flag-title="react（一）：初识react">
+             <span id="/gulp（一）.html" class="leancloud_visitors" data-flag-title="gulp（一）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,7 +410,7 @@
                      <span class="post-meta-item-text">字数统计</span>
                        
                      <span title="字数统计" }}">
-                       635 字
+                       1,075 字
                      </span>
                   
                  
@@ -424,7 +424,7 @@
                       <span class="post-meta-item-text">阅读时长</span>
                  
                    <span title="阅读时长" }}">
-                 2 分钟
+                 4 分钟
                  </span>
                
             </div>
@@ -442,35 +442,27 @@
       
 
       
-        <p>这里只是读书笔记，因为刚开始接触react，概况的说一下什么是react，并且使用react完成hello world</p>
-<a id="more"></a>
-<p>这里是看慕课网初学react做的一些总结<a href="http://www.imooc.com/video/9819" target="_blank" rel="external">[课程]React入门</a>，</p>
-<h1 id="什么是react"><a href="#什么是react" class="headerlink" title="什么是react"></a>什么是react</h1><p>在这一个小时内对react的认识中，我有了对react的初步印象</p>
-<ol>
-<li>js库</li>
-<li>facebook开发的</li>
-<li>高度的组件化</li>
-<li>使用jsx</li>
-<li>将html和js结合</li>
-<li>单项传输数据</li>
-<li>虚拟dom</li>
-<li>只负责view层</li>
-</ol>
-<p>react并不是一个完整的mvc或者mvvm框架，只是负责view层，特点是“轻”，组件化的开发：组件高度的可重用。含义是将有独立功能的UI控件封装起来，将UI上的每一个独立的模块定义成组件，通过组合或者嵌套的方式构成大的组件，完成完整的UI</p>
-<h1 id="react应用场景"><a href="#react应用场景" class="headerlink" title="react应用场景"></a>react应用场景</h1><ol>
-<li>复杂场景下的高性能</li>
-<li>重用组件库，组件组合</li>
-<li>“懒”</li>
-</ol>
-<h1 id="使用react"><a href="#使用react" class="headerlink" title="使用react"></a>使用react</h1><p>最正确的打开方式还是直接看官方api：<a href="http://reactjs.cn/react/docs/getting-started-zh-CN.html" target="_blank" rel="external">react入门教程</a></p>
-<p>或者阮一峰老师的教程：<a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="external">React 入门实例教程</a></p>
-<p>我们先用React JSFiddle来创建一个最简单的hello world</p>
-<p>html：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//这里引入的js库只是方便学习和实验的，在正式项目不引入</div><div class="line">&lt;script src=&quot;https://facebook.github.io/react/js/jsfiddle-integration-babel.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;div id=&quot;container&quot;&gt;</div><div class="line">    &lt;!-- This element&apos;s contents will be replaced with your component. --&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>js:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//jsx语法糖，计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。通常来说使用语法糖能够增加程序的可读性，从而减少程序代码出错的机会。</div><div class="line"></div><div class="line">//react里面的div只是虚拟的dom，在react看来只是react componments的一个实例，调用ReactDOM.render方法使虚拟的dom呈现到页面上，ReactDOM.render方法第一次参数就是我们要渲染的react componments，第二个参数是我们要插入的位置</div><div class="line"></div><div class="line">//自定义的componments通过React.createClass来进行创建</div><div class="line">//&#123;&#125;里面为js表达式的值this是我们所使用的componments，props是我们在ReactDOM.render中所使用的属性的集合</div><div class="line">var Hello = React.createClass(&#123;</div><div class="line">  render: function() &#123;</div><div class="line">  </div><div class="line">    </div><div class="line">    return &lt;div&gt;Hello &#123;this.props.name&#125;&lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  //生成自定义标签</div><div class="line">  &lt;Hello name=&quot;World&quot; /&gt;,</div><div class="line">  document.getElementById(&apos;container&apos;)</div><div class="line">);</div></pre></td></tr></table></figure>
-<h1 id="为html添加css"><a href="#为html添加css" class="headerlink" title="为html添加css"></a>为html添加css</h1><h2 id="添加类"><a href="#添加类" class="headerlink" title="添加类"></a>添加类</h2><p>因为class是js中的保留字，所以在给标签加css类的时候不能使用class需要用className</p>
-<h2 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h2><p>需要使用驼峰写法的键值对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return &lt;div style=&#123;&#123;color:&apos;red&apos;&#125;&#125;&gt;Hello &#123;this.props.name&#125;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
+        <p>因为新的工作使用的是gulp，所以学习一下gulp，本文主要参考的是：<a href="http://www.cnblogs.com/2050/p/4198792.html" target="_blank" rel="external">http://www.cnblogs.com/2050/p/4198792.html</a>.   以及gulp的官网<br><a id="more"></a></p>
+<h1 id="gulp的工作原理简述"><a href="#gulp的工作原理简述" class="headerlink" title="gulp的工作原理简述"></a>gulp的工作原理简述</h1><h2 id="下Grunt-js和Gulp-js工作方式的区别"><a href="#下Grunt-js和Gulp-js工作方式的区别" class="headerlink" title="下Grunt.js和Gulp.js工作方式的区别"></a>下Grunt.js和Gulp.js工作方式的区别</h2><blockquote>
+<p>grunt主要是以文件为媒介来运行工作流的，比如在grunt中执行完一个任务后，会把结果写在一个临时文件中，然后可以在这个临时文件内容的基础上执行其他任务，执行完之后又把结果写入到临时文件中，，然后又以这个为基础继续执行其他任务…但是在gulp中，使用的是nodejs中的stream（流），首先获取到需要的stream，然后可以通过stream的<code>pipe()</code>方法把流导入到你想要的地方，比如gulp的插件中，经过插件处理后的流又可以继续导入到其他插件中，当然也可以把流写到文件中，所以gulp是以stream为媒介的，它不需要频繁的生成临时文件，这也是gulp比grunt快的一个原因</p>
+</blockquote>
+<h2 id="gulp传入的路径参数与最终生成文件的关系"><a href="#gulp传入的路径参数与最终生成文件的关系" class="headerlink" title="gulp传入的路径参数与最终生成文件的关系"></a>gulp传入的路径参数与最终生成文件的关系</h2><blockquote>
+<p>理解了gulp传入路径参数与最终生成文件的关系，就可以理解怎么使用<code>gulp.dest()</code>这个方法。gulp的流程是这样的：首先通过<code>gulp.src()</code>方法获取到我们想要处理的文件流，然后把文件流通过pipe方法导入到gulp插件中，最后把经过插件处理后的流再通过pipe方法导入到<code>gulp.dest()</code>中，<code>gulp.dest()</code>方法则把流中的内容写入到文件中，这里首先需要弄清楚一点的是，我们给<code>gulp.dest()</code>传入的路径参数，只能用来指定要生成的文件的目录，而不能指定生成文件的文件名，它生成文件的文件名使用的是导入到它的文件流自身的文件名，<strong>所以生成的文件名是由导入到它的文件流决定的</strong>即使我们给它传入一个带有文件名的路径的参数，然后它也会把这个文件名</p>
+</blockquote>
+<h1 id="gulp安装"><a href="#gulp安装" class="headerlink" title="gulp安装"></a>gulp安装</h1><p>gulp是基于node环境的，所以首先需要安装node环境<br>然后以全局方式安装gulp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g gulp</div></pre></td></tr></table></figure></p>
+<p>全局安装gulp之后还需要在每个要使用gulp的项目中都单独安装一次。把目录切换到你的项目文件夹中，然后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp</div></pre></td></tr></table></figure></p>
+<p>如果想要在安装的时候把gulp写进项目package.json文件的依赖中，可以加上 –save-dev<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp</div></pre></td></tr></table></figure></p>
+<h1 id="开始使用gulp"><a href="#开始使用gulp" class="headerlink" title="开始使用gulp"></a>开始使用gulp</h1><h2 id="建立gulpfile-js文件"><a href="#建立gulpfile-js文件" class="headerlink" title="建立gulpfile.js文件"></a>建立gulpfile.js文件</h2><p>建立一个<code>gulpfile.js</code>文件，这个文件就是gulp的主文件，之后要做的事情就是在<code>gulpfile.js</code>文件中定义我们的任务就好，下面是一个最简单的<code>gulpfile.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&apos;gulp&apos;);</div><div class="line">gulp.task(&apos;default&apos;,function()&#123;</div><div class="line">  console.log(&apos;Hello world&apos;)  </div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>此时我们的目录结构是这样的<br>├── gulpfile.js<br>├── node_modules<br>│ └── gulp<br>└── package.json</p>
+<h2 id="运行gulp任务"><a href="#运行gulp任务" class="headerlink" title="运行gulp任务"></a>运行gulp任务</h2><p>要运行gulp任务，只需切换到存放<code>gulpfile.js</code>文件的目录，然后在命令行执行<code>gulp</code>命令就可以，<code>gulp</code>后面加上要执行的任务名，例如<code>gulp task1</code>，如果没有指定任务名。则是按照默认的<code>defaule</code>任务</p>
+<h1 id="gulp的api"><a href="#gulp的api" class="headerlink" title="gulp的api"></a>gulp的api</h1><p>gulp只要四个api，<code>gulp.task()</code>、<code>gulp.src()</code>,<code>gulp.dest()</code>,<code>gulp.watch()</code></p>
+<h2 id="gulp-src"><a href="#gulp-src" class="headerlink" title="gulp.src"></a>gulp.src</h2><p>这个方法用来读取你需要操作的文件</p>
+<p><code>gulp.src()</code>方法正是用来获取流的，但是要注意这个流里的内容不是原始的文件流，而是一个虚拟文件对象流，这个虚拟文件对象中存储着原始文件的路径、文件名、内容信息等，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.src(globs[,options])</div></pre></td></tr></table></figure>
+<p>globs参数是文件匹配模式，用来匹配文件路径（包括文件名），当然这里也可以直接指定某个具体的文件路径，当有多个匹配模式时，该参数可以为一个数组</p>
+<p>option是可选参数，通常情况下我们不需要用到</p>
+<h1 id="gulp-dest"><a href="#gulp-dest" class="headerlink" title="gulp.dest()"></a>gulp.dest()</h1><p><code>gulp.dest()</code>是用来写文件的，其语法为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.dest(path[,option])</div></pre></td></tr></table></figure></p>
+<p><code>path</code>为写入文件的路径<br>option为一个可选的参数，通常我们不需要用到</p>
 
       
     </div>
@@ -500,7 +492,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/react/" rel="tag"># react</a>
+            <a href="/tags/gulp/" rel="tag"># gulp</a>
           
         </div>
       
@@ -513,8 +505,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/了解githubPages-hexo搭建博客的原理" rel="next" title="了解githubPages+hexo搭建博客的原理">
-                <i class="fa fa-chevron-left"></i> 了解githubPages+hexo搭建博客的原理
+              <a href="/Git常用命令-完成一个小工作流.html" rel="next" title="Git常用命令&完成一个小工作流">
+                <i class="fa fa-chevron-left"></i> Git常用命令&完成一个小工作流
               </a>
             
           </div>
@@ -523,8 +515,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/react（二）：用实例认识react" rel="prev" title="react（二）：用实例认识react">
-                react（二）：用实例认识react <i class="fa fa-chevron-right"></i>
+              <a href="/javascript模块化编程（二）：模块化模式.html" rel="prev" title="javascript设计模式（二）：模块化模式">
+                javascript设计模式（二）：模块化模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -682,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是react"><span class="nav-number">1.</span> <span class="nav-text">什么是react</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#react应用场景"><span class="nav-number">2.</span> <span class="nav-text">react应用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用react"><span class="nav-number">3.</span> <span class="nav-text">使用react</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为html添加css"><span class="nav-number">4.</span> <span class="nav-text">为html添加css</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加类"><span class="nav-number">4.1.</span> <span class="nav-text">添加类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联样式"><span class="nav-number">4.2.</span> <span class="nav-text">内联样式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp的工作原理简述"><span class="nav-number">1.</span> <span class="nav-text">gulp的工作原理简述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下Grunt-js和Gulp-js工作方式的区别"><span class="nav-number">1.1.</span> <span class="nav-text">下Grunt.js和Gulp.js工作方式的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp传入的路径参数与最终生成文件的关系"><span class="nav-number">1.2.</span> <span class="nav-text">gulp传入的路径参数与最终生成文件的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp安装"><span class="nav-number">2.</span> <span class="nav-text">gulp安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用gulp"><span class="nav-number">3.</span> <span class="nav-text">开始使用gulp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立gulpfile-js文件"><span class="nav-number">3.1.</span> <span class="nav-text">建立gulpfile.js文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行gulp任务"><span class="nav-number">3.2.</span> <span class="nav-text">运行gulp任务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp的api"><span class="nav-number">4.</span> <span class="nav-text">gulp的api</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp-src"><span class="nav-number">4.1.</span> <span class="nav-text">gulp.src</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp-dest"><span class="nav-number">5.</span> <span class="nav-text">gulp.dest()</span></a></li></ol></div>
             
 
           </div>

@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git,实战经验," />
+  <meta name="keywords" content="js模块化,js," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="在Git的使用过程中，难免会有这样那样的错误，对于刚开始使用git的小白来说，来记录一下使用过程中报错情况以及怎么处理的">
+<meta name="description" content="在简单了介绍了javascript的模块化编程思想之后，我们来写一个简单的requireJS的案例，来了解一下具体是怎么在你的项目中使用requireJS的本文的源码在个人的github上：https://github.com/sunshine940326/js-module-demo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git使用中的报错情况">
-<meta property="og:url" content="http://cherryblog.site/Git使用中的报错情况">
+<meta property="og:title" content="Javascript模块化编程（三）：require.js的用法">
+<meta property="og:url" content="http://cherryblog.site/Javascript模块化编程（三）：require.js的用法.html">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="在Git的使用过程中，难免会有这样那样的错误，对于刚开始使用git的小白来说，来记录一下使用过程中报错情况以及怎么处理的">
-<meta property="og:updated_time" content="2017-03-24T15:13:38.380Z">
+<meta property="og:description" content="在简单了介绍了javascript的模块化编程思想之后，我们来写一个简单的requireJS的案例，来了解一下具体是怎么在你的项目中使用requireJS的本文的源码在个人的github上：https://github.com/sunshine940326/js-module-demo">
+<meta property="og:updated_time" content="2017-03-08T15:15:25.679Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git使用中的报错情况">
-<meta name="twitter:description" content="在Git的使用过程中，难免会有这样那样的错误，对于刚开始使用git的小白来说，来记录一下使用过程中报错情况以及怎么处理的">
+<meta name="twitter:title" content="Javascript模块化编程（三）：require.js的用法">
+<meta name="twitter:description" content="在简单了介绍了javascript的模块化编程思想之后，我们来写一个简单的requireJS的案例，来了解一下具体是怎么在你的项目中使用requireJS的本文的源码在个人的github上：https://github.com/sunshine940326/js-module-demo">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://cherryblog.site/Git使用中的报错情况"/>
+  <link rel="canonical" href="http://cherryblog.site/Javascript模块化编程（三）：require.js的用法.html"/>
 
 
 
 
 
-  <title> Git使用中的报错情况 | Cherry's Blog </title>
+  <title> Javascript模块化编程（三）：require.js的用法 | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/Git使用中的报错情况">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/Javascript模块化编程（三）：require.js的用法.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cherry">
@@ -321,7 +321,7 @@
             
             
               
-                Git使用中的报错情况
+                Javascript模块化编程（三）：require.js的用法
               
             
           </h1>
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T23:54:11+08:00">
-                2017-03-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-08T23:11:42+08:00">
+                2017-03-08
               </time>
             
 
@@ -359,8 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -377,7 +377,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/Git使用中的报错情况#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/Javascript模块化编程（三）：require.js的用法.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/Git使用中的报错情况" class="leancloud_visitors" data-flag-title="Git使用中的报错情况">
+             <span id="/Javascript模块化编程（三）：require.js的用法.html" class="leancloud_visitors" data-flag-title="Javascript模块化编程（三）：require.js的用法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,7 +410,7 @@
                      <span class="post-meta-item-text">字数统计</span>
                        
                      <span title="字数统计" }}">
-                       749 字
+                       1,136 字
                      </span>
                   
                  
@@ -424,7 +424,7 @@
                       <span class="post-meta-item-text">阅读时长</span>
                  
                    <span title="阅读时长" }}">
-                 4 分钟
+                 5 分钟
                  </span>
                
             </div>
@@ -442,26 +442,42 @@
       
 
       
-        <p>在Git的使用过程中，难免会有这样那样的错误，对于刚开始使用git的小白来说，来记录一下使用过程中报错情况以及怎么处理的<br><a id="more"></a></p>
-<p>#　<code>git pull</code>时报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$ git pull</div><div class="line">remote: Counting objects: 100, done.</div><div class="line">remote: Compressing objects: 100% (57/57), done.</div><div class="line">remote: Total 60 (delta 36), reused 3 (delta 0)</div><div class="line">Unpacking objects: 100% (60/60), done.</div><div class="line">From 180.166.124.26:/var/git/fzc</div><div class="line">   d8ec768..7c13661  master     -&gt; origin/master</div><div class="line">Updating d8ec768..7c13661</div><div class="line">error: Your local changes to the following files would be overwritten by merge:</div><div class="line">        protected/modules/m/views/detail/house.php</div><div class="line">        protected/modules/m/views/list/house.php</div><div class="line">        protected/modules/web/views/default/list.php</div><div class="line">        protected/modules/web/views/detail/house.php</div><div class="line">        protected/modules/web/views/list/house.php</div><div class="line">        static_src/web/js/houseList/nprogress.js</div><div class="line">        static_src/web/js/list/nprogress.js</div><div class="line">Please commit your changes or stash them before you can merge.</div><div class="line">error: The following untracked working tree files would be overwritten by merge:</div><div class="line">        static_dist/web/js/houseList/houseList-min-50ae65dad4.js</div><div class="line">        static_dist/web/js/list/list-min-dd27ec4ef4.js</div><div class="line">Please move or remove them before you can merge.</div><div class="line">Aborting</div></pre></td></tr></table></figure></p>
-<p>大意就是说你修改的文件在之前的commit中没有提交，远端的文件和本地的文件冲突<br>解决方法</p>
+        <p>在简单了介绍了javascript的模块化编程思想之后，我们来写一个简单的requireJS的案例，来了解一下具体是怎么在你的项目中使用requireJS的<br>本文的源码在个人的github上：<a href="https://github.com/sunshine940326/js-module-demo" target="_blank" rel="external">https://github.com/sunshine940326/js-module-demo</a><br><a id="more"></a><br>首先祭上<a href="http://www.requirejs.cn/docs/start.html" target="_blank" rel="external">requireJS的官方api</a></p>
+<h1 id="下载requireJS"><a href="#下载requireJS" class="headerlink" title="下载requireJS"></a>下载requireJS</h1><p>我们可以再requireJS的官网上下载最新的reqrequireJS：下载链接：<a href="http://www.requirejs.cn/docs/download.html" target="_blank" rel="external">http://www.requirejs.cn/docs/download.html</a></p>
+<p>你可以下载最新版本的<code>require.js</code>, <code>r.js</code>(node中使用)，以及requireJS的插件：</p>
 <ol>
-<li><p>昨天遇到这个问题的时候是本地修改的文件不需要提交了，直接放弃就可以了，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout --filename</div></pre></td></tr></table></figure>
-<p>然后远端的文件就覆盖了你的本地文件，然后在<code>git pull</code>,之后就可以<code>git add</code>、<code>git commit</code>、<code>git push</code>三部曲了</p>
+<li>text</li>
+<li>domReady</li>
+<li>cs(coffeeScript)</li>
+<li>i18n（国际化）</li>
+</ol>
+<h1 id="在html中引入require-js"><a href="#在html中引入require-js" class="headerlink" title="在html中引入require.js"></a>在html中引入require.js</h1><p>使用requireJS的方法很简单，只需要在html中引入<code>&lt;script src=&quot;js/require.js&quot;  data-main=&quot;js/main&quot;  async=&quot;true&quot;&gt;&lt;/script&gt;</code>就可以，和引入普通的js一样。</p>
+<p>async属性是html5中的新特性，意为异步加载该js，就是可以不用把这个script标签放在底部，不会使网页失去响应</p>
+<p><code>data-main=&quot;js/main</code>main.js就是我们自己编写的js文件，因为requireJS默认的文件后缀就是js，所以<code>.js</code>文件后缀可以省略<br>这个<code>main.js</code>就是我们程序的js主入口，会第一个被require加载。和c的<code>main()</code>一样</p>
+<p>我们原来的html的<code>&lt;head&gt;</code>中是不是加载了很多的js，因为能同时发出的http请求是有限的，所以在加载的时候网页需要响应的时间变长，浏览器会停止网页的渲染。</p>
+<p>并且这样加载还有一个弊端就是js文件之间存在依赖关系，一定要有一个先后顺序，所以加载顺序很重要<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">　　&lt;script src=&quot;1.js&quot;&gt;&lt;/script&gt;</div><div class="line">　　&lt;script src=&quot;2.js&quot;&gt;&lt;/script&gt;</div><div class="line">　　&lt;script src=&quot;3.js&quot;&gt;&lt;/script&gt;</div><div class="line">　　&lt;script src=&quot;4.js&quot;&gt;&lt;/script&gt;</div><div class="line">　　&lt;script src=&quot;5.js&quot;&gt;&lt;/script&gt;</div><div class="line">　　&lt;script src=&quot;6.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>所以requireJS解决了这两个问题：</p>
 <ol>
-<li>还可以保存本地的状态<br><code>git stash</code><br>然后再<br><code>git pull  origin master</code><br>但是提示我<code>No local changes to save</code></li>
+<li>实现js文件的异步加载，避免网页失去响应；</li>
+<li>管理模块之间的依赖性，便于代码的编写和维护。</li>
 </ol>
-</li>
-</ol>
-<p>然后我再pull的时候提示我<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git pull</div><div class="line">Updating d8ec768..7c13661</div><div class="line">error: The following untracked working tree files would be overwritten by merge:</div><div class="line">        static_dist/web/js/houseList/houseList-min-50ae65dad4.js</div><div class="line">        static_dist/web/js/list/list-min-dd27ec4ef4.js</div><div class="line">Please move or remove them before you can merge.</div><div class="line">Aborting</div></pre></td></tr></table></figure></p>
-<p>然后我想放弃这两个文件就报错了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout  static_dist/web/js/houseList/houseList-min-50ae65dad4.js</div><div class="line">error: pathspec &apos;static_dist/web/js/houseList/houseList-min-50ae65dad4.js&apos; did not match any fi         le(s) known to git.</div></pre></td></tr></table></figure></p>
-<ol>
-<li>所以我请来了我们的phper，他说可以直接提交 = =<br>先是查看一下现在的状态<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">On branch master</div><div class="line">Your branch is behind &apos;origin/master&apos; by 3 commits, and can be fast-forwarded.</div><div class="line">  (use &quot;git pull&quot; to update your local branch)</div><div class="line">Untracked files:</div><div class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</div><div class="line"></div><div class="line">        static_dist/m/css/about/about-min-e5159328af.css</div><div class="line">        static_dist/m/css/authentication/authentication-min-2315b81179.css</div><div class="line">        static_dist/m/css/defaultIndex/defaultIndex-min-ecc8a57574.css</div><div class="line">        static_dist/m/css/defaultList/defaultList-min-df3ee5323b.css</div><div class="line">        static_dist/m/css/detailHouse/detailHouse-min-8f6835d719.css</div><div class="line">        static_dist/m/css/detailIndex/detailIndex-min-24e3587ee2.css</div><div class="line">        static_dist/m/css/detailOrder/detailOrder-min-ffa8b47793.css</div><div class="line">        static_dist/m/css/listHouse/listHouse-min-53c056c915.css</div><div class="line">        static_dist/m/css/payIndex/payIndex-min-78a3d6e471.css</div><div class="line">        static_dist/m/css/publicMain/publicMain-min-243df56309.css</div><div class="line">        static_dist/m/css/userDetail/userDetail-min-bf3f5d072e.css</div><div class="line">        static_dist/m/css/userIndex/userIndex-min-7898459c71.css</div><div class="line">        static_dist/m/css/userLogin_reg/userLogin_reg-min-718b2d35d8.css</div><div class="line">        static_dist/m/css/userOrder/userOrder-min-5f18d80c90.css</div><div class="line">        static_dist/m/css/userProject/userProject-min-fcc2e92ff7.css</div><div class="line">        static_dist/web/css/bankguide/bankguide-min-eb72d15494.css</div><div class="line">        static_dist/web/css/defaultIndex/defaultIndex-min-ccc49d9d39.css</div><div class="line">        static_dist/web/css/detail/detail-min-714ac29c22.css</div><div class="line">        static_dist/web/css/houseDetail/houseDetail-min-ea5da2d35e.css</div><div class="line">        static_dist/web/css/houseList/houseList-min-5ad0e311df.css</div><div class="line">        static_dist/web/css/list/list-min-7b339899d6.css</div><div class="line">        static_dist/web/css/publicMain/publicMain-min-51e7cfd8d2.css</div><div class="line">        static_dist/web/js/houseList/houseList-min-50ae65dad4.js</div><div class="line">        static_dist/web/js/list/list-min-dd27ec4ef4.js</div><div class="line"></div><div class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>然后确认这些文件都不需要了，在checkout一遍<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout .</div></pre></td></tr></table></figure></p>
-<p>然后在发布三部曲</p>
+<h1 id="main-js的编写"><a href="#main-js的编写" class="headerlink" title="main.js的编写"></a>main.js的编写</h1><p>我们试着在<code>main.js</code>中加入如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(&quot;Hello world!&quot;)</div></pre></td></tr></table></figure>
+<p>打开<code>index,html</code>看到弹出“Hello world！”就说明我们的require引用成功</p>
+<p>这只是初步解决了第一个问题，还没有解决模块的依赖关系，这时候就需要使用AMD规范来定义require()函数，不了解AMD规范的请查看前一篇博文</p>
+<h1 id="math-js模块编写"><a href="#math-js模块编写" class="headerlink" title="math.js模块编写"></a>math.js模块编写</h1><p>现在我们来编写一个求和的模块，然后在<code>main.js</code>中依赖该模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//math.js</div><div class="line">define(function()&#123;</div><div class="line">   var add = function(x,y)&#123;</div><div class="line">       return x+y&apos;</div><div class="line">       </div><div class="line">   &#125;</div><div class="line">   return&#123;</div><div class="line">       add:add</div><div class="line">   &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="加载方式"><a href="#加载方式" class="headerlink" title="加载方式"></a>加载方式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//main.js</div><div class="line">require([&apos;math&apos;],function()&#123;</div><div class="line">    console.log(math.add(1,2))   //3</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>如果是加载多个模块，那么require的第一个参数就是一个数组，默认情况下，require.js假定这三个模块与main.js在同一个目录。第二个参数是一个回调函数，当前面指定的模块都加载成功后，它将被调用。加载的模块会已参数的形式传入该参数，从而在回调函数内部就可以使用这些模块。</p>
+<p>require()异步加载各个依赖模块，浏览器不会失去响应，并且指定的回调函数只有在前面的模块都加载成功后才会运行，解决了依赖的问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">　　require([&apos;jquery&apos;, &apos;underscore&apos;, &apos;backbone&apos;], function ($, _, Backbone)&#123;</div><div class="line">　　　　// some code here</div><div class="line">　　&#125;);</div></pre></td></tr></table></figure>
+<p>默认情况是依赖模块和主模块在一个目录下，但是我们也可以自定义配置，在<code>main.js</code>的头部写一个<code>require.config()</code>方法就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　require.config(&#123;</div><div class="line">　　　　paths: &#123;</div><div class="line">　　　　　　&quot;jquery&quot;: &quot;jquery.min&quot;,</div><div class="line">　　　　　　&quot;underscore&quot;: &quot;underscore.min&quot;,</div><div class="line">　　　　　　&quot;backbone&quot;: &quot;backbone.min&quot;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;);</div></pre></td></tr></table></figure></p>
+<p>上面的代码给出了三个模块的文件名，路径默认与main.js在同一个目录（js子目录）。如果这些模块在其他目录，比如js/lib目录，则有两种写法。一种是逐一指定路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　require.config(&#123;</div><div class="line">　　　　paths: &#123;</div><div class="line">　　　　　　&quot;jquery&quot;: &quot;lib/jquery.min&quot;,</div><div class="line">　　　　　　&quot;underscore&quot;: &quot;lib/underscore.min&quot;,</div><div class="line">　　　　　　&quot;backbone&quot;: &quot;lib/backbone.min&quot;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;);</div></pre></td></tr></table></figure></p>
+<p>另一种则是直接改变基目录（baseUrl）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">require.config(&#123;</div><div class="line">　　　　baseUrl: &quot;js/lib&quot;,</div><div class="line">　　　　paths: &#123;</div><div class="line">　　　　　　&quot;jquery&quot;: &quot;jquery.min&quot;,</div><div class="line">　　　　　　&quot;underscore&quot;: &quot;underscore.min&quot;,</div><div class="line">　　　　　　&quot;backbone&quot;: &quot;backbone.min&quot;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;);</div></pre></td></tr></table></figure></p>
+<p>如果某个模块在另一台主机上，也可以直接指定它的网址，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">　　require.config(&#123;</div><div class="line">　　　　paths: &#123;</div><div class="line">　　　　　　&quot;jquery&quot;: &quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min&quot;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>require.js要求，每个模块是一个单独的js文件。这样的话，如果加载多个模块，就会发出多次HTTP请求，会影响网页的加载速度。因此，require.js提供了一个优化工具，当模块部署完毕以后，可以用这个工具将多个模块合并在一个文件中，减少HTTP请求数。</p>
+</blockquote>
 
       
     </div>
@@ -491,9 +507,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/js模块化/" rel="tag"># js模块化</a>
           
-            <a href="/tags/实战经验/" rel="tag"># 实战经验</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
         </div>
       
@@ -506,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/javascript设计模式（一）" rel="next" title="javascript设计模式（一）">
-                <i class="fa fa-chevron-left"></i> javascript设计模式（一）
+              <a href="/javascript模块化编程（二）：js模块化的发展史.html" rel="next" title="javascript模块化编程（二）：js模块化发展史">
+                <i class="fa fa-chevron-left"></i> javascript模块化编程（二）：js模块化发展史
               </a>
             
           </div>
@@ -516,8 +532,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Git常用命令-完成一个小工作流" rel="prev" title="Git常用命令&完成一个小工作流">
-                Git常用命令&完成一个小工作流 <i class="fa fa-chevron-right"></i>
+              <a href="/javascript设计模式（一）.html" rel="prev" title="javascript设计模式（一）">
+                javascript设计模式（一） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -573,8 +589,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -656,6 +681,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载requireJS"><span class="nav-number">1.</span> <span class="nav-text">下载requireJS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在html中引入require-js"><span class="nav-number">2.</span> <span class="nav-text">在html中引入require.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#main-js的编写"><span class="nav-number">3.</span> <span class="nav-text">main.js的编写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#math-js模块编写"><span class="nav-number">4.</span> <span class="nav-text">math.js模块编写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加载方式"><span class="nav-number">5.</span> <span class="nav-text">加载方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
