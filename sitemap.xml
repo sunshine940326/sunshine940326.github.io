@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://cherryblog.site/GitCommands.html</loc>
+    
+    <lastmod>2017-04-12T14:45:42.270Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://cherryblog.site/hexo%E9%AB%98%E9%98%B6%E6%95%99%E7%A8%8B.html</loc>
     
     <lastmod>2017-04-09T15:54:36.836Z</lastmod>
@@ -65,7 +72,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Git%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5.html</loc>
+    <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
     
     <lastmod>2017-03-24T15:13:38.380Z</lastmod>
     
@@ -82,13 +89,6 @@
     <loc>http://cherryblog.site/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
     
     <lastmod>2017-03-16T14:12:37.663Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-%E5%AE%8C%E6%88%90%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%B7%A5%E4%BD%9C%E6%B5%81.html</loc>
-    
-    <lastmod>2017-03-16T14:01:10.626Z</lastmod>
     
   </url>
   
