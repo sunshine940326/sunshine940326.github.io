@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js,js设计模式," />
+  <meta name="keywords" content="js,js模块化," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。">
+<meta name="description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript设计模式（四）：工厂模式">
-<meta property="og:url" content="http://cherryblog.site/javascript设计模式（四）：工厂模式.html">
+<meta property="og:title" content="Javascript模块化编程（一）：模块的写法">
+<meta property="og:url" content="http://cherryblog.site/Javascript-modular-programming1module-writing.html">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。">
-<meta property="og:updated_time" content="2017-03-26T14:02:49.912Z">
+<meta property="og:description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
+<meta property="og:updated_time" content="2017-03-07T14:42:38.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript设计模式（四）：工厂模式">
-<meta name="twitter:description" content="我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。">
+<meta name="twitter:title" content="Javascript模块化编程（一）：模块的写法">
+<meta name="twitter:description" content="不得不说现在“前端”的知识点实在是太多了，(ಥಥ)就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://cherryblog.site/javascript设计模式（四）：工厂模式.html"/>
+  <link rel="canonical" href="http://cherryblog.site/Javascript-modular-programming1module-writing.html"/>
 
 
 
 
 
-  <title> javascript设计模式（四）：工厂模式 | Cherry's Blog </title>
+  <title> Javascript模块化编程（一）：模块的写法 | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/javascript设计模式（四）：工厂模式.html">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/Javascript-modular-programming1module-writing.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cherry">
@@ -321,7 +321,7 @@
             
             
               
-                javascript设计模式（四）：工厂模式
+                Javascript模块化编程（一）：模块的写法
               
             
           </h1>
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T22:01:41+08:00">
-                2017-03-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T22:40:16+08:00">
+                2017-03-07
               </time>
             
 
@@ -377,7 +377,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/javascript设计模式（四）：工厂模式.html#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/Javascript-modular-programming1module-writing.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/javascript设计模式（四）：工厂模式.html" class="leancloud_visitors" data-flag-title="javascript设计模式（四）：工厂模式">
+             <span id="/Javascript-modular-programming1module-writing.html" class="leancloud_visitors" data-flag-title="Javascript模块化编程（一）：模块的写法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,7 +410,7 @@
                      <span class="post-meta-item-text">字数统计</span>
                        
                      <span title="字数统计" }}">
-                       385 字
+                       921 字
                      </span>
                   
                  
@@ -424,7 +424,7 @@
                       <span class="post-meta-item-text">阅读时长</span>
                  
                    <span title="阅读时长" }}">
-                 2 分钟
+                 3 分钟
                  </span>
                
             </div>
@@ -442,10 +442,33 @@
       
 
       
-        <p>我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。<br><a id="more"></a></p>
-<h2 id="使用工厂模式"><a href="#使用工厂模式" class="headerlink" title="使用工厂模式"></a>使用工厂模式</h2><p>下面通过使用构造器模式逻辑来定义一个汽车。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">// Types.js - Constructors used behind the scenes</div><div class="line"></div><div class="line">// A constructor for defining new cars</div><div class="line">function Car( options ) &#123;</div><div class="line"></div><div class="line">  // some defaults</div><div class="line">  this.doors = options.doors || 4;</div><div class="line">  this.state = options.state || &quot;brand new&quot;;</div><div class="line">  this.color = options.color || &quot;silver&quot;;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">// A constructor for defining new trucks</div><div class="line">function Truck( options)&#123;</div><div class="line"></div><div class="line">  this.state = options.state || &quot;used&quot;;</div><div class="line">  this.wheelSize = options.wheelSize || &quot;large&quot;;</div><div class="line">  this.color = options.color || &quot;blue&quot;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// FactoryExample.js</div><div class="line"></div><div class="line">// Define a skeleton vehicle factory</div><div class="line">function VehicleFactory() &#123;&#125;</div><div class="line"></div><div class="line">// Define the prototypes and utilities for this factory</div><div class="line"></div><div class="line">// Our default vehicleClass is Car</div><div class="line">VehicleFactory.prototype.vehicleClass = Car;</div><div class="line"></div><div class="line">// Our Factory method for creating new Vehicle instances</div><div class="line">VehicleFactory.prototype.createVehicle = function ( options ) &#123;</div><div class="line"></div><div class="line">  if( options.vehicleType === &quot;car&quot; )&#123;</div><div class="line">    this.vehicleClass = Car;</div><div class="line">  &#125;else&#123;</div><div class="line">    this.vehicleClass = Truck;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return new this.vehicleClass( options );</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">// Create an instance of our factory that makes cars</div><div class="line">var carFactory = new VehicleFactory();</div><div class="line">var car = carFactory.createVehicle( &#123;</div><div class="line">            vehicleType: &quot;car&quot;,</div><div class="line">            color: &quot;yellow&quot;,</div><div class="line">            doors: 6 &#125; );</div><div class="line"></div><div class="line">// Test to confirm our car was created using the vehicleClass/prototype Car</div><div class="line"></div><div class="line">// Outputs: true</div><div class="line">console.log( car instanceof Car );</div><div class="line"></div><div class="line">// Outputs: Car object of color &quot;yellow&quot;, doors: 6 in a &quot;brand new&quot; state</div><div class="line">console.log( car );</div></pre></td></tr></table></figure></p>
-<p>在这个例子中，我们首先定义了两个函数：Car 和 Trucks，这两个类中有Car和Trucks的属性默认值并且也可以自己传入参数，就是相当于造Car和Trucks的方法</p>
-<p>然后我们定义了一个工厂，将创造Car和Trucks 的方法放到工厂里面（通过给VehicleFactory的prototype上增加Car和Trucks方法），默认是要创建一个Car，</p>
+        <p>不得不说现在“前端”的知识点实在是太多了，(ಥ<em>ಥ)<br>就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥ</em>ಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成</p>
+<a id="more"></a>
+<h1 id="了解基本概念：AMD-CMD-commonJS"><a href="#了解基本概念：AMD-CMD-commonJS" class="headerlink" title="了解基本概念：AMD/CMD/commonJS"></a>了解基本概念：AMD/CMD/commonJS</h1><p>先来大体说一些这些都是什么东西：<br>AMD/CMD/commonJS都是JavaScript模块化变的规范</p>
+<blockquote>
+<p>因为有了模块，我们就可以更方便地使用别人的代码，想要什么功能，就加载什么模块。<br>但是，这样做有一个前提，那就是大家必须以同样的方式编写模块，否则你有你的写法，我有我的写法，岂不是乱了套！考虑到Javascript模块现在还没有官方规范，这一点就更重要了。</p>
+</blockquote>
+<ul>
+<li>AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。</li>
+<li>CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。</li>
+<li>commonJS是nodejs在推广过程中对模块定义的规范化产出。</li>
+</ul>
+<p>因为node主要是将javascript语言用于服务器端编程，所以对应的commonJS主要是针对服务端，AMD/CMD主要是针对浏览器端。</p>
+<h2 id="AMD-Asynchronous-Module-Definition"><a href="#AMD-Asynchronous-Module-Definition" class="headerlink" title="AMD(Asynchronous Module Definition)"></a>AMD(Asynchronous Module Definition)</h2><p>全称是Asynchronous Module Definition，即异步模块加载机制。</p>
+<h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><p>CommonJS 的目标是定义一套普通应用程序使用的API，从而填补原生JavaScript标准库过少的缺点。终极目标是实现一个像python，java中含有的标准库。现在非常火爆的node.js实际上就是CommonJS 的一个实现。</p>
+<p>通过 CommonJS 的规范和代码可以看出，require 是同步的，模块系统需要同步读取模块文件内容，并编译执行以得到模块接口。在服务端，比如node.js，这一般来说没有问题，文件请求都是本地获取，对性能没有什么影响。但是放在浏览器端，问题就出来了，等到所有模块同步加载完毕，时间不知道要过去多久了。</p>
+<blockquote>
+<p>CommonJS 最早叫做 ServerJS，Modules 1.0规范在node.js上实践的很好，由于知道自身在浏览器中的不足，CommonJS社区把名字改为CommonJS，意为想统一服务器端和浏览器端，但是要实现浏览器端，就要有新的版本的标准，在新的版本制定过程中，社区出现了分歧，在这个分歧中，分出了AMD规范。</p>
+<p>由于风格和机制的差异，最终，AMD从CommonJS社区中独立了出来<br>–<a href="http://www.feeldesignstudio.com/2013/09/javascript-module-pattern-commonjs/?utm_source=caibaojian.com" target="_blank" rel="external">JavaScript模块化开发（二）——CommonJS规范</a></p>
+</blockquote>
+<h1 id="那么AMD-CMD又有什么区别呢？"><a href="#那么AMD-CMD又有什么区别呢？" class="headerlink" title="那么AMD/CMD又有什么区别呢？"></a>那么AMD/CMD又有什么区别呢？</h1><p>AMD和CMD的区别 </p>
+<ol>
+<li>对于依赖的模块，AMD 是 提前执行 ，CMD 是 延迟执行 。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible. </li>
+<li>CMD 推崇 依赖就近 ，AMD 推崇 依赖前置 。（这一点是非常重要的区别） </li>
+<li>AMD 的 API 默认是 一个当多个用 ，CMD 的 API 严格区分，推崇 职责单一 。</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>不得不说，其实这篇文章大部分都是摘录的，反思了一下，归根结底还是自己对这些概念理解的不清，首先是没有找到系统的讲解文章，其次是自己没有用到项目中去，自我批评。</p>
+<p>先挖个坑，以后我胡汉三还会回来的~</p>
 
       
     </div>
@@ -477,7 +500,7 @@
           
             <a href="/tags/js/" rel="tag"># js</a>
           
-            <a href="/tags/js设计模式/" rel="tag"># js设计模式</a>
+            <a href="/tags/js模块化/" rel="tag"># js模块化</a>
           
         </div>
       
@@ -490,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/javascript设计模式（三）：原型模式.html" rel="next" title="javascript设计模式（三）：原型模式">
-                <i class="fa fa-chevron-left"></i> javascript设计模式（三）：原型模式
+              <a href="/Front-interview.html" rel="next" title="前端面试">
+                <i class="fa fa-chevron-left"></i> 前端面试
               </a>
             
           </div>
@@ -500,8 +523,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/移动端调试方法.html" rel="prev" title="移动端调试方法">
-                移动端调试方法 <i class="fa fa-chevron-right"></i>
+              <a href="/JavaScript-modular-programming2JSmodulardevelopmenthistory.html" rel="prev" title="javascript模块化编程（二）：js模块化发展史">
+                javascript模块化编程（二）：js模块化发展史 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -659,7 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用工厂模式"><span class="nav-number">1.</span> <span class="nav-text">使用工厂模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#了解基本概念：AMD-CMD-commonJS"><span class="nav-number">1.</span> <span class="nav-text">了解基本概念：AMD/CMD/commonJS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AMD-Asynchronous-Module-Definition"><span class="nav-number">1.1.</span> <span class="nav-text">AMD(Asynchronous Module Definition)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#commonJS"><span class="nav-number">1.2.</span> <span class="nav-text">commonJS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#那么AMD-CMD又有什么区别呢？"><span class="nav-number">2.</span> <span class="nav-text">那么AMD/CMD又有什么区别呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

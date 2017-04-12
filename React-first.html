@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js,js设计模式," />
+  <meta name="keywords" content="react," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="在javascript中，是没有类的概念的，也没有私有变量和全局变量的区别，这样的话，我们很有可能会遇到命名冲突的问题，然后就是我们希望能跟其他面向对象编程语言一样，能够将一个方法封装成一个类，这样的话别人在引用这个方法的时候只需要调用接口就可以了，不需要知道内部是怎么实现的，我们也往往不想让外部访问到类中的成员变量">
+<meta name="description" content="这里只是读书笔记，因为刚开始接触react，概况的说一下什么是react，并且使用react完成hello world">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript设计模式（二）：模块化模式">
-<meta property="og:url" content="http://cherryblog.site/javascript模块化编程（二）：模块化模式.html">
+<meta property="og:title" content="react（一）：初识react">
+<meta property="og:url" content="http://cherryblog.site/React-first.html">
 <meta property="og:site_name" content="Cherry's Blog">
-<meta property="og:description" content="在javascript中，是没有类的概念的，也没有私有变量和全局变量的区别，这样的话，我们很有可能会遇到命名冲突的问题，然后就是我们希望能跟其他面向对象编程语言一样，能够将一个方法封装成一个类，这样的话别人在引用这个方法的时候只需要调用接口就可以了，不需要知道内部是怎么实现的，我们也往往不想让外部访问到类中的成员变量">
-<meta property="og:updated_time" content="2017-03-24T15:12:21.530Z">
+<meta property="og:description" content="这里只是读书笔记，因为刚开始接触react，概况的说一下什么是react，并且使用react完成hello world">
+<meta property="og:updated_time" content="2017-03-01T14:39:08.188Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript设计模式（二）：模块化模式">
-<meta name="twitter:description" content="在javascript中，是没有类的概念的，也没有私有变量和全局变量的区别，这样的话，我们很有可能会遇到命名冲突的问题，然后就是我们希望能跟其他面向对象编程语言一样，能够将一个方法封装成一个类，这样的话别人在引用这个方法的时候只需要调用接口就可以了，不需要知道内部是怎么实现的，我们也往往不想让外部访问到类中的成员变量">
+<meta name="twitter:title" content="react（一）：初识react">
+<meta name="twitter:description" content="这里只是读书笔记，因为刚开始接触react，概况的说一下什么是react，并且使用react完成hello world">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://cherryblog.site/javascript模块化编程（二）：模块化模式.html"/>
+  <link rel="canonical" href="http://cherryblog.site/React-first.html"/>
 
 
 
 
 
-  <title> javascript设计模式（二）：模块化模式 | Cherry's Blog </title>
+  <title> react（一）：初识react | Cherry's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/javascript模块化编程（二）：模块化模式.html">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/React-first.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cherry">
@@ -321,7 +321,7 @@
             
             
               
-                javascript设计模式（二）：模块化模式
+                react（一）：初识react
               
             
           </h1>
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T23:09:08+08:00">
-                2017-03-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-01T22:01:40+08:00">
+                2017-03-01
               </time>
             
 
@@ -359,8 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
                   </a>
                 </span>
 
@@ -377,7 +377,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/javascript模块化编程（二）：模块化模式.html#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/React-first.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/javascript模块化编程（二）：模块化模式.html" class="leancloud_visitors" data-flag-title="javascript设计模式（二）：模块化模式">
+             <span id="/React-first.html" class="leancloud_visitors" data-flag-title="react（一）：初识react">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,7 +410,7 @@
                      <span class="post-meta-item-text">字数统计</span>
                        
                      <span title="字数统计" }}">
-                       887 字
+                       635 字
                      </span>
                   
                  
@@ -424,7 +424,7 @@
                       <span class="post-meta-item-text">阅读时长</span>
                  
                    <span title="阅读时长" }}">
-                 4 分钟
+                 2 分钟
                  </span>
                
             </div>
@@ -442,16 +442,35 @@
       
 
       
-        <p>在javascript中，是没有类的概念的，也没有私有变量和全局变量的区别，这样的话，我们很有可能会遇到命名冲突的问题，然后就是我们希望能跟其他面向对象编程语言一样，能够将一个方法封装成一个类，这样的话别人在引用这个方法的时候只需要调用接口就可以了，不需要知道内部是怎么实现的，我们也往往不想让外部访问到类中的成员变量<br><a id="more"></a></p>
-<h1 id="模块化模式"><a href="#模块化模式" class="headerlink" title="模块化模式"></a>模块化模式</h1><p>所以模块化模式最先开始就是为了解决这个问题的，是用来模拟类的概念的，模拟私有变量的实现（模拟！！在js中是没有类和私有变量的说法的），对传统软件工程中的类提供私有和公共封装的方法</p>
-<p>通过这样的方式，我们可以在一个单一的对象中包含公有/私有的方法和变量</p>
-<p>模块模式使用“闭包”的方式来将不想让外部访问到的变量封装为“私有变量（private）”。提供一种将公有（pubilc）和私有（private）方法，变量封装混合在一起的方式，声明的变量或者方法只在模块内部有效，其他人可以调用return中的方法和变量。这种方式防止内部信息泄露到全局中，从而避免了和其他开发者接口发生冲突的可能。</p>
-<p>这种方式和立即调用函数表达式有相似的地方，不同的是这种模式返回的是一个对象，而立即调用表达式返回的是一个函数</p>
-<h2 id="闭包实现模块模式基础版"><a href="#闭包实现模块模式基础版" class="headerlink" title="闭包实现模块模式基础版"></a>闭包实现模块模式基础版</h2><p>下面就是一个最简单的用闭包实现模块模式的栗子~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var testModule = (function()&#123;</div><div class="line">    var counter = 0;</div><div class="line">    </div><div class="line">    return&#123;</div><div class="line">        incrementCounter:function()&#123;</div><div class="line">            return counter++;</div><div class="line">        &#125;</div><div class="line">        resetCounter:function()&#123;</div><div class="line">            console.log(&quot;counter value prior to reset:&quot;+counter);</div><div class="line">            counter = 0;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">//use</div><div class="line"></div><div class="line">testModule.incrementCounter();</div><div class="line"></div><div class="line">testModule.resetCounter();</div></pre></td></tr></table></figure></p>
-<p>这个栗子中，在函数体内定义的变量<code>counter</code>就是一个“私有变量”，在函数外部是不能直接访问到的。在<code>return</code>中给我们提供了这个函数的两个<code>public</code>方法：<code>incrementCounter()</code>和<code>resetCounter()</code>。我们想要使用这个函数的功能就直接调用<code>testModule.incrementCounter();</code>就可以了</p>
-<h2 id="包含命名空间、公有变量和私有变量"><a href="#包含命名空间、公有变量和私有变量" class="headerlink" title="包含命名空间、公有变量和私有变量"></a>包含命名空间、公有变量和私有变量</h2><p>下面是一个包含了命名空间、公有变量和私有变量的一个栗子~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var myNamespace = (function()&#123;</div><div class="line">    var myPrivateVar,myPrivateMethod</div><div class="line"></div><div class="line">    myPrivateVar = 0;</div><div class="line">    </div><div class="line">    myPrivateMethod = function(foo)&#123;</div><div class="line">        console.log(foo)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return&#123;</div><div class="line">        myPublicVar:&quot;foo&quot;,</div><div class="line">        myPublicFunction:function(bar)&#123;</div><div class="line">            myPrivateVar++;</div><div class="line">            </div><div class="line">            myPrivateMethod(bar)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)()</div></pre></td></tr></table></figure></p>
-<h2 id="升级版使用模块模式实现购物车"><a href="#升级版使用模块模式实现购物车" class="headerlink" title="升级版使用模块模式实现购物车"></a>升级版使用模块模式实现购物车</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">var basketModule = (function () &#123;</div><div class="line"></div><div class="line">  // privates</div><div class="line"></div><div class="line">  var basket = [];</div><div class="line"></div><div class="line">  function doSomethingPrivate() &#123;</div><div class="line">    //...</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  function doSomethingElsePrivate() &#123;</div><div class="line">    //...</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  // Return an object exposed to the public</div><div class="line">  return &#123;</div><div class="line"></div><div class="line">    // Add items to our basket</div><div class="line">    addItem: function( values ) &#123;</div><div class="line">      basket.push(values);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    // Get the count of items in the basket</div><div class="line">    getItemCount: function () &#123;</div><div class="line">      return basket.length;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    // Public alias to a  private function</div><div class="line">    doSomething: doSomethingPrivate,</div><div class="line"></div><div class="line">    // Get the total value of items in the basket</div><div class="line">    getTotal: function () &#123;</div><div class="line"></div><div class="line">      var q = this.getItemCount(),</div><div class="line">          p = 0;</div><div class="line"></div><div class="line">      while (q--) &#123;</div><div class="line">        p += basket[q].price;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      return p;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;());</div></pre></td></tr></table></figure>
-<p>在这个栗子中，这个模块完全自包含在<code>basketModule</code>这个模块中，其中的<code>basket</code>数组是私有的，在外部访问不到，我们需要访问<code>basketModule</code>中return的方法使用对应的功能，使用方法如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">// basketModule returns an object with a public API we can use</div><div class="line"></div><div class="line">basketModule.addItem(&#123;</div><div class="line">  item: &quot;bread&quot;,</div><div class="line">  price: 0.5</div><div class="line">&#125;);</div><div class="line"></div><div class="line">basketModule.addItem(&#123;</div><div class="line">  item: &quot;butter&quot;,</div><div class="line">  price: 0.3</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// Outputs: 2</div><div class="line">console.log( basketModule.getItemCount() );</div><div class="line"></div><div class="line">// Outputs: 0.8</div><div class="line">console.log( basketModule.getTotal() );</div><div class="line"></div><div class="line">// However, the following will not work:</div><div class="line"></div><div class="line">// Outputs: undefined</div><div class="line">// This is because the basket itself is not exposed as a part of our</div><div class="line">// the public API</div><div class="line">console.log( basketModule.basket );</div><div class="line"></div><div class="line">// This also won&apos;t work as it only exists within the scope of our</div><div class="line">// basketModule closure, but not the returned public object</div><div class="line">console.log( basket );</div></pre></td></tr></table></figure></p>
+        <p>这里只是读书笔记，因为刚开始接触react，概况的说一下什么是react，并且使用react完成hello world</p>
+<a id="more"></a>
+<p>这里是看慕课网初学react做的一些总结<a href="http://www.imooc.com/video/9819" target="_blank" rel="external">[课程]React入门</a>，</p>
+<h1 id="什么是react"><a href="#什么是react" class="headerlink" title="什么是react"></a>什么是react</h1><p>在这一个小时内对react的认识中，我有了对react的初步印象</p>
+<ol>
+<li>js库</li>
+<li>facebook开发的</li>
+<li>高度的组件化</li>
+<li>使用jsx</li>
+<li>将html和js结合</li>
+<li>单项传输数据</li>
+<li>虚拟dom</li>
+<li>只负责view层</li>
+</ol>
+<p>react并不是一个完整的mvc或者mvvm框架，只是负责view层，特点是“轻”，组件化的开发：组件高度的可重用。含义是将有独立功能的UI控件封装起来，将UI上的每一个独立的模块定义成组件，通过组合或者嵌套的方式构成大的组件，完成完整的UI</p>
+<h1 id="react应用场景"><a href="#react应用场景" class="headerlink" title="react应用场景"></a>react应用场景</h1><ol>
+<li>复杂场景下的高性能</li>
+<li>重用组件库，组件组合</li>
+<li>“懒”</li>
+</ol>
+<h1 id="使用react"><a href="#使用react" class="headerlink" title="使用react"></a>使用react</h1><p>最正确的打开方式还是直接看官方api：<a href="http://reactjs.cn/react/docs/getting-started-zh-CN.html" target="_blank" rel="external">react入门教程</a></p>
+<p>或者阮一峰老师的教程：<a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="external">React 入门实例教程</a></p>
+<p>我们先用React JSFiddle来创建一个最简单的hello world</p>
+<p>html：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//这里引入的js库只是方便学习和实验的，在正式项目不引入</div><div class="line">&lt;script src=&quot;https://facebook.github.io/react/js/jsfiddle-integration-babel.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;div id=&quot;container&quot;&gt;</div><div class="line">    &lt;!-- This element&apos;s contents will be replaced with your component. --&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>js:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//jsx语法糖，计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。通常来说使用语法糖能够增加程序的可读性，从而减少程序代码出错的机会。</div><div class="line"></div><div class="line">//react里面的div只是虚拟的dom，在react看来只是react componments的一个实例，调用ReactDOM.render方法使虚拟的dom呈现到页面上，ReactDOM.render方法第一次参数就是我们要渲染的react componments，第二个参数是我们要插入的位置</div><div class="line"></div><div class="line">//自定义的componments通过React.createClass来进行创建</div><div class="line">//&#123;&#125;里面为js表达式的值this是我们所使用的componments，props是我们在ReactDOM.render中所使用的属性的集合</div><div class="line">var Hello = React.createClass(&#123;</div><div class="line">  render: function() &#123;</div><div class="line">  </div><div class="line">    </div><div class="line">    return &lt;div&gt;Hello &#123;this.props.name&#125;&lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  //生成自定义标签</div><div class="line">  &lt;Hello name=&quot;World&quot; /&gt;,</div><div class="line">  document.getElementById(&apos;container&apos;)</div><div class="line">);</div></pre></td></tr></table></figure>
+<h1 id="为html添加css"><a href="#为html添加css" class="headerlink" title="为html添加css"></a>为html添加css</h1><h2 id="添加类"><a href="#添加类" class="headerlink" title="添加类"></a>添加类</h2><p>因为class是js中的保留字，所以在给标签加css类的时候不能使用class需要用className</p>
+<h2 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h2><p>需要使用驼峰写法的键值对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return &lt;div style=&#123;&#123;color:&apos;red&apos;&#125;&#125;&gt;Hello &#123;this.props.name&#125;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -481,9 +500,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"># js</a>
-          
-            <a href="/tags/js设计模式/" rel="tag"># js设计模式</a>
+            <a href="/tags/react/" rel="tag"># react</a>
           
         </div>
       
@@ -496,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/gulp（一）.html" rel="next" title="gulp（一）">
-                <i class="fa fa-chevron-left"></i> gulp（一）
+              <a href="/Hexo-Understand-the-principles-of-githubPages-hexoblog.html" rel="next" title="了解githubPages+hexo搭建博客的原理">
+                <i class="fa fa-chevron-left"></i> 了解githubPages+hexo搭建博客的原理
               </a>
             
           </div>
@@ -506,8 +523,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/javascript设计模式（三）：原型模式.html" rel="prev" title="javascript设计模式（三）：原型模式">
-                javascript设计模式（三）：原型模式 <i class="fa fa-chevron-right"></i>
+              <a href="/React2understanding-react-with-examples.html" rel="prev" title="react（二）：用实例认识react">
+                react（二）：用实例认识react <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -665,7 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模块化模式"><span class="nav-number">1.</span> <span class="nav-text">模块化模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包实现模块模式基础版"><span class="nav-number">1.1.</span> <span class="nav-text">闭包实现模块模式基础版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包含命名空间、公有变量和私有变量"><span class="nav-number">1.2.</span> <span class="nav-text">包含命名空间、公有变量和私有变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级版使用模块模式实现购物车"><span class="nav-number">1.3.</span> <span class="nav-text">升级版使用模块模式实现购物车</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是react"><span class="nav-number">1.</span> <span class="nav-text">什么是react</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#react应用场景"><span class="nav-number">2.</span> <span class="nav-text">react应用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用react"><span class="nav-number">3.</span> <span class="nav-text">使用react</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为html添加css"><span class="nav-number">4.</span> <span class="nav-text">为html添加css</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加类"><span class="nav-number">4.1.</span> <span class="nav-text">添加类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联样式"><span class="nav-number">4.2.</span> <span class="nav-text">内联样式</span></a></li></ol></li></ol></div>
             
 
           </div>
