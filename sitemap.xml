@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
+    
+    <lastmod>2017-04-12T15:37:25.742Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/Front-interview.html</loc>
+    
+    <lastmod>2017-04-12T15:37:25.711Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://cherryblog.site/GitCommands.html</loc>
     
-    <lastmod>2017-04-12T14:45:42.270Z</lastmod>
+    <lastmod>2017-04-12T15:37:25.602Z</lastmod>
     
   </url>
   
@@ -72,13 +86,6 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
-    
-    <lastmod>2017-03-24T15:13:38.380Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html</loc>
     
     <lastmod>2017-03-24T15:12:21.530Z</lastmod>
@@ -124,13 +131,6 @@
     <loc>http://cherryblog.site/Javascript-modular-programming1module-writing.html</loc>
     
     <lastmod>2017-03-07T14:42:38.175Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/Front-interview.html</loc>
-    
-    <lastmod>2017-03-07T14:24:58.055Z</lastmod>
     
   </url>
   
