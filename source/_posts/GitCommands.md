@@ -1,5 +1,5 @@
 ---
-title: Git常用命令&完成一个小工作流
+title: Git常用命令and完成一个小工作流
 date: 2017-03-15 22:32:30
 tags: git 
 categories: git
