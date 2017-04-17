@@ -8,7 +8,9 @@ description: [git,git实战,git报错]
 在Git的使用过程中，难免会有这样那样的错误，对于刚开始使用git的小白来说，来记录一下使用过程中报错情况以及怎么处理的
 <!--more-->
 
-#　`git pull`时报错
+在Git的使用过程中，难免会有这样那样的错误，对于刚开始使用git的小白来说，来记录一下使用过程中报错情况以及怎么处理的
+
+`git pull`时报错
 ```
 $ git pull
 remote: Counting objects: 100, done.
@@ -35,78 +37,56 @@ Aborting
 
 ```
 大意就是说你修改的文件在之前的commit中没有提交，远端的文件和本地的文件冲突
-解决方法
-1. 昨天遇到这个问题的时候是本地修改的文件不需要提交了，直接放弃就可以了，
+解决方法（出现这样的原因是你在commit之前进行了pull，正确的顺序应该是先进行`git add`、`git commit`、然后再进行拉去远端的代码`git pull`，解决完冲突之后再push）
+1. 如果本地修改的文件不需要提交了，直接放弃就可以了
  ```
  $ git checkout --filename
  ```
- 然后远端的文件就覆盖了你的本地文件，然后在`git pull`,之后就可以`git add`、`git commit`、`git push`三部曲了
+ 然后远端的文件就覆盖了你的本地文件,之后就可以`git add`、`git commit`、`git pull`、`git push`了
  
  2. 还可以保存本地的状态
- `git stash`
-然后再
-`git pull  origin master`
-但是提示我`No local changes to save`
-
-然后我再pull的时候提示我
 ```
-$ git pull
-Updating d8ec768..7c13661
-error: The following untracked working tree files would be overwritten by merge:
-        static_dist/web/js/houseList/houseList-min-50ae65dad4.js
-        static_dist/web/js/list/list-min-dd27ec4ef4.js
-Please move or remove them before you can merge.
-Aborting
+//暂存当前文件
+$ git stash [save message]
+save可以对进度进行备注
 
 
+//查看当前工作区和版本库区别
+$ git diff HEAD
+
+//显示已暂存列表
+$ git stash list
+
+//恢复最近一次暂存区
+$ git stash pop [--index][<stash>]
+[]中为可选参数
+--index 不仅恢复工作区，还恢复暂存区
+<stash>指定恢复到具体的进度
+
+//删除进度（默认删除最新进度）
+$ git stash drop [<stash>]
+
+//删除所有进度
+$ git stash clear
+
+//基于进度创建分支 
+$ git stash branch <branchname> <stash>
 ```
-然后我想放弃这两个文件就报错了
-```
-$ git checkout  static_dist/web/js/houseList/houseList-min-50ae65dad4.js
-error: pathspec 'static_dist/web/js/houseList/houseList-min-50ae65dad4.js' did not match any fi         le(s) known to git.
+
+在pull的时候经常会出现下面的情况
+![image](http://images2015.cnblogs.com/blog/630011/201603/630011-20160315120522896-1718649799.jpg)
 
 ```
-3. 所以我请来了我们的phper，他说可以直接提交 = =
-先是查看一下现在的状态
+Please enter a commit message to explain why this merge is necessary.
+请输入提交消息来解释为什么这种合并是必要的
 ```
-$ git status
-On branch master
-Your branch is behind 'origin/master' by 3 commits, and can be fast-forwarded.
-  (use "git pull" to update your local branch)
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+这种轻情况在pull或者合并分支的时候会出现，为什么会出现我也不清楚原因= =
+ - 1按键盘字母 i 进入insert模式
 
-        static_dist/m/css/about/about-min-e5159328af.css
-        static_dist/m/css/authentication/authentication-min-2315b81179.css
-        static_dist/m/css/defaultIndex/defaultIndex-min-ecc8a57574.css
-        static_dist/m/css/defaultList/defaultList-min-df3ee5323b.css
-        static_dist/m/css/detailHouse/detailHouse-min-8f6835d719.css
-        static_dist/m/css/detailIndex/detailIndex-min-24e3587ee2.css
-        static_dist/m/css/detailOrder/detailOrder-min-ffa8b47793.css
-        static_dist/m/css/listHouse/listHouse-min-53c056c915.css
-        static_dist/m/css/payIndex/payIndex-min-78a3d6e471.css
-        static_dist/m/css/publicMain/publicMain-min-243df56309.css
-        static_dist/m/css/userDetail/userDetail-min-bf3f5d072e.css
-        static_dist/m/css/userIndex/userIndex-min-7898459c71.css
-        static_dist/m/css/userLogin_reg/userLogin_reg-min-718b2d35d8.css
-        static_dist/m/css/userOrder/userOrder-min-5f18d80c90.css
-        static_dist/m/css/userProject/userProject-min-fcc2e92ff7.css
-        static_dist/web/css/bankguide/bankguide-min-eb72d15494.css
-        static_dist/web/css/defaultIndex/defaultIndex-min-ccc49d9d39.css
-        static_dist/web/css/detail/detail-min-714ac29c22.css
-        static_dist/web/css/houseDetail/houseDetail-min-ea5da2d35e.css
-        static_dist/web/css/houseList/houseList-min-5ad0e311df.css
-        static_dist/web/css/list/list-min-7b339899d6.css
-        static_dist/web/css/publicMain/publicMain-min-51e7cfd8d2.css
-        static_dist/web/js/houseList/houseList-min-50ae65dad4.js
-        static_dist/web/js/list/list-min-dd27ec4ef4.js
+ - 2修改最上面那行黄色合并信息,可以不修改
 
-nothing added to commit but untracked files present (use "git add" to track)
+ - 3按键盘左上角"Esc"
 
-```
-然后确认这些文件都不需要了，在checkout一遍
-```
-$ git checkout .
+ - 4输入":wq",注意是冒号+wq,按回车键即可
 
-```
-然后在发布三部曲
+可以直接进行3、4步，
