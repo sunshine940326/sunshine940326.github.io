@@ -1,8 +1,8 @@
 ---
-title: photo
+title: 
 date: 2017-04-04 22:14:07
 type: "photo"
-comments: false
+comments: true
 ---
 ![第一次喜欢多肉大概是从这一盆开始的吧，这一盆叫虹之玉，算是多肉中的普货，多肉的颜色就是需要晒](http://oova2i5xh.bkt.clouddn.com/IMG_0795_%E7%9C%8B%E5%9B%BE%E7%8E%8B.jpg)
 ![跟虹之玉一起买的，购于上海七宝万科~满满的一盆很喜爱](http://oova2i5xh.bkt.clouddn.com/IMG_0800_%E7%9C%8B%E5%9B%BE%E7%8E%8B.jpg)
