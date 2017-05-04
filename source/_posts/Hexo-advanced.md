@@ -4,6 +4,8 @@ date: 2016-09-17 01:14:19
 tags: hexo 
 categories: git
 ---
+![这里写图片描述](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493223838128&di=c9a4b5d92b7ab41789dbde3069dbaf3a&imgtype=0&src=http%3A%2F%2Fpic4.zhimg.com%2Fd4c1239e75c02e8482c22017a6c8d407_r.jpg)
+
 这一部分的主要是一些高级进阶的功能，想自定义自己的主题，就需要这部分的内容。
 <!--more-->
 

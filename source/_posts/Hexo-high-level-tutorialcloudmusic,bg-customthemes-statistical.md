@@ -4,6 +4,8 @@ date: 2017-04-09 22:32:30
 tags: [git,hexo教程] 
 categories: git
 ---
+![这里写图片描述](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493223838128&di=c9a4b5d92b7ab41789dbde3069dbaf3a&imgtype=0&src=http%3A%2F%2Fpic4.zhimg.com%2Fd4c1239e75c02e8482c22017a6c8d407_r.jpg)
+
 # 前言
 本篇文章是在已经搭建好gitpage+hexo的博客的前提下（不懂怎么搭建的可以参考我的另一篇博文：[了解githubPages+hexo搭建博客的原理](http://cherryblog.site/2017/02/26/%E4%BA%86%E8%A7%A3githubPages-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%8E%9F%E7%90%86/) 或者[利用Gitpage+hexo开发自己的博客](http://cherryblog.site/2016/09/16/%E5%88%A9%E7%94%A8Gitpage-hexo%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/)，这两篇博文都比较详细的教大家最基础的怎么将博客搭建起来。本篇博文是使用next主题的进击版本，主要是有以下内容
 

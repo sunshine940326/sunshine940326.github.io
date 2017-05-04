@@ -5,6 +5,8 @@ tags: git
 categories: git
 description: [git常用命令,git使用技巧,git实战]
 ---
+![git图片](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493224022490&di=4b9c36844b17e0c6116d1fd5aa883baf&imgtype=0&src=http%3A%2F%2Fimages.cnblogs.com%2Fcnblogs_com%2Fqyf404%2F612381%2Fo_git-logo.png)
+
 本篇长期更新，记录一些常用的git命令和使用git团队合作的命令
 
 <!--more-->
