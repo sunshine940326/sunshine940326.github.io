@@ -327,7 +327,7 @@ changyan:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-baidushare: true
+# baidushare: true
 ##  type: button
 
 # Share
@@ -336,7 +336,7 @@ baidushare: true
 #add_this_id:
 
 # Share
-#duoshuo_share: true
+duoshuo_share: true
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
@@ -549,3 +549,6 @@ images: images
 # Theme version
 version: 5.1.0
 
+reward_comment: 客官，赏一个嘛~
+wechatpay: http://oova2i5xh.bkt.clouddn.com/wechat.jpg
+alipay: http://oova2i5xh.bkt.clouddn.com/alipay.jpg

@@ -83,7 +83,14 @@
        <canvas id="canvas"></canvas>
   </div>
   <script>
-  //百度站长
+  //360站长平台
+
+    (function(){
+       var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?940223423bbed5ceb474bec1058bc6fb":"https://jspassport.ssl.qhimg.com/11.0.1.js?940223423bbed5ceb474bec1058bc6fb";
+       document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+
+     //百度站长
     (function(){
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
