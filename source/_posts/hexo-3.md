@@ -4,6 +4,7 @@ date: 2017-04-16 13:24:51
 tags: [hexo高阶教程,hexo+gulp,hexo+七牛,hexo百度收录,hexo百度统计,hexo seo] 
 categories: git
 ---
+![coding](http://img.blog.csdn.net/20170506111627464?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 > 本文首发在我的个人博客：http://cherryblog.site/,欢迎大家前去参观，顺便求fork，么么哒~
 
 上一次在掘金上发表的`hexo`高阶教程：[hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能](http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html)，收到了不少朋友的喜欢，手动比心♪(＾∀＾●)ﾉ，也有不少朋友私信我给我提改进的意见，本着生命就是要折腾的原则，我又做了如下的优化：  
@@ -151,7 +152,102 @@ seo优化应该说是一个收益延迟的行为，可能你做的优化短期�
  - 网站的浏览量及深度：**用户体验**越好，网站的百度权重越高
 # 同时托管到github和coding上
 前面已经提到过一个惨绝人寰的消息，那就是github是不允许百度的爬虫爬取内容的，所以我们的项目如果是托管在github上的话基本是不会被百度收录的，所以我又同时托管到了coding上，然后在做解析的时候海外的ip 指向到github，国内的或者说百度的直接指向coding
- 
+## 将你的项目托管在coding上
+![coding](http://img.blog.csdn.net/20170506111627464?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+> Coding 是一个面向开发者的云端开发平台[1]  ，目前提供代码托管，运行空间，质量控制，项目管理等功能。此外，还提供社会化协作功能，包含了社交元素，方便开发者进行技术讨论和协作。
+> 2016年3月CODING宣布收购代码托管平台GitCafe。
+
+之前好多小伙伴都是将项目托管在gitcafe上，但是现在gitcafe被coding收购了，于是就转到coding上了，之前好多人说github的服务器在国外，于是就转战国内的coding了，我将代码迁移至coding还有另外一个原因，github不让百度的爬虫爬取啊，让我哭一会，不然也不会这样折腾。coding就是中国版的github（只是打一个比喻），有提供pages服务。
+### 在coding上创建仓库
+首先我们先要创建一个coding账号并且在coding上创建一个项目,必须要是公开项目，私有项目是没有page服务的，项目名称可以随意起
+![创建coding项目](http://img.blog.csdn.net/20170506114106649?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+### 将hexo博客同步到新创建的仓库中
+第一次使用coding需要使用ssh，方法和之前github是一样一样的，将ssh公钥复制到coding上
+![自己的ssh公钥](http://img.blog.csdn.net/20170506114846918?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![coding中贴入ssh](http://img.blog.csdn.net/20170506114917277?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)  
+在coding中添加过ssh公钥之后我们需要修改hexo根目录下的配置文件,官方要求配置格式如下
+```
+deploy:
+  type: git
+  message: [message]
+  repo:
+    github: <repository url>,[branch]
+    gitcafe: <repository url>,[branch] 
+```
+所以我的配置就是这样的(我这个配置github和coding都有ssh和https两种方式)：
+```
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo:
+    #github: git@github.com:sunshine940326/sunshine940326.github.io.git
+    github: https://github.com/sunshine940326/sunshine940326.github.io.git
+    coding: git@git.coding.net:cherry940326/cherry940326.git
+    #coding: https://git.coding.net/cherry940326/cherry940326.git
+```
+完成之后在git bash 中输入
+```
+ssh -T git@git.coding.net
+```
+如果得到如图提示就说明配置成功了
+![配置成功ssh](http://img.blog.csdn.net/20170506120449863?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+然后重新部署hexo就将代码上传至coding上了
+### 设置coding的pages服务
+将代码上传至coding之后我们就要开启pages服务了，在pages页面我们只需要将部署来源选择为master分支，然后将自定义域名填写我们自己购买的域名就可以了
+![找到pages](http://img.blog.csdn.net/20170506121132351?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![配置pages](http://img.blog.csdn.net/20170506120956994?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+### 设置域名解析
+然后我们到万网下面设置我们的域名解析，将默认ip解析到coding上（这里要注意，解析到coding时记录值是pages.coding.me，并没有具体的账号名或者仓库名，并且只有设置完成域名解析才可以在coding上设置自定义域名），将海外的ip解析到github上，设置如下：
+![域名解析](http://img.blog.csdn.net/20170506122622186?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+
+----------
+至此就完成了将你的hexo编译的博客同时部署在github和coding上
+# 多终端编辑hexo博客
+之前就想到了一个问题，如果我想要在公司写博客怎么办，或者说如果我换电脑了怎么办，因为在github中的我们github.io项目是只有编译后的文件的，没有源文件的，也就是说，如果我们的电脑坏了，打不开了，我们的博客就不能进行更新了，所以我们要把我们的源文件也上传到github上，这道题的解题思路（哈哈，突然想到这个词了）是，将我们的源文件上传至username.github.io的Hexo分支，并且设置为默认分支（分支需要自己创建），然后对我们的源文件进行版本管理，这样我们就可以在另一台电脑上pull我们的源码，然后编译完之后push上去。
+> 更为优雅的方式是使用travis-ci，然后用webhook自动部署。你只需要写markdown，push到github就行了。根本不用关心deploy，只要维护你的markdown就行。详情请参考：http://blog.bigruan.com/2015-03-09-Continuous-Integration-Your-Hexo-Blog-With-TravisCI/
+## 创建Hexo分支
+创建两个分支：master 与 Hexo,并将Hexo设置为默认分支（这个Hexo分支就是存放我们源文件的分支，我们只需要更新Hexo分支上的内容据就好，master上的分支hexo编译的时候会更新的）
+## 删除文件夹内原有的.git缓存文件夹并编辑.gitignore文件
+因为有些主题是从git上clone过来的，所以我们要先删除.git缓存文件，否则会和blog仓库冲突（.git默认是隐藏文件夹，需要先开启显示隐藏文件夹。**.git文件夹被删除后整个文件对应的git仓库状态也会被清空**)
+.gitignore文件作用是声明不被git记录的文件，blog根目录下的.gitignore是hexo初始化带来的，可以先删除或者直接编辑，对hexo不会有影响。建议.gitignore内添加以下内容：
+```
+/.deploy_git
+/public  
+/_config.yml
+
+```
+> .deploy_git是hexo默认的.git配置文件夹，不需要同步
+public内文件是根据source文件夹内容自动生成，不需要备份，不然每次改动内容太多
+即使是私有仓库，除去在线服务商员工可以看到的风险外，还有云服务商被攻击造成泄漏等可能，所以不建议将配置文件传上去 
+## 初始化仓库
+然后我们再初始化仓库，重新对我们的代码进行版本控制
+```
+git init
+git remote add origin <server>
+```
+`<server>`是指在线仓库的地址。origin是本地分支,remote add操作会将本地仓库映射到云端
+## 将博客源文件上传至Hexo分支
+依次执行
+```
+git add .
+git commit -m "..."
+git push origin hexo
+```
+提交网站相关的文件； 
+## 对B电脑进行的操作
+假设B电脑现在没有我们的源文件
+```
+git init
+git remote add origin <server> #将本地文件和云端仓库映射起来。
+git fetch --all
+git reset --hard origin/master
+```
+## 日常改动
+平时我们对源文件有修改的时候记得先pull一遍代码，再将代码push到Hexo分支，就和日常的使用git一样~
+1. 依次执行git add .、git commit -m "..."、git push origin Hexo指令将改动推送到GitHub（此时当前分支应为Hexo）；
+2. 然后才执行hexo g -d发布网站到master分支上。
 # 使用gulp压缩你的代码
 当你在你的博客页面右键查看源代码的时候，你会发现你的html页面中会有大段大段的空白，这个时候我们就要使用压缩工具对我们的代码进行压缩，在前一段时间参见的前端开发者大会（FDCon2017）中，携程的框架式就有讲到，在携程，线上的资源是需要申请的（单位具体到k），所以说我们的代码不压缩实在是太奢侈~
 ## 什么是gulp
@@ -327,25 +423,4 @@ webstorm真的太强大，已经帮我们继承了gulp，我们只需要动动�
 ![这里写图片描述](http://img.blog.csdn.net/20170504165826626?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 然后在该地址后加上我设置的连接符,"-"和我的样式名称：http://oova2i5xh.bkt.clouddn.com/IMG49.jpg-cherryblogImg，就可以看到是一张带水印的小图，我进行了缩放和加水印
 ![这里写图片描述](http://img.blog.csdn.net/20170504170056689?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
- 
-
- 
-
- 
-
- 
-
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
+  
