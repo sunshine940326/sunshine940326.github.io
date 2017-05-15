@@ -58,7 +58,7 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="8046">
               <caret line="298" column="0" lean-forward="false" selection-start-line="298" selection-start-column="0" selection-end-line="299" selection-end-column="8" />
               <folding />
             </state>
@@ -112,8 +112,8 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/css-checkbox-input-radio.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="27">
-                <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="62" />
+              <first_editor relative-caret-position="1635">
+                <caret line="309" column="0" lean-forward="true" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -301,7 +301,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -349,6 +348,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -543,15 +543,16 @@
       <workItem from="1494331516049" duration="964000" />
       <workItem from="1494428521704" duration="851000" />
       <workItem from="1494746157172" duration="1040000" />
-      <workItem from="1494774370404" duration="347000" />
+      <workItem from="1494774370404" duration="569000" />
+      <workItem from="1494854664535" duration="639000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187236000" />
+    <option name="totallyTimeSpent" value="188097000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19375" sideWeight="0.48360655" order="2" side_tool="true" content_ui="tabs" />
@@ -990,7 +991,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="8046">
           <caret line="298" column="0" lean-forward="false" selection-start-line="298" selection-start-column="0" selection-end-line="299" selection-end-column="8" />
           <folding />
         </state>
@@ -999,8 +1000,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/css-checkbox-input-radio.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="27">
-            <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="62" />
+          <first_editor relative-caret-position="1635">
+            <caret line="309" column="0" lean-forward="true" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />

@@ -4,7 +4,8 @@ date: 2017-05-10 20:54:11
 tags: [css,checkbox优化,input优化,radio优化] 
 categories: css
 ---
- > 项目的github地址为： https://github.com/sunshine940326/css3formeledemo 
+![](http://img.blog.csdn.net/20170515213354489?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+> 项目的github地址为： https://github.com/sunshine940326/css3formeledemo 
  > 本文首发于我的个人博客，http://cherryblog.site/ ；欢迎大家查看我的其他博客
 最近在做公司后台的优化项目，拿到设计稿一看，设计师觉得默认的input、checkbox、radio太丑了，要优化，在做了几个demo之后找到了要怎么优化这些样式的方法，我优化的原则有以下几点：
 
@@ -14,15 +15,163 @@ categories: css
  - 使用sass，只需要改变参数就可以反复多次使用
  <!--more-->
 
-#思路
-大致的原理都是使用html原生的标签元素标签`checkbox`或者`input`，在后面加上`label`标签，将一些原有的元素隐藏，然后再用css设置你想要样式，行为方面都是根据原生属性来判断，不需要使用js。
- 
+# 思路
+大致的原理都是使用html原生的标签元素标签`checkbox`或者`input`，在后面加上`label`标签，将一些原有的元素隐藏，然后再用css设置你想要样式，行为方面都是根据原生属性来判断，不需要使用js。所有的html代码都是
+```
+div.container
+    input type="checkbox" id="checkbox" 
+    label for="checkbox"
+    div.bottom-line
+```
+都是利用css的原生属性来判断用户的操作,先将原本的checkbox隐藏，然后再设置label的样式，最后设置`input[type=checkbox]:checked+label`的样式 
 # checkbox
 ## checkbox demo1
 首先来看一个checkbox，实现这个动画其实很简单，只运用css就可以实现。实现的原理是绑定checkout和label,用label控制是否checked。点击label的时候改变checkbox的属性
     先将checkbox隐藏，然后label为一个只有border的框框，使用after和befor伪元素来实现对号的两部分。
     先将after和before设置宽度为width*0.4，height为0，设置不同的旋转角度，让befor和after合起来刚好是一个对号。
     然后用css动画设置使其height达到width*0.7和width*0.35并控制动画使其连贯播放，
+###  html
+```
+<div class="cb-container">
+    <input type="checkbox" id="checkbox">
+    <label for="checkbox" class="cb-label"></label>
+</div>
+```
+###  scss
+```
+
+$checked-color: #fff;
+$checked-bg:rgb(101,141,181);
+$unchecked-color: #cfcece;
+$unchecked-bg:rgb(249,249,249);
+$checkbox-height: 100px;
+$background-color:#fff;
+$font-color:#dcdcdc;
+$duration: .4s;
+.cb-container{
+  width: 1000px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+html, body{
+  padding:0;
+  margin:0;
+  background-color: $background-color;
+  color:$font-color;
+  font-family:'Open Sans';
+}
+#checkbox{
+  display:none;
+}
+
+.cb-label{
+  height: $checkbox-height;
+  width: $checkbox-height;
+  background: $unchecked-bg;
+  border: $checkbox-height * .1 solid $unchecked-color;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: border-color ease $duration/2;
+  -moz-transition: border-color ease $duration/2;
+  -o-transition: border-color ease $duration/2;
+  -webkit-transition: border-color ease $duration/2;
+  cursor: pointer;
+  &::before,&::after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    height: 0;
+    width: $checkbox-height * 0.2;
+    background: $checked-color;
+    display: inline-block;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    content: '';
+    -webkit-transition: opacity ease 0.5s;
+    -moz-transition: opacity ease 0.5s;
+    transition: opacity ease 0.5s;
+  }
+  &::before{
+    top:$checkbox-height * 0.76;
+    left: $checkbox-height * 0.31;
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  &::after {
+    top: $checkbox-height * .45;
+    left: $checkbox-height * 0;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+input[type=checkbox]:checked + .cb-label,
+.cb-label.checked{
+
+  background: $checked-bg;
+  border-color:$checked-bg;
+  &::after{
+    border-color:$checked-color;
+    height: $checkbox-height * .35;
+    -moz-animation: dothabottomcheck $duration/2 ease 0s forwards;
+    -o-animation: dothabottomcheck $duration/2 ease 0s forwards;
+    -webkit-animation: dothabottomcheck $duration/2 ease 0s forwards;
+    animation: dothabottomcheck $duration/2 ease 0s forwards;
+  }
+
+  &::before{
+    border-color:$checked-color;
+    height: $checkbox-height * 1;
+    -moz-animation: dothatopcheck $duration ease 0s forwards;
+    -o-animation: dothatopcheck $duration ease 0s forwards;
+    -webkit-animation: dothatopcheck $duration ease 0s forwards;
+    animation: dothatopcheck $duration ease 0s forwards;
+  }
+
+}
+@-moz-keyframes dothabottomcheck{
+  0% { height: 0; }
+  100% { height: $checkbox-height *0.35; }
+}
+
+@-webkit-keyframes dothabottomcheck{
+  0% { height: 0; }
+  100% { height: $checkbox-height *0.35; }
+}
+
+@keyframes dothabottomcheck{
+  0% { height: 0; }
+  100% { height: $checkbox-height *0.35;  }
+}
+
+@keyframes dothatopcheck{
+  0% { height: 0; }
+  50% { height: 0; }
+  100% { height: $checkbox-height * 0.7; }
+}
+@-webkit-keyframes dothatopcheck{
+  0% { height: 0; }
+  50% { height: 0; }
+  100% { height: $checkbox-height * 0.7; }
+}
+@-moz-keyframes dothatopcheck{
+  0% { height: 0; }
+  50% { height: 0; }
+  100% { height: $checkbox-height * 0.7; }
+}
+
+```
 ![经过改变后的checkbox](http://img.blog.csdn.net/20170514194453879?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 ## checkboxdemo2
 ![checkboxdemo2](http://img.blog.csdn.net/20170514230458375?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
