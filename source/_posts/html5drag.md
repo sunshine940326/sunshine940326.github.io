@@ -4,7 +4,7 @@ date: 2017-05-24 13:24:51
 tags: [html5,前端] 
 categories: html5
 ---
-![html5拖放](https://user-gold-cdn.xitu.io/2017/5/24/db08e291a9b0857cca0060110188e225)
+![html5拖放](http://img.blog.csdn.net/20170523231217677?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 <!--more-->
 > 本文首发于我的个人博客:http://cherryblog.site/ ，欢迎大家前去参观
 > 本文项目地址，sortable插件地址：https://github.com/sunshine940326/sortable
