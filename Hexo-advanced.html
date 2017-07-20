@@ -1,0 +1,1225 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="这一部分的主要是一些高级进阶的功能，想自定义自己的主题，就需要这部分的内容。">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo高级进阶">
+<meta property="og:url" content="http://cherryblog.site/Hexo-advanced.html">
+<meta property="og:site_name" content="Cherry&#39;s Blog">
+<meta property="og:description" content="这一部分的主要是一些高级进阶的功能，想自定义自己的主题，就需要这部分的内容。">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493223838128&di=c9a4b5d92b7ab41789dbde3069dbaf3a&imgtype=0&src=http%3A%2F%2Fpic4.zhimg.com%2Fd4c1239e75c02e8482c22017a6c8d407_r.jpg">
+<meta property="og:updated_time" content="2017-07-01T13:44:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo高级进阶">
+<meta name="twitter:description" content="这一部分的主要是一些高级进阶的功能，想自定义自己的主题，就需要这部分的内容。">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493223838128&di=c9a4b5d92b7ab41789dbde3069dbaf3a&imgtype=0&src=http%3A%2F%2Fpic4.zhimg.com%2Fd4c1239e75c02e8482c22017a6c8d407_r.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cherryblog.site/Hexo-advanced.html"/>
+
+
+
+
+
+     <title> hexo高级进阶 | Cherry's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?71ddec12fb1172387f0bd6399e834274";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <div class="bg_content">
+    <div class="filter"></div>
+    <canvas id="canvas"></canvas>
+  </div>
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <a href="https://github.com/sunshine940326"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cherry's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">To Be a Better Me</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br />
+            
+            照片
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/Hexo-advanced.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                hexo高级进阶
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-17T01:14:19+08:00">
+                2016-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/Hexo-advanced.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/Hexo-advanced.html" class="leancloud_visitors" data-flag-title="hexo高级进阶">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+               
+                     <span class="post-meta-item-icon">
+                       <i class="fa fa-edit"></i>
+                     </span>
+                 
+                     <span class="post-meta-item-text">字数统计</span>
+                       
+                     <span title="字数统计" }}">
+                       4,632 字
+                     </span>
+                  
+                 
+                  <span class="post-meta-divider">|</span>
+                 
+                 
+                 <span class="post-meta-item-icon">
+                     <i class="fa fa-clock-o"></i>
+                     </span>
+                 
+                      <span class="post-meta-item-text">阅读时长</span>
+                 
+                   <span title="阅读时长" }}">
+                 19 分钟
+                 </span>
+               
+            </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493223838128&amp;di=c9a4b5d92b7ab41789dbde3069dbaf3a&amp;imgtype=0&amp;src=http%3A%2F%2Fpic4.zhimg.com%2Fd4c1239e75c02e8482c22017a6c8d407_r.jpg" alt="这里写图片描述"></p>
+<p>这一部分的主要是一些高级进阶的功能，想自定义自己的主题，就需要这部分的内容。<br><a id="more"></a></p>
+<h1 id="1、永久链接"><a href="#1、永久链接" class="headerlink" title="1、永久链接"></a>1、永久链接</h1><p>你可以通过 _config.yml 或者文章的头部申明来设置文章的永久链接。</p>
+<h2 id="（1）变量"><a href="#（1）变量" class="headerlink" title="（1）变量"></a>（1）变量</h2><p>下面列举了可以使用在永久链接里的变量，除了下面这些，你可以使用固定链接中的任何属性。</p>
+<pre><code>:year 4位的年，比如2015
+:month 2位的月，比如06
+:i_month 去掉前面0的月，比如9代表9月
+:day 两位的天，比如05代表5号
+:i_day 同理
+:title 文件名
+:id 文章ID
+:category 类别；如果文章没有指定，那么就是 default_category 字段设置的那个。
+</code></pre><p>你也可以自定义每个变量，在 permalink_defaults 中这样设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">permalink_defaults:</div><div class="line">    lang: en</div></pre></td></tr></table></figure></p>
+<h2 id="（2）举例说明"><a href="#（2）举例说明" class="headerlink" title="（2）举例说明"></a>（2）举例说明</h2><p>假设在_posts目录下有一篇名为hello-world.md的文章，声明如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: Hello World</div><div class="line">date: 2015-06-01</div><div class="line">categories:</div><div class="line">- foo</div><div class="line">- bar</div></pre></td></tr></table></figure></p>
+<pre><code>设置为： :year/:month/:day/:title/ 结果为： 2015/06/01/hello-world
+设置为： :year-:month-:day-:title.html 结果为： 2015-06-01-hello-world.html
+设置为： :category/:title 结果为： foo/bar/hello-world
+</code></pre><h2 id="（3）多语言支持"><a href="#（3）多语言支持" class="headerlink" title="（3）多语言支持"></a>（3）多语言支持</h2><p>你可以通过 new_post_name 和 permalink 字段的设定，来创建一个多语言的网站。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">new_post_name: :lang/:title.md</div><div class="line">permalink: :lang/:title/</div></pre></td></tr></table></figure></p>
+<p>当你创建一个新的文章的时候， hexo new “Hello World” –lang tw ，hexo会创建source/_posts/tw/Hello-World.md，那么 <a href="http://localhost:4000/tw/hello-world/" target="_blank" rel="external">http://localhost:4000/tw/hello-world/</a> 便会指向该文章。</p>
+<h1 id="2、主题"><a href="#2、主题" class="headerlink" title="2、主题"></a>2、主题</h1><p>hexo根目录中的theme目录就是主题的所在地，设置主题非常简单，只需将 _config.yml 中theme字段值设为主题名就行了。下面看一下一个主题的目录结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── languages</div><div class="line">├── layout</div><div class="line">├── scripts</div><div class="line">└── source</div></pre></td></tr></table></figure></p>
+<h2 id="（1）主题全局设置"><a href="#（1）主题全局设置" class="headerlink" title="（1）主题全局设置"></a>（1）主题全局设置</h2><p>_config.yml配置文件，跟hexo的全局配置文件名一样。只是在不同的目录中，在该配置文件中的改动不需要重启服务，就可以实时体现在站点中。</p>
+<h2 id="（2）语言"><a href="#（2）语言" class="headerlink" title="（2）语言"></a>（2）语言</h2><p>语言文件夹，详细信息可以查看Localization(i18n)的说明，下面再介绍。</p>
+<h1 id="3、模版"><a href="#3、模版" class="headerlink" title="3、模版"></a>3、模版</h1><p>模版基本上就是网站的布局了，如果你想要自己亲手制作一个Hexo的主题，那么就要深入了解这块内容了，每一个主题至少都要包含一个index模版，下面是各页面对应的模版名称：</p>
+<pre><code>index 首页
+post 文章
+page 分页
+archive 归档
+category 分类归档
+tag 标签归档
+</code></pre><h2 id="（1）Layouts（布局）"><a href="#（1）Layouts（布局）" class="headerlink" title="（1）Layouts（布局）"></a>（1）Layouts（布局）</h2><p>如果页面结构类似，举个例子，两个模版都含有header以及footer，你就可以考虑通过「布局」让两个模板共享相同的结构。一个布局文件必须要能显示 body 变量的内容，如此一来模板的内容才会被显示，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!--index.ejs--&gt;</div><div class="line">index</div><div class="line"></div><div class="line">&lt;!--layout.ejs--&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;body&gt;&lt;%- body %&gt;&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>生成的结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;body&gt;index&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>每个模板都默认使用 layout 布局，您可在文章的前置申明中指定其他布局，比如“post”或者“page”或是设为false来关闭布局功能（如果不填默认是post，这个在_config.yml中可以设置默认值），您甚至可在布局中再使用其他布局来建立嵌套布局。</p>
+<p>也许你看到官方Docs这么说，还是不明白说的是什么意思，后面我会通过创建个人简历的布局示例来详细讲解这一块内容。</p>
+<h2 id="（2）Partials（局部模版）"><a href="#（2）Partials（局部模版）" class="headerlink" title="（2）Partials（局部模版）"></a>（2）Partials（局部模版）</h2><p>局部模版可以让你在不同的模版中分享相同的组件，例如Header、Footer或者Sidebar侧边栏等等，可以利用局部模版功能将各个组件分割成独立的文件，便于维护。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!--partial/header.ejs--&gt;</div><div class="line">&lt;h1 id=&quot;logo&quot;&gt;&lt;%= config.title %&gt;&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;!--index.ejs--&gt;</div><div class="line">&lt;%- partial(&apos;partial/header&apos;) %&gt;</div><div class="line">&lt;div id=&quot;content&quot;&gt;Home page&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>生成后就是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;h1 id=&quot;logo&quot;&gt;My Site&lt;/h1&gt;</div><div class="line">&lt;div id=&quot;content&quot;&gt;Home page&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>这个很容易理解，就是将局部模块里的内容，原封不动的拷贝到引用它的文件中。</p>
+<h2 id="（3）Local-Variables（本地变量）"><a href="#（3）Local-Variables（本地变量）" class="headerlink" title="（3）Local Variables（本地变量）"></a>（3）Local Variables（本地变量）</h2><p>这里的变量就是针对局部模版来使用的，您可以在局部模块中指定局部变量来进行传递。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!--partial/header.ejs--&gt;</div><div class="line">&lt;h1 id=&quot;logo&quot;&gt;&lt;%= title&gt;&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;!--index.ejs--&gt;</div><div class="line">&lt;%- partial(&apos;partial/header&apos;, &#123;title: &apos;Hello World&apos;&#125;) %&gt;</div><div class="line">&lt;div id=&quot;content&quot;&gt;Home page&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>生成后就是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;h1 id=&quot;logo&quot;&gt;Hello World&lt;/h1&gt;</div><div class="line">&lt;div id=&quot;content&quot;&gt;Home page&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>这个也不难理解，就是传递变量的过程。</p>
+<h2 id="（4）Optimization（最优化）"><a href="#（4）Optimization（最优化）" class="headerlink" title="（4）Optimization（最优化）"></a>（4）Optimization（最优化）</h2><p>假如你的主题特别复杂，因为要生成的文件过于庞大，这样会导致hexo生成性能下降，除了优化主题外，你还可以通过Fragment Caching(局部缓存)的功能来处理。它的主要功能就是缓存局部的内容，减少文件查询。常用在那些很少变动的模块中，比如Header、Footer等等，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%- fragment_cache(&apos;header&apos;, function()&#123;</div><div class="line">  return &apos;&lt;header&gt;&lt;/header&gt;&apos;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>如果使用局部模版的话，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%- partial(&apos;header&apos;, &#123;&#125;, &#123;cache: true&#125;);</div></pre></td></tr></table></figure></p>
+<p>但是需要注意的是，如果开启了 relative_link 参数的话，就不要使用局部缓存的功能，因为relative link在每个页面可能不同。</p>
+<h1 id="4、变量"><a href="#4、变量" class="headerlink" title="4、变量"></a>4、变量</h1><h2 id="（1）全局变量"><a href="#（1）全局变量" class="headerlink" title="（1）全局变量"></a>（1）全局变量</h2><pre><code>site 网站变量
+    site.posts 所有文章
+    site.pages 所有分页
+    site.categories 所有分类
+    site.tags 所有标签
+page 针对改页面的内容以及前置申明中所设定的变量
+config 配置文件中的变量
+theme 主题配置文件中的变量
+_ lodash 函数库
+path 当前页面的路径（不含根路径）
+url 页面完整网址
+env 环境变量
+</code></pre><h2 id="（2）页面变量"><a href="#（2）页面变量" class="headerlink" title="（2）页面变量"></a>（2）页面变量</h2><p>Page(page)这里指的是 hexo new page 创建的那个页面</p>
+<pre><code>page.title 文章标题
+page.date 文章建立日期
+page.updated 文章更新日期
+page.comments 留言是否开启
+page.layout 布局名称
+page.content 文章完整内容
+page.excerpt 文章摘要
+page.more 除了摘要的其他内容
+page.source 文章原始路劲
+page.full_source 文章完整原始路径
+page.path 文章网址（不含根路径），通常在主题中使用 url_for(page.path)
+page.permalink 文章永久网址
+page.prev 上一篇文章，如果此为第一篇文章则为 null
+page.next 下一篇文章，如果此为最后一篇文章则为 null
+page.raw 文章原始内容
+page.photos 文章的照片（用于相册）
+page.link 文章的外链（用于链接文章）
+</code></pre><p>Post(post)这里指的是文章页面，与page布局相同，添加如下变量：</p>
+<pre><code>page.pulished 文章非草稿为true
+page.categories 文章分类
+page.tags 文章标签
+</code></pre><p><strong>首页(index)</strong></p>
+<pre><code>page.per_page 每一页显示的文章数
+page.total 文章数量
+page.current 当前页码
+page.current_url 当前页的URL
+page.posts 当前页的文章
+page.prev 前一页页码，如果为第一页，该值为0
+page.prev_link 前一页URL，如果为第一页，则为&apos;&apos;
+page.next 后一页页码，如果为最后一页，则为0
+page.next_link 后一页URL，如果为最后一页，则为&apos;&apos;
+page.path 当前页网址（不含根路径），通常在主题中使用 url_for(page.path)
+</code></pre><p>归档页(archive)与 index 布局相同，但是新增如下变量：</p>
+<pre><code>archive 为true
+year 归档年份（4位）
+month 归档月份（不包含0）
+</code></pre><p>分类页(category)与 index 布局相同，但是新增如下变量：</p>
+<pre><code>category 分类名称
+</code></pre><p>标签页(tag)与 index 布局相同，但是新增如下变量：</p>
+<pre><code>tag 标签名称
+</code></pre><h1 id="5、帮助函数"><a href="#5、帮助函数" class="headerlink" title="5、帮助函数"></a>5、帮助函数</h1><p>帮助函数被用于在模版中快速插入内容。</p>
+<h2 id="（1）URL"><a href="#（1）URL" class="headerlink" title="（1）URL"></a>（1）URL</h2><pre><code>url_for 返回一个带root路径的url，用法： &lt;%- url_for(path) %&gt;
+relative_url 返回from相对的to路径，用法： &lt;%- relative_url(from, to) %&gt;
+
+gravatar 插入Gravatar图片，用法： &lt;%- gravatar(email, [size])%&gt; ，例如：
+
+&lt;%- gravatar(&apos;a@abc.com&apos;) %&gt;
+// http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787
+&lt;%- gravatar(&apos;a@abc.com&apos;, 40) %&gt;
+// http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787?s=40
+</code></pre><h2 id="（2）HTML"><a href="#（2）HTML" class="headerlink" title="（2）HTML"></a>（2）HTML</h2><p>   1 css 载入CSS文件。用法： &lt;%- css(path, …)%&gt; ， path 可以是数据或者字符串，如果 path 开头不是 / 或任何协议，则会自动加上根路劲；如果后面没有加上 .css 扩展名的话，也会自动加上。示例如下：</p>
+<pre><code>&lt;%- css(&apos;style.css&apos;) %&gt;
+// &lt;link rel=&quot;stylesheet&quot; href=&quot;/style.css&quot; type=&quot;text/css&quot;&gt;
+
+
+&lt;%- css([&apos;style.css&apos;, &apos;screen.css&apos;]) %&gt;
+// &lt;link rel=&quot;stylesheet&quot; href=&quot;/style.css&quot; type=&quot;text/css&quot;&gt;
+// &lt;link rel=&quot;stylesheet&quot; href=&quot;/screen.css&quot; type=&quot;text/css&quot;&gt;
+</code></pre><p>   2 js 载入 JavaScript 文件。用法： &lt;%- js(path, …) %&gt; ， path 可以是数组或字符串，如果 path 开头不是 / 或任何协议，则会自动加上根路径；如果后面没有加上 .js 扩展名的话，也会自动加上。</p>
+<pre><code>&lt;%- js(&apos;script.js&apos;) %&gt;
+// &lt;script type=&quot;text/javascript&quot; src=&quot;/script.js&quot;&gt;&lt;/script&gt;
+&lt;%- js([&apos;script.js&apos;, &apos;gallery.js&apos;]) %&gt;
+// &lt;script type=&quot;text/javascript&quot; src=&quot;/script.js&quot;&gt;&lt;/script&gt;
+// &lt;script type=&quot;text/javascript&quot; src=&quot;/gallery.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>   3 link_to 插入链接。用法： &lt;%- link_to(path, [text], [options]) %&gt; ， options 参数有：</p>
+<ul>
+<li>external 在新窗口中打开链接，默认值为false</li>
+<li>class Class名称，也就是html标签a的class名</li>
+<li><p>id ID名，也就是html标签a的id名</p>
+<p>示例如下：</p>
+</li>
+</ul>
+<pre><code>&lt;%- link_to(&apos;http://www.google.com&apos;) %&gt;
+ // &lt;a href=&quot;http://www.google.com&quot; title=&quot;http://www.google.com&quot;&gt;http://www.google.com&lt;/a&gt;
+&lt;%- link_to(&apos;http://www.google.com&apos;, &apos;Google&apos;) %&gt;
+// &lt;a href=&quot;http://www.google.com&quot; title=&quot;Google&quot;&gt;Google&lt;/a&gt;
+
+
+&lt;%- link_to(&apos;http://www.google.com&apos;, &apos;Google&apos;, {external: true, class: &quot;link&quot;}) %&gt;
+// &lt;a href=&quot;http://www.google.com&quot; title=&quot;Google&quot; target=&quot;_blank&quot; rel=&quot;external&quot; class=&quot;link&quot;&gt;Google&lt;/a&gt;
+</code></pre><p>   4 mail_to 插入电子邮件链接。用法： &lt;%- mail_to(path, [text], [options])%&gt; ， options 参数有：</p>
+<ul>
+<li>class Class名称，也就是html标签a的class名</li>
+<li>id ID名，也就是html标签a的id名</li>
+<li>subject 邮件主题</li>
+<li>cc 抄送（CC）</li>
+<li>bcc 密送（BCC）</li>
+<li><p>body 邮件内容</p>
+<p>示例如下：</p>
+</li>
+</ul>
+<pre><code>&lt;%- mail_to(&apos;a@abc.com&apos;) %&gt;
+// &lt;a href=&quot;mailto:a@abc.com&quot; title=&quot;a@abc.com&quot;&gt;a@abc.com&lt;/a&gt;
+&lt;%- mail_to(&apos;a@abc.com&apos;, &apos;Email&apos;) %&gt;
+// &lt;a href=&quot;mailto:a@abc.com&quot; title=&quot;Email&quot;&gt;Email&lt;/a&gt;
+</code></pre><p>   5 image_tag 插入图片。用法： &lt;%- image_tag(path, [options]) %&gt; ， options 参数有：</p>
+<ul>
+<li>class Class名称，也就是html标签a的class名</li>
+<li>id ID名，也就是html标签a的id名</li>
+<li>alt 替代文字</li>
+<li>width 宽度</li>
+<li><p>height 高度</p>
+<p>基本上就是 img 标签里的属性值。</p>
+</li>
+</ul>
+<p>6 favicon_tag 插入favicon。用法：<br><figure class="highlight plain"><figcaption><span>favicon_tag(path) %>```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">7 feed_tag 插入feed链接。用法：</div><div class="line">```&lt;%- feed_tag(path, [options]) %&gt; ```，参数有： title 和 type (默认值为atom)</div><div class="line"></div><div class="line">（3）条件函数</div><div class="line">---</div><div class="line">    is_current 判断 path 是否符合目前页面的网址。 &lt;%- is_current(path, [strict]) %&gt;</div><div class="line">    is_home 判断目前是否为首页。</div><div class="line">    is_post 检查目前是否为文章。 &lt;%- is_post() %&gt;</div><div class="line">    is_archive 检查目前是否为存档页面。 &lt;%- is_archive() %&gt;</div><div class="line">    is_year 检查目前是否为年度归档页面。 &lt;%- is_year() %&gt;</div><div class="line">    is_month 检查目前是否为月度归档页面。 &lt;%- is_month() %&gt;</div><div class="line">    is_category 检查目前是否为分类归档页面。 &lt;%- is_category() %&gt;</div><div class="line">    is_tag 检查目前是否为标签归档页面。 &lt;%- is_tag() %&gt;</div><div class="line"></div><div class="line">（4）字符串处理</div><div class="line">---</div><div class="line">   - trim 清除字符串开头和结尾的空格。 ```&lt;%- trim(string) %&gt;`</div><div class="line"></div><div class="line">   - strip_html 清除字符串中的 HTML 标签。``` &lt;%- strip_html(string) %&gt; ```，示例：</div></pre></td></tr></table></figure></p>
+<pre><code>&lt;%- strip_html(&apos;It&apos;s not &lt;b&gt;important&lt;/b&gt; anymore!&apos;) %&gt;
+// It&apos;s not important anymore!
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- titlecase 把字符串转换为正确的 Title case。 ```&lt;%- titlecase(string) %&gt; ```示例：</div></pre></td></tr></table></figure>
+<pre><code>&lt;%- titlecase(&apos;this is an apple&apos;) %&gt;
+# This is an Apple
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- markdown 使用 Markdown 解析字符串。 &lt;%- markdown(str) %&gt; 示例：</div></pre></td></tr></table></figure>
+<pre><code>&lt;%- markdown(&apos;make me **strong**&apos;) %&gt;
+// make me &lt;strong&gt;strong&lt;/strong&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- render 解析字符串。``` &lt;%- render(str, engine, [options]) %&gt;</div></pre></td></tr></table></figure>
+<pre><code>word_wrap 使每行的字符串长度不超过 length 。 length 预设为 80。 <figure class="highlight plain"><figcaption><span>word_wrap(str, [length]) %> ```，示例：</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">    &lt;%- word_wrap(&apos;Once upon a time&apos;, 8) %&gt;</div><div class="line">    // Once upon\n a time</div></pre></td></tr></table></figure>
+</code></pre><ul>
+<li>truncate 移除超过 length 长度的字符串。 <figure class="highlight plain"><figcaption><span>truncate(text, length) %> ```示例：</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">    &lt;%- truncate(&apos;Once upon a time in a world far far away&apos;, 16) %&gt;</div><div class="line"></div><div class="line">    // Once upon a time</div></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="（5）模板"><a href="#（5）模板" class="headerlink" title="（5）模板"></a>（5）模板</h2><ul>
+<li><p>partial 载入其他模板文件，您可在 locals 设定区域变量。 &lt;%- partial(layout, [locals], [options]) %&gt;</p>
+<p>参数 | 描述 | 默认值 — | — | — cache | 缓存（使用 Fragment cache） | false only | 限制局部变量。在模板中只能使用 locals 中设定的变量。 | false</p>
+</li>
+<li><p>fragment_cache 局部缓存。它储存局部内容，下次使用时就能直接使用缓存。 &lt;%- fragment_cache(id, fn); 示例：</p>
+<p>&lt;%- fragment_cache(‘header’, function(){</p>
+<pre><code>return &apos;&lt;header&gt;&lt;/header&gt;&apos;;
+</code></pre><p>}) %&gt;</p>
+</li>
+</ul>
+<h2 id="（6）日期与时间"><a href="#（6）日期与时间" class="headerlink" title="（6）日期与时间"></a>（6）日期与时间</h2><ul>
+<li>date 插入格式化的日期。 date 可以是 UNIX 时间、ISO 字符串、Date 对象或 [Moment.js] 对象。 format 默认为 date_format 配置信息。 &lt;%- date(date, [format]) %&gt; 示例：</li>
+</ul>
+<pre><code>&lt;%- date(Date.now()) %&gt;
+// Jan 1, 2013
+&lt;%- date(Date.now(), &apos;YYYY/M/D&apos;) %&gt;
+// 2013/1/1
+</code></pre><ul>
+<li><p>date_xml 插入 XML 格式的日期。 date 可以是 UNIX 时间、ISO 字符串、Date 对象或 [Moment.js] 对象。 &lt;%- date_xml(date) %&gt; ，示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;%- date_xml(Date.now()) %&gt;</div><div class="line">// 2013-01-01T00:00:00.000Z</div></pre></td></tr></table></figure>
+</li>
+<li><p>time 插入格式化的时间。 date 可以是 UNIX 时间、ISO 字符串、Date 对象或 [Moment.js] 对象。 format 默认为 time_format 配置信息。 <figure class="highlight plain"><figcaption><span>time(date, [format]) %>``` 示例：</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">    &lt;%- time(Date.now()) %&gt;</div><div class="line">    // 13:05:12</div><div class="line"></div><div class="line"></div><div class="line">    &lt;%- time(Date.now(), &apos;h:mm:ss a&apos;) %&gt;</div><div class="line">    // 1:05:12 pm</div><div class="line"></div><div class="line">   - full_date 插入格式化的日期和时间。 date 可以是 UNIX 时间、ISO 字符串、Date 对象或 [Moment.js] 对象。 format 默认为 time_format 配置信息。 &lt;%- full_date(date, [format]) %&gt; 示例：</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    &lt;%- full_date(new Date()) %&gt;</div><div class="line">    // Jan 1, 2013 0:00:00</div><div class="line">    &lt;%- full_date(new Date(), &apos;dddd, MMMM Do YYYY, h:mm:ss a&apos;) %&gt;</div><div class="line">    // Tuesday, January 1st 2013, 12:00:00 am</div><div class="line"></div><div class="line">（7）列表</div><div class="line">---</div><div class="line"></div><div class="line">   - list_categories 插入分类列表。 &lt;%- list_categories([categories], [options]) %&gt;</div><div class="line"></div><div class="line">    参数 | 描述 | 默认值 --- | --- | --- orderby | 分类排列方式 | name order | 分类排列顺序。 1 , asc 升序； -1 , desc 降序。 | 1 show_count | 显示每个分类的文章总数 | true style | 分类列表的显示方式。使用 list 以无序列表（unordered list）方式显示。 | list separator | 分类间的分隔符号。只有在 style 不是 list 时有用。 | , depth | 要显示的分类层级。 0 显示所有层级的分类； -1 和 0 很类似，但是显示不分层 级； 1 只显示第一层的分类。 | 0 class | 分类列表的 class 名称。 | category transform | 改变分类名称显示方法的函数 |</div><div class="line"></div><div class="line">   - list_tags 插入标签列表。 &lt;%- list_tags([tags], [options]) %&gt;</div><div class="line"></div><div class="line">    选项 | 描述 | 预设值 --- | --- | --- orderby | 标签排列方式 | name order | 标签排列顺序。 1 , asc 升序； -1 , desc 降序。 | 1 show_count | 显示每个标签的文章总数 | true style | 标签列表的显示方式。使用 list 以无序列表（unordered list）方式显示。 | list separator | 标签间的分隔符号。只有在 style 不是 list 时有用。 | , class | 标签列表的 class 名称。 | tag transform | 改变标签名称显示方法的函数 | amount | 要显示的标签数量（0 = 无限制） | 0</div><div class="line"></div><div class="line">   - list_archives 插入归档列表。 ```&lt;%- list_archives([options]) %&gt;</div></pre></td></tr></table></figure></p>
+<p>参数 | 描述 | 默认值 — | — | — type | 类型。此设定可为 yearly 或 monthly 。 | monthly order | 排列顺序。 1 , asc 升序； -1 , desc 降序。 | 1 show_count | 显示每个归档的文章总数 | true format | 日期格式 | MMMM YYYY style | 归档列表的显示方式。使用 list 以无序列表（unordered list）方式显示。 | list separator | 归档间的分隔符号。只有在 style 不是 list 时有用。 | , class | 归档列表的 class 名称。 | archive transform | 改变归档名称显示方法的函数 |</p>
+</li>
+<li><p>list_posts 插入文章列表。 <figure class="highlight plain"><figcaption><span>list_posts([options]) %>```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> 参数 | 描述 | 默认值 --- | --- | --- orderby | 文章排列方式 | date order | 文章排列顺序。 1 , asc 升序； -1 , desc 降序。 | -1 style | 文章列表的显示方式。使用 list 以无序列表（unordered list）方式显示。 | list separator | 文章间的分隔符号。只有在 style 不是 list 时有用。 | , class | 文章列表的 class 名称。 | post amount | 要显示的文章数量（0 = 无限制） | 6 transform | 改变文章名称显示方法的函数 |</div><div class="line"></div><div class="line">- tagcloud 插入标签云。 ```&lt;%- tagcloud([tags], [options]) %&gt;</div></pre></td></tr></table></figure></p>
+<p>参数 | 描述 | 默认值 — | — | — min_font | 最小字体尺寸 | 10 max_font | 最大字体尺寸 | 20 unit | 字体尺寸的单位 | px amount | 标签总量 | 40 orderby | 标签排列方式 | name order | 标签排列顺序。 1 , sac 升序； -1 , desc 降序 | 1 color | 使用颜色 | false start_color | 开始的颜色。您可使用十六进位值（ #b700ff ），rgba（ rgba(183, 0, 255, 1) ），hsla（ hsla(283, 100%, 50%, 1) ）或 [颜色关键字]。此变量仅在 color 参数开启时才有用。 | end_color | 结束的颜色。您可使用十六进位值（ #b700ff ），rgba（ rgba(183, 0, 255, 1) ），hsla（ hsla(283, 100%, 50%, 1) ）或 [颜色关键字]。此变量仅在 color 参数开启时才有用。 |</p>
+</li>
+</ul>
+<h2 id="（8）其他"><a href="#（8）其他" class="headerlink" title="（8）其他"></a>（8）其他</h2><ul>
+<li><p>paginator 插入分页链接。 <figure class="highlight plain"><figcaption><span>paginator(options) %>```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> 参数 | 描述 | 默认值 --- | --- | --- base | 基础网址 | / format | 网址格式 | page/%d/ total | 分页总数 | 1 current | 目前页数 | 0 prev_text | 上一页链接的文字。仅在 prev_next 设定开启时才有用。 | Prev next_text | 下一页链接的文字。仅在 prev_next 设定开启时才有用。 | Next space | 空白文字 | &amp;hellp; prev_next | 显示上一页和下一页的链接 | true end_size | 显示于两侧的页数 | 1 mid_size | 显示于中间的页数 | 2 show_all | 显示所有页数。如果开启此参数的话， end_size 和 mid_size 就没用了。 | false</div><div class="line"></div><div class="line">- search_form 插入 Google 搜索框。 ```&lt;%- search_form(options) %&gt;</div></pre></td></tr></table></figure></p>
+<p>参数 | 描述 | 默认值 — | — | — class | 表单的 class name | search-form text | 搜索提示文字 | Search button | 显示搜索按钮。此参数可为布尔值（boolean）或字符串，当设定是字符串的时候，即为搜索按钮的文字。 | false</p>
+</li>
+<li><p>number_format 格式化数字。 <figure class="highlight plain"><figcaption><span>number_format(number, [options]) %>```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> 参数 | 描述 | 默认值 --- | --- | --- precision | 数字精度。此选项可为 false 或非负整数。 | false delimiter | 千位数分隔符号 | , separator | 整数和小数之间的分隔符号 | .</div><div class="line"> 示例：</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"> &lt;%- number_format(12345.67, &#123;precision: 1&#125;) %&gt;</div><div class="line"> // 12,345.68</div><div class="line"> &lt;%- number_format(12345.67, &#123;precision: 4&#125;) %&gt;</div><div class="line"> // 12,345.6700</div><div class="line"></div><div class="line"></div><div class="line"> &lt;%- number_format(12345.67, &#123;precision: 0&#125;) %&gt;</div><div class="line"> // 12,345</div><div class="line"></div><div class="line"></div><div class="line"> &lt;%- number_format(12345.67, &#123;delimiter: &apos;&apos;&#125;) %&gt;</div><div class="line"> // 12345.67</div><div class="line"></div><div class="line"></div><div class="line"> &lt;%- number_format(12345.67, &#123;separator: &apos;/&apos;&#125;) %&gt;</div><div class="line"> // 12,345/67</div><div class="line"></div><div class="line">- open_graph 插入 open graph 资源。 &lt;%- open_graph([options]) %&gt;</div><div class="line"></div><div class="line"> 参数 | 描述 | 默认值 --- | --- | --- title | 页面标题 ( og:title ) | page.title type | 页面类型 ( og:type ) | blog url | 页面网址 ( og:url ) | url image | 页面图片 ( og:image ) | 内容中的图片 site_name | 网站名称 ( og:site_name ) | config.title description | 页面描述 ( og:desription ) | 内容摘要或前 200 字 twitter_card | Twitter 卡片类型 ( twitter:card ) | summary twitter_id | Twitter ID ( twitter:creator ) | twitter_site | Twitter 网站 ( twitter:site ) | google_plus | Google+ 个人资料链接 | fb_admins | Facebook 管理者 ID | fb_app_id | Facebook 应用程序 ID |</div><div class="line"></div><div class="line">- toc 解析内容中的标题标签 (h1~h6) 并插入目录。 &lt;%- toc(str, [options]) %&gt;</div><div class="line"></div><div class="line"> 参数 | 描述 | 默认值 --- | --- | --- class | Class 名称 | toc list_number | 显示编号 | true</div><div class="line"></div><div class="line"> 下面示例就是解析文章内容，并生成目录列表：</div></pre></td></tr></table></figure></p>
+<p>&lt;%- toc(page.content) %&gt;```</p>
+</li>
+</ul>
+<h1 id="6、本地化"><a href="#6、本地化" class="headerlink" title="6、本地化"></a>6、本地化</h1><p>所谓的本地化功能，就是在主题中设置不同的语言模版，在文件夹 languages ，然后通过设置改变网页中的预设文本。在模版中是通过 __ 或 _p 来引用的。</p>
+<p>例如你在 _config.yml 中设置 language: zh-CN ，而网页模版中有这么一段引用：<code>&lt;h1 class=&quot;title&quot;&gt;&lt;%= __(&#39;comment&#39;) %&gt;&lt;/h1&gt;</code>，那么网站会在 languages 文件夹中找 zh-CH.yml 文件，并找到对应的 comment 值，将值显示在网站中。</p>
+<p>这一块知道这些就基本上满足了自定义主题的需求了。</p>
+<h1 id="7、插件"><a href="#7、插件" class="headerlink" title="7、插件"></a>7、插件</h1><p>这一块内容主要针对开发者的，帮助开发hexo的插件或者向hexo提供插件，主要就是通过github提交代码。大致可以了解一下Hexo的九种插件，您可以在 API 页面中获得更多信息：</p>
+<pre><code>Generator
+Renderer
+Helper
+Deployer
+Processor
+Tag
+Console
+Migrator
+Filter
+</code></pre><p>注意</p>
+<p>1、上面提到的所有 Options 参数一定要按照 json 的格式来书写；</p>
+<p>2、虽然官方Docs已经写得很详细了，但是缺乏实际例子，后续我会以我的站点为例，详细介绍一些功能如何使用。 或者直接在Github中fork我的主题 light-ch （基于hexo-theme-light主题的China版）自行查看代码。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>客官，赏一个嘛~</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://oova2i5xh.bkt.clouddn.com/wechat.jpg" alt="Cherry WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://oova2i5xh.bkt.clouddn.com/alipay.jpg" alt="Cherry Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Hexo-insert-music-share-comment-tab-search.html" rel="next" title="hexo附件插入音乐、分享、评论、标签页、搜索">
+                <i class="fa fa-chevron-left"></i> hexo附件插入音乐、分享、评论、标签页、搜索
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Use-webstorm-to-connect-GitHub.html" rel="prev" title="使用webstorm连接github">
+                使用webstorm连接github <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Cherry" />
+          <p class="site-author-name" itemprop="name">Cherry</p>
+           
+              <p class="site-description motion-element" itemprop="description">做更好的自己</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/sunshine940326" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5094854684/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、永久链接"><span class="nav-number">1.</span> <span class="nav-text">1、永久链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（1）变量"><span class="nav-number">1.1.</span> <span class="nav-text">（1）变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（2）举例说明"><span class="nav-number">1.2.</span> <span class="nav-text">（2）举例说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（3）多语言支持"><span class="nav-number">1.3.</span> <span class="nav-text">（3）多语言支持</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、主题"><span class="nav-number">2.</span> <span class="nav-text">2、主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（1）主题全局设置"><span class="nav-number">2.1.</span> <span class="nav-text">（1）主题全局设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（2）语言"><span class="nav-number">2.2.</span> <span class="nav-text">（2）语言</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、模版"><span class="nav-number">3.</span> <span class="nav-text">3、模版</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（1）Layouts（布局）"><span class="nav-number">3.1.</span> <span class="nav-text">（1）Layouts（布局）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（2）Partials（局部模版）"><span class="nav-number">3.2.</span> <span class="nav-text">（2）Partials（局部模版）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（3）Local-Variables（本地变量）"><span class="nav-number">3.3.</span> <span class="nav-text">（3）Local Variables（本地变量）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（4）Optimization（最优化）"><span class="nav-number">3.4.</span> <span class="nav-text">（4）Optimization（最优化）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、变量"><span class="nav-number">4.</span> <span class="nav-text">4、变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（1）全局变量"><span class="nav-number">4.1.</span> <span class="nav-text">（1）全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（2）页面变量"><span class="nav-number">4.2.</span> <span class="nav-text">（2）页面变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、帮助函数"><span class="nav-number">5.</span> <span class="nav-text">5、帮助函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（1）URL"><span class="nav-number">5.1.</span> <span class="nav-text">（1）URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（2）HTML"><span class="nav-number">5.2.</span> <span class="nav-text">（2）HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（5）模板"><span class="nav-number">5.3.</span> <span class="nav-text">（5）模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（6）日期与时间"><span class="nav-number">5.4.</span> <span class="nav-text">（6）日期与时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（8）其他"><span class="nav-number">5.5.</span> <span class="nav-text">（8）其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6、本地化"><span class="nav-number">6.</span> <span class="nav-text">6、本地化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7、插件"><span class="nav-number">7.</span> <span class="nav-text">7、插件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cherry</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问用户：
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问次数：
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/canvasstar.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/baidu_tools.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "8e7fb6982ddb4d13ad9daf445e511984",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("SXu3fAQtWilv2Jtsr5eHvgCH-gzGzoHsz", "R79G2KT1xhiu9Ngp3Dnjsn7k");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+
+</body>
+</html>
