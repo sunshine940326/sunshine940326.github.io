@@ -89,10 +89,10 @@ scheme: Muse
 # - Introduce in 5.0.1
 # ---------------------------------------------------------------
 font:
-  enable: true
+  enable: false
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
-  host:
+  host: //fonts.useso.com
 
   # Global font settings used on <body> element.
   global:
@@ -336,7 +336,7 @@ changyan:
 #add_this_id:
 
 # Share
-duoshuo_share: true
+duoshuo_share: false
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
