@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://cherryblog.site/about/index.html</loc>
+    <loc>http://cherryblog.site/photo/index.html</loc>
     
-    <lastmod>2017-07-20T15:40:32.000Z</lastmod>
+    <lastmod>2017-07-23T07:02:36.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/photo/index.html</loc>
+    <loc>http://cherryblog.site/about/index.html</loc>
     
-    <lastmod>2017-07-20T15:38:36.000Z</lastmod>
+    <lastmod>2017-07-21T02:43:33.000Z</lastmod>
     
   </url>
   
@@ -23,7 +23,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/GitCommands.html</loc>
+    <loc>http://cherryblog.site/Use-webstorm-to-connect-GitHub.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
+    <loc>http://cherryblog.site/Hexo-advanced.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Hexo-advanced.html</loc>
+    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -58,14 +58,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -100,14 +100,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Javascript-modular-programming3requirejs-use.html</loc>
+    <loc>http://cherryblog.site/Mobile-terminal-debugging-method.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Mobile-terminal-debugging-method.html</loc>
+    <loc>http://cherryblog.site/Javascript-modular-programming3requirejs-use.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Freedom-of-self-discipline.html</loc>
+    <loc>http://cherryblog.site/Front-interview.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -142,7 +142,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Use-webstorm-to-connect-GitHub.html</loc>
+    <loc>http://cherryblog.site/developing-guideline.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -156,21 +163,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/developing-guideline.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/html5drag.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -212,7 +212,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Front-interview.html</loc>
+    <loc>http://cherryblog.site/life/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -226,13 +226,6 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/life/index.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/photo/index2.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
@@ -240,14 +233,21 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/tags/index.html</loc>
+    <loc>http://cherryblog.site/Freedom-of-self-discipline.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
+    <loc>http://cherryblog.site/GitCommands.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/tags/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
