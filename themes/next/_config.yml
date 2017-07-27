@@ -307,13 +307,13 @@ disqus:
 #hypercomments_id:
 
 # Gentie productKey
-gentie_productKey: 8e7fb6982ddb4d13ad9daf445e511984
+gentie_productKey:
 
 # changyan
 changyan:
-  enable: false
-  appid:
-  appkey:
+  enable: true
+  appid: cyt8lab7G
+  appkey: ca667050ec57c6762a854ee31516238f
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
@@ -552,3 +552,5 @@ version: 5.1.0
 reward_comment: 客官，赏一个嘛~
 wechatpay: http://oova2i5xh.bkt.clouddn.com/wechat.jpg
 alipay: http://oova2i5xh.bkt.clouddn.com/alipay.jpg
+
+
