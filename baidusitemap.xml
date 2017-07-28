@@ -52,6 +52,26 @@
 
     
   <url>
+    <loc>http://cherryblog.site/GitCommands.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Git常用命令and完成一个小工作流</title>
+        <pubTime>2017-03-15T14:32:30.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -92,6 +112,26 @@
 
     
   <url>
+    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>hexo附件插入音乐、分享、评论、标签页、搜索</title>
+        <pubTime>2016-09-16T17:01:48.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -114,52 +154,12 @@
 
     
   <url>
-    <loc>http://cherryblog.site/GitCommands.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>Git常用命令and完成一个小工作流</title>
-        <pubTime>2017-03-15T14:32:30.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo附件插入音乐、分享、评论、标签页、搜索</title>
-        <pubTime>2016-09-16T17:01:48.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>javascript设计模式（二）：模块化模式</title>
-        <pubTime>2017-03-24T15:09:08.000Z</pubTime>
+        <title>javascript设计模式（一）</title>
+        <pubTime>2017-03-11T15:54:11.000Z</pubTime>
         
         <tag>js</tag>
          
@@ -176,12 +176,12 @@
 
     
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>javascript设计模式（一）</title>
-        <pubTime>2017-03-11T15:54:11.000Z</pubTime>
+        <title>javascript设计模式（二）：模块化模式</title>
+        <pubTime>2017-03-24T15:09:08.000Z</pubTime>
         
         <tag>js</tag>
          
@@ -454,26 +454,6 @@
 
     
   <url>
-    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>gulp（一）</title>
-        <pubTime>2017-03-18T12:00:06.000Z</pubTime>
-        
-        <tag>gulp</tag>
-         
-         
-           
-             
-              <breadCrumb title="gulp" url="http://cherryblog.site/categories/gulp/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cherryblog.site/developing-guideline.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -496,6 +476,53 @@
           
              
               <breadCrumb title="开发规范" url="http://cherryblog.site/categories/html/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>gulp（一）</title>
+        <pubTime>2017-03-18T12:00:06.000Z</pubTime>
+        
+        <tag>gulp</tag>
+         
+         
+           
+             
+              <breadCrumb title="gulp" url="http://cherryblog.site/categories/gulp/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/html5zhihubg.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>html5canvas教你实现知乎登录动态粒子背景</title>
+        <pubTime>2017-05-24T05:24:51.000Z</pubTime>
+        
+        <tag>html5</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>canvas</tag>
+         
+         
+           
+             
+              <breadCrumb title="html5" url="http://cherryblog.site/categories/html5/"/>
+          
+             
+              <breadCrumb title="canvas" url="http://cherryblog.site/categories/html5/canvas/"/>
           
         </display>
     </data>
@@ -548,33 +575,6 @@
            
              
               <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/html5zhihubg.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>html5canvas教你实现知乎登录动态粒子背景</title>
-        <pubTime>2017-05-24T05:24:51.000Z</pubTime>
-        
-        <tag>html5</tag>
-         
-        <tag>前端</tag>
-         
-        <tag>canvas</tag>
-         
-         
-           
-             
-              <breadCrumb title="html5" url="http://cherryblog.site/categories/html5/"/>
-          
-             
-              <breadCrumb title="canvas" url="http://cherryblog.site/categories/html5/canvas/"/>
           
         </display>
     </data>
