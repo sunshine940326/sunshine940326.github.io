@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d80fe1a-f48e-4e4e-90f4-6a5b195924a3" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/about/index.md" afterPath="$PROJECT_DIR$/source/about/index2.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/photo/index.md" afterPath="$PROJECT_DIR$/source/photo/index2.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.json" afterPath="$PROJECT_DIR$/db.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/photo/index.html" afterPath="$PROJECT_DIR$/source/photo/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/_config.yml" afterPath="$PROJECT_DIR$/themes/next/_config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/about/index.html" afterPath="$PROJECT_DIR$/source/about/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_third-party/comments/changyan.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_third-party/comments/changyan.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_custom/custom.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_custom/custom.styl" />
     </list>
     <ignored path="Hexo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,11 +67,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="changyan.swig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="changyan.swig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/comments/changyan.swig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+            <state relative-caret-position="69">
+              <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/about/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="718" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="740" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -90,6 +96,33 @@
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/about/index2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-16361">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="740" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/about/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="659">
+              <caret line="1469" column="0" lean-forward="false" selection-start-line="1469" selection-start-column="0" selection-end-line="1469" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#header#0;n#div#1;n#body#0;n#html#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#15725#15730#0" expanded="true" />
+                <element signature="e#15735#15740#0" expanded="true" />
+                <element signature="e#19506#19512#0" expanded="true" />
+                <element signature="e#30867#30873#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,7 +152,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rewardButton</find>
       <find>reward</find>
       <find>script</find>
       <find>http://oova2i5xh.bkt.clouddn.com/IMG_0795_%E7%9C%8B%E5%9B%BE%E7%8E%8B.jpg</find>
@@ -149,6 +181,7 @@
       <find>changyan_appid</find>
       <find>changyan</find>
       <find>gentie</find>
+      <find>comments</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Hexo</dir>
@@ -200,9 +233,7 @@
         <option value="$PROJECT_DIR$/themes/next/source/js/src/baidu_tools.js" />
         <option value="$PROJECT_DIR$/themes/next/layout/_scripts/commons.swig" />
         <option value="$PROJECT_DIR$/public/photo/index.html" />
-        <option value="$PROJECT_DIR$/source/about/index.html" />
         <option value="$PROJECT_DIR$/photo/index.html" />
-        <option value="$PROJECT_DIR$/public/about/index.html" />
         <option value="$PROJECT_DIR$/about/index.html" />
         <option value="$PROJECT_DIR$/themes/next/layout/_macro/post.swig" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
@@ -212,6 +243,8 @@
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/themes/next/source/css/_custom/custom.styl" />
         <option value="$PROJECT_DIR$/themes/next/layout/_third-party/comments/changyan.swig" />
+        <option value="$PROJECT_DIR$/source/about/index.html" />
+        <option value="$PROJECT_DIR$/public/about/index.html" />
       </list>
     </option>
   </component>
@@ -299,10 +332,6 @@
               <option name="myItemId" value="themes" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="next" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -311,14 +340,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sunshine940326.github.io" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="next" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -336,19 +357,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="next" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="source" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="about" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -362,23 +375,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="next" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_custom" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -392,7 +389,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="about" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -613,12 +614,12 @@
       <workItem from="1500544858019" duration="5697000" />
       <workItem from="1500600271556" duration="9747000" />
       <workItem from="1501140346416" duration="1703000" />
-      <workItem from="1501145829307" duration="1324000" />
+      <workItem from="1501145829307" duration="3150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234969000" />
+    <option name="totallyTimeSpent" value="236795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -855,19 +856,13 @@
     <entry file="file://$PROJECT_DIR$/js/src/schemes/pisces.js" />
     <entry file="file://$PROJECT_DIR$/js/src/hook-duoshuo.js" />
     <entry file="file://$PROJECT_DIR$/lib/algolia-instant-search/instantsearch.min.js" />
-    <entry file="file://$PROJECT_DIR$/source/about/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="210" column="31" lean-forward="false" selection-start-line="210" selection-start-column="31" selection-end-line="210" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/about/index.html" />
     <entry file="file://$PROJECT_DIR$/photo/index.html" />
     <entry file="file://$PROJECT_DIR$/public/js/src/canvasstar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -923,7 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/about/index2.html" />
     <entry file="file://$PROJECT_DIR$/public/life/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -939,13 +933,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/about/index3.html" />
-    <entry file="file://$PROJECT_DIR$/public/about/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/photo/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1771">
@@ -969,17 +956,6 @@
         <state relative-caret-position="572">
           <caret line="73" column="49" lean-forward="false" selection-start-line="73" selection-start-column="49" selection-end-line="73" selection-end-column="49" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/about/index2.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1012,9 +988,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/comments/changyan.swig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        <state relative-caret-position="69">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/about/index2.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/about/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16361">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="740" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/about/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="718" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="740" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/about/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="1469" column="0" lean-forward="false" selection-start-line="1469" selection-start-column="0" selection-end-line="1469" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#header#0;n#div#1;n#body#0;n#html#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#15725#15730#0" expanded="true" />
+            <element signature="e#15735#15740#0" expanded="true" />
+            <element signature="e#19506#19512#0" expanded="true" />
+            <element signature="e#30867#30873#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
