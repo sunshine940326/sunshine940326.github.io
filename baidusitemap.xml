@@ -32,19 +32,19 @@
 
     
   <url>
-    <loc>http://cherryblog.site/Upload-project-to-GitHub.html</loc>
+    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>将项目上传至github</title>
-        <pubTime>2017-02-25T09:35:35.000Z</pubTime>
+        <title>react（二）：用实例认识react</title>
+        <pubTime>2017-03-02T13:34:44.000Z</pubTime>
         
-        <tag>git</tag>
+        <tag>react</tag>
          
          
            
              
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
+              <breadCrumb title="react" url="http://cherryblog.site/categories/react/"/>
           
         </display>
     </data>
@@ -112,16 +112,14 @@
 
     
   <url>
-    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
+    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能</title>
-        <pubTime>2017-04-09T14:32:30.000Z</pubTime>
+        <title>hexo附件插入音乐、分享、评论、标签页、搜索</title>
+        <pubTime>2016-09-16T17:01:48.000Z</pubTime>
         
-        <tag>git</tag>
-         
-        <tag>hexo教程</tag>
+        <tag>hexo</tag>
          
          
            
@@ -134,14 +132,16 @@
 
     
   <url>
-    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
+    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>hexo附件插入音乐、分享、评论、标签页、搜索</title>
-        <pubTime>2016-09-16T17:01:48.000Z</pubTime>
+        <title>hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能</title>
+        <pubTime>2017-04-09T14:32:30.000Z</pubTime>
         
-        <tag>hexo</tag>
+        <tag>git</tag>
+         
+        <tag>hexo教程</tag>
          
          
            
@@ -368,19 +368,19 @@
 
     
   <url>
-    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
+    <loc>http://cherryblog.site/Upload-project-to-GitHub.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>react（二）：用实例认识react</title>
-        <pubTime>2017-03-02T13:34:44.000Z</pubTime>
+        <title>将项目上传至github</title>
+        <pubTime>2017-02-25T09:35:35.000Z</pubTime>
         
-        <tag>react</tag>
+        <tag>git</tag>
          
          
            
              
-              <breadCrumb title="react" url="http://cherryblog.site/categories/react/"/>
+              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
           
         </display>
     </data>
@@ -503,6 +503,28 @@
 
     
   <url>
+    <loc>http://cherryblog.site/html5drag.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>html5拖放--15行js代码实现两个div内容互换</title>
+        <pubTime>2017-05-24T05:24:51.000Z</pubTime>
+        
+        <tag>html5</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="html5" url="http://cherryblog.site/categories/html5/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cherryblog.site/hexo-3.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -526,28 +548,6 @@
            
              
               <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/html5drag.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>html5拖放--15行js代码实现两个div内容互换</title>
-        <pubTime>2017-05-24T05:24:51.000Z</pubTime>
-        
-        <tag>html5</tag>
-         
-        <tag>前端</tag>
-         
-         
-           
-             
-              <breadCrumb title="html5" url="http://cherryblog.site/categories/html5/"/>
           
         </display>
     </data>
