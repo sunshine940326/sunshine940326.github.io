@@ -32,19 +32,19 @@
 
     
   <url>
-    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
+    <loc>http://cherryblog.site/Upload-project-to-GitHub.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>react（二）：用实例认识react</title>
-        <pubTime>2017-03-02T13:34:44.000Z</pubTime>
+        <title>将项目上传至github</title>
+        <pubTime>2017-02-25T09:35:35.000Z</pubTime>
         
-        <tag>react</tag>
+        <tag>git</tag>
          
          
            
              
-              <breadCrumb title="react" url="http://cherryblog.site/categories/react/"/>
+              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
           
         </display>
     </data>
@@ -112,14 +112,16 @@
 
     
   <url>
-    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
+    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>hexo附件插入音乐、分享、评论、标签页、搜索</title>
-        <pubTime>2016-09-16T17:01:48.000Z</pubTime>
+        <title>hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能</title>
+        <pubTime>2017-04-09T14:32:30.000Z</pubTime>
         
-        <tag>hexo</tag>
+        <tag>git</tag>
+         
+        <tag>hexo教程</tag>
          
          
            
@@ -132,16 +134,14 @@
 
     
   <url>
-    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
+    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能</title>
-        <pubTime>2017-04-09T14:32:30.000Z</pubTime>
+        <title>hexo附件插入音乐、分享、评论、标签页、搜索</title>
+        <pubTime>2016-09-16T17:01:48.000Z</pubTime>
         
-        <tag>git</tag>
-         
-        <tag>hexo教程</tag>
+        <tag>hexo</tag>
          
          
            
@@ -348,23 +348,19 @@
 
     
   <url>
-    <loc>http://cherryblog.site/Front-interview.html</loc>
+    <loc>http://cherryblog.site/Freedom-of-self-discipline.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>前端面试</title>
-        <pubTime>2017-03-06T15:15:56.000Z</pubTime>
+        <title>自律才能自由</title>
+        <pubTime>2017-03-02T13:55:57.000Z</pubTime>
         
-        <tag>面试</tag>
-         
-        <tag>js</tag>
-         
-        <tag>知识点</tag>
+        <tag>脑子里的小想法</tag>
          
          
            
              
-              <breadCrumb title="面试题库" url="http://cherryblog.site/categories/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+              <breadCrumb title="随笔" url="http://cherryblog.site/categories/%E9%9A%8F%E7%AC%94/"/>
           
         </display>
     </data>
@@ -372,14 +368,34 @@
 
     
   <url>
-    <loc>http://cherryblog.site/Upload-project-to-GitHub.html</loc>
+    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>将项目上传至github</title>
-        <pubTime>2017-02-25T09:35:35.000Z</pubTime>
+        <title>react（二）：用实例认识react</title>
+        <pubTime>2017-03-02T13:34:44.000Z</pubTime>
         
-        <tag>git</tag>
+        <tag>react</tag>
+         
+         
+           
+             
+              <breadCrumb title="react" url="http://cherryblog.site/categories/react/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/Use-Gitpagehexo-to-develop-their-own-blog.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>利用Gitpage+hexo开发自己的博客</title>
+        <pubTime>2016-09-15T17:07:17.000Z</pubTime>
+        
+        <tag>hexo</tag>
          
          
            
@@ -400,26 +416,6 @@
         <pubTime>2017-02-24T02:40:20.000Z</pubTime>
         
         <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Use-Gitpagehexo-to-develop-their-own-blog.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>利用Gitpage+hexo开发自己的博客</title>
-        <pubTime>2016-09-15T17:07:17.000Z</pubTime>
-        
-        <tag>hexo</tag>
          
          
            
@@ -458,26 +454,6 @@
 
     
   <url>
-    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>gulp（一）</title>
-        <pubTime>2017-03-18T12:00:06.000Z</pubTime>
-        
-        <tag>gulp</tag>
-         
-         
-           
-             
-              <breadCrumb title="gulp" url="http://cherryblog.site/categories/gulp/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cherryblog.site/developing-guideline.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -507,21 +483,19 @@
 
     
   <url>
-    <loc>http://cherryblog.site/html5drag.html</loc>
+    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>html5拖放--15行js代码实现两个div内容互换</title>
-        <pubTime>2017-05-24T05:24:51.000Z</pubTime>
+        <title>gulp（一）</title>
+        <pubTime>2017-03-18T12:00:06.000Z</pubTime>
         
-        <tag>html5</tag>
-         
-        <tag>前端</tag>
+        <tag>gulp</tag>
          
          
            
              
-              <breadCrumb title="html5" url="http://cherryblog.site/categories/html5/"/>
+              <breadCrumb title="gulp" url="http://cherryblog.site/categories/gulp/"/>
           
         </display>
     </data>
@@ -552,6 +526,28 @@
            
              
               <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/html5drag.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>html5拖放--15行js代码实现两个div内容互换</title>
+        <pubTime>2017-05-24T05:24:51.000Z</pubTime>
+        
+        <tag>html5</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="html5" url="http://cherryblog.site/categories/html5/"/>
           
         </display>
     </data>
@@ -611,25 +607,29 @@
     
     
     
+    
   <url>
-    <loc>http://cherryblog.site/Freedom-of-self-discipline.html</loc>
+    <loc>http://cherryblog.site/Front-interview.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>自律才能自由</title>
-        <pubTime>2017-03-02T13:55:57.000Z</pubTime>
+        <title>前端面试</title>
+        <pubTime>2017-03-06T15:15:56.000Z</pubTime>
         
-        <tag>脑子里的小想法</tag>
+        <tag>面试</tag>
+         
+        <tag>js</tag>
+         
+        <tag>知识点</tag>
          
          
            
              
-              <breadCrumb title="随笔" url="http://cherryblog.site/categories/%E9%9A%8F%E7%AC%94/"/>
+              <breadCrumb title="面试题库" url="http://cherryblog.site/categories/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/"/>
           
         </display>
     </data>
     </url>
 
-    
     
 </urlset>
