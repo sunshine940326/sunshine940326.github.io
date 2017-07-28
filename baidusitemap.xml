@@ -33,19 +33,23 @@
 
     
   <url>
-    <loc>http://cherryblog.site/Upload-project-to-GitHub.html</loc>
+    <loc>http://cherryblog.site/Front-interview.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>将项目上传至github</title>
-        <pubTime>2017-02-25T09:35:35.000Z</pubTime>
+        <title>前端面试</title>
+        <pubTime>2017-03-06T15:15:56.000Z</pubTime>
         
-        <tag>git</tag>
+        <tag>面试</tag>
+         
+        <tag>js</tag>
+         
+        <tag>知识点</tag>
          
          
            
              
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
+              <breadCrumb title="面试题库" url="http://cherryblog.site/categories/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/"/>
           
         </display>
     </data>
@@ -267,6 +271,26 @@
 
     
   <url>
+    <loc>http://cherryblog.site/Mobile-terminal-debugging-method.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>移动端调试方法</title>
+        <pubTime>2017-03-28T15:21:55.000Z</pubTime>
+        
+        <tag>调试</tag>
+         
+         
+           
+             
+              <breadCrumb title="日积月累" url="http://cherryblog.site/categories/%E6%97%A5%E7%A7%AF%E6%9C%88%E7%B4%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cherryblog.site/Javascript-modular-programming3requirejs-use.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -282,26 +306,6 @@
            
              
               <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Mobile-terminal-debugging-method.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>移动端调试方法</title>
-        <pubTime>2017-03-28T15:21:55.000Z</pubTime>
-        
-        <tag>调试</tag>
-         
-         
-           
-             
-              <breadCrumb title="日积月累" url="http://cherryblog.site/categories/%E6%97%A5%E7%A7%AF%E6%9C%88%E7%B4%AF/"/>
           
         </display>
     </data>
@@ -435,6 +439,35 @@
 
     
   <url>
+    <loc>http://cherryblog.site/developing-guideline.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端开发规范：命名规范、html规范、css规范、js规范</title>
+        <pubTime>2017-05-30T06:54:11.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+        <tag>开发规范</tag>
+         
+        <tag>js规范</tag>
+         
+        <tag>jshint</tag>
+         
+         
+           
+             
+              <breadCrumb title="html" url="http://cherryblog.site/categories/html/"/>
+          
+             
+              <breadCrumb title="开发规范" url="http://cherryblog.site/categories/html/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -477,28 +510,29 @@
 
     
   <url>
-    <loc>http://cherryblog.site/developing-guideline.html</loc>
+    <loc>http://cherryblog.site/hexo-3.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>前端开发规范：命名规范、html规范、css规范、js规范</title>
-        <pubTime>2017-05-30T06:54:11.000Z</pubTime>
+        <title>hexo高阶教程：想让你的博客被更多的人在搜索引擎中搜到吗？</title>
+        <pubTime>2017-04-16T05:24:51.000Z</pubTime>
         
-        <tag>css</tag>
+        <tag>hexo高阶教程</tag>
          
-        <tag>开发规范</tag>
+        <tag>hexo+gulp</tag>
          
-        <tag>js规范</tag>
+        <tag>hexo+七牛</tag>
          
-        <tag>jshint</tag>
+        <tag>hexo百度收录</tag>
+         
+        <tag>hexo百度统计</tag>
+         
+        <tag>hexo seo</tag>
          
          
            
              
-              <breadCrumb title="html" url="http://cherryblog.site/categories/html/"/>
-          
-             
-              <breadCrumb title="开发规范" url="http://cherryblog.site/categories/html/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/"/>
+              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
           
         </display>
     </data>
@@ -533,36 +567,6 @@
 
     
   <url>
-    <loc>http://cherryblog.site/hexo-3.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo高阶教程：想让你的博客被更多的人在搜索引擎中搜到吗？</title>
-        <pubTime>2017-04-16T05:24:51.000Z</pubTime>
-        
-        <tag>hexo高阶教程</tag>
-         
-        <tag>hexo+gulp</tag>
-         
-        <tag>hexo+七牛</tag>
-         
-        <tag>hexo百度收录</tag>
-         
-        <tag>hexo百度统计</tag>
-         
-        <tag>hexo seo</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -586,34 +590,6 @@
     
     
   <url>
-    <loc>http://cherryblog.site/Front-interview.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>前端面试</title>
-        <pubTime>2017-03-06T15:15:56.000Z</pubTime>
-        
-        <tag>面试</tag>
-         
-        <tag>js</tag>
-         
-        <tag>知识点</tag>
-         
-         
-           
-             
-              <breadCrumb title="面试题库" url="http://cherryblog.site/categories/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-    
-    
-  <url>
     <loc>http://cherryblog.site/GitCommands.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -633,4 +609,28 @@
     </url>
 
     
+    
+    
+    
+    
+    
+  <url>
+    <loc>http://cherryblog.site/Upload-project-to-GitHub.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>将项目上传至github</title>
+        <pubTime>2017-02-25T09:35:35.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
 </urlset>
