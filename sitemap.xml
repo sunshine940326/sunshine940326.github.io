@@ -4,7 +4,7 @@
   <url>
     <loc>http://cherryblog.site/canvas-star.html</loc>
     
-    <lastmod>2017-08-06T08:40:46.000Z</lastmod>
+    <lastmod>2017-08-06T08:49:50.000Z</lastmod>
     
   </url>
   
@@ -30,7 +30,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
+    <loc>http://cherryblog.site/Upload-project-to-GitHub.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -72,14 +72,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern4factory-mode.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern3prototype-model.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern3prototype-model.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern4factory-mode.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -93,21 +93,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/React-first.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/Javascript-modular-programming1module-writing.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/Upload-project-to-GitHub.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -128,7 +114,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Front-interview.html</loc>
+    <loc>http://cherryblog.site/React-first.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -142,28 +135,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/css-checkbox-input-radio.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/Use-webstorm-to-connect-GitHub.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/developing-guideline.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -177,7 +149,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/hexo-3.html</loc>
+    <loc>http://cherryblog.site/css-checkbox-input-radio.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -191,7 +163,35 @@
   </url>
   
   <url>
+    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/developing-guideline.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/hexo-3.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://cherryblog.site/html5zhihubg.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/Front-interview.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -219,13 +219,6 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/life/index.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/categories/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
@@ -233,7 +226,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/tags/index.html</loc>
+    <loc>http://cherryblog.site/life/index.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -247,7 +247,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
+    <loc>http://cherryblog.site/tags/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
