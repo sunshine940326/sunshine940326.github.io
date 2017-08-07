@@ -8,10 +8,13 @@ categories: html5
 <!--more-->
 > 本文首发于我的个人博客:http://cherryblog.site/ ，欢迎大家前去参观
 > 本文项目地址，sortable插件地址：https://github.com/sunshine940326/sortable
-> demo地址：https://github.com/sunshine940326/drag
+> 源码地址：https://github.com/sunshine940326/drag
+> 项目演示地址：https://sunshine940326.github.io/drag/
 
  在写我们后台的管理程序中需要有一个拖放的功能，然后我们有一个这样的功能，实现11个固定且大小不一的div互换，效果如下
 ![最终效果图](https://user-gold-cdn.xitu.io/2017/5/24/c9919143af8ac22486c3fb9fcfd5b981)
+
+pc端演示地址：https://sunshine940326.github.io/drag/
 
 作为一个小菜鸟，听到这样的消息我是蒙逼的= =，在网上找到一个插件，功能挺强大的
 ![sortable插件](https://user-gold-cdn.xitu.io/2017/5/24/0c1b872fd140ad1053ec1a7f0b03fa75)

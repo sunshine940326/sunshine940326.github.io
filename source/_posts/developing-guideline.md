@@ -2,7 +2,7 @@
 title: 前端开发规范：命名规范、html规范、css规范、js规范
 date: 2017-05-30 14:54:11
 tags: [css,开发规范,js规范,jshint] 
-categories: [html,开发规范]
+categories: [html5]
 ---
 ![这里写图片描述](http://img.blog.csdn.net/20170530152035209?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
