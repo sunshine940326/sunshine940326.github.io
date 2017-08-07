@@ -1,3 +1,4 @@
+http://cherryblog.site/something1.html
 http://cherryblog.site/canvas-star.html
 http://cherryblog.site/javascript-oop.html
 http://cherryblog.site/developing-guideline.html
