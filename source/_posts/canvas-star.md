@@ -47,7 +47,7 @@ fillStyle()//填充的样式
 strokeStyle()//边框样式
 context.lineWidth()//图形边框宽度
 ```
-### 绘制矩形
+## 绘制矩形
 用 canvas 绘制一个矩形很简单
 ```
 fillRect(x,y,width,height)  // 实心矩形 
@@ -83,8 +83,8 @@ context.strokeRect(120, 0, 100, 100);
 效果如下
 ![canvas绘制矩形有填充颜色](http://img.blog.csdn.net/20170803200651020?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-### 清除矩形区域
-```
+## 清除矩形区域
+
 clearRect(x,y,width,height)
 ``` 
  - x ：清除矩形起始点的 x 坐标
@@ -101,10 +101,12 @@ context.strokeStyle = "darkred";
 context.fillRect(0, 120, 100, 100);
 context.strokeRect(120, 120, 100, 100);
 context.clearRect( 50,50,120,120)
-```
+
 效果如下：
+
 ![清除矩形](http://img.blog.csdn.net/20170803201130050?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-### 实心圆
+
+## 实心圆
 `context.arc(x, y, radius, starAngle,endAngle, anticlockwise)`
  - x : 圆心的 x 坐标
  - y：圆心的 y 坐标
@@ -121,9 +123,10 @@ context.fillStyle = 'rgba(0,255,0,0.25)';
 context.fill();
 ```
 效果如下：
+
 ![canvas绘制圆弧](http://img.blog.csdn.net/20170803201728632?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-### 圆弧
+## 圆弧
 如果不填充颜色，实心圆就是圆弧
 ```
     context.beginPath();
@@ -146,11 +149,14 @@ context.fill();
  - 每次调用context.fill（）的时候会自动把当次绘制的路径的开始点和结束点相连，接着填充封闭的部分
 
 所以说，如果第一个圆弧没有 `closePath()` 并且第二个圆弧没有 `beginPath()` 的话就是这样的效果：
+
 ![canvas绘制矩形](http://img.blog.csdn.net/20170804121543455?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-###  绘制线段 
+
+##  绘制线段 
  - `moveTo(x,y)`：把路径移动到画布中的指定点，不创建线条
  - `lineTo(x,y)`：添加一个新点，然后在画布中创建从该点到最后指定点的线条
  - 每次画线都从 moveTo 的点到 lineTo 的点，
+
 ```
     context.strokeStyle = 'pink';
     context.moveTo(0, 0);
@@ -205,7 +211,7 @@ var n = 0;
     context.stroke();
 ```
 ![使用canvas绘制六边形](http://img.blog.csdn.net/20170804151434159?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-绘制 30 边形：
+绘制 30 角形：
 ```
 var n = 0;
     var dx = 150;
@@ -228,8 +234,11 @@ var n = 0;
     context.stroke();
 ```
 效果如下：
-![canvas绘制 30 边形](http://img.blog.csdn.net/20170804152344651?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-### 线性渐变
+
+![canvas绘制 30 脚形](http://img.blog.csdn
+.net/20170804152344651?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+## 线性渐变
 `var lg= context.createLinearGradient(xStart,yStart,xEnd,yEnd)`
 `lg.addColorStop(offset,color)`
 
@@ -249,8 +258,11 @@ var n = 0;
     context.fillRect(0, 0, 400, 300);
 ```
 效果如下：
+
 ![canvas绘制渐变](http://img.blog.csdn.net/20170804164331469?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-### 径向渐变
+
+## 径向渐变
+
 `var rg=context.createRadialGradient(xStart,yStart,radiusStart,xEnd,yEnd,radiusEnd)`
 `rg.addColorStop(offset,color)`
 
@@ -288,32 +300,38 @@ var n = 0;
     context.fillRect(0, 0, 300, 500);
 ```
 效果图：
+
 ![不同圆心径向渐变](http://img.blog.csdn.net/20170804175425719?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-### 图形变形 
-#### 缩放
+
+## 图形变形 
+
+### 缩放
+
 `scale(x,y)`
  - x ：x坐标轴按 x 比例缩放
  - y ：x坐标轴按 y 比例缩放
-#### 旋转
+
+### 旋转
+
 `rotate(angle)`
  -  angle ：坐标轴旋转x角度（角度变化模型和画圆的模型一样）
 
-#### 平移
+### 平移
+
 `translate(x,y)`
 
  - x ：坐标原点向x轴方向平移x
  - y ：坐标原点向y轴方向平移y
 
 平移，缩放，旋转先后顺序不同，坐标轴的变化图，图片来源于网络：
+
 ![平移缩放旋转先后顺序不同坐标轴的变化图](http://pic002.cnblogs.com/images/2012/407398/2012080316350654.png)
 
-### 图形组合
+## 图形组合
+
 `globalCompositeOperation=type`
 设置或返回新图像如何绘制到已有的图像上。最后的效果取决于 type 的值
 type：
-
-        
-
  - source-over（默认值）:在原有图形上绘制新图形
  - destination-over:在原有图形下绘制新图形
  - source-in:显示原有图形和新图形的交集，新图形在上，所以颜色为新图形的颜色
@@ -326,15 +344,20 @@ type：
  - xor:重叠飞部分不现实
  - copy:只显示新图形
 效果图如下，图片来源于网络
+
 ![效果图](http://pic002.cnblogs.com/images/2012/407398/2012080317515321.png)
-### 阴影
+
+## 阴影
+
 ```
 shadowOffsetX：设置或返回阴影距形状的水平距离（默认值为 0）
 shadowOffsetY：设置或返回阴影距形状的垂直距离（默认值为 0）
 shadowColor：设置或返回用于阴影的颜色
 shadowBlur：设置或返回用于阴影的模糊级别（值越大越模糊）
 ```
+
 例如：
+
 ```
     context.fillStyle = 'white';
     context.beginPath();
@@ -344,9 +367,12 @@ shadowBlur：设置或返回用于阴影的模糊级别（值越大越模糊）
     context.fill();
     context.closePath();
 ```
+
 我们看到的效果就是我们在开头提起的例子中的 star 粒子的效果，因为其有白色阴影的效果，所以看起来像是发光一样，效果如下图：
+
 ![带阴影效果的圆形](http://img.blog.csdn.net/20170805132804029?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-### 图像绘制
+
+## 图像绘制
 `drawImage()`
 向画布上绘制图像、画布或视频
 
@@ -364,18 +390,21 @@ shadowBlur：设置或返回用于阴影的模糊级别（值越大越模糊）
  - `height`：可选。要使用的图像的高度。（伸展或缩小图像）
   
 ![canvas绘制图形例子](http://pic002.cnblogs.com/images/2012/407398/2012080410231479.png)
-### 图像平铺
+
+## 图像平铺
 `createPattern(image,type)`
- type:
+type:
 
  - no-repeat:不平铺
  - repeat-x:横方向平铺
  - repeat-y:纵方向平铺
  - repeat:全方向平铺
 
-### 图像裁剪
+## 图像裁剪
+
 `clip()`从原始画布剪切任意形状和尺寸的区域，需要先创建裁剪区域，再绘制图像；一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内（不能访问画布上的其他区域）。您也可以在使用 clip() 方法前通过使用 save() 方法对当前画布区域进行保存，并在以后的任意时间对其进行恢复（通过 restore() 方法）。
 例如：
+
 ```
     // 设置剪切区域（粉色矩形）
     context.rect(0,0,500,400);
@@ -392,10 +421,14 @@ shadowBlur：设置或返回用于阴影的模糊级别（值越大越模糊）
     context.fillRect(100,100,600,600)
 
 ```
+
 效果如下：可以看到我们设置的红色矩形是一个 600*600 的矩形，但是显然是没有显示完的，**一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内（不能访问画布上的其他区域）。**
+
 ![canvas进行图像剪切](http://img.blog.csdn.net/20170805163432597?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
 所以说我们可以在使用 clip() 方法前通过使用 save() 方法对当前画布区域进行保存，并在以后的任意时间对其进行恢复（通过 restore() 方法）。
 代码如下：
+
 ```
 context.save();
     // 设置剪切区域
@@ -413,9 +446,13 @@ context.save();
     context.fillStyle = "red";
     context.fillRect(100,100,600,600)
 ```
+
 这样就可以正常显示了：
+
 ![canvas进行图像裁剪](http://img.blog.csdn.net/20170805163713137?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-### 绘制文字
+
+## 绘制文字
+
 ```
 fillText(text,x,y)：绘制实心文字
 strokeText()：绘制文字描边（空心）
@@ -423,16 +460,21 @@ textAlign：设置或返回文本内容的当前对齐方式
 textBaseline：设置或返回在绘制文本时使用的当前文本基线
 font：设置或返回文本内容的当前字体属性
 ```
+
 例如：
+
 ```
     context.font="40px Arial";
     context.fillText("Hello world",200,200);
     context.strokeText("Hello world",200,300)
 ```
+
 效果如下：
+
 ![canvas绘制文字](http://img.blog.csdn.net/20170806152010585?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 # 准备工作
+
 > 好的开始是成功的一半
 
 简单介绍了下 canvas 的常用 api，大家发现是不是也没有那么难呢~(￣▽￣)~*，那么让我们回到标题，一起来看一下这个少女心满满的例子是怎样实现的~
@@ -443,7 +485,7 @@ canvas 其实写一个炫酷的特效在技术上并不难，难的是你的创�
 
 特效pc端演示地址：https://sunshine940326.github.io/canvasStar/ （当然，可以直接查看我的博客，背景暂时就是这个，不知道什么时候会变，捂脸ing：http://cherryblog.site/）
 
-# 分析 star 的表现和行为
+## 分析 star 的表现和行为
 我们可以将其一直位移向上的粒子称为 star，我们观察 star 的特点：
 
  - 开始创建时位置随机（坐标随机）
@@ -464,14 +506,18 @@ canvas 其实写一个炫酷的特效在技术上并不难，难的是你的创�
  - 达到一定条件消失
  
 这样，我们就完成了一半了呢~将事件屡清楚之后我们就可以开始着手撸代码了！
+
 ## 背景的 HTML 和 CSS
+
 其实需要的 HTML 代码和 CSS 代码很简答的，HTML 只需要一行就可以了呢，设置一个渐变的背景蒙层和一个 `canvas` 标签。
+
+HTML 和 CSS 如下：
+
 ```
+
 <div class="filter"></div>
 <canvas id="canvas"></canvas>
-``` 
-CSS 如下：
-```
+
 html, body {
             margin: 0;
             padding: 0;
@@ -509,10 +555,13 @@ html, body {
             }
         }
 ```
+
 是的，我使用的是一个渐变的背景，不仅是从上到下的渐变，并且颜色也是会渐变的，效果如下：
+
 ![渐变背景](http://img.blog.csdn.net/20170806160547970?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 # 设置参数以及获取 dom 对象
+
 ```
     /*
      * @var star_r：star半径系数，系数越大，半径越大
@@ -549,7 +598,9 @@ html, body {
         mouseX,
         mouseY;
 ```
+
 # 绘制单个 star
+
 ```
     /* 设置单个 star
      * @param id：id
@@ -573,8 +624,10 @@ html, body {
         }
     }
 ```
+
 # 让每一个 star 动起来
 这里我使用的是原型的方式，将 `draw`、`cache`、`move` 和 `die` 方法都设置在 `Star` 的原型上，这样在使用 `new` 创建对象的时候，每一个 star 都可以继承这些方法。
+
 ```
 Star.prototype = {
         draw : function () {
@@ -618,7 +671,9 @@ Star.prototype = {
         }
     };
 ```
+
 # 绘制 dot 
+
 ```
 function Dot(id, x, y, useCache) {
         this.id = id;
@@ -644,7 +699,9 @@ function Dot(id, x, y, useCache) {
         }
     }
 ```
+
 # 让每一个 dot 动起来
+
 ```
 Dot.prototype = {
         draw : function () {
@@ -724,10 +781,11 @@ Dot.prototype = {
         }
     };
 ```
+
 # 鼠标移入事件监听
 此外，我们还需要设置一些其他的函数和对鼠标移入事件的监听，这里就不再赘述了，感兴趣的同学可以直接到 github 下载源码。
 
-## canvas 离屏渲染优化
+# canvas 离屏渲染优化
 我所使用的离屏优化是基于此文，原文写的很好，大家感兴趣的话可以去看一下：http://www.cnblogs.com/axes/p/3567364.html?utm_source=tuicool&utm_medium=referral。
 因为这个效果之前我也在博客用当做背景过，不少同学都反应很卡，所以我就找了下优化的教程做了下优化，我发现对性能影响最大的可能就是 canvas 的离屏渲染优化了，这也是 canvas 的最常见优化之一。
 
@@ -736,6 +794,7 @@ Dot.prototype = {
 > 建立两个 canvas 标签，大小一致，一个正常显示，一个隐藏（缓存用的，不插入dom中），先将结果draw缓存用的canvas上下文中，因为游离canvas不会造成ui的渲染，所以它不会展现出来，再把缓存的内容整个裁剪再 draw 到正常显示用的 canvas 上，这样能优化不少。
 
 其实已经体现在上述的代码中的，比如，创建 star 的代码中：
+
 ```
  /* 设置单个star
      * @param id：id
@@ -760,12 +819,16 @@ Dot.prototype = {
         }
     }
 ```
+
 细心的同学可能就会发现
+
 ```
         this.cacheCanvas = document.createElement("canvas");
         this.cacheCtx = this.cacheCanvas.getContext("2d");
 ```
+
 这段代码就是又创建了一个 canvas 标签，然后再 star 的原型中有一个 cache 方法，这个 cache 方法就是在刚刚创建的 canvas 中绘制 star，而不是直接在原来的 canvas 画布中绘制的。
+
 ```
         cache : function () {
             this.cacheCtx.save();
@@ -779,6 +842,7 @@ Dot.prototype = {
             this.cacheCtx.restore();
         },
 ```
+
 之后我们需要将我们绘制的离屏 canvas 使用 `drawImage` 方法插入到我们最先开始创建的 canvas 画布中。
 
 这里要注意的是，创建的离屏 canvas 的大小，因为太大的话同样会浪费性能，所以我们可以创建和我们每一个 star 粒子相同的 canvas ，但是这个例子中不适用，要将离屏的 canvas 设置的稍微大一些，因为我们还需要设置发光的效果（也就是设置阴影）。
