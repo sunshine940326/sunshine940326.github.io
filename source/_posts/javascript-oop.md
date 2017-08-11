@@ -4,9 +4,10 @@ date: 2017-06-8 14:54:11
 tags: [js,面向对象编程,软件工程] 
 categories: [js,面向对象]
 ---
-> 本文首发于我的个人网站：http://cherryblog.site
 
-![这里写图片描述](http://img.blog.csdn.net/20170608233128113?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+![title](http://img.blog.csdn.net/20170810183412159?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+> 本文首发于我的个人网站：http://cherryblog.site
 
 周末的时候深入的了解了下javascript的面向对象编程思想，收获颇丰，感觉对面向对象编程有了那么一丢丢的了解了~很开森
 <!--more-->

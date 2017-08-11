@@ -3,6 +3,7 @@ title: 一个少女心满满的例子带你入门 canvas
 date: 2017-08-06 14:40:06
 tags: [html5,canvas]
 categories: [html5,canvas]
+top: 998
 ---
 
 ![canvas入门](http://img.blog.csdn.net/20170801184128503?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)

@@ -4,6 +4,8 @@ date: 2017-03-28 23:21:55
 tags: [调试] 
 categories: 日积月累
 ---
+![title](http://img.blog.csdn.net/20170810182835737?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
 在开发中前端免不了要进行移动端的开发，然而在电脑上看的样式和手机上还是有一定的差距的，因为手机上有顶部的状态栏和底部的菜单栏，特别是在qq中打开，差距还是蛮大的，所以在chrom中模拟手机显示的情况虽然有一定的效果，但是还是不能完全模拟，我们还需要在真机环境下测试。
 <!--more-->
 # iphone+safari

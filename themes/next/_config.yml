@@ -46,6 +46,7 @@ menu:
   #commonweal: /404.html
   life: /life
   photo: /photo
+  book: /categories/book-movie-music
 
 
 # Enable/Disable menu icons.
@@ -66,6 +67,7 @@ menu_icons:
   commonweal: heartbeat
   life: heart
   photo: image
+  book: book
 
 
 
@@ -140,6 +142,8 @@ font:
 social:
   GitHub: http://github.com/sunshine940326
   Weibo: http://weibo.com/5094854684/profile?rightmod=1&wvr=6&mod=personinfo
+  掘金: https://juejin.im/user/584d7a3e2f301e00572fb7fc
+  JianShu: http://www.jianshu.com/u/04d2a375a281
 
 
 
@@ -155,6 +159,8 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
+  简书: star
+  掘金: group
 
 
 # Sidebar Avatar
@@ -198,10 +204,10 @@ sidebar:
   offset_float: 0
 
   # Back to top in sidebar
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button
-  scrollpercent: false
+  scrollpercent: true
 
 
 # Blog rolls
@@ -250,7 +256,7 @@ post_wordcount:
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 

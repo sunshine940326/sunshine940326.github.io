@@ -133,15 +133,18 @@ body{
   }
 }
   /*相册页面样式*/
-#photo #posts .fancybox img{
+#photo{
+  overflow: auto;
+}
+#photo .fancybox img{
   display:inline-block;
   float:left;
   margin: 20px;
-  padding: 5px;
   -webkit-box-shadow: 0 0 14px #cacbcb;
   width: 300px;
+  border: 5px solid #fff;
 }
-#photo  #posts p{
+#photo p{
     overflow:auto;
   }
 
@@ -239,7 +242,7 @@ body{
   background: #fff;
 }
 @media (min-width: 1600px) {
-  #photo #photos .fancybox img{
+  #photo .fancybox img{
     width: 400px;
     background: #fff;
     display: inline-block;
@@ -254,4 +257,11 @@ body{
     width: 124%;
     padding: 0;
   }
+}
+.post-copyright{
+  margin: 2em 0 0;
+  padding: 1em 2em;
+  border-left: 3px solid #ff1700;
+  background-color: #f9f9f9;
+  list-style: none;
 }

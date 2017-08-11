@@ -4,6 +4,8 @@ date: 2017-02-26 14:30:15
 tags: hexo 
 categories: git
 ---
+![title](http://img.blog.csdn.net/20170810182823396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
 之前用githubPages+hexo搭建了一个自己的博客：sunshine940326.github.io(就是你现在看到的博客)，当时还不知道怎么使用git和github，所以只是跟着网上的教程在一步一步操作，现在了解了git知道怎么使用之后才慢慢明白其中的原理。
 <!--more-->
 
