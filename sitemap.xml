@@ -2,28 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://cherryblog.site/photo/index.html</loc>
-    
-    <lastmod>2017-08-11T06:13:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/about/index.html</loc>
     
-    <lastmod>2017-08-11T06:13:24.000Z</lastmod>
+    <lastmod>2017-08-11T06:20:37.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/music-categories.html</loc>
+    <loc>http://cherryblog.site/photo/index.html</loc>
+    
+    <lastmod>2017-08-11T06:18:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/movie-categories.html</loc>
     
     <lastmod>2017-08-10T12:17:48.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/movie-categories.html</loc>
+    <loc>http://cherryblog.site/music-categories.html</loc>
     
     <lastmod>2017-08-10T12:17:48.000Z</lastmod>
     
@@ -135,13 +135,6 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
@@ -149,7 +142,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/tags/index.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/html5zhihubg.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -198,7 +198,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/html5zhihubg.html</loc>
+    <loc>http://cherryblog.site/tags/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -268,14 +268,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
+    <loc>http://cherryblog.site/life/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/life/index.html</loc>
+    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
