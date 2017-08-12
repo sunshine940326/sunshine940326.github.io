@@ -2,9 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://cherryblog.site/Use-Gitpagehexo-to-develop-their-own-blog.html</loc>
+    
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
+    
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
+    
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
+    
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/hexo-4.html</loc>
+    
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/hexo-3.html</loc>
+    
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/Hexo-advanced.html</loc>
+    
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://cherryblog.site/photo/index.html</loc>
     
-    <lastmod>2017-08-11T06:26:43.000Z</lastmod>
+    <lastmod>2017-08-12T06:30:44.000Z</lastmod>
     
   </url>
   
@@ -12,6 +61,13 @@
     <loc>http://cherryblog.site/about/index.html</loc>
     
     <lastmod>2017-08-11T06:20:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/book-categories.html</loc>
+    
+    <lastmod>2017-08-10T12:17:48.000Z</lastmod>
     
   </url>
   
@@ -24,13 +80,6 @@
   
   <url>
     <loc>http://cherryblog.site/music-categories.html</loc>
-    
-    <lastmod>2017-08-10T12:17:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/book-categories.html</loc>
     
     <lastmod>2017-08-10T12:17:48.000Z</lastmod>
     
@@ -79,41 +128,6 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
-    
-    <lastmod>2017-08-10T10:32:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
-    
-    <lastmod>2017-08-10T10:32:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/Hexo-advanced.html</loc>
-    
-    <lastmod>2017-08-10T10:32:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
-    
-    <lastmod>2017-08-10T10:32:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/hexo-3.html</loc>
-    
-    <lastmod>2017-08-10T10:32:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/using-feature-queries-in-css.html</loc>
     
     <lastmod>2017-08-10T10:31:16.000Z</lastmod>
@@ -135,21 +149,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/html5zhihubg.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/Javascript-modular-programming3requirejs-use.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -233,7 +240,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Use-Gitpagehexo-to-develop-their-own-blog.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern3prototype-model.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -247,14 +254,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern3prototype-model.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html</loc>
+    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -275,13 +282,6 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/GitCommands.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
@@ -289,7 +289,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Javascript-modular-programming3requirejs-use.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     

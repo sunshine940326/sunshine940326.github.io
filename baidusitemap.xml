@@ -3,6 +3,172 @@
 
 
     
+  <url>
+    <loc>http://cherryblog.site/Use-Gitpagehexo-to-develop-their-own-blog.html</loc>
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 1：【基础】利用 hexo + Gitpage 开发自己的博客</title>
+        <pubTime>2016-09-15T17:07:17.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Hexo建站初级教程</tag>
+         
+        <tag>Githubpages</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 4：【高阶】NexT 主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能</title>
+        <pubTime>2017-04-09T14:32:30.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>NexT主题</tag>
+         
+        <tag>网易云音乐</tag>
+         
+        <tag>动态背景</tag>
+         
+        <tag>统计功能</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 3：【高阶】附件插入音乐、分享、评论、标签页、搜索</title>
+        <pubTime>2016-09-16T17:01:48.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/hexo-4.html</loc>
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 7：【原理】深入理解 Hexo</title>
+        <pubTime>2017-08-12T05:24:51.000Z</pubTime>
+        
+        <tag>hexo高阶教程</tag>
+         
+        <tag>hexo原理</tag>
+         
+        <tag>github的pages服务</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 2：【基础】了解 hexo + githubPages 搭建博客的原理</title>
+        <pubTime>2017-02-26T06:30:15.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/Hexo-advanced.html</loc>
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 5：【高阶】hexo高级进阶</title>
+        <pubTime>2016-09-16T17:14:19.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/hexo-3.html</loc>
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 6：【高阶】想让你的博客被更多的人在搜索引擎中搜到吗？</title>
+        <pubTime>2017-04-16T05:24:51.000Z</pubTime>
+        
+        <tag>hexo高阶教程</tag>
+         
+        <tag>hexo+gulp</tag>
+         
+        <tag>hexo+七牛</tag>
+         
+        <tag>hexo百度收录</tag>
+         
+        <tag>hexo百度统计</tag>
+         
+        <tag>hexo seo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -26,14 +192,14 @@
 
     
   <url>
-    <loc>http://cherryblog.site/music-categories.html</loc>
+    <loc>http://cherryblog.site/movie-categories.html</loc>
     <lastmod>2017-08-10T12:17:48.000Z</lastmod>
     <data>
         <display>
-        <title>那些年听过的音乐</title>
+        <title>那些年看过的电影</title>
         <pubTime>2017-08-10T12:17:48.000Z</pubTime>
         
-        <tag>那些年听过的音乐</tag>
+        <tag>那些年看过的电影</tag>
          
          
            
@@ -46,14 +212,14 @@
 
     
   <url>
-    <loc>http://cherryblog.site/movie-categories.html</loc>
+    <loc>http://cherryblog.site/music-categories.html</loc>
     <lastmod>2017-08-10T12:17:48.000Z</lastmod>
     <data>
         <display>
-        <title>那些年看过的电影</title>
+        <title>那些年听过的音乐</title>
         <pubTime>2017-08-10T12:17:48.000Z</pubTime>
         
-        <tag>那些年看过的电影</tag>
+        <tag>那些年听过的音乐</tag>
          
          
            
@@ -187,118 +353,6 @@
 
     
   <url>
-    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
-    <lastmod>2017-08-10T10:32:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>了解githubPages+hexo搭建博客的原理</title>
-        <pubTime>2017-02-26T06:30:15.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/hexo-3.html</loc>
-    <lastmod>2017-08-10T10:32:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo高阶教程：想让你的博客被更多的人在搜索引擎中搜到吗？</title>
-        <pubTime>2017-04-16T05:24:51.000Z</pubTime>
-        
-        <tag>hexo高阶教程</tag>
-         
-        <tag>hexo+gulp</tag>
-         
-        <tag>hexo+七牛</tag>
-         
-        <tag>hexo百度收录</tag>
-         
-        <tag>hexo百度统计</tag>
-         
-        <tag>hexo seo</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
-    <lastmod>2017-08-10T10:32:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo附件插入音乐、分享、评论、标签页、搜索</title>
-        <pubTime>2016-09-16T17:01:48.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
-    <lastmod>2017-08-10T10:32:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能</title>
-        <pubTime>2017-04-09T14:32:30.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>hexo教程</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Hexo-advanced.html</loc>
-    <lastmod>2017-08-10T10:32:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo高级进阶</title>
-        <pubTime>2016-09-16T17:14:19.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cherryblog.site/using-feature-queries-in-css.html</loc>
     <lastmod>2017-08-10T10:31:16.000Z</lastmod>
     <data>
@@ -340,46 +394,6 @@
     
     
   <url>
-    <loc>http://cherryblog.site/Use-webstorm-to-connect-GitHub.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用webstorm连接github</title>
-        <pubTime>2017-02-24T02:40:20.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Use-Gitpagehexo-to-develop-their-own-blog.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>利用Gitpage+hexo开发自己的博客</title>
-        <pubTime>2016-09-15T17:07:17.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cherryblog.site/Freedom-of-self-discipline.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -400,14 +414,16 @@
 
     
   <url>
-    <loc>http://cherryblog.site/GitCommands.html</loc>
+    <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>Git常用命令and完成一个小工作流</title>
-        <pubTime>2017-03-15T14:32:30.000Z</pubTime>
+        <title>Git使用中的报错情况</title>
+        <pubTime>2017-03-11T15:54:11.000Z</pubTime>
         
         <tag>git</tag>
+         
+        <tag>实战经验</tag>
          
          
            
@@ -466,28 +482,6 @@
 
     
   <url>
-    <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Git使用中的报错情况</title>
-        <pubTime>2017-03-11T15:54:11.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>实战经验</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -532,33 +526,6 @@
 
     
   <url>
-    <loc>http://cherryblog.site/html5zhihubg.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>html5canvas教你实现知乎登录动态粒子背景</title>
-        <pubTime>2017-05-24T05:24:51.000Z</pubTime>
-        
-        <tag>html5</tag>
-         
-        <tag>canvas</tag>
-         
-        <tag>前端</tag>
-         
-         
-           
-             
-              <breadCrumb title="html5" url="http://cherryblog.site/categories/html5/"/>
-          
-             
-              <breadCrumb title="canvas" url="http://cherryblog.site/categories/html5/canvas/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cherryblog.site/JavaScript-Design-Pattern3prototype-model.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -596,6 +563,33 @@
            
              
               <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/html5zhihubg.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>html5canvas教你实现知乎登录动态粒子背景</title>
+        <pubTime>2017-05-24T05:24:51.000Z</pubTime>
+        
+        <tag>html5</tag>
+         
+        <tag>canvas</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="html5" url="http://cherryblog.site/categories/html5/"/>
+          
+             
+              <breadCrumb title="canvas" url="http://cherryblog.site/categories/html5/canvas/"/>
           
         </display>
     </data>
@@ -668,7 +662,6 @@
     </url>
 
     
-    
   <url>
     <loc>http://cherryblog.site/Front-interview.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
@@ -714,7 +707,6 @@
 
     
     
-    
   <url>
     <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
@@ -742,6 +734,48 @@
         <display>
         <title>将项目上传至github</title>
         <pubTime>2017-02-25T09:35:35.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://cherryblog.site/GitCommands.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Git常用命令and完成一个小工作流</title>
+        <pubTime>2017-03-15T14:32:30.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/Use-webstorm-to-connect-GitHub.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用webstorm连接github</title>
+        <pubTime>2017-02-24T02:40:20.000Z</pubTime>
         
         <tag>git</tag>
          
