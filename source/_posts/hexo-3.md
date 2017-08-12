@@ -1,8 +1,8 @@
 ---
-title: hexo高阶教程：想让你的博客被更多的人在搜索引擎中搜到吗？
+title: Hexo 6：【高阶】想让你的博客被更多的人在搜索引擎中搜到吗？
 date: 2017-04-16 13:24:51
 tags: [hexo高阶教程,hexo+gulp,hexo+七牛,hexo百度收录,hexo百度统计,hexo seo] 
-categories: git
+categories: [Hexo建站]
 ---
 ![title](http://img.blog.csdn.net/20170810182823396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 上一次在掘金上发表的`hexo`高阶教程：[hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能](http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html)，收到了不少朋友的喜欢，手动比心♪(＾∀＾●)ﾉ，也有不少朋友私信我给我提改进的意见，本着生命就是要折腾的原则，我又做了如下的优化：  

@@ -1,8 +1,8 @@
 ---
-title: 了解githubPages+hexo搭建博客的原理
+title: Hexo 2：【基础】了解 hexo + githubPages 搭建博客的原理
 date: 2017-02-26 14:30:15
-tags: hexo 
-categories: git
+tags: [Hexo] 
+categories: [Hexo建站]
 ---
 ![title](http://img.blog.csdn.net/20170810182823396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 

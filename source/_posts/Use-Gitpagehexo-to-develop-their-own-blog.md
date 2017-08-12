@@ -1,8 +1,8 @@
 ---
-title: 利用Gitpage+hexo开发自己的博客
+title: Hexo 1：【基础】利用 hexo + Gitpage 开发自己的博客
 date: 2016-09-16 01:07:17
-tags: hexo 
-categories: git
+tags: [Hexo建站初级教程,Githubpages,Hexo]
+categories: [Hexo建站]
 ---
 ![这里写图片描述](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493223838128&di=c9a4b5d92b7ab41789dbde3069dbaf3a&imgtype=0&src=http%3A%2F%2Fpic4.zhimg.com%2Fd4c1239e75c02e8482c22017a6c8d407_r.jpg)
 

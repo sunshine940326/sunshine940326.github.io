@@ -1,8 +1,8 @@
 ---
-title: hexo高级进阶
+title: Hexo 5：【高阶】hexo高级进阶
 date: 2016-09-17 01:14:19
-tags: hexo 
-categories: git
+tags: [Hexo]
+categories: [Hexo建站]
 ---
 ![title](http://img.blog.csdn.net/20170810182823396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 这一部分的主要是一些高级进阶的功能，想自定义自己的主题，就需要这部分的内容。

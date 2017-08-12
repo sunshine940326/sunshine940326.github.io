@@ -1,8 +1,8 @@
 ---
-title: hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能
+title: Hexo 4：【高阶】NexT 主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能
 date: 2017-04-09 22:32:30
-tags: [git,hexo教程] 
-categories: git
+tags: [Hexo,NexT主题,网易云音乐,动态背景,统计功能] 
+categories: [Hexo建站]
 ---
 ![title](http://img.blog.csdn.net/20170810182823396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 # 前言

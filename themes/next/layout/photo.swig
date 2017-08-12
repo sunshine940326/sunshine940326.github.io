@@ -6,9 +6,7 @@
 
 {% block content %}
 
-    <div id="posts" class="photo">
 
-    </div>
 
 {% endblock %}
 

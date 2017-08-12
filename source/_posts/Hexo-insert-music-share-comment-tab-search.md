@@ -1,8 +1,8 @@
 ---
-title: hexo附件插入音乐、分享、评论、标签页、搜索
+title: Hexo 3：【高阶】附件插入音乐、分享、评论、标签页、搜索
 date: 2016-09-17 01:01:48
-tags: hexo 
-categories: git
+tags: [Hexo] 
+categories: [Hexo建站]
 
 ---
 ![title](http://img.blog.csdn.net/20170810182823396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
