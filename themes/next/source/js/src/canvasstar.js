@@ -17,7 +17,7 @@
 var stars = [],
     star_r = 3,
     star_alpha = 5,
-    initStarsPopulation = 150,
+    initStarsPopulation = 50,
     move_distance = 0.25,
     dots = [],
     dot_r = 5,
@@ -209,32 +209,32 @@ window.onmousemove = function (e) {
     },1000)
 
 };
-function drawIfMouseMoving() {
-    if (!mouseMoving) return;
-
-    if (dots.length == 0) {
-        dots[0] = new Dot(0, mouseX, mouseY,true);
-        dots[0].draw();
-        return;
-    }
-
-    var previousDot = getPreviousDot(dots.length, 1);
-    var prevX = previousDot.x;
-    var prevY = previousDot.y;
-
-    var diffX = Math.abs(prevX - mouseX);
-    var diffY = Math.abs(prevY - mouseY);
-
-    if (diffX < dotsMinDist || diffY < dotsMinDist) return;
-
-    var xVariation = Math.random() > .5 ? -1 : 1;
-    xVariation = xVariation*Math.floor(Math.random()*maxDistFromCursor)+1;
-    var yVariation = Math.random() > .5 ? -1 : 1;
-    yVariation = yVariation*Math.floor(Math.random()*maxDistFromCursor)+1;
-    dots[dots.length] = new Dot(dots.length, mouseX+xVariation, mouseY+yVariation,true);
-    dots[dots.length-1].draw();
-    dots[dots.length-1].link();
-}
+// function drawIfMouseMoving() {
+//     if (!mouseMoving) return;
+//
+//     if (dots.length == 0) {
+//         dots[0] = new Dot(0, mouseX, mouseY,true);
+//         dots[0].draw();
+//         return;
+//     }
+//
+//     var previousDot = getPreviousDot(dots.length, 1);
+//     var prevX = previousDot.x;
+//     var prevY = previousDot.y;
+//
+//     var diffX = Math.abs(prevX - mouseX);
+//     var diffY = Math.abs(prevY - mouseY);
+//
+//     if (diffX < dotsMinDist || diffY < dotsMinDist) return;
+//
+//     var xVariation = Math.random() > .5 ? -1 : 1;
+//     xVariation = xVariation*Math.floor(Math.random()*maxDistFromCursor)+1;
+//     var yVariation = Math.random() > .5 ? -1 : 1;
+//     yVariation = yVariation*Math.floor(Math.random()*maxDistFromCursor)+1;
+//     dots[dots.length] = new Dot(dots.length, mouseX+xVariation, mouseY+yVariation,true);
+//     dots[dots.length-1].draw();
+//     dots[dots.length-1].link();
+// }
 
 function getPreviousDot(id, stepback) {
     if(id == 0 || id - stepback < 0){
@@ -275,7 +275,7 @@ function animate() {
     for (var i in dots) {
         dots[i].move();
     }
-    drawIfMouseMoving();
+    /*drawIfMouseMoving();*/
     requestAnimationFrame(animate);
 }
 
