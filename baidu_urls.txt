@@ -1,6 +1,8 @@
+http://cherryblog.site/common-CSS-layout.html
+http://cherryblog.site/earning-react-js-is-easier-than-you-think.html
 http://cherryblog.site/hexo-4.html
-http://cherryblog.site/music-categories.html
 http://cherryblog.site/book-categories.html
+http://cherryblog.site/music-categories.html
 http://cherryblog.site/movie-categories.html
 http://cherryblog.site/using-feature-queries-in-css.html
 http://cherryblog.site/something1.html

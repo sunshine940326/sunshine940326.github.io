@@ -4,6 +4,75 @@
 
     
   <url>
+    <loc>http://cherryblog.site/earning-react-js-is-easier-than-you-think.html</loc>
+    <lastmod>2017-08-21T02:31:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>学习 React.js 比你想象的要简单</title>
+        <pubTime>2017-08-14T15:54:11.000Z</pubTime>
+        
+        <tag>翻译</tag>
+         
+         
+           
+             
+              <breadCrumb title="React" url="http://cherryblog.site/categories/React/"/>
+          
+             
+              <breadCrumb title="翻译" url="http://cherryblog.site/categories/React/%E7%BF%BB%E8%AF%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/canvas-star.html</loc>
+    <lastmod>2017-08-21T02:30:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>一个少女心满满的例子带你入门 canvas</title>
+        <pubTime>2017-08-06T06:40:06.000Z</pubTime>
+        
+        <tag>html5</tag>
+         
+        <tag>canvas</tag>
+         
+         
+           
+             
+              <breadCrumb title="html5" url="http://cherryblog.site/categories/html5/"/>
+          
+             
+              <breadCrumb title="canvas" url="http://cherryblog.site/categories/html5/canvas/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/common-CSS-layout.html</loc>
+    <lastmod>2017-08-20T11:30:44.000Z</lastmod>
+    <data>
+        <display>
+        <title>常见 CSS 布局方式</title>
+        <pubTime>2017-08-20T06:40:06.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="http://cherryblog.site/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://cherryblog.site/hexo-4.html</loc>
     <lastmod>2017-08-12T12:51:03.000Z</lastmod>
     <data>
@@ -28,42 +97,12 @@
 
     
   <url>
-    <loc>http://cherryblog.site/hexo-3.html</loc>
+    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
     <lastmod>2017-08-12T12:00:54.000Z</lastmod>
     <data>
         <display>
-        <title>Hexo 6：【高阶】想让你的博客被更多的人在搜索引擎中搜到吗？</title>
-        <pubTime>2017-04-16T05:24:51.000Z</pubTime>
-        
-        <tag>hexo高阶教程</tag>
-         
-        <tag>hexo+gulp</tag>
-         
-        <tag>hexo+七牛</tag>
-         
-        <tag>hexo百度收录</tag>
-         
-        <tag>hexo百度统计</tag>
-         
-        <tag>hexo seo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Hexo-advanced.html</loc>
-    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo 5：【高阶】hexo高级进阶</title>
-        <pubTime>2016-09-16T17:14:19.000Z</pubTime>
+        <title>Hexo 2：【基础】了解 hexo + githubPages 搭建博客的原理</title>
+        <pubTime>2017-02-26T06:30:15.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -150,12 +189,12 @@
 
     
   <url>
-    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
+    <loc>http://cherryblog.site/Hexo-advanced.html</loc>
     <lastmod>2017-08-12T12:00:54.000Z</lastmod>
     <data>
         <display>
-        <title>Hexo 2：【基础】了解 hexo + githubPages 搭建博客的原理</title>
-        <pubTime>2017-02-26T06:30:15.000Z</pubTime>
+        <title>Hexo 5：【高阶】hexo高级进阶</title>
+        <pubTime>2016-09-16T17:14:19.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -169,27 +208,36 @@
     </url>
 
     
-    
-    
   <url>
-    <loc>http://cherryblog.site/book-categories.html</loc>
-    <lastmod>2017-08-10T12:17:48.000Z</lastmod>
+    <loc>http://cherryblog.site/hexo-3.html</loc>
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
     <data>
         <display>
-        <title>那些年读过的书</title>
-        <pubTime>2017-08-10T12:17:48.000Z</pubTime>
+        <title>Hexo 6：【高阶】想让你的博客被更多的人在搜索引擎中搜到吗？</title>
+        <pubTime>2017-04-16T05:24:51.000Z</pubTime>
         
-        <tag>那些年读过的书</tag>
+        <tag>hexo高阶教程</tag>
+         
+        <tag>hexo+gulp</tag>
+         
+        <tag>hexo+七牛</tag>
+         
+        <tag>hexo百度收录</tag>
+         
+        <tag>hexo百度统计</tag>
+         
+        <tag>hexo seo</tag>
          
          
            
              
-              <breadCrumb title="book-movie-music" url="http://cherryblog.site/categories/book-movie-music/"/>
+              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
           
         </display>
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://cherryblog.site/movie-categories.html</loc>
@@ -232,24 +280,19 @@
 
     
   <url>
-    <loc>http://cherryblog.site/canvas-star.html</loc>
-    <lastmod>2017-08-10T12:04:02.000Z</lastmod>
+    <loc>http://cherryblog.site/book-categories.html</loc>
+    <lastmod>2017-08-10T12:17:48.000Z</lastmod>
     <data>
         <display>
-        <title>一个少女心满满的例子带你入门 canvas</title>
-        <pubTime>2017-08-06T06:40:06.000Z</pubTime>
+        <title>那些年读过的书</title>
+        <pubTime>2017-08-10T12:17:48.000Z</pubTime>
         
-        <tag>html5</tag>
-         
-        <tag>canvas</tag>
+        <tag>那些年读过的书</tag>
          
          
            
              
-              <breadCrumb title="html5" url="http://cherryblog.site/categories/html5/"/>
-          
-             
-              <breadCrumb title="canvas" url="http://cherryblog.site/categories/html5/canvas/"/>
+              <breadCrumb title="book-movie-music" url="http://cherryblog.site/categories/book-movie-music/"/>
           
         </display>
     </data>
@@ -394,6 +437,28 @@
     
     
   <url>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern4factory-mode.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript设计模式（四）：工厂模式</title>
+        <pubTime>2017-03-26T14:01:41.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+        <tag>js设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cherryblog.site/Freedom-of-self-discipline.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -414,16 +479,14 @@
 
     
   <url>
-    <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
+    <loc>http://cherryblog.site/Use-webstorm-to-connect-GitHub.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>Git使用中的报错情况</title>
-        <pubTime>2017-03-11T15:54:11.000Z</pubTime>
+        <title>使用webstorm连接github</title>
+        <pubTime>2017-02-24T02:40:20.000Z</pubTime>
         
         <tag>git</tag>
-         
-        <tag>实战经验</tag>
          
          
            
@@ -436,21 +499,19 @@
 
     
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
+    <loc>http://cherryblog.site/Upload-project-to-GitHub.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>javascript设计模式（一）</title>
-        <pubTime>2017-03-11T15:54:11.000Z</pubTime>
+        <title>将项目上传至github</title>
+        <pubTime>2017-02-25T09:35:35.000Z</pubTime>
         
-        <tag>js</tag>
-         
-        <tag>js设计模式</tag>
+        <tag>git</tag>
          
          
            
              
-              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
+              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
           
         </display>
     </data>
@@ -478,21 +539,19 @@
 
     
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html</loc>
+    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>javascript设计模式（二）：模块化模式</title>
-        <pubTime>2017-03-24T15:09:08.000Z</pubTime>
+        <title>react（二）：用实例认识react</title>
+        <pubTime>2017-03-02T13:34:44.000Z</pubTime>
         
-        <tag>js</tag>
-         
-        <tag>js设计模式</tag>
+        <tag>react</tag>
          
          
            
              
-              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
+              <breadCrumb title="react" url="http://cherryblog.site/categories/react/"/>
           
         </display>
     </data>
@@ -500,21 +559,19 @@
 
     
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern3prototype-model.html</loc>
+    <loc>http://cherryblog.site/React-first.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>javascript设计模式（三）：原型模式</title>
-        <pubTime>2017-03-25T15:05:28.000Z</pubTime>
+        <title>react（一）：初识react</title>
+        <pubTime>2017-03-01T14:01:40.000Z</pubTime>
         
-        <tag>js</tag>
-         
-        <tag>js设计模式</tag>
+        <tag>react</tag>
          
          
            
              
-              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
+              <breadCrumb title="react" url="http://cherryblog.site/categories/react/"/>
           
         </display>
     </data>
@@ -522,34 +579,12 @@
 
     
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern4factory-mode.html</loc>
+    <loc>http://cherryblog.site/Javascript-modular-programming3requirejs-use.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>javascript设计模式（四）：工厂模式</title>
-        <pubTime>2017-03-26T14:01:41.000Z</pubTime>
-        
-        <tag>js</tag>
-         
-        <tag>js设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/JavaScript-modular-programming2JSmodulardevelopmenthistory.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>javascript模块化编程（二）：js模块化发展史</title>
-        <pubTime>2017-03-07T15:04:40.000Z</pubTime>
+        <title>Javascript模块化编程（三）：require.js的用法</title>
+        <pubTime>2017-03-08T15:11:42.000Z</pubTime>
         
         <tag>js</tag>
          
@@ -615,12 +650,12 @@
 
     
   <url>
-    <loc>http://cherryblog.site/Javascript-modular-programming3requirejs-use.html</loc>
+    <loc>http://cherryblog.site/JavaScript-modular-programming2JSmodulardevelopmenthistory.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>Javascript模块化编程（三）：require.js的用法</title>
-        <pubTime>2017-03-08T15:11:42.000Z</pubTime>
+        <title>javascript模块化编程（二）：js模块化发展史</title>
+        <pubTime>2017-03-07T15:04:40.000Z</pubTime>
         
         <tag>js</tag>
          
@@ -635,6 +670,121 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://cherryblog.site/css-checkbox-input-radio.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>css：默认的checkbox、input、radio太丑了？我来教你改变使用纯css3改写的带动画的默认样式</title>
+        <pubTime>2017-05-10T12:54:11.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+        <tag>checkbox优化</tag>
+         
+        <tag>input优化</tag>
+         
+        <tag>radio优化</tag>
+         
+         
+           
+             
+              <breadCrumb title="css" url="http://cherryblog.site/categories/css/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern3prototype-model.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript设计模式（三）：原型模式</title>
+        <pubTime>2017-03-25T15:05:28.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+        <tag>js设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript设计模式（二）：模块化模式</title>
+        <pubTime>2017-03-24T15:09:08.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+        <tag>js设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript设计模式（一）</title>
+        <pubTime>2017-03-11T15:54:11.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+        <tag>js设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/GitCommands.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Git常用命令and完成一个小工作流</title>
+        <pubTime>2017-03-15T14:32:30.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
     
   <url>
     <loc>http://cherryblog.site/Front-interview.html</loc>
@@ -660,130 +810,23 @@
     </url>
 
     
+    
   <url>
-    <loc>http://cherryblog.site/React-first.html</loc>
+    <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>react（一）：初识react</title>
-        <pubTime>2017-03-01T14:01:40.000Z</pubTime>
-        
-        <tag>react</tag>
-         
-         
-           
-             
-              <breadCrumb title="react" url="http://cherryblog.site/categories/react/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>react（二）：用实例认识react</title>
-        <pubTime>2017-03-02T13:34:44.000Z</pubTime>
-        
-        <tag>react</tag>
-         
-         
-           
-             
-              <breadCrumb title="react" url="http://cherryblog.site/categories/react/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://cherryblog.site/Upload-project-to-GitHub.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>将项目上传至github</title>
-        <pubTime>2017-02-25T09:35:35.000Z</pubTime>
+        <title>Git使用中的报错情况</title>
+        <pubTime>2017-03-11T15:54:11.000Z</pubTime>
         
         <tag>git</tag>
+         
+        <tag>实战经验</tag>
          
          
            
              
               <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Use-webstorm-to-connect-GitHub.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用webstorm连接github</title>
-        <pubTime>2017-02-24T02:40:20.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-  <url>
-    <loc>http://cherryblog.site/GitCommands.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Git常用命令and完成一个小工作流</title>
-        <pubTime>2017-03-15T14:32:30.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://cherryblog.site/css-checkbox-input-radio.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>css：默认的checkbox、input、radio太丑了？我来教你改变使用纯css3改写的带动画的默认样式</title>
-        <pubTime>2017-05-10T12:54:11.000Z</pubTime>
-        
-        <tag>css</tag>
-         
-        <tag>checkbox优化</tag>
-         
-        <tag>input优化</tag>
-         
-        <tag>radio优化</tag>
-         
-         
-           
-             
-              <breadCrumb title="css" url="http://cherryblog.site/categories/css/"/>
           
         </display>
     </data>
