@@ -62,7 +62,7 @@ flex 的使用方法很简单，只需要将其 `display` 属性设置为 `flex`
 ### 父容器属性
 父容器上有六个属性
 - [flex-direction：主轴的方向。](#flex-direction)
-- [flex-wrap：超出父容器自容器的排列样式。](flex-wrap)
+- [flex-wrap：超出父容器子容器的排列样式。](flex-wrap)
 - flex-flow：`flex-direction` 属性和 `flex-wrap` 属性的简写形式。
 - justify-content：子容器在主轴的排列方向。
 - align-items：子容器在交叉轴的排列方向。
@@ -114,7 +114,7 @@ flex-direction 属性决定主轴的方向（**主轴的方向不一定是水平
 ```
 
 #### align-items 属性
-`align-items`属性定义自容器在交叉轴上如何对齐。
+`align-items`属性定义子容器在交叉轴上如何对齐。
 具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。
 
 ```css
@@ -148,7 +148,7 @@ flex-direction 属性决定主轴的方向（**主轴的方向不一定是水平
 - order：子容器的排列顺序
 - flex-grow：子容器剩余空间的拉伸比例
 - flex-shrink：子容器超出空间的压缩比例
-- flex-basis：自容器在不伸缩情况下的原始尺寸
+- flex-basis：子容器在不伸缩情况下的原始尺寸
 - flex：子元素的 `flex` 属性是 `flex-grow`,`flex-shrink` 和  `flex-basis` 的简写
 - align-self
 
@@ -182,7 +182,7 @@ flex-direction 属性决定主轴的方向（**主轴的方向不一定是水平
 ![flex-shrink 属性](http://img.blog.csdn.net/20170814135516978?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 #### flex-basis 属性
-`flex-basis` 属性定义了自容器在不伸缩情况下的原始尺寸，主轴为横向时代表宽度，主轴为纵向时代表高度。
+`flex-basis` 属性定义了子容器在不伸缩情况下的原始尺寸，主轴为横向时代表宽度，主轴为纵向时代表高度。
 ```css
 .ele{
     flex-basis: <length> | auto; /* default auto */
@@ -263,7 +263,7 @@ grid 布局又称为“网格布局”，可以实现二维布局方式，和之
 </div>
 ```
 
-在 CSS 中，我们不设置 `grid-template-columns`，只设置 `grid-template-row`
+在 CSS 中，我们不设置 `grid-template-columns`，只设置 `grid-template-rows`
 ```css
         .grid-container{
             display: grid;
@@ -280,7 +280,7 @@ grid 布局又称为“网格布局”，可以实现二维布局方式，和之
 显示如下
 ![不设置 grid-template-columns](http://img.blog.csdn.net/20170814164634389?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-设置了 `grid-template-columns` 的话，设置了几个参数，就有几列（不超过 grid item 的个数），然后设置的 `grid-template-row` 参数就是每一列的高度（超出列数的高度无效）
+设置了 `grid-template-columns` 的话，设置了几个参数，就有几列（不超过 grid item 的个数），然后设置的 `grid-template-rows` 参数就是每一列的高度（超出列数的高度无效）
 
 比如：
 ```css
