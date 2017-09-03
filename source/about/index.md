@@ -1,10 +1,13 @@
 ---
-title: about
+title: 关于 Cherry
 date: 2016-09-04 17:59:49
 type: "about"
 ---
+
+<div style="-webkit-box-shadow: 0 0 14px rgba(202,203,203,1);-moz-box-shadow: 0 0 14px rgba(202,203,204,1);
+background: #fff;padding: 25px;margin-bottom: 100px;">
 ![](http://oova2i5xh.bkt.clouddn.com/head5.jpg)
-<div style="color:#fff">
+
 我，一个在上海慢慢前行的程序媛，坚信越努力，越幸运。
 
 很高兴大家能来到我的博客，首先说明**我不是什么大牛，但是是想成为大牛的程序媛**。
@@ -25,7 +28,7 @@ type: "about"
 
 最近比较喜欢玩狼人杀，真的很烧脑。
 
-有什么技术问题可以给我发邮件，微博上都是生活内容，也欢迎大家加我 qq 或者微信，来者不拒（**不陪聊，有问题请直接提问~**）。
+有什么技术问题可以给我发邮件，微博上都是生活内容，也欢迎大家加我 qq 或者微信，来者不拒（**不陪聊，有问题请直接提问，不要问在吗！！！/(ㄒoㄒ)/~~强迫症忍不了啊~**）。
 
 最近在掘金上比较活跃，博文一般都同步在掘金，项目源码都在 github 上，求follow~。
 

@@ -65,10 +65,9 @@ body{
   margin:0;
   overflow:hidden;
   cursor:none;
-  background:black;
-  background: linear-gradient(to bottom, #dcdcdc 0%, palevioletred 100%);
+  background: #fff;
 }
-.filter {
+/*.filter {
   width:100%;
   height:100%;
   position:absolute;
@@ -79,7 +78,7 @@ body{
   animation-fill-mode:both;
   mix-blend-mode:overlay;
   z-index: -1;
-}
+}*/
 @keyframes colorChange {
   0%,100% {
     opacity:0;
@@ -264,4 +263,42 @@ body{
   border-left: 3px solid #ff1700;
   background-color: #f9f9f9;
   list-style: none;
+}
+
+
+/*白色背景时*/
+.brand{
+  color: #000;
+}
+.site-subtitle{
+  color: #999;
+}
+.menu .menu-item a{
+  color: #555;
+}
+.sidebar{
+  background: #222;
+}
+.pagination .page-number.current{
+  color: #555;
+}
+.powered-by a, .theme-info a, .pagination a, .page-archive .archive-page-counter, .posts-collapse .collection-title h2, .category-list-item a, .category-all-title{
+  color: #555;
+}
+.pagination .prev:hover, .pagination .next:hover, .pagination .page-number:hover{
+  color: #fff;
+  background: #555;
+}
+.footer{
+  color: #999;
+}
+.comments{
+  -webkit-box-shadow: 0 0 14px rgba(202,203,203,1);
+  -moz-box-shadow: 0 0 14px rgba(202,203,204,1);
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 100px;
+}
+.brand:hover, .btn{
+  color: #222;
 }
