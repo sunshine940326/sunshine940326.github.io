@@ -1,3 +1,4 @@
+http://cherryblog.site/deepcopy.html
 http://cherryblog.site/sharp-jquery.html
 http://cherryblog.site/common-CSS-layout.html
 http://cherryblog.site/earning-react-js-is-easier-than-you-think.html

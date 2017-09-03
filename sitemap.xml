@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://cherryblog.site/deepcopy.html</loc>
+    
+    <lastmod>2017-09-03T15:35:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://cherryblog.site/about/index.html</loc>
     
     <lastmod>2017-08-31T03:23:03.000Z</lastmod>
@@ -79,7 +86,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Use-Gitpagehexo-to-develop-their-own-blog.html</loc>
+    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
+    
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/hexo-3.html</loc>
     
     <lastmod>2017-08-12T12:00:54.000Z</lastmod>
     
@@ -87,13 +101,6 @@
   
   <url>
     <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
-    
-    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
     
     <lastmod>2017-08-12T12:00:54.000Z</lastmod>
     
@@ -114,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/hexo-3.html</loc>
+    <loc>http://cherryblog.site/Use-Gitpagehexo-to-develop-their-own-blog.html</loc>
     
     <lastmod>2017-08-12T12:00:54.000Z</lastmod>
     
@@ -205,7 +212,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/html5zhihubg.html</loc>
+    <loc>http://cherryblog.site/tags/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -303,7 +310,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/tags/index.html</loc>
+    <loc>http://cherryblog.site/html5zhihubg.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     

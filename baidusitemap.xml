@@ -3,6 +3,26 @@
 
 
     
+  <url>
+    <loc>http://cherryblog.site/deepcopy.html</loc>
+    <lastmod>2017-09-03T15:35:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>js 中的浅拷贝和深拷贝</title>
+        <pubTime>2017-09-03T14:54:11.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://cherryblog.site/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
     
@@ -182,6 +202,26 @@
 
     
   <url>
+    <loc>http://cherryblog.site/Hexo-advanced.html</loc>
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 5：【高阶】hexo高级进阶</title>
+        <pubTime>2016-09-16T17:14:19.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cherryblog.site/hexo-3.html</loc>
     <lastmod>2017-08-12T12:00:54.000Z</lastmod>
     <data>
@@ -200,46 +240,6 @@
         <tag>hexo百度统计</tag>
          
         <tag>hexo seo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
-    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo 2：【基础】了解 hexo + githubPages 搭建博客的原理</title>
-        <pubTime>2017-02-26T06:30:15.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Hexo-advanced.html</loc>
-    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo 5：【高阶】hexo高级进阶</title>
-        <pubTime>2016-09-16T17:14:19.000Z</pubTime>
-        
-        <tag>Hexo</tag>
          
          
            
@@ -292,6 +292,26 @@
         <tag>Hexo建站初级教程</tag>
          
         <tag>Githubpages</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 2：【基础】了解 hexo + githubPages 搭建博客的原理</title>
+        <pubTime>2017-02-26T06:30:15.000Z</pubTime>
+        
+        <tag>Hexo</tag>
          
          
            
@@ -507,21 +527,19 @@
 
     
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
+    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
         <display>
-        <title>javascript设计模式（一）</title>
-        <pubTime>2017-03-11T15:54:11.000Z</pubTime>
+        <title>gulp（一）</title>
+        <pubTime>2017-03-18T12:00:06.000Z</pubTime>
         
-        <tag>js</tag>
-         
-        <tag>js设计模式</tag>
+        <tag>gulp</tag>
          
          
            
              
-              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
+              <breadCrumb title="gulp" url="http://cherryblog.site/categories/gulp/"/>
           
         </display>
     </data>
@@ -544,26 +562,6 @@
            
              
               <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>gulp（一）</title>
-        <pubTime>2017-03-18T12:00:06.000Z</pubTime>
-        
-        <tag>gulp</tag>
-         
-         
-           
-             
-              <breadCrumb title="gulp" url="http://cherryblog.site/categories/gulp/"/>
           
         </display>
     </data>
@@ -637,6 +635,28 @@
 
     
   <url>
+    <loc>http://cherryblog.site/Javascript-modular-programming3requirejs-use.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript模块化编程（三）：require.js的用法</title>
+        <pubTime>2017-03-08T15:11:42.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+        <tag>js模块化</tag>
+         
+         
+           
+             
+              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cherryblog.site/html5zhihubg.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     <data>
@@ -657,28 +677,6 @@
           
              
               <breadCrumb title="canvas" url="http://cherryblog.site/categories/html5/canvas/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Javascript-modular-programming3requirejs-use.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Javascript模块化编程（三）：require.js的用法</title>
-        <pubTime>2017-03-08T15:11:42.000Z</pubTime>
-        
-        <tag>js</tag>
-         
-        <tag>js模块化</tag>
-         
-         
-           
-             
-              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
           
         </display>
     </data>
@@ -789,7 +787,6 @@
     </url>
 
     
-    
   <url>
     <loc>http://cherryblog.site/Use-webstorm-to-connect-GitHub.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
@@ -811,27 +808,6 @@
 
     
     
-    
-  <url>
-    <loc>http://cherryblog.site/Freedom-of-self-discipline.html</loc>
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>自律才能自由</title>
-        <pubTime>2017-03-02T13:55:57.000Z</pubTime>
-        
-        <tag>脑子里的小想法</tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="http://cherryblog.site/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
@@ -848,6 +824,50 @@
            
              
               <breadCrumb title="git" url="http://cherryblog.site/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript设计模式（一）</title>
+        <pubTime>2017-03-11T15:54:11.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+        <tag>js设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="js" url="http://cherryblog.site/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/Freedom-of-self-discipline.html</loc>
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>自律才能自由</title>
+        <pubTime>2017-03-02T13:55:57.000Z</pubTime>
+        
+        <tag>脑子里的小想法</tag>
+         
+         
+           
+             
+              <breadCrumb title="随笔" url="http://cherryblog.site/categories/%E9%9A%8F%E7%AC%94/"/>
           
         </display>
     </data>
