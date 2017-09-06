@@ -1,5 +1,5 @@
 ---
-title: html5canvas教你实现知乎登录动态粒子背景
+title: 【canvas】教你实现知乎登录动态粒子背景
 date: 2017-05-24 13:24:51
 tags: [html5,前端,canvas] 
 categories: [html5,canvas]

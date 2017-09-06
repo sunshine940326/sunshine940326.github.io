@@ -1,5 +1,5 @@
 ---
-title: 前端开发规范：命名规范、html规范、css规范、js规范
+title: 【前端开发规范】命名规范、HTML 规范、CSS 规范、JS 规范
 date: 2017-05-30 14:54:11
 tags: [css,开发规范,js规范,jshint] 
 categories: [html5]

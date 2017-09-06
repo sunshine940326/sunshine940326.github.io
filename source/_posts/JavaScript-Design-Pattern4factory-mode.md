@@ -1,4 +1,4 @@
-layout: w
+
 title: javascript设计模式（四）：工厂模式
 date: 2017-03-26 22:01:41
 tags: [js,js设计模式] 

@@ -1,5 +1,5 @@
 ---
-title: css：默认的checkbox、input、radio太丑了？我来教你改变使用纯css3改写的带动画的默认样式
+title: 【CSS】默认的checkbox、input、radio太丑了？我来教你改变使用纯css3改写的带动画的默认样式
 date: 2017-05-10 20:54:11
 tags: [css,checkbox优化,input优化,radio优化] 
 categories: css

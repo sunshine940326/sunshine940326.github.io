@@ -1,5 +1,5 @@
 ---
-title: js 中的浅拷贝和深拷贝
+title: 【JS】ECAMScript 中的浅拷贝和深拷贝
 date: 2017-09-3 22:54:11
 tags: [JavaScript] 
 categories: [JavaScript]
@@ -65,11 +65,11 @@ top: 1000
 
 ## 引用类型
 
-### 基本数据类型存放在堆中
+### 引用类型存放在堆中
 引用类型（`object`）是存放在堆内存中的，变量实际上是一个存放在栈内存的指针，这个指针指向堆内存中的地址。每个空间大小不一样，要根据情况开进行特定的分配，例如。
 
 ```js
-ar person1 = {name:'jozo'};
+var person1 = {name:'jozo'};
 var person2 = {name:'xiaom'};
 var person3 = {name:'xiaoq'};
 ```
@@ -169,21 +169,21 @@ console.log(a == b);// true
     //obj1 = {
     //    'name' : 'lisi',
     //    'age' :  '18',
-    //    'language' : [1,[4,5]],
+    //    'language' : [1,["二","三"],["四","五"]],
     //};
 
     console.log(obj2);
     //obj2 = {
     //    'name' : 'lisi',
     //    'age' :  '18',
-    //    'language' : [1,[4,5]],
+    //    'language' : [1,["二","三"],["四","五"]],
     //};
 
     console.log(obj3);
     //obj3 = {
     //    'name' : 'zhangsan',
     //    'age' :  '20',
-    //    'language' : [1,[4,5]],
+    //    'language' : [1,["二","三"],["四","五"]],
     //};
 ```
 先定义个一个原始的对象 `obj1`，然后使用赋值得到第二个对象 `obj2`，然后通过浅拷贝，将 `obj1` 里面的属性都赋值到 `obj3` 中。也就是说：

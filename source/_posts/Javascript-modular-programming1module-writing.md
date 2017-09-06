@@ -1,4 +1,4 @@
-layout: ew
+
 title: Javascript模块化编程（一）：模块的写法
 date: 2017-03-07 22:40:16
 tags: [js模块化,js]

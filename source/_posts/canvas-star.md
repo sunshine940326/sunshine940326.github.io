@@ -1,5 +1,5 @@
 ---
-title: 一个少女心满满的例子带你入门 canvas
+title: 【canvas】一个少女心满满的例子带你入门 canvas
 date: 2017-08-06 14:40:06
 tags: [html5,canvas]
 categories: [html5,canvas]
@@ -8,9 +8,9 @@ top: 998
 
 ![canvas入门](http://img.blog.csdn.net/20170801184128503?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
->本文首发于我的个人博客：http://cherryblog.site/ 
->github项目地址：https://github.com/sunshine940326/canvasStar
->项目演示地址：https://sunshine940326.github.io/canvasStar/
+> 本文首发于我的个人博客：http://cherryblog.site/ 
+> github项目地址：https://github.com/sunshine940326/canvasStar
+> 项目演示地址：https://sunshine940326.github.io/canvasStar/
 
 <!--more-->
 

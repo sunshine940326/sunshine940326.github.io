@@ -1,5 +1,5 @@
 ---
-title: 学习 React.js 比你想象的要简单
+title: 【React.js】学习 React.js 比你想象的要简单
 date: 2017-08-14 23:54:11
 tags: [翻译] 
 categories: [React,翻译]
