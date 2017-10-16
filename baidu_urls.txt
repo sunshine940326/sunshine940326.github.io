@@ -1,3 +1,5 @@
+http://cherryblog.site/HTTPS.html
+http://cherryblog.site/call-apply-bind-this.html
 http://cherryblog.site/type-checking.html
 http://cherryblog.site/deepcopy.html
 http://cherryblog.site/sharp-jquery.html
@@ -9,8 +11,8 @@ http://cherryblog.site/something1.html
 http://cherryblog.site/canvas-star.html
 http://cherryblog.site/javascript-oop.html
 http://cherryblog.site/developing-guideline.html
-http://cherryblog.site/html5zhihubg.html
 http://cherryblog.site/html5drag.html
+http://cherryblog.site/html5zhihubg.html
 http://cherryblog.site/css-checkbox-input-radio.html
 http://cherryblog.site/hexo-3.html
 http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html
@@ -20,8 +22,8 @@ http://cherryblog.site/JavaScript-Design-Pattern3prototype-model.html
 http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html
 http://cherryblog.site/gulp（一）.html
 http://cherryblog.site/GitCommands.html
-http://cherryblog.site/ErrorReportingInGitUse.html
 http://cherryblog.site/JavaScript-Design-Pattern.html
+http://cherryblog.site/ErrorReportingInGitUse.html
 http://cherryblog.site/Javascript-modular-programming3requirejs-use.html
 http://cherryblog.site/JavaScript-modular-programming2JSmodulardevelopmenthistory.html
 http://cherryblog.site/Javascript-modular-programming1module-writing.html
@@ -35,6 +37,6 @@ http://cherryblog.site/Use-webstorm-to-connect-GitHub.html
 http://cherryblog.site/Hexo-advanced.html
 http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html
 http://cherryblog.site/Use-Gitpagehexo-to-develop-their-own-blog.html
-http://cherryblog.site/movie-categories.html
 http://cherryblog.site/music-categories.html
+http://cherryblog.site/movie-categories.html
 http://cherryblog.site/book-categories.html
