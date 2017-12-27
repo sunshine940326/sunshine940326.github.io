@@ -1,1 +1,1162 @@
-<!doctype html><html class="theme-next muse use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script><link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet"><style>.pace .pace-progress{background:#f8b6bf;height:3px}.pace .pace-progress-inner{box-shadow:0 0 10px #f8b6bf,0 0 5px #f8b6bf}.pace .pace-activity{border-top-color:#f8b6bf;border-left-color:#f8b6bf}</style><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"><link href="/css/main.css?v=5.1.0" rel="stylesheet"><meta name="keywords" content="JavaScript,"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0"><meta name="description" content="本文首发于我的个人博客 ： http://cherryblog.site/  前言js 中的类型检测也是很重要的一部分，所以说这篇文章我们就来讲一下怎么对 JavaScript 中的基本数据类型进行检测。其实这也是在读 Zepto 源码中学习到的，所以阅读源码对我们的提升还是很有帮助的。本文基于参考了前辈们的文章之后个人理解此文写的有不当的地方，请各位大佬指正。"><meta name="keywords" content="JavaScript"><meta property="og:type" content="article"><meta property="og:title" content="【JS】类型检测"><meta property="og:url" content="http://cherryblog.site/type-checking.html"><meta property="og:site_name" content="Cherry&#39;s Blog"><meta property="og:description" content="本文首发于我的个人博客 ： http://cherryblog.site/  前言js 中的类型检测也是很重要的一部分，所以说这篇文章我们就来讲一下怎么对 JavaScript 中的基本数据类型进行检测。其实这也是在读 Zepto 源码中学习到的，所以阅读源码对我们的提升还是很有帮助的。本文基于参考了前辈们的文章之后个人理解此文写的有不当的地方，请各位大佬指正。"><meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/1873903988fcac89c3115a61c5c60f9b?imageView2/1/w/1200/h/700/q/85/interlace/1&quot"><meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/957236bdfc7a0ac9843faadf6904a3f5"><meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/c6734e9a93efc2fa548f7aacf672d208"><meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/666560bfc62d7bcd8cd550fb5d0ced1c"><meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/4b0543f8d5db54138af49326ad522557"><meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/681a4809feeb4a919cb014c384fd4ed7"><meta property="og:updated_time" content="2017-09-10T15:11:39.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="【JS】类型检测"><meta name="twitter:description" content="本文首发于我的个人博客 ： http://cherryblog.site/  前言js 中的类型检测也是很重要的一部分，所以说这篇文章我们就来讲一下怎么对 JavaScript 中的基本数据类型进行检测。其实这也是在读 Zepto 源码中学习到的，所以阅读源码对我们的提升还是很有帮助的。本文基于参考了前辈们的文章之后个人理解此文写的有不当的地方，请各位大佬指正。"><meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2017/9/10/1873903988fcac89c3115a61c5c60f9b?imageView2/1/w/1200/h/700/q/85/interlace/1&quot"><script id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Muse",sidebar:{position:"left",display:"post",offset:12,offset_float:0,b2t:!0,scrollpercent:!0},fancybox:!0,motion:!0,duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><link rel="canonical" href="http://cherryblog.site/type-checking.html"><title>【JS】类型检测 | Cherry's Blog</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?71ddec12fb1172387f0bd6399e834274";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><div class="bg_content"><div class="filter"></div><canvas id="canvas"></canvas></div><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><a href="https://github.com/sunshine940326"><img style="position:absolute;top:0;left:0;border:0" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Cherry's Blog</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">To Be a Better Me</p></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-about"><a href="/about" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-life"><a href="/life" rel="section"><i class="menu-item-icon fa fa-fw fa-heart"></i><br>留言板</a></li><li class="menu-item menu-item-photo"><a href="/photo" rel="section"><i class="menu-item-icon fa fa-fw fa-image"></i><br>照片</a></li><li class="menu-item menu-item-book"><a href="/categories/book-movie-music" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i><br>书影音</a></li></ul></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://cherryblog.site/type-checking.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="Cherry"><meta itemprop="description" content=""><meta itemprop="image" content="/uploads/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Cherry's Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">【JS】类型检测</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T14:54:11+08:00">2017-09-10 </time></span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span> </a></span></span><span class="post-comments-count"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-comment-o"></i> </span><a href="/type-checking.html#SOHUCS" itemprop="discussionUrl"><span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="type-checking.html" itemprop="commentsCount"></span> </a><span id="/type-checking.html" class="leancloud_visitors" data-flag-title="【JS】类型检测"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-eye"></i> </span><span class="post-meta-item-text">阅读次数 </span><span class="leancloud-visitors-count"></span></span><div class="post-wordcount"><span class="post-meta-item-icon"><i class="fa fa-edit"></i> </span><span class="post-meta-item-text">字数统计</span> <span title="字数统计">3,571 字 </span><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i> </span><span class="post-meta-item-text">阅读时长</span> <span title="阅读时长">15 分钟</span></div></span></div></header><div class="post-body" itemprop="articleBody"><p><img src="https://user-gold-cdn.xitu.io/2017/9/10/1873903988fcac89c3115a61c5c60f9b?imageView2/1/w/1200/h/700/q/85/interlace/1&amp;quot" alt=""></p><blockquote><p>本文首发于我的个人博客 ： <a href="http://cherryblog.site/">http://cherryblog.site/</a></p></blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>js 中的类型检测也是很重要的一部分，所以说这篇文章我们就来讲一下怎么对 JavaScript 中的基本数据类型进行检测。其实这也是在读 Zepto 源码中学习到的，所以阅读源码对我们的提升还是很有帮助的。本文基于参考了前辈们的文章之后个人理解此文写的有不当的地方，请各位大佬指正。</p><a id="more"></a><p>其实常规方法主要有四种</p><ol><li><code>typeof</code></li><li><code>instanceof</code></li><li><code>Object.prototype.toString</code></li><li><code>construcor</code></li></ol><p>其实这四种方式归根结底就是两种思路：</p><ol><li>根据数据类型判断（1，2）</li><li>根据构造函数判断（3，4）</li></ol><h1 id="前置基础"><a href="#前置基础" class="headerlink" title="前置基础"></a>前置基础</h1><p>再看 Zepto 之前看了 <a href="http://www.imooc.com/course/comment/id/745?page=4" target="_blank" rel="external">慕课网一个老师的视频</a>，一共一个小时左右，开了快进估计也就 45 分钟左右。只是讲了 Zepto 的架构和设计，没有详细的将每一个方法，初看之前可以看一下，对 Zepto 有一个大概的印象。</p><h2 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h2><p>其实这部分真的是老生常谈的问题，但是每一次听其他人都有新的收获。<strong>真的是不想写这部分，但是自我感觉整体思路比较清晰</strong>，所以推荐大家阅读一下。</p><p>Zepto 整个的设计思想其实是基于 js 的原型链。关于原型链，这个老师讲的比较清晰，需要记住三句话：</p><ol><li>每一个函数，都有一个 prototype 属性。</li><li>所有通过函数 new 出来的对象，这个对象都有一个 <code>__proto__</code> 指向这个函数的 prototype。</li><li>当你想要使用一个对象（或者一个数组）的某个功能时：如果该对象本身具有这个功能，则直接使用；如果该对象本身没有这个功能，则去 <code>__proto__</code> 中找。</li></ol><h2 id="什么是-prototype（显示原型）"><a href="#什么是-prototype（显示原型）" class="headerlink" title="什么是 prototype（显示原型）"></a>什么是 prototype（显示原型）</h2><blockquote><p>每一个函数在创建之后都会拥有一个名为 prototype 的属性，这个属性指向函数的原型对象。<strong>通过Function.prototype.bind方法构造出来的函数是个例外，它没有prototype属性。</strong></p></blockquote><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log( fn.prototype );</div></pre></td></tr></table></figure><p>通过下面这幅图我们可以看出创建一个函数时，都会有一个 <code>prototype</code> 属性指向它的原型。而 <code>fn.prototype</code> 中有一个 <code>constructor</code> 属性指向 fn 函数。<br><img src="https://user-gold-cdn.xitu.io/2017/9/10/957236bdfc7a0ac9843faadf6904a3f5" alt="原型图"></p><h2 id="什么是-proto-（隐式原型）"><a href="#什么是-proto-（隐式原型）" class="headerlink" title="什么是 __proto__（隐式原型）"></a>什么是 <code>__proto__</code>（隐式原型）</h2><p>JavaScript 中任意对象都有一个内置属性 <code>__proto__</code>，隐式原型指向<strong>创建</strong>这个对象的函数（constructor）的 prototype。</p><p><strong><code>Object.prototype</code> 这个对象是个例外，它的 <code>__proto__</code> 值为 null</strong></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log( <span class="keyword">typeof</span> <span class="built_in">Array</span> );   <span class="comment">// 'function'</span></div><div class="line"><span class="built_in">console</span>.log( <span class="built_in">Array</span>.prototype );</div></pre></td></tr></table></figure><p>数组构造函数 <code>Array</code> 也是一个函数，并且在 Array 的原型中除了指向 Array 的 constructor 之外还有其他的内置对象。</p><h2 id="proto-的指向"><a href="#proto-的指向" class="headerlink" title="__proto__ 的指向"></a><code>__proto__</code> 的指向</h2><p>上面应该都不难理解，主要是 <code>__proto__</code> 的指向，这个问题是比较难理解的，我们来看刚刚的定义，<code>__proto__</code> 指向创建这个对象的函数的显式原型。创建函数一共有三种方式：</p><ol><li>字面量方式</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person1 = &#123;</div><div class="line">   <span class="attr">name</span>: <span class="string">'cyl'</span>,</div><div class="line">   <span class="attr">sex</span>: <span class="string">'male'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure><p>字面量的方式是一种为了开发人员更方便创建对象的一个语法糖，本质就是<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>(); </div><div class="line">o.xx = xx;</div><div class="line">o.yy=yy;</div></pre></td></tr></table></figure><p></p><p>所以说使用字面量方式创建的函对象的 <code>__proto__</code> 属性是指向 <code>Object.prototype</code> 的。</p><ol><li>构造函数<br>所谓的构造函数，就是通过 <code>new</code> 关键字调用的函数，只要是通过 <code>new</code> 关键字调用的函数都是构造函数。由构造函数构造的对象，其 <code>__prototype__</code> 指向其构造函数的 prototype 属性指向的对象。</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  arr = <span class="keyword">new</span> <span class="built_in">Array</span>()</div></pre></td></tr></table></figure><p>比如 <code>arr</code> 是一个实例化的数组，那么 arr 的 <code>__proto__</code> 属性就指向 Array 的 prototype 属性。</p><p><img src="https://user-gold-cdn.xitu.io/2017/9/10/c6734e9a93efc2fa548f7aacf672d208" alt="原型图"></p><ol><li>函数通过 <code>Object.create</code> 构造的</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person1 = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">'cyl'</span>,</div><div class="line">    <span class="attr">sex</span>: <span class="string">'male'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person2 = <span class="built_in">Object</span>.create(person1);</div></pre></td></tr></table></figure><p><code>Object.create</code> 的内部其实是这样的：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>)</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">    F.prototype = o;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F()</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>也可以看成是通过 <code>new</code> 创建的。所以说我们就可以一目了然，person2 的 <code>__proto__</code> 是指向 person1 的。（<strong>注意，是直接指向 person1，而不是 <code>person1.prototype</code></strong>）。</p><h2 id="prototype-和-proto-的作用"><a href="#prototype-和-proto-的作用" class="headerlink" title="prototype 和 __proto__ 的作用"></a><code>prototype</code> 和 <code>__proto__</code> 的作用</h2><p>在了解了什么是显示原型 <code>prototype</code> 和隐式原型 <code>__proto__</code> 之后，我们也知道了怎么去找隐式原型，那么它们有什么作用呢？</p><ul><li>显式原型的作用：用来实现基于原型的继承与属性的共享。</li><li>隐式原型的作用：构成原型链，同样用于实现基于原型的继承。举个例子，当我们访问 obj 这个对象中的 x 属性时，如果在 obj 中找不到，那么就会沿着 <code>__proto__</code> 依次查找。</li></ul><p>这里我们要注意了，<strong>当我们访问 obj 这个对象中的 x 属性时，如果在 obj 中找不到，那么就会沿着 <code>__proto__</code> 依次查找。</strong></p><p>划重点，是在 <strong><code>__proto__</code></strong> 中依次查找</p><h2 id="重写-proto"><a href="#重写-proto" class="headerlink" title="重写 __proto__"></a>重写 <code>__proto__</code></h2><p>既然我们知道了继承实际上是继承对象 <code>__proto__</code> 上的属性，那我们就可以改写我们的 <code>__proto__</code> 属性。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">arr.__proto__.addClass = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">123</span>);</div><div class="line">&#125;</div><div class="line">arr.push(<span class="number">4</span>);</div><div class="line">arr.addClass();   <span class="comment">// 123</span></div></pre></td></tr></table></figure><p>修改了之后，<code>arr</code> 不仅有内置的 <code>concat</code>、<code>push</code> 等功能，还多了一个 <code>addClass</code> 功能。</p><p>也可以完全改写 <code>__proto__</code> 属性，那么其原先的所有的功能都没有了，如下图所示。<br><img src="https://user-gold-cdn.xitu.io/2017/9/10/666560bfc62d7bcd8cd550fb5d0ced1c" alt="原型图"></p><p>是时候祭上这张图了：<br><img src="https://user-gold-cdn.xitu.io/2017/9/10/4b0543f8d5db54138af49326ad522557" alt="深入理解JS原型链"></p><h1 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a><code>typeof</code></h1><blockquote><p><code>typeof</code> 是解释器内部实现，根据 ECMA-262 规定的几种类型的值来返回类型名称。</p></blockquote><p>但是 <code>typeof</code> 的应用场景非常有限，基本上只能判断出来使用字面量方式赋值的基本数据类型，例如：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  a = <span class="number">123</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(a));   <span class="comment">// number</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  b = <span class="string">"string"</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(b));   <span class="comment">// string</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  c = <span class="literal">true</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(c));   <span class="comment">// boolean</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  d;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(d));   <span class="comment">// undefined</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  e = <span class="literal">null</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(e));   <span class="comment">// object</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  f = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(f));   <span class="comment">// object</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  g = &#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(g));   <span class="comment">// object</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  fun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(fun)); <span class="comment">// function</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  A = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(A));   <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(A <span class="keyword">instanceof</span> <span class="built_in">Number</span>);  <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  B = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"123"</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(B));    <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(B <span class="keyword">instanceof</span> <span class="built_in">String</span>);  <span class="comment">// true</span></div></pre></td></tr></table></figure><p></p><p>由以上例子可以看出，<code>typeof</code> 测试的结果并不是特别的准确，并且只能检测使用字面量命名的基本数据类型（除了 <code>null</code>）。所以我们一般不使用 typeof 进行数据检测。</p><h1 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a><code>instanceof</code></h1><p>在上面的例子中，我们已经使用了 <code>typeof</code> 进行数据检测。<br><code>instance</code> 是“例子，实例”的意思，所以 <code>instanceof</code> 意思是用于判断变量是否是某一个对象的实例。</p><h2 id="instanceof-原理"><a href="#instanceof-原理" class="headerlink" title="instanceof 原理"></a><code>instanceof</code> 原理</h2><p>以下部分是根据 <a href="https://www.ibm.com/developerworks/cn/web/1306_jiangjj_jsinstanceof/" target="_blank" rel="external">JavaScript instanceof 运算符深入剖析</a> 理解。</p><p><code>instanceof</code> 的原理可以认为是如下：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">instance_of</span>(<span class="params">L, R</span>) </span>&#123;    <span class="comment">//L 表示左表达式，R 表示右表达式</span></div><div class="line"> <span class="keyword">var</span> O = R.prototype;           <span class="comment">// 取 R 的显示原型</span></div><div class="line"> L = L.__proto__;               <span class="comment">// 取 L 的隐式原型</span></div><div class="line"> <span class="keyword">while</span> (<span class="literal">true</span>) &#123; </div><div class="line">   <span class="keyword">if</span> (L === <span class="literal">null</span>) </div><div class="line">     <span class="keyword">return</span> <span class="literal">false</span>; </div><div class="line">   <span class="keyword">if</span> (O === L)                 <span class="comment">// 这里重点：当 O 严格等于 L 时，返回 true </span></div><div class="line">     <span class="keyword">return</span> <span class="literal">true</span>; </div><div class="line">   L = L.__proto__; </div><div class="line"> &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>再结合我们在最开始介绍的前置知识的这张图来看几个例子帮助我们更好的理解 <code>instanceof</code> 的原理:<br><img src="https://user-gold-cdn.xitu.io/2017/9/10/681a4809feeb4a919cb014c384fd4ed7" alt="JS原型链"><br>例1：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>;</div><div class="line"><span class="comment">// 为了方便表述，首先区分左侧表达式和右侧表达式</span></div><div class="line">ObjectL = <span class="built_in">Object</span>, ObjectR = <span class="built_in">Object</span>; </div><div class="line"><span class="comment">// 下面根据规范逐步推演</span></div><div class="line">O = ObjectR.prototype = <span class="built_in">Object</span>.prototype </div><div class="line">L = ObjectL.__proto__ = <span class="built_in">Function</span>.prototype </div><div class="line"><span class="comment">// 第一次判断</span></div><div class="line">O != L </div><div class="line"><span class="comment">// 循环查找 L 是否还有 __proto__ </span></div><div class="line">L = <span class="built_in">Function</span>.prototype.__proto__ = <span class="built_in">Object</span>.prototype </div><div class="line"><span class="comment">// 第二次判断</span></div><div class="line">O == L </div><div class="line"><span class="comment">// 返回 true</span></div></pre></td></tr></table></figure><p></p><p>例2：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Function</span></div><div class="line"><span class="comment">// 为了方便表述，首先区分左侧表达式和右侧表达式</span></div><div class="line">FunctionL = <span class="built_in">Function</span>, FunctionR = <span class="built_in">Function</span>; </div><div class="line"><span class="comment">// 下面根据规范逐步推演</span></div><div class="line">O = FunctionR.prototype = <span class="built_in">Function</span>.prototype </div><div class="line">L = FunctionL.__proto__ = <span class="built_in">Function</span>.prototype </div><div class="line"><span class="comment">// 第一次判断</span></div><div class="line">O == L </div><div class="line"><span class="comment">// 返回 true</span></div></pre></td></tr></table></figure><p></p><p>例3：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Foo <span class="keyword">instanceof</span> Foo</div><div class="line"><span class="comment">// 为了方便表述，首先区分左侧表达式和右侧表达式</span></div><div class="line">FooL = Foo, FooR = Foo; </div><div class="line"><span class="comment">// 下面根据规范逐步推演</span></div><div class="line">O = FooR.prototype = Foo.prototype </div><div class="line">L = FooL.__proto__ = <span class="built_in">Function</span>.prototype </div><div class="line"><span class="comment">// 第一次判断</span></div><div class="line">O != L </div><div class="line"><span class="comment">// 循环再次查找 L 是否还有 __proto__ </span></div><div class="line">L = <span class="built_in">Function</span>.prototype.__proto__ = <span class="built_in">Object</span>.prototype </div><div class="line"><span class="comment">// 第二次判断</span></div><div class="line">O != L </div><div class="line"><span class="comment">// 再次循环查找 L 是否还有 __proto__ </span></div><div class="line">L = <span class="built_in">Object</span>.prototype.__proto__ = <span class="literal">null</span> </div><div class="line"><span class="comment">// 第三次判断</span></div><div class="line">L == <span class="literal">null</span> </div><div class="line"><span class="comment">// 返回 false</span></div></pre></td></tr></table></figure><p></p><p><strong>其实，instanceof 的重点也就是左边对象的隐式原型等于右边构造函数的显示原型，是不是听着很熟悉呢，这就是在 new 操作中的关键一步（new 操作是赋值），这样就可以判断指定的对象是否是某个构造函数的实例，使 L = L.<strong>proto</strong>（继续沿原型链向上寻找），一直循环判断左边对象的隐式原型等于右边构造函数的显示原型，直到<code>L.__proto__</code> 为 null（L 已经循环到 object.prototype） 或者 true</strong></p><h2 id="instanceof-局限性"><a href="#instanceof-局限性" class="headerlink" title="instanceof 局限性"></a><code>instanceof</code> 局限性</h2><p><code>instanceof</code> 的局限性应该也就是不能检测基本数据类型了吧，其他的貌似没什么。通过对 <code>instanceof</code> 的原理进行分析，我们可以得知，只要左边的对象的对象能够通过原型链 <code>__proto__</code> 是指向右边的构造函数就可以~</p><p><code>instanceof</code> 右边必须是对象或构造函数，否则会抛出 TypeError 的错误。</p><h1 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a><code>Object.prototype.toString</code></h1><p>所有的数据类型都可以用 <code>Object.prototype.toString</code> 来检测,而且非常的精准。</p><p>以下内容参考 <a href="https://segmentfault.com/a/1190000009407558" target="_blank" rel="external">谈谈Object.prototype.toString</a></p><p>我们先来看一下 <code>Object.prototype.toString</code> 是怎么进行类型检测的<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(a));    <span class="comment">// [object Number]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> b = <span class="string">"string"</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(b));    <span class="comment">// [object String]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> c = [];</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(c));    <span class="comment">// [object Array]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> d = &#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(d));    <span class="comment">// [object Object]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> e = <span class="literal">true</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(e));    <span class="comment">// [object Boolean]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> f =  <span class="literal">null</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(f));    <span class="comment">// [object Null]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> g;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(g));    <span class="comment">// [object Undefined]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> h = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(h));    <span class="comment">// [object Function]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> A = <span class="keyword">new</span> <span class="built_in">Number</span>();</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(A));    <span class="comment">// [object Number]</span></div></pre></td></tr></table></figure><p></p><p>所以说，<code>Object.prototype.toString</code> 还是能够比较准确的检测出对应的类型的。</p><h2 id="Object-prototype-toString-的实现过程"><a href="#Object-prototype-toString-的实现过程" class="headerlink" title="Object.prototype.toString 的实现过程"></a><code>Object.prototype.toString</code> 的实现过程</h2><p>在 ECMAScript 5中，<code>Object.prototype.toString()</code> 被调用时，会进行如下步骤：</p><ol><li>如果 <code>this</code> 是 <code>undefined</code> ，返回 <code>[object Undefined]</code> ；</li><li>如果 <code>this</code> 是 <code>null</code>， 返回 <code>[object Null]</code>；</li><li>令 <code>Object</code> 为以 <code>this</code> 作为参数调用 <code>ToObject</code> 的结果；</li><li>令 <code>class</code> 为 <code>Object</code> 的内部属性 <code>[[Class]]</code> 的值；</li><li>返回三个字符串 <code>[object&quot;, class, 以及&quot;]</code> 拼接而成的字符串。</li></ol><h2 id="Class"><a href="#Class" class="headerlink" title="[[Class]]"></a><code>[[Class]]</code></h2><blockquote><p>本规范的每种内置对象都定义了 [[Class]] 内部属性的值。宿主对象的 [[Class]] 内部属性的值可以是除了 “Arguments”, “Array”, “Boolean”, “Date”, “Error”, “Function”, “JSON”, “Math”, “Number”, “Object”, “RegExp”, “String” 的任何字符串。[[Class]] 内部属性的值用于内部区分对象的种类。注，本规范中除了通过 Object.prototype.toString ( 见 15.2.4.2) 没有提供任何手段使程序访问此值。</p></blockquote><p>在 JavaScript 代码里，唯一可以访问该属性的方法就是通过 <code>Object.prototype.toString</code>，通常方法如下：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.toString.call/apply(value)</div></pre></td></tr></table></figure><p></p><p>在 ES6 请参见 <a href="https://segmentfault.com/a/1190000009407558" target="_blank" rel="external">谈谈 Object.prototype.toString</a></p><h1 id="construtor"><a href="#construtor" class="headerlink" title="construtor"></a><code>construtor</code></h1><p><code>construtor</code> 其实也是用了原型链的知识。</p><blockquote><p>constructor 属性返回对创建此对象的数组函数的引用。</p></blockquote><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</div><div class="line"><span class="built_in">console</span>.log( a.constructor == <span class="built_in">Number</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> b = <span class="string">"string"</span>;</div><div class="line"><span class="built_in">console</span>.log( b.constructor == <span class="built_in">String</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> c = [];</div><div class="line"><span class="built_in">console</span>.log( c.constructor == <span class="built_in">Array</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> d = &#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log( d.constructor == <span class="built_in">Object</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> e = <span class="literal">true</span>;</div><div class="line"><span class="built_in">console</span>.log( e.constructor == <span class="built_in">Boolean</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> f =  <span class="literal">null</span>;</div><div class="line"><span class="built_in">console</span>.log( f.constructor == Null);    <span class="comment">//  TypeError: Cannot read property 'constructor' of null</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> g;</div><div class="line"><span class="built_in">console</span>.log( g.constructor == Undefined);    <span class="comment">// Uncaught TypeError: Cannot read property 'constructor' of</span></div><div class="line"><span class="literal">undefined</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> h = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log( h.constructor == <span class="built_in">Function</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> A = <span class="keyword">new</span> <span class="built_in">Number</span>();</div><div class="line"><span class="built_in">console</span>.log( A.constructor == <span class="built_in">Number</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> A = <span class="keyword">new</span> <span class="built_in">Number</span>();</div><div class="line"><span class="built_in">console</span>.log( A.constructor == <span class="built_in">Object</span>);    <span class="comment">// false</span></div></pre></td></tr></table></figure><p>通过上述的实例，我们可以看到，无论是通过字面量或者构造函数创建的基本类型，都可以检测出。并且也可以检测出 <code>Array</code>、<code>Object</code>、<code>Function</code>引用类型，但是不能检测出 <code>Null</code> 和 <code>Undefined</code></p><h1 id="Zepto-中检测数据类型"><a href="#Zepto-中检测数据类型" class="headerlink" title="Zepto 中检测数据类型"></a>Zepto 中检测数据类型</h1><p>在 Zepto 中主要是用 <code>Object.prototype.toString</code> 来做数据类型的判断的<br>现在让我们来看一下 Zepto 中是怎么检测这些数据类型的：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> class2type = &#123;&#125;,</div><div class="line">    toString = class2type.toString</div><div class="line"></div><div class="line"><span class="comment">// 在代码中部，执行了</span></div><div class="line"><span class="comment">// $.each("Boolean Number String Function Array Date RegExp Object Error".split(" "), function(i, name) &#123;</span></div><div class="line"><span class="comment">//   class2type[ "[object " + name + "]" ] = name.toLowerCase()</span></div><div class="line"><span class="comment">// &#125;)</span></div><div class="line"><span class="comment">// 用来给 class2type 对象赋值</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">// a ? b : c || d</span></div><div class="line"><span class="comment">//type 用来判断类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> obj == <span class="literal">null</span> ? <span class="built_in">String</span>(obj) :</div><div class="line">    class2type[toString.call(obj)] || <span class="string">"object"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>这里你可能会有疑问，为什么使用 <code>toString</code> 而不是 <code>Object.prototype.toString</code><br>那是因为如果将基本数据类型，比如 string、number、boolean等类型的值使用 toString 的方法时，是直接将基本数据类型转换为 string 类型，但是如果对 object 类型使用 toString 方法，则是会调用其原型上的 toString 方法，也就是 <code>Object.prototype.toString</code>。所以 Zepto 在开头的地方就定义了 class2type 为一个 object 类型。</p><p>如果 obj 的类型为 null 或者 undefined 直接返回，如果该对象的 <code>Object.prototype.toString</code> 将返回的结果作为 class2type 的 key 取值。Object.prototype.toString 对不同的数据类型会返回形如 [object Boolean] 的结果。</p><p>如果都不是以上情况，默认返回 object 类型。</p><h1 id="Zepto-中的其他检测方法"><a href="#Zepto-中的其他检测方法" class="headerlink" title="Zepto 中的其他检测方法"></a>Zepto 中的其他检测方法</h1><h2 id="isFunction"><a href="#isFunction" class="headerlink" title="isFunction"></a>isFunction</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFunction</span>(<span class="params">value</span>) </span>&#123; <span class="keyword">return</span> type(value) == <span class="string">"function"</span> &#125;</div></pre></td></tr></table></figure><h2 id="isWindow"><a href="#isWindow" class="headerlink" title="isWindow"></a>isWindow</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是 window对象（注意，w为小写）指当前的浏览器窗口，window对象的window属性指向自身。</span></div><div class="line">    <span class="comment">// 即 window.window === window</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isWindow</span>(<span class="params">obj</span>)     </span>&#123; <span class="keyword">return</span> obj != <span class="literal">null</span> &amp;&amp; obj == obj.window &#125;</div></pre></td></tr></table></figure><h2 id="isDocument"><a href="#isDocument" class="headerlink" title="isDocument"></a>isDocument</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是 document 对象</span></div><div class="line">    <span class="comment">// window.document.nodeType == 9 数字表示为9，常量表示为 DOCUMENT_NODE</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isDocument</span>(<span class="params">obj</span>)   </span>&#123; <span class="keyword">return</span> obj != <span class="literal">null</span> &amp;&amp; obj.nodeType == obj.DOCUMENT_NODE &#125;</div></pre></td></tr></table></figure><h2 id="isObject"><a href="#isObject" class="headerlink" title="isObject"></a>isObject</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是 object</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isObject</span>(<span class="params">obj</span>)     </span>&#123; <span class="keyword">return</span> type(obj) == <span class="string">"object"</span> &#125;</div></pre></td></tr></table></figure><h2 id="isPlainObject"><a href="#isPlainObject" class="headerlink" title="isPlainObject"></a>isPlainObject</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPlainObject</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> isObject(obj) &amp;&amp; !isWindow(obj) &amp;&amp; <span class="built_in">Object</span>.getPrototypeOf(obj) == <span class="built_in">Object</span>.prototype</div><div class="line">    &#125;</div></pre></td></tr></table></figure><h2 id="isArray"><a href="#isArray" class="headerlink" title="isArray"></a>isArray</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是arr</span></div><div class="line">isArray = <span class="built_in">Array</span>.isArray || <span class="function"><span class="keyword">function</span>(<span class="params">object</span>)</span>&#123; <span class="keyword">return</span> object <span class="keyword">instanceof</span> <span class="built_in">Array</span> &#125;;</div></pre></td></tr></table></figure><h2 id="likeArray"><a href="#likeArray" class="headerlink" title="likeArray"></a>likeArray</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是数组或者对象数组</span></div><div class="line"><span class="comment">// !!的作用是把一个其他类型的变量转成的bool类型。</span></div><div class="line"><span class="comment">// !!obj 直接过滤掉了false，null，undefined，''等值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">likeArray</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> length = !!obj &amp;&amp; <span class="string">'length'</span> <span class="keyword">in</span> obj &amp;&amp; obj.length,</div><div class="line"></div><div class="line">        <span class="comment">// 获取obj的数据类型</span></div><div class="line">        type = $.type(obj);</div><div class="line"></div><div class="line">    <span class="comment">// 不能是function类型，不能是window</span></div><div class="line">    <span class="comment">// 如果是array则直接返回true</span></div><div class="line">    <span class="comment">// 或者当length的数据类型是number，并且其取值范围是0到(length - 1)这里是通过判断length - 1 是否为obj的属性</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="string">'function'</span> != type &amp;&amp; !isWindow(obj) &amp;&amp; (</div><div class="line">            <span class="string">'array'</span> == type || length === <span class="number">0</span> ||</div><div class="line">            (<span class="keyword">typeof</span> length == <span class="string">'number'</span> &amp;&amp; length &gt; <span class="number">0</span> &amp;&amp; (length - <span class="number">1</span>) <span class="keyword">in</span> obj)</div><div class="line">        )</div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="isEmptyObject"><a href="#isEmptyObject" class="headerlink" title="isEmptyObject"></a>isEmptyObject</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 空对象</span></div><div class="line">$.isEmptyObject = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> name</div><div class="line">    <span class="keyword">for</span> (name <span class="keyword">in</span> obj) <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="isNumeric"><a href="#isNumeric" class="headerlink" title="isNumeric"></a>isNumeric</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数字</span></div><div class="line">$.isNumeric = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> num = <span class="built_in">Number</span>(val), type = <span class="keyword">typeof</span> val;</div><div class="line">    <span class="keyword">return</span> val != <span class="literal">null</span> &amp;&amp; type != <span class="string">'boolean'</span> &amp;&amp;</div><div class="line">        (type != <span class="string">'string'</span> || val.length) &amp;&amp;</div><div class="line">        !<span class="built_in">isNaN</span>(num) &amp;&amp; <span class="built_in">isFinite</span>(num) || <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure><div></div><div></div><div><div style="padding:10px 0;margin:20px auto;width:90%;text-align:center"><div>客官，赏一个嘛~</div><button id="rewardButton" disable="enable" onclick='var qr=document.getElementById("QR");"none"===qr.style.display?qr.style.display="block":qr.style.display="none"'><span>赏</span></button><div id="QR" style="display:none"><div id="wechat" style="display:inline-block"><img id="wechat_qr" src="http://oova2i5xh.bkt.clouddn.com/wechat.jpg" alt="Cherry WeChat Pay"><p>微信打赏</p></div><div id="alipay" style="display:inline-block"><img id="alipay_qr" src="http://oova2i5xh.bkt.clouddn.com/alipay.jpg" alt="Cherry Alipay"><p>支付宝打赏</p></div></div></div></div><div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong> Cherry</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="http://cherryblog.site/type-checking.html" title="【JS】类型检测">http://cherryblog.site/type-checking.html</a></li><li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！</li></ul></div><footer class="post-footer"><div class="post-tags"><a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/deepcopy.html" rel="next" title="【JS】ECAMScript 中的浅拷贝和深拷贝"><i class="fa fa-chevron-left"></i> 【JS】ECAMScript 中的浅拷贝和深拷贝</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/call-apply-bind-this.html" rel="prev" title="this、call、apply、bind">this、call、apply、bind <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class="post-spread"></div></div></div><div class="comments" id="comments"><div id="SOHUCS"></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview">站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Cherry"><p class="site-author-name" itemprop="name">Cherry</p><p class="site-description motion-element" itemprop="description">做更好的自己</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives"><span class="site-state-item-count">42</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/index.html"><span class="site-state-item-count">21</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/index.html"><span class="site-state-item-count">48</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="http://github.com/sunshine940326" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i> GitHub </a></span><span class="links-of-author-item"><a href="http://weibo.com/5094854684/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo"><i class="fa fa-fw fa-weibo"></i> Weibo </a></span><span class="links-of-author-item"><a href="https://juejin.im/user/584d7a3e2f301e00572fb7fc" target="_blank" title="掘金"><i class="fa fa-fw fa-group"></i> 掘金 </a></span><span class="links-of-author-item"><a href="http://www.jianshu.com/u/04d2a375a281" target="_blank" title="JianShu"><i class="fa fa-fw fa-globe"></i> JianShu</a></span></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前置基础"><span class="nav-number">2.</span> <span class="nav-text">前置基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型与原型链"><span class="nav-number">2.1.</span> <span class="nav-text">原型与原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-prototype（显示原型）"><span class="nav-number">2.2.</span> <span class="nav-text">什么是 prototype（显示原型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-proto-（隐式原型）"><span class="nav-number">2.3.</span> <span class="nav-text">什么是 __proto__（隐式原型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#proto-的指向"><span class="nav-number">2.4.</span> <span class="nav-text">__proto__ 的指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prototype-和-proto-的作用"><span class="nav-number">2.5.</span> <span class="nav-text">prototype 和 __proto__ 的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写-proto"><span class="nav-number">2.6.</span> <span class="nav-text">重写 __proto__</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#typeof"><span class="nav-number">3.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#instanceof"><span class="nav-number">4.</span> <span class="nav-text">instanceof</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof-原理"><span class="nav-number">4.1.</span> <span class="nav-text">instanceof 原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof-局限性"><span class="nav-number">4.2.</span> <span class="nav-text">instanceof 局限性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-prototype-toString"><span class="nav-number">5.</span> <span class="nav-text">Object.prototype.toString</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-prototype-toString-的实现过程"><span class="nav-number">5.1.</span> <span class="nav-text">Object.prototype.toString 的实现过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class"><span class="nav-number">5.2.</span> <span class="nav-text">[[Class]]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#construtor"><span class="nav-number">6.</span> <span class="nav-text">construtor</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zepto-中检测数据类型"><span class="nav-number">7.</span> <span class="nav-text">Zepto 中检测数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zepto-中的其他检测方法"><span class="nav-number">8.</span> <span class="nav-text">Zepto 中的其他检测方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#isFunction"><span class="nav-number">8.1.</span> <span class="nav-text">isFunction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isWindow"><span class="nav-number">8.2.</span> <span class="nav-text">isWindow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isDocument"><span class="nav-number">8.3.</span> <span class="nav-text">isDocument</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isObject"><span class="nav-number">8.4.</span> <span class="nav-text">isObject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isPlainObject"><span class="nav-number">8.5.</span> <span class="nav-text">isPlainObject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isArray"><span class="nav-number">8.6.</span> <span class="nav-text">isArray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#likeArray"><span class="nav-number">8.7.</span> <span class="nav-text">likeArray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isEmptyObject"><span class="nav-number">8.8.</span> <span class="nav-text">isEmptyObject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isNumeric"><span class="nav-number">8.9.</span> <span class="nav-text">isNumeric</span></a></li></ol></li></ol></div></div></section><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2017</span> <span class="with-love"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">Cherry</span></div><div class="busuanzi-count"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="site-uv"><i class="fa fa-user"></i> 访问用户： <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人 </span><span class="site-pv"><i class="fa fa-eye"></i> 访问次数： <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次</span></div></div></footer></div><script>"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script src="/lib/jquery/index.js?v=2.1.3"></script><script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script src="/js/src/utils.js?v=5.1.0"></script><script src="/js/src/motion.js?v=5.1.0"></script><script src="/js/src/canvasline.js?v=5.1.0"></script><script src="/js/src/baidu_tools.js?v=5.1.0"></script><script src="/js/src/scrollspy.js?v=5.1.0"></script><script src="/js/src/post-details.js?v=5.1.0"></script><script src="/js/src/bootstrap.js?v=5.1.0"></script><script>!function(){var t="ca667050ec57c6762a854ee31516238f";(window.innerWidth||document.documentElement.clientWidth)<960?window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cyt8lab7G&conf='+t+'"><\/script>'):function(t,e){var n=document.getElementsByTagName("head")[0]||document.head||document.documentElement,a=document.createElement("script");a.setAttribute("type","text/javascript"),a.setAttribute("charset","UTF-8"),a.setAttribute("src","https://changyan.sohu.com/upload/changyan.js"),"function"==typeof e&&(window.attachEvent?a.onreadystatechange=function(){var t=a.readyState;"loaded"!==t&&"complete"!==t||(a.onreadystatechange=null,e())}:a.onload=e),n.appendChild(a)}(0,function(){window.changyan.api.config({appid:"cyt8lab7G",conf:t})})}()</script><script src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script><script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script><script>AV.initialize("SXu3fAQtWilv2Jtsr5eHvgCH-gzGzoHsz","R79G2KT1xhiu9Ngp3Dnjsn7k")</script><script>function showTime(e){var t=new AV.Query(e),n=[],o=$(".leancloud_visitors");o.each(function(){n.push($(this).attr("id").trim())}),t.containedIn("url",n),t.find().done(function(e){if(0!==e.length){for(c=0;c<e.length;c++){var t=e[c],i=t.get("url"),s=t.get("time"),l=document.getElementById(i);$(l).find(".leancloud-visitors-count").text(s)}for(var c=0;c<n.length;c++){var i=n[c],l=document.getElementById(i),r=$(l).find(".leancloud-visitors-count");""==r.text()&&r.text(0)}}else o.find(".leancloud-visitors-count").text(0)}).fail(function(e,t){console.log("Error: "+t.code+" "+t.message)})}function addCount(e){var t=$(".leancloud_visitors"),n=t.attr("id").trim(),o=t.attr("data-flag-title").trim(),i=new AV.Query(e);i.equalTo("url",n),i.find({success:function(t){if(t.length>0){var i=t[0];i.fetchWhenSave(!0),i.increment("time"),i.save(null,{success:function(e){$(document.getElementById(n)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to save Visitor num, with error message: "+t.message)}})}else{var s=new e,l=new AV.ACL;l.setPublicReadAccess(!0),l.setPublicWriteAccess(!0),s.setACL(l),s.set("title",o),s.set("url",n),s.set("time",1),s.save(null,{success:function(e){$(document.getElementById(n)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to create")}})}},error:function(e){console.log("Error:"+e.code+" "+e.message)}})}$(function(){var e=AV.Object.extend("Counter");1==$(".leancloud_visitors").length?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script></body></html>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+  .pace .pace-progress {
+    background: #f8b6bf; /*进度条颜色*/
+    height: 3px;
+  }
+  .pace .pace-progress-inner {
+    box-shadow: 0 0 10px #f8b6bf, 0 0 5px #f8b6bf; /*阴影颜色*/
+  }
+  .pace .pace-activity {
+    border-top-color: #f8b6bf;    /*上边框颜色*/
+    border-left-color: #f8b6bf;    /*左边框颜色*/
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="本文首发于我的个人博客 ： http://cherryblog.site/  前言js 中的类型检测也是很重要的一部分，所以说这篇文章我们就来讲一下怎么对 JavaScript 中的基本数据类型进行检测。其实这也是在读 Zepto 源码中学习到的，所以阅读源码对我们的提升还是很有帮助的。本文基于参考了前辈们的文章之后个人理解此文写的有不当的地方，请各位大佬指正。">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【JS】类型检测">
+<meta property="og:url" content="http://cherryblog.site/type-checking.html">
+<meta property="og:site_name" content="Cherry&#39;s Blog">
+<meta property="og:description" content="本文首发于我的个人博客 ： http://cherryblog.site/  前言js 中的类型检测也是很重要的一部分，所以说这篇文章我们就来讲一下怎么对 JavaScript 中的基本数据类型进行检测。其实这也是在读 Zepto 源码中学习到的，所以阅读源码对我们的提升还是很有帮助的。本文基于参考了前辈们的文章之后个人理解此文写的有不当的地方，请各位大佬指正。">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/1873903988fcac89c3115a61c5c60f9b?imageView2/1/w/1200/h/700/q/85/interlace/1&quot">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/957236bdfc7a0ac9843faadf6904a3f5">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/c6734e9a93efc2fa548f7aacf672d208">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/666560bfc62d7bcd8cd550fb5d0ced1c">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/4b0543f8d5db54138af49326ad522557">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/9/10/681a4809feeb4a919cb014c384fd4ed7">
+<meta property="og:updated_time" content="2017-09-10T15:11:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【JS】类型检测">
+<meta name="twitter:description" content="本文首发于我的个人博客 ： http://cherryblog.site/  前言js 中的类型检测也是很重要的一部分，所以说这篇文章我们就来讲一下怎么对 JavaScript 中的基本数据类型进行检测。其实这也是在读 Zepto 源码中学习到的，所以阅读源码对我们的提升还是很有帮助的。本文基于参考了前辈们的文章之后个人理解此文写的有不当的地方，请各位大佬指正。">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2017/9/10/1873903988fcac89c3115a61c5c60f9b?imageView2/1/w/1200/h/700/q/85/interlace/1&quot">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cherryblog.site/type-checking.html"/>
+
+
+
+
+
+     <title> 【JS】类型检测 | Cherry's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?71ddec12fb1172387f0bd6399e834274";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <div class="bg_content">
+    <div class="filter"></div>
+    <canvas id="canvas"></canvas>
+  </div>
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <a href="https://github.com/sunshine940326"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cherry's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">To Be a Better Me</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br />
+            
+            照片
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="/categories/book-movie-music" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            书影音
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/type-checking.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                【JS】类型检测
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T14:54:11+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/type-checking.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="type-checking.html" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/type-checking.html" class="leancloud_visitors" data-flag-title="【JS】类型检测">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+               
+                     <span class="post-meta-item-icon">
+                       <i class="fa fa-edit"></i>
+                     </span>
+                 
+                     <span class="post-meta-item-text">字数统计</span>
+                       
+                     <span title="字数统计">
+                       3,571 字
+                     </span>
+                  
+                 
+                  <span class="post-meta-divider">|</span>
+                 
+                 
+                 <span class="post-meta-item-icon">
+                     <i class="fa fa-clock-o"></i>
+                     </span>
+                 
+                      <span class="post-meta-item-text">阅读时长</span>
+                 
+                   <span title="阅读时长">
+                 15 分钟
+                 </span>
+               
+            </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://user-gold-cdn.xitu.io/2017/9/10/1873903988fcac89c3115a61c5c60f9b?imageView2/1/w/1200/h/700/q/85/interlace/1&amp;quot" alt=""></p>
+<blockquote>
+<p>本文首发于我的个人博客 ： <a href="http://cherryblog.site/">http://cherryblog.site/</a></p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>js 中的类型检测也是很重要的一部分，所以说这篇文章我们就来讲一下怎么对 JavaScript 中的基本数据类型进行检测。其实这也是在读 Zepto 源码中学习到的，所以阅读源码对我们的提升还是很有帮助的。本文基于参考了前辈们的文章之后个人理解此文写的有不当的地方，请各位大佬指正。</p>
+<a id="more"></a>
+<p>其实常规方法主要有四种</p>
+<ol>
+<li><code>typeof</code></li>
+<li><code>instanceof</code></li>
+<li><code>Object.prototype.toString</code></li>
+<li><code>construcor</code></li>
+</ol>
+<p>其实这四种方式归根结底就是两种思路：</p>
+<ol>
+<li>根据数据类型判断（1，2）</li>
+<li>根据构造函数判断（3，4）</li>
+</ol>
+<h1 id="前置基础"><a href="#前置基础" class="headerlink" title="前置基础"></a>前置基础</h1><p>再看 Zepto 之前看了 <a href="http://www.imooc.com/course/comment/id/745?page=4" target="_blank" rel="external">慕课网一个老师的视频</a>，一共一个小时左右，开了快进估计也就 45 分钟左右。只是讲了 Zepto 的架构和设计，没有详细的将每一个方法，初看之前可以看一下，对 Zepto 有一个大概的印象。</p>
+<h2 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h2><p>其实这部分真的是老生常谈的问题，但是每一次听其他人都有新的收获。<strong>真的是不想写这部分，但是自我感觉整体思路比较清晰</strong>，所以推荐大家阅读一下。</p>
+<p>Zepto 整个的设计思想其实是基于 js 的原型链。关于原型链，这个老师讲的比较清晰，需要记住三句话：</p>
+<ol>
+<li>每一个函数，都有一个 prototype 属性。</li>
+<li>所有通过函数 new 出来的对象，这个对象都有一个 <code>__proto__</code> 指向这个函数的 prototype。</li>
+<li>当你想要使用一个对象（或者一个数组）的某个功能时：如果该对象本身具有这个功能，则直接使用；如果该对象本身没有这个功能，则去 <code>__proto__</code> 中找。 </li>
+</ol>
+<h2 id="什么是-prototype（显示原型）"><a href="#什么是-prototype（显示原型）" class="headerlink" title="什么是 prototype（显示原型）"></a>什么是 prototype（显示原型）</h2><blockquote>
+<p>每一个函数在创建之后都会拥有一个名为 prototype 的属性，这个属性指向函数的原型对象。<strong>通过Function.prototype.bind方法构造出来的函数是个例外，它没有prototype属性。</strong></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log( fn.prototype );</div></pre></td></tr></table></figure>
+<p>通过下面这幅图我们可以看出创建一个函数时，都会有一个 <code>prototype</code> 属性指向它的原型。而 <code>fn.prototype</code> 中有一个 <code>constructor</code> 属性指向 fn 函数。<br><img src="https://user-gold-cdn.xitu.io/2017/9/10/957236bdfc7a0ac9843faadf6904a3f5" alt="原型图"></p>
+<h2 id="什么是-proto-（隐式原型）"><a href="#什么是-proto-（隐式原型）" class="headerlink" title="什么是 __proto__（隐式原型）"></a>什么是 <code>__proto__</code>（隐式原型）</h2><p>JavaScript 中任意对象都有一个内置属性 <code>__proto__</code>，隐式原型指向<strong>创建</strong>这个对象的函数（constructor）的 prototype。</p>
+<p><strong><code>Object.prototype</code> 这个对象是个例外，它的 <code>__proto__</code> 值为 null</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log( <span class="keyword">typeof</span> <span class="built_in">Array</span> );   <span class="comment">// 'function'</span></div><div class="line"><span class="built_in">console</span>.log( <span class="built_in">Array</span>.prototype );</div></pre></td></tr></table></figure>
+<p>数组构造函数 <code>Array</code> 也是一个函数，并且在 Array 的原型中除了指向 Array 的 constructor 之外还有其他的内置对象。</p>
+<h2 id="proto-的指向"><a href="#proto-的指向" class="headerlink" title="__proto__ 的指向"></a><code>__proto__</code> 的指向</h2><p>上面应该都不难理解，主要是 <code>__proto__</code> 的指向，这个问题是比较难理解的，我们来看刚刚的定义，<code>__proto__</code> 指向创建这个对象的函数的显式原型。创建函数一共有三种方式：</p>
+<ol>
+<li>字面量方式</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person1 = &#123;</div><div class="line">   <span class="attr">name</span>: <span class="string">'cyl'</span>,</div><div class="line">   <span class="attr">sex</span>: <span class="string">'male'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>字面量的方式是一种为了开发人员更方便创建对象的一个语法糖，本质就是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>(); </div><div class="line">o.xx = xx;</div><div class="line">o.yy=yy;</div></pre></td></tr></table></figure></p>
+<p>所以说使用字面量方式创建的函对象的 <code>__proto__</code> 属性是指向 <code>Object.prototype</code> 的。</p>
+<ol>
+<li>构造函数<br>所谓的构造函数，就是通过 <code>new</code> 关键字调用的函数，只要是通过 <code>new</code> 关键字调用的函数都是构造函数。由构造函数构造的对象，其 <code>__prototype__</code> 指向其构造函数的 prototype 属性指向的对象。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  arr = <span class="keyword">new</span> <span class="built_in">Array</span>()</div></pre></td></tr></table></figure>
+<p>比如 <code>arr</code> 是一个实例化的数组，那么 arr 的 <code>__proto__</code> 属性就指向 Array 的 prototype 属性。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/9/10/c6734e9a93efc2fa548f7aacf672d208" alt="原型图"></p>
+<ol>
+<li>函数通过 <code>Object.create</code> 构造的</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person1 = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">'cyl'</span>,</div><div class="line">    <span class="attr">sex</span>: <span class="string">'male'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person2 = <span class="built_in">Object</span>.create(person1);</div></pre></td></tr></table></figure>
+<p><code>Object.create</code> 的内部其实是这样的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>)</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">    F.prototype = o;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F()</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>也可以看成是通过 <code>new</code> 创建的。所以说我们就可以一目了然，person2 的 <code>__proto__</code> 是指向 person1 的。（<strong>注意，是直接指向 person1，而不是 <code>person1.prototype</code></strong>）。</p>
+<h2 id="prototype-和-proto-的作用"><a href="#prototype-和-proto-的作用" class="headerlink" title="prototype 和 __proto__ 的作用"></a><code>prototype</code> 和 <code>__proto__</code> 的作用</h2><p>在了解了什么是显示原型 <code>prototype</code> 和隐式原型 <code>__proto__</code> 之后，我们也知道了怎么去找隐式原型，那么它们有什么作用呢？</p>
+<ul>
+<li>显式原型的作用：用来实现基于原型的继承与属性的共享。</li>
+<li>隐式原型的作用：构成原型链，同样用于实现基于原型的继承。举个例子，当我们访问 obj 这个对象中的 x 属性时，如果在 obj 中找不到，那么就会沿着 <code>__proto__</code> 依次查找。</li>
+</ul>
+<p>这里我们要注意了，<strong>当我们访问 obj 这个对象中的 x 属性时，如果在 obj 中找不到，那么就会沿着 <code>__proto__</code> 依次查找。</strong> </p>
+<p>划重点，是在 <strong><code>__proto__</code></strong> 中依次查找</p>
+<h2 id="重写-proto"><a href="#重写-proto" class="headerlink" title="重写 __proto__"></a>重写 <code>__proto__</code></h2><p>既然我们知道了继承实际上是继承对象 <code>__proto__</code> 上的属性，那我们就可以改写我们的 <code>__proto__</code> 属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">arr.__proto__.addClass = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">123</span>);</div><div class="line">&#125;</div><div class="line">arr.push(<span class="number">4</span>);</div><div class="line">arr.addClass();   <span class="comment">// 123</span></div></pre></td></tr></table></figure>
+<p>修改了之后，<code>arr</code> 不仅有内置的 <code>concat</code>、<code>push</code> 等功能，还多了一个 <code>addClass</code> 功能。</p>
+<p>也可以完全改写 <code>__proto__</code> 属性，那么其原先的所有的功能都没有了，如下图所示。<br><img src="https://user-gold-cdn.xitu.io/2017/9/10/666560bfc62d7bcd8cd550fb5d0ced1c" alt="原型图"></p>
+<p>是时候祭上这张图了：<br><img src="https://user-gold-cdn.xitu.io/2017/9/10/4b0543f8d5db54138af49326ad522557" alt="深入理解JS原型链"></p>
+<h1 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a><code>typeof</code></h1><blockquote>
+<p><code>typeof</code> 是解释器内部实现，根据 ECMA-262 规定的几种类型的值来返回类型名称。</p>
+</blockquote>
+<p>但是 <code>typeof</code> 的应用场景非常有限，基本上只能判断出来使用字面量方式赋值的基本数据类型，例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  a = <span class="number">123</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(a));   <span class="comment">// number</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  b = <span class="string">"string"</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(b));   <span class="comment">// string</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  c = <span class="literal">true</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(c));   <span class="comment">// boolean</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  d;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(d));   <span class="comment">// undefined</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  e = <span class="literal">null</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(e));   <span class="comment">// object</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  f = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(f));   <span class="comment">// object</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  g = &#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(g));   <span class="comment">// object</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  fun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(fun)); <span class="comment">// function</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  A = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(A));   <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(A <span class="keyword">instanceof</span> <span class="built_in">Number</span>);  <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span>  B = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"123"</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(B));    <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(B <span class="keyword">instanceof</span> <span class="built_in">String</span>);  <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>由以上例子可以看出，<code>typeof</code> 测试的结果并不是特别的准确，并且只能检测使用字面量命名的基本数据类型（除了 <code>null</code>）。所以我们一般不使用 typeof 进行数据检测。</p>
+<h1 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a><code>instanceof</code></h1><p>在上面的例子中，我们已经使用了 <code>typeof</code> 进行数据检测。<br><code>instance</code> 是“例子，实例”的意思，所以 <code>instanceof</code> 意思是用于判断变量是否是某一个对象的实例。</p>
+<h2 id="instanceof-原理"><a href="#instanceof-原理" class="headerlink" title="instanceof 原理"></a><code>instanceof</code> 原理</h2><p>以下部分是根据 <a href="https://www.ibm.com/developerworks/cn/web/1306_jiangjj_jsinstanceof/" target="_blank" rel="external">JavaScript instanceof 运算符深入剖析</a> 理解。</p>
+<p><code>instanceof</code> 的原理可以认为是如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">instance_of</span>(<span class="params">L, R</span>) </span>&#123;    <span class="comment">//L 表示左表达式，R 表示右表达式</span></div><div class="line"> <span class="keyword">var</span> O = R.prototype;           <span class="comment">// 取 R 的显示原型</span></div><div class="line"> L = L.__proto__;               <span class="comment">// 取 L 的隐式原型</span></div><div class="line"> <span class="keyword">while</span> (<span class="literal">true</span>) &#123; </div><div class="line">   <span class="keyword">if</span> (L === <span class="literal">null</span>) </div><div class="line">     <span class="keyword">return</span> <span class="literal">false</span>; </div><div class="line">   <span class="keyword">if</span> (O === L)                 <span class="comment">// 这里重点：当 O 严格等于 L 时，返回 true </span></div><div class="line">     <span class="keyword">return</span> <span class="literal">true</span>; </div><div class="line">   L = L.__proto__; </div><div class="line"> &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再结合我们在最开始介绍的前置知识的这张图来看几个例子帮助我们更好的理解 <code>instanceof</code> 的原理:<br><img src="https://user-gold-cdn.xitu.io/2017/9/10/681a4809feeb4a919cb014c384fd4ed7" alt="JS原型链"><br>例1：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>;</div><div class="line"><span class="comment">// 为了方便表述，首先区分左侧表达式和右侧表达式</span></div><div class="line">ObjectL = <span class="built_in">Object</span>, ObjectR = <span class="built_in">Object</span>; </div><div class="line"><span class="comment">// 下面根据规范逐步推演</span></div><div class="line">O = ObjectR.prototype = <span class="built_in">Object</span>.prototype </div><div class="line">L = ObjectL.__proto__ = <span class="built_in">Function</span>.prototype </div><div class="line"><span class="comment">// 第一次判断</span></div><div class="line">O != L </div><div class="line"><span class="comment">// 循环查找 L 是否还有 __proto__ </span></div><div class="line">L = <span class="built_in">Function</span>.prototype.__proto__ = <span class="built_in">Object</span>.prototype </div><div class="line"><span class="comment">// 第二次判断</span></div><div class="line">O == L </div><div class="line"><span class="comment">// 返回 true</span></div></pre></td></tr></table></figure></p>
+<p>例2：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Function</span></div><div class="line"><span class="comment">// 为了方便表述，首先区分左侧表达式和右侧表达式</span></div><div class="line">FunctionL = <span class="built_in">Function</span>, FunctionR = <span class="built_in">Function</span>; </div><div class="line"><span class="comment">// 下面根据规范逐步推演</span></div><div class="line">O = FunctionR.prototype = <span class="built_in">Function</span>.prototype </div><div class="line">L = FunctionL.__proto__ = <span class="built_in">Function</span>.prototype </div><div class="line"><span class="comment">// 第一次判断</span></div><div class="line">O == L </div><div class="line"><span class="comment">// 返回 true</span></div></pre></td></tr></table></figure></p>
+<p>例3：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Foo <span class="keyword">instanceof</span> Foo</div><div class="line"><span class="comment">// 为了方便表述，首先区分左侧表达式和右侧表达式</span></div><div class="line">FooL = Foo, FooR = Foo; </div><div class="line"><span class="comment">// 下面根据规范逐步推演</span></div><div class="line">O = FooR.prototype = Foo.prototype </div><div class="line">L = FooL.__proto__ = <span class="built_in">Function</span>.prototype </div><div class="line"><span class="comment">// 第一次判断</span></div><div class="line">O != L </div><div class="line"><span class="comment">// 循环再次查找 L 是否还有 __proto__ </span></div><div class="line">L = <span class="built_in">Function</span>.prototype.__proto__ = <span class="built_in">Object</span>.prototype </div><div class="line"><span class="comment">// 第二次判断</span></div><div class="line">O != L </div><div class="line"><span class="comment">// 再次循环查找 L 是否还有 __proto__ </span></div><div class="line">L = <span class="built_in">Object</span>.prototype.__proto__ = <span class="literal">null</span> </div><div class="line"><span class="comment">// 第三次判断</span></div><div class="line">L == <span class="literal">null</span> </div><div class="line"><span class="comment">// 返回 false</span></div></pre></td></tr></table></figure></p>
+<p><strong>其实，instanceof 的重点也就是左边对象的隐式原型等于右边构造函数的显示原型，是不是听着很熟悉呢，这就是在 new 操作中的关键一步（new 操作是赋值），这样就可以判断指定的对象是否是某个构造函数的实例，使 L = L.<strong>proto</strong>（继续沿原型链向上寻找），一直循环判断左边对象的隐式原型等于右边构造函数的显示原型，直到<code>L.__proto__</code> 为 null（L 已经循环到 object.prototype） 或者 true</strong></p>
+<h2 id="instanceof-局限性"><a href="#instanceof-局限性" class="headerlink" title="instanceof 局限性"></a><code>instanceof</code> 局限性</h2><p><code>instanceof</code> 的局限性应该也就是不能检测基本数据类型了吧，其他的貌似没什么。通过对 <code>instanceof</code> 的原理进行分析，我们可以得知，只要左边的对象的对象能够通过原型链 <code>__proto__</code> 是指向右边的构造函数就可以~</p>
+<p><code>instanceof</code> 右边必须是对象或构造函数，否则会抛出 TypeError 的错误。</p>
+<h1 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a><code>Object.prototype.toString</code></h1><p>所有的数据类型都可以用 <code>Object.prototype.toString</code> 来检测,而且非常的精准。</p>
+<p>以下内容参考 <a href="https://segmentfault.com/a/1190000009407558" target="_blank" rel="external">谈谈Object.prototype.toString</a></p>
+<p>我们先来看一下 <code>Object.prototype.toString</code> 是怎么进行类型检测的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(a));    <span class="comment">// [object Number]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> b = <span class="string">"string"</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(b));    <span class="comment">// [object String]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> c = [];</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(c));    <span class="comment">// [object Array]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> d = &#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(d));    <span class="comment">// [object Object]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> e = <span class="literal">true</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(e));    <span class="comment">// [object Boolean]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> f =  <span class="literal">null</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(f));    <span class="comment">// [object Null]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> g;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(g));    <span class="comment">// [object Undefined]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> h = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(h));    <span class="comment">// [object Function]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> A = <span class="keyword">new</span> <span class="built_in">Number</span>();</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(A));    <span class="comment">// [object Number]</span></div></pre></td></tr></table></figure></p>
+<p>所以说，<code>Object.prototype.toString</code> 还是能够比较准确的检测出对应的类型的。</p>
+<h2 id="Object-prototype-toString-的实现过程"><a href="#Object-prototype-toString-的实现过程" class="headerlink" title="Object.prototype.toString 的实现过程"></a><code>Object.prototype.toString</code> 的实现过程</h2><p>在 ECMAScript 5中，<code>Object.prototype.toString()</code> 被调用时，会进行如下步骤：</p>
+<ol>
+<li>如果 <code>this</code> 是 <code>undefined</code> ，返回 <code>[object Undefined]</code> ；</li>
+<li>如果 <code>this</code> 是 <code>null</code>， 返回 <code>[object Null]</code>；</li>
+<li>令 <code>Object</code> 为以 <code>this</code> 作为参数调用 <code>ToObject</code> 的结果；</li>
+<li>令 <code>class</code> 为 <code>Object</code> 的内部属性 <code>[[Class]]</code> 的值；</li>
+<li>返回三个字符串 <code>[object&quot;, class, 以及&quot;]</code> 拼接而成的字符串。</li>
+</ol>
+<h2 id="Class"><a href="#Class" class="headerlink" title="[[Class]]"></a><code>[[Class]]</code></h2><blockquote>
+<p>本规范的每种内置对象都定义了 [[Class]] 内部属性的值。宿主对象的 [[Class]] 内部属性的值可以是除了 “Arguments”, “Array”, “Boolean”, “Date”, “Error”, “Function”, “JSON”, “Math”, “Number”, “Object”, “RegExp”, “String” 的任何字符串。[[Class]] 内部属性的值用于内部区分对象的种类。注，本规范中除了通过 Object.prototype.toString ( 见 15.2.4.2) 没有提供任何手段使程序访问此值。</p>
+</blockquote>
+<p>在 JavaScript 代码里，唯一可以访问该属性的方法就是通过 <code>Object.prototype.toString</code>，通常方法如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.toString.call/apply(value)</div></pre></td></tr></table></figure></p>
+<p>在 ES6 请参见 <a href="https://segmentfault.com/a/1190000009407558" target="_blank" rel="external">谈谈 Object.prototype.toString</a></p>
+<h1 id="construtor"><a href="#construtor" class="headerlink" title="construtor"></a><code>construtor</code></h1><p><code>construtor</code> 其实也是用了原型链的知识。</p>
+<blockquote>
+<p>constructor 属性返回对创建此对象的数组函数的引用。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</div><div class="line"><span class="built_in">console</span>.log( a.constructor == <span class="built_in">Number</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> b = <span class="string">"string"</span>;</div><div class="line"><span class="built_in">console</span>.log( b.constructor == <span class="built_in">String</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> c = [];</div><div class="line"><span class="built_in">console</span>.log( c.constructor == <span class="built_in">Array</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> d = &#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log( d.constructor == <span class="built_in">Object</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> e = <span class="literal">true</span>;</div><div class="line"><span class="built_in">console</span>.log( e.constructor == <span class="built_in">Boolean</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> f =  <span class="literal">null</span>;</div><div class="line"><span class="built_in">console</span>.log( f.constructor == Null);    <span class="comment">//  TypeError: Cannot read property 'constructor' of null</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> g;</div><div class="line"><span class="built_in">console</span>.log( g.constructor == Undefined);    <span class="comment">// Uncaught TypeError: Cannot read property 'constructor' of</span></div><div class="line"><span class="literal">undefined</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> h = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log( h.constructor == <span class="built_in">Function</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> A = <span class="keyword">new</span> <span class="built_in">Number</span>();</div><div class="line"><span class="built_in">console</span>.log( A.constructor == <span class="built_in">Number</span>);    <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> A = <span class="keyword">new</span> <span class="built_in">Number</span>();</div><div class="line"><span class="built_in">console</span>.log( A.constructor == <span class="built_in">Object</span>);    <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<p>通过上述的实例，我们可以看到，无论是通过字面量或者构造函数创建的基本类型，都可以检测出。并且也可以检测出 <code>Array</code>、<code>Object</code>、<code>Function</code>引用类型，但是不能检测出 <code>Null</code> 和 <code>Undefined</code></p>
+<h1 id="Zepto-中检测数据类型"><a href="#Zepto-中检测数据类型" class="headerlink" title="Zepto 中检测数据类型"></a>Zepto 中检测数据类型</h1><p>在 Zepto 中主要是用 <code>Object.prototype.toString</code> 来做数据类型的判断的<br>现在让我们来看一下 Zepto 中是怎么检测这些数据类型的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> class2type = &#123;&#125;,</div><div class="line">    toString = class2type.toString</div><div class="line"></div><div class="line"><span class="comment">// 在代码中部，执行了</span></div><div class="line"><span class="comment">// $.each("Boolean Number String Function Array Date RegExp Object Error".split(" "), function(i, name) &#123;</span></div><div class="line"><span class="comment">//   class2type[ "[object " + name + "]" ] = name.toLowerCase()</span></div><div class="line"><span class="comment">// &#125;)</span></div><div class="line"><span class="comment">// 用来给 class2type 对象赋值</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">// a ? b : c || d</span></div><div class="line"><span class="comment">//type 用来判断类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> obj == <span class="literal">null</span> ? <span class="built_in">String</span>(obj) :</div><div class="line">    class2type[toString.call(obj)] || <span class="string">"object"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里你可能会有疑问，为什么使用 <code>toString</code> 而不是 <code>Object.prototype.toString</code><br>那是因为如果将基本数据类型，比如 string、number、boolean等类型的值使用 toString 的方法时，是直接将基本数据类型转换为 string 类型，但是如果对 object 类型使用 toString 方法，则是会调用其原型上的 toString 方法，也就是 <code>Object.prototype.toString</code>。所以 Zepto 在开头的地方就定义了 class2type 为一个 object 类型。</p>
+<p>如果 obj 的类型为 null 或者 undefined 直接返回，如果该对象的 <code>Object.prototype.toString</code> 将返回的结果作为 class2type 的 key 取值。Object.prototype.toString 对不同的数据类型会返回形如 [object Boolean] 的结果。</p>
+<p>如果都不是以上情况，默认返回 object 类型。</p>
+<h1 id="Zepto-中的其他检测方法"><a href="#Zepto-中的其他检测方法" class="headerlink" title="Zepto 中的其他检测方法"></a>Zepto 中的其他检测方法</h1><h2 id="isFunction"><a href="#isFunction" class="headerlink" title="isFunction"></a>isFunction</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFunction</span>(<span class="params">value</span>) </span>&#123; <span class="keyword">return</span> type(value) == <span class="string">"function"</span> &#125;</div></pre></td></tr></table></figure>
+<h2 id="isWindow"><a href="#isWindow" class="headerlink" title="isWindow"></a>isWindow</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是 window对象（注意，w为小写）指当前的浏览器窗口，window对象的window属性指向自身。</span></div><div class="line">    <span class="comment">// 即 window.window === window</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isWindow</span>(<span class="params">obj</span>)     </span>&#123; <span class="keyword">return</span> obj != <span class="literal">null</span> &amp;&amp; obj == obj.window &#125;</div></pre></td></tr></table></figure>
+<h2 id="isDocument"><a href="#isDocument" class="headerlink" title="isDocument"></a>isDocument</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是 document 对象</span></div><div class="line">    <span class="comment">// window.document.nodeType == 9 数字表示为9，常量表示为 DOCUMENT_NODE</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isDocument</span>(<span class="params">obj</span>)   </span>&#123; <span class="keyword">return</span> obj != <span class="literal">null</span> &amp;&amp; obj.nodeType == obj.DOCUMENT_NODE &#125;</div></pre></td></tr></table></figure>
+<h2 id="isObject"><a href="#isObject" class="headerlink" title="isObject"></a>isObject</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是 object</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isObject</span>(<span class="params">obj</span>)     </span>&#123; <span class="keyword">return</span> type(obj) == <span class="string">"object"</span> &#125;</div></pre></td></tr></table></figure>
+<h2 id="isPlainObject"><a href="#isPlainObject" class="headerlink" title="isPlainObject"></a>isPlainObject</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPlainObject</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> isObject(obj) &amp;&amp; !isWindow(obj) &amp;&amp; <span class="built_in">Object</span>.getPrototypeOf(obj) == <span class="built_in">Object</span>.prototype</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="isArray"><a href="#isArray" class="headerlink" title="isArray"></a>isArray</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是arr</span></div><div class="line">isArray = <span class="built_in">Array</span>.isArray || <span class="function"><span class="keyword">function</span>(<span class="params">object</span>)</span>&#123; <span class="keyword">return</span> object <span class="keyword">instanceof</span> <span class="built_in">Array</span> &#125;;</div></pre></td></tr></table></figure>
+<h2 id="likeArray"><a href="#likeArray" class="headerlink" title="likeArray"></a>likeArray</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否是数组或者对象数组</span></div><div class="line"><span class="comment">// !!的作用是把一个其他类型的变量转成的bool类型。</span></div><div class="line"><span class="comment">// !!obj 直接过滤掉了false，null，undefined，''等值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">likeArray</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> length = !!obj &amp;&amp; <span class="string">'length'</span> <span class="keyword">in</span> obj &amp;&amp; obj.length,</div><div class="line"></div><div class="line">        <span class="comment">// 获取obj的数据类型</span></div><div class="line">        type = $.type(obj);</div><div class="line"></div><div class="line">    <span class="comment">// 不能是function类型，不能是window</span></div><div class="line">    <span class="comment">// 如果是array则直接返回true</span></div><div class="line">    <span class="comment">// 或者当length的数据类型是number，并且其取值范围是0到(length - 1)这里是通过判断length - 1 是否为obj的属性</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="string">'function'</span> != type &amp;&amp; !isWindow(obj) &amp;&amp; (</div><div class="line">            <span class="string">'array'</span> == type || length === <span class="number">0</span> ||</div><div class="line">            (<span class="keyword">typeof</span> length == <span class="string">'number'</span> &amp;&amp; length &gt; <span class="number">0</span> &amp;&amp; (length - <span class="number">1</span>) <span class="keyword">in</span> obj)</div><div class="line">        )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="isEmptyObject"><a href="#isEmptyObject" class="headerlink" title="isEmptyObject"></a>isEmptyObject</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 空对象</span></div><div class="line">$.isEmptyObject = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> name</div><div class="line">    <span class="keyword">for</span> (name <span class="keyword">in</span> obj) <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="isNumeric"><a href="#isNumeric" class="headerlink" title="isNumeric"></a>isNumeric</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数字</span></div><div class="line">$.isNumeric = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> num = <span class="built_in">Number</span>(val), type = <span class="keyword">typeof</span> val;</div><div class="line">    <span class="keyword">return</span> val != <span class="literal">null</span> &amp;&amp; type != <span class="string">'boolean'</span> &amp;&amp;</div><div class="line">        (type != <span class="string">'string'</span> || val.length) &amp;&amp;</div><div class="line">        !<span class="built_in">isNaN</span>(num) &amp;&amp; <span class="built_in">isFinite</span>(num) || <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      <div>
+          
+              
+
+          
+      </div>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>客官，赏一个嘛~</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://oova2i5xh.bkt.clouddn.com/wechat.jpg" alt="Cherry WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://oova2i5xh.bkt.clouddn.com/alipay.jpg" alt="Cherry Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Cherry
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://cherryblog.site/type-checking.html" title="【JS】类型检测">http://cherryblog.site/type-checking.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/deepcopy.html" rel="next" title="【JS】ECAMScript 中的浅拷贝和深拷贝">
+                <i class="fa fa-chevron-left"></i> 【JS】ECAMScript 中的浅拷贝和深拷贝
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/call-apply-bind-this.html" rel="prev" title="this、call、apply、bind">
+                this、call、apply、bind <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Cherry" />
+          <p class="site-author-name" itemprop="name">Cherry</p>
+           
+              <p class="site-description motion-element" itemprop="description">做更好的自己</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/sunshine940326" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5094854684/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/584d7a3e2f301e00572fb7fc" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-group"></i>
+                  
+                  掘金
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/04d2a375a281" target="_blank" title="JianShu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  JianShu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前置基础"><span class="nav-number">2.</span> <span class="nav-text">前置基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型与原型链"><span class="nav-number">2.1.</span> <span class="nav-text">原型与原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-prototype（显示原型）"><span class="nav-number">2.2.</span> <span class="nav-text">什么是 prototype（显示原型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-proto-（隐式原型）"><span class="nav-number">2.3.</span> <span class="nav-text">什么是 __proto__（隐式原型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#proto-的指向"><span class="nav-number">2.4.</span> <span class="nav-text">__proto__ 的指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prototype-和-proto-的作用"><span class="nav-number">2.5.</span> <span class="nav-text">prototype 和 __proto__ 的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写-proto"><span class="nav-number">2.6.</span> <span class="nav-text">重写 __proto__</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#typeof"><span class="nav-number">3.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#instanceof"><span class="nav-number">4.</span> <span class="nav-text">instanceof</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof-原理"><span class="nav-number">4.1.</span> <span class="nav-text">instanceof 原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof-局限性"><span class="nav-number">4.2.</span> <span class="nav-text">instanceof 局限性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-prototype-toString"><span class="nav-number">5.</span> <span class="nav-text">Object.prototype.toString</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-prototype-toString-的实现过程"><span class="nav-number">5.1.</span> <span class="nav-text">Object.prototype.toString 的实现过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class"><span class="nav-number">5.2.</span> <span class="nav-text">[[Class]]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#construtor"><span class="nav-number">6.</span> <span class="nav-text">construtor</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zepto-中检测数据类型"><span class="nav-number">7.</span> <span class="nav-text">Zepto 中检测数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zepto-中的其他检测方法"><span class="nav-number">8.</span> <span class="nav-text">Zepto 中的其他检测方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#isFunction"><span class="nav-number">8.1.</span> <span class="nav-text">isFunction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isWindow"><span class="nav-number">8.2.</span> <span class="nav-text">isWindow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isDocument"><span class="nav-number">8.3.</span> <span class="nav-text">isDocument</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isObject"><span class="nav-number">8.4.</span> <span class="nav-text">isObject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isPlainObject"><span class="nav-number">8.5.</span> <span class="nav-text">isPlainObject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isArray"><span class="nav-number">8.6.</span> <span class="nav-text">isArray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#likeArray"><span class="nav-number">8.7.</span> <span class="nav-text">likeArray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isEmptyObject"><span class="nav-number">8.8.</span> <span class="nav-text">isEmptyObject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isNumeric"><span class="nav-number">8.9.</span> <span class="nav-text">isNumeric</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cherry</span>
+</div>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问用户：
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问次数：
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/canvasline.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/baidu_tools.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt8lab7G';
+      var conf = 'ca667050ec57c6762a854ee31516238f';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("SXu3fAQtWilv2Jtsr5eHvgCH-gzGzoHsz", "R79G2KT1xhiu9Ngp3Dnjsn7k");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+
+</body>
+</html>

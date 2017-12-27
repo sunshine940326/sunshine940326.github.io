@@ -4,7 +4,7 @@
   <url>
     <loc>http://cherryblog.site/HTTPS.html</loc>
     
-    <lastmod>2017-10-16T14:43:03.000Z</lastmod>
+    <lastmod>2017-10-16T14:58:50.000Z</lastmod>
     
   </url>
   
@@ -51,6 +51,13 @@
   </url>
   
   <url>
+    <loc>http://cherryblog.site/Use-webstorm-to-connect-GitHub.html</loc>
+    
+    <lastmod>2017-09-05T04:54:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://cherryblog.site/sharp-jquery.html</loc>
     
     <lastmod>2017-09-05T04:54:37.000Z</lastmod>
@@ -58,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Use-webstorm-to-connect-GitHub.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern4factory-mode.html</loc>
     
     <lastmod>2017-09-05T04:54:37.000Z</lastmod>
     
@@ -73,13 +80,6 @@
   
   <url>
     <loc>http://cherryblog.site/something1.html</loc>
-    
-    <lastmod>2017-09-05T04:54:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern4factory-mode.html</loc>
     
     <lastmod>2017-09-05T04:54:37.000Z</lastmod>
     
@@ -184,14 +184,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/music-categories.html</loc>
+    <loc>http://cherryblog.site/movie-categories.html</loc>
     
     <lastmod>2017-08-22T02:01:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/movie-categories.html</loc>
+    <loc>http://cherryblog.site/music-categories.html</loc>
     
     <lastmod>2017-08-22T02:01:35.000Z</lastmod>
     
@@ -317,13 +317,6 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/tags/index.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/life/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
@@ -332,6 +325,13 @@
   
   <url>
     <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/tags/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
