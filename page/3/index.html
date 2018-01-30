@@ -300,6 +300,831 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/hexo-3.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/hexo-3.html" itemprop="url">
+                  Hexo 6：【高阶】想让你的博客被更多的人在搜索引擎中搜到吗？
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-16T13:24:51+08:00">
+                2017-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo建站/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo建站</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/hexo-3.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cherryblog.site/hexo-3.html" class="cy_cmt_count" data-xid="hexo-3.html" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/hexo-3.html" class="leancloud_visitors" data-flag-title="Hexo 6：【高阶】想让你的博客被更多的人在搜索引擎中搜到吗？">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+               
+                     <span class="post-meta-item-icon">
+                       <i class="fa fa-edit"></i>
+                     </span>
+                 
+                     <span class="post-meta-item-text">字数统计</span>
+                       
+                     <span title="字数统计">
+                       7,141 字
+                     </span>
+                  
+                 
+                  <span class="post-meta-divider">|</span>
+                 
+                 
+                 <span class="post-meta-item-icon">
+                     <i class="fa fa-clock-o"></i>
+                     </span>
+                 
+                      <span class="post-meta-item-text">阅读时长</span>
+                 
+                   <span title="阅读时长">
+                 27 分钟
+                 </span>
+               
+            </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="http://img.blog.csdn.net/20170810182823396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="title"><br>上一次在掘金上发表的<code>hexo</code>高阶教程：<a href="http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html" target="_blank" rel="external">hexo高阶教程next主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能</a>，收到了不少朋友的喜欢，手动比心♪(＾∀＾●)ﾉ，也有不少朋友私信我给我提改进的意见，本着生命就是要折腾的原则，我又做了如下的优化：  </p>
+<ul>
+<li>seo优化</li>
+<li>多终端修改项目</li>
+<li>同时托管到github和coding上</li>
+<li>设置google和百度sitemap，让搜索引擎更好的抓取你的网站</li>
+<li>使用gulp对css、js进行优化</li>
+<li>接入七牛图床</li>
+<li>加入打赏功能</li>
+<li>加入照片模块</li>
+</ul>
+<p>开始做这个博客的时候是想着记录自己学习的过程，并没有指望别人发现（自己比较菜，写的都是一些基础的东西，也没有什么特别nb的技巧值得炫耀〒▽〒），但是自从给博客增加了统计的功能之后，并且在掘金社区发布之后，看着每天还有那么百十号人来看看，内心还有点小激动呢~[]~(￣▽￣)~*  </p>
+<blockquote>
+<p>酒香不敌巷子深<br>我们要做对搜索引擎友好的站点<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hexo-3.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+
+      <div>
+          
+      </div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html" itemprop="url">
+                  Hexo 4：【高阶】NexT 主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-09T22:32:30+08:00">
+                2017-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo建站/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo建站</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html" class="cy_cmt_count" data-xid="Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html" class="leancloud_visitors" data-flag-title="Hexo 4：【高阶】NexT 主题优化之加入网易云音乐、网易云跟帖、动态背景、自定义主题、统计功能">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+               
+                     <span class="post-meta-item-icon">
+                       <i class="fa fa-edit"></i>
+                     </span>
+                 
+                     <span class="post-meta-item-text">字数统计</span>
+                       
+                     <span title="字数统计">
+                       5,866 字
+                     </span>
+                  
+                 
+                  <span class="post-meta-divider">|</span>
+                 
+                 
+                 <span class="post-meta-item-icon">
+                     <i class="fa fa-clock-o"></i>
+                     </span>
+                 
+                      <span class="post-meta-item-text">阅读时长</span>
+                 
+                   <span title="阅读时长">
+                 25 分钟
+                 </span>
+               
+            </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="http://img.blog.csdn.net/20170810182823396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="title"></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本篇文章是在已经搭建好gitpage+hexo的博客的前提下（不懂怎么搭建的可以参考我的另一篇博文：<a href="http://cherryblog.site/2017/02/26/%E4%BA%86%E8%A7%A3githubPages-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%8E%9F%E7%90%86/" target="_blank" rel="external">了解githubPages+hexo搭建博客的原理</a> 或者<a href="http://cherryblog.site/2016/09/16/%E5%88%A9%E7%94%A8Gitpage-hexo%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">利用Gitpage+hexo开发自己的博客</a>，这两篇博文都比较详细的教大家最基础的怎么将博客搭建起来。本篇博文是使用next主题的进击版本，主要是有以下内容</p>
+<ul>
+<li>域名绑定，将github博客和你的独有域名绑定</li>
+<li>添加更多的menu内容</li>
+<li>添加头像</li>
+<li>定义网站个性logo</li>
+<li>自定义样式，重写默认样式，个性化定制你的博客</li>
+<li>炫酷动态背景制作</li>
+<li>添加网易云音乐</li>
+<li>添加网易云跟帖</li>
+<li>添加leancloud阅读次数统计功能</li>
+<li>添加wordcount页面字数统计</li>
+<li>添加fork me on github功能</li>
+</ul>
+<p>要想最快的知道这些功能的效果，请移步我的个人博客：<a href="http://cherryblog.site/" target="_blank" rel="external">http://cherryblog.site/</a> ，顺便求个fork，大爷们看过可以评论一下，试一下新加上的网易云跟帖效果怎么样ヽ(●´ε｀●)ノ<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+
+      <div>
+          
+      </div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/Mobile-terminal-debugging-method.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/Mobile-terminal-debugging-method.html" itemprop="url">
+                  移动端调试方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-28T23:21:55+08:00">
+                2017-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/日积月累/" itemprop="url" rel="index">
+                    <span itemprop="name">日积月累</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/Mobile-terminal-debugging-method.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cherryblog.site/Mobile-terminal-debugging-method.html" class="cy_cmt_count" data-xid="Mobile-terminal-debugging-method.html" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/Mobile-terminal-debugging-method.html" class="leancloud_visitors" data-flag-title="移动端调试方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+               
+                     <span class="post-meta-item-icon">
+                       <i class="fa fa-edit"></i>
+                     </span>
+                 
+                     <span class="post-meta-item-text">字数统计</span>
+                       
+                     <span title="字数统计">
+                       2,507 字
+                     </span>
+                  
+                 
+                  <span class="post-meta-divider">|</span>
+                 
+                 
+                 <span class="post-meta-item-icon">
+                     <i class="fa fa-clock-o"></i>
+                     </span>
+                 
+                      <span class="post-meta-item-text">阅读时长</span>
+                 
+                   <span title="阅读时长">
+                 9 分钟
+                 </span>
+               
+            </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="http://img.blog.csdn.net/20170810182835737?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="title"></p>
+<p>在开发中前端免不了要进行移动端的开发，然而在电脑上看的样式和手机上还是有一定的差距的，因为手机上有顶部的状态栏和底部的菜单栏，特别是在qq中打开，差距还是蛮大的，所以在chrom中模拟手机显示的情况虽然有一定的效果，但是还是不能完全模拟，我们还需要在真机环境下测试。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Mobile-terminal-debugging-method.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+
+      <div>
+          
+      </div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/JavaScript-Design-Pattern4factory-mode.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cherry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/JavaScript-Design-Pattern4factory-mode.html" itemprop="url">
+                  javascript设计模式（四）：工厂模式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T22:01:41+08:00">
+                2017-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/JavaScript-Design-Pattern4factory-mode.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cherryblog.site/JavaScript-Design-Pattern4factory-mode.html" class="cy_cmt_count" data-xid="JavaScript-Design-Pattern4factory-mode.html" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/JavaScript-Design-Pattern4factory-mode.html" class="leancloud_visitors" data-flag-title="javascript设计模式（四）：工厂模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+               
+                     <span class="post-meta-item-icon">
+                       <i class="fa fa-edit"></i>
+                     </span>
+                 
+                     <span class="post-meta-item-text">字数统计</span>
+                       
+                     <span title="字数统计">
+                       385 字
+                     </span>
+                  
+                 
+                  <span class="post-meta-divider">|</span>
+                 
+                 
+                 <span class="post-meta-item-icon">
+                     <i class="fa fa-clock-o"></i>
+                     </span>
+                 
+                      <span class="post-meta-item-text">阅读时长</span>
+                 
+                   <span title="阅读时长">
+                 2 分钟
+                 </span>
+               
+            </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>我理解的工厂模式就是我们自己先创造一个工厂，里面可以生成好多组件，比如说我的工厂可以生产小轿车也可以生成大卡车，那么当我需要用小轿车的时候就给我的工厂说我需要小轿车，然后它就可以给你生成一个小轿车。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/JavaScript-Design-Pattern4factory-mode.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+
+      <div>
+          
+      </div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://cherryblog.site/JavaScript-Design-Pattern3prototype-model.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1096,205 +1921,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/ErrorReportingInGitUse.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cherry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cherry's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/ErrorReportingInGitUse.html" itemprop="url">
-                  Git使用中的报错情况
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T23:54:11+08:00">
-                2017-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/ErrorReportingInGitUse.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://cherryblog.site/ErrorReportingInGitUse.html" class="cy_cmt_count" data-xid="ErrorReportingInGitUse.html" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/ErrorReportingInGitUse.html" class="leancloud_visitors" data-flag-title="Git使用中的报错情况">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-               
-                     <span class="post-meta-item-icon">
-                       <i class="fa fa-edit"></i>
-                     </span>
-                 
-                     <span class="post-meta-item-text">字数统计</span>
-                       
-                     <span title="字数统计">
-                       698 字
-                     </span>
-                  
-                 
-                  <span class="post-meta-divider">|</span>
-                 
-                 
-                 <span class="post-meta-item-icon">
-                     <i class="fa fa-clock-o"></i>
-                     </span>
-                 
-                      <span class="post-meta-item-text">阅读时长</span>
-                 
-                   <span title="阅读时长">
-                 3 分钟
-                 </span>
-               
-            </div>
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          git,git实战,git报错
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/ErrorReportingInGitUse.html">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-
-      <div>
-          
-      </div>
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://cherryblog.site/JavaScript-Design-Pattern.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1494,7 +2120,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/Javascript-modular-programming3requirejs-use.html">
+    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/ErrorReportingInGitUse.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cherry">
@@ -1516,8 +2142,8 @@
             
               
                 
-                <a class="post-title-link" href="/Javascript-modular-programming3requirejs-use.html" itemprop="url">
-                  Javascript模块化编程（三）：require.js的用法
+                <a class="post-title-link" href="/ErrorReportingInGitUse.html" itemprop="url">
+                  Git使用中的报错情况
                 </a>
               
             
@@ -1533,8 +2159,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-08T23:11:42+08:00">
-                2017-03-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T23:54:11+08:00">
+                2017-03-11
               </time>
             
 
@@ -1556,8 +2182,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -1575,8 +2201,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/Javascript-modular-programming3requirejs-use.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://cherryblog.site/Javascript-modular-programming3requirejs-use.html" class="cy_cmt_count" data-xid="Javascript-modular-programming3requirejs-use.html" itemprop="commentsCount" ></span>
+                <a href="/ErrorReportingInGitUse.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cherryblog.site/ErrorReportingInGitUse.html" class="cy_cmt_count" data-xid="ErrorReportingInGitUse.html" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1584,7 +2210,7 @@
 
           
           
-             <span id="/Javascript-modular-programming3requirejs-use.html" class="leancloud_visitors" data-flag-title="Javascript模块化编程（三）：require.js的用法">
+             <span id="/ErrorReportingInGitUse.html" class="leancloud_visitors" data-flag-title="Git使用中的报错情况">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1608,405 +2234,7 @@
                      <span class="post-meta-item-text">字数统计</span>
                        
                      <span title="字数统计">
-                       1,136 字
-                     </span>
-                  
-                 
-                  <span class="post-meta-divider">|</span>
-                 
-                 
-                 <span class="post-meta-item-icon">
-                     <i class="fa fa-clock-o"></i>
-                     </span>
-                 
-                      <span class="post-meta-item-text">阅读时长</span>
-                 
-                   <span title="阅读时长">
-                 5 分钟
-                 </span>
-               
-            </div>
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在简单了介绍了javascript的模块化编程思想之后，我们来写一个简单的requireJS的案例，来了解一下具体是怎么在你的项目中使用requireJS的<br>本文的源码在个人的github上：<a href="https://github.com/sunshine940326/js-module-demo" target="_blank" rel="external">https://github.com/sunshine940326/js-module-demo</a><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Javascript-modular-programming3requirejs-use.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-
-      <div>
-          
-      </div>
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/JavaScript-modular-programming2JSmodulardevelopmenthistory.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cherry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cherry's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/JavaScript-modular-programming2JSmodulardevelopmenthistory.html" itemprop="url">
-                  javascript模块化编程（二）：js模块化发展史
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T23:04:40+08:00">
-                2017-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/JavaScript-modular-programming2JSmodulardevelopmenthistory.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://cherryblog.site/JavaScript-modular-programming2JSmodulardevelopmenthistory.html" class="cy_cmt_count" data-xid="JavaScript-modular-programming2JSmodulardevelopmenthistory.html" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/JavaScript-modular-programming2JSmodulardevelopmenthistory.html" class="leancloud_visitors" data-flag-title="javascript模块化编程（二）：js模块化发展史">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-               
-                     <span class="post-meta-item-icon">
-                       <i class="fa fa-edit"></i>
-                     </span>
-                 
-                     <span class="post-meta-item-text">字数统计</span>
-                       
-                     <span title="字数统计">
-                       2,284 字
-                     </span>
-                  
-                 
-                  <span class="post-meta-divider">|</span>
-                 
-                 
-                 <span class="post-meta-item-icon">
-                     <i class="fa fa-clock-o"></i>
-                     </span>
-                 
-                      <span class="post-meta-item-text">阅读时长</span>
-                 
-                   <span title="阅读时长">
-                 9 分钟
-                 </span>
-               
-            </div>
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下javascrip的模块化发展史，主要是commonJS、AMD和应用AMD的requireJS、CMD和应用CMD的seaJS（不过现在seaJS貌似用的人挺少的，就不详细说明了）<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/JavaScript-modular-programming2JSmodulardevelopmenthistory.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-
-      <div>
-          
-      </div>
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/Javascript-modular-programming1module-writing.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cherry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cherry's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Javascript-modular-programming1module-writing.html" itemprop="url">
-                  Javascript模块化编程（一）：模块的写法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T22:40:16+08:00">
-                2017-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/Javascript-modular-programming1module-writing.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://cherryblog.site/Javascript-modular-programming1module-writing.html" class="cy_cmt_count" data-xid="Javascript-modular-programming1module-writing.html" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/Javascript-modular-programming1module-writing.html" class="leancloud_visitors" data-flag-title="Javascript模块化编程（一）：模块的写法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-               
-                     <span class="post-meta-item-icon">
-                       <i class="fa fa-edit"></i>
-                     </span>
-                 
-                     <span class="post-meta-item-text">字数统计</span>
-                       
-                     <span title="字数统计">
-                       921 字
+                       698 字
                      </span>
                   
                  
@@ -2039,209 +2267,10 @@
 
       
         
-          <p>不得不说现在“前端”的知识点实在是太多了，(ಥ<em>ಥ)<br>就在昨天，我就是想看一下webpack怎么使用，然后在慕课网的视频中用到了commonJS的知识，今天我就想查一下什么是有关commonJS的知识，然后发现查到了是和node和AMD/CMD相关，望天(ಥ</em>ಥ)，最后发现这些都是js模块化编程的内容，于是决定跟着阮一峰老师学习js模块化变成</p>
+          git,git实战,git报错
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/Javascript-modular-programming1module-writing.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-
-      <div>
-          
-      </div>
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherryblog.site/Front-interview.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cherry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cherry's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Front-interview.html" itemprop="url">
-                  前端面试
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-06T23:15:56+08:00">
-                2017-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试题库/" itemprop="url" rel="index">
-                    <span itemprop="name">面试题库</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/Front-interview.html#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://cherryblog.site/Front-interview.html" class="cy_cmt_count" data-xid="Front-interview.html" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/Front-interview.html" class="leancloud_visitors" data-flag-title="前端面试">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-               
-                     <span class="post-meta-item-icon">
-                       <i class="fa fa-edit"></i>
-                     </span>
-                 
-                     <span class="post-meta-item-text">字数统计</span>
-                       
-                     <span title="字数统计">
-                       1,809 字
-                     </span>
-                  
-                 
-                  <span class="post-meta-divider">|</span>
-                 
-                 
-                 <span class="post-meta-item-icon">
-                     <i class="fa fa-clock-o"></i>
-                     </span>
-                 
-                      <span class="post-meta-item-text">阅读时长</span>
-                 
-                   <span title="阅读时长">
-                 7 分钟
-                 </span>
-               
-            </div>
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          前端面试,面试题库
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Front-interview.html">
+            <a class="btn" href="/ErrorReportingInGitUse.html">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2330,7 +2359,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2438,7 +2467,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

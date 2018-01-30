@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://cherryblog.site/front-end-performance-checklist-2018-3.html</loc>
+    
+    <lastmod>2018-01-30T15:29:47.942Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/growing-popularity-atomic-css.html</loc>
+    
+    <lastmod>2018-01-30T15:28:24.122Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/chrome-devtools-performance-monitor.html</loc>
+    
+    <lastmod>2018-01-30T15:25:25.348Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/introducing-turbo-5x-faster-than-yarn.html</loc>
+    
+    <lastmod>2018-01-30T15:22:43.143Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://cherryblog.site/HTTPS.html</loc>
     
     <lastmod>2017-10-16T14:58:50.000Z</lastmod>
@@ -37,7 +65,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Javascript-modular-programming1module-writing.html</loc>
+    <loc>http://cherryblog.site/using-feature-queries-in-css.html</loc>
+    
+    <lastmod>2017-09-05T04:54:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/sharp-jquery.html</loc>
     
     <lastmod>2017-09-05T04:54:37.000Z</lastmod>
     
@@ -58,7 +93,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/sharp-jquery.html</loc>
+    <loc>http://cherryblog.site/something1.html</loc>
     
     <lastmod>2017-09-05T04:54:37.000Z</lastmod>
     
@@ -72,14 +107,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/using-feature-queries-in-css.html</loc>
-    
-    <lastmod>2017-09-05T04:54:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/something1.html</loc>
+    <loc>http://cherryblog.site/Javascript-modular-programming1module-writing.html</loc>
     
     <lastmod>2017-09-05T04:54:37.000Z</lastmod>
     
@@ -149,14 +177,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/css-checkbox-input-radio.html</loc>
+    <loc>http://cherryblog.site/common-CSS-layout.html</loc>
     
     <lastmod>2017-09-05T03:48:49.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/common-CSS-layout.html</loc>
+    <loc>http://cherryblog.site/css-checkbox-input-radio.html</loc>
     
     <lastmod>2017-09-05T03:48:49.000Z</lastmod>
     
@@ -198,14 +226,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
-    
-    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
+    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
     
     <lastmod>2017-08-12T12:00:54.000Z</lastmod>
     
@@ -219,7 +240,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
+    <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
+    
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
     
     <lastmod>2017-08-12T12:00:54.000Z</lastmod>
     
@@ -240,21 +268,21 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html</loc>
+    <loc>http://cherryblog.site/GitCommands.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern3prototype-model.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://cherryblog.site/JavaScript-modular-programming2JSmodulardevelopmenthistory.html</loc>
+    <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -268,7 +296,14 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/GitCommands.html</loc>
+    <loc>http://cherryblog.site/JavaScript-modular-programming2JSmodulardevelopmenthistory.html</loc>
+    
+    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern3prototype-model.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -282,14 +317,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
-    
-    <lastmod>2017-07-01T13:44:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
+    <loc>http://cherryblog.site/JavaScript-Design-Pattern2modular-mode.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -303,7 +331,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/React-first.html</loc>
+    <loc>http://cherryblog.site/React2understanding-react-with-examples.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -324,7 +352,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/JavaScript-Design-Pattern.html</loc>
+    <loc>http://cherryblog.site/React-first.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -338,7 +366,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/ErrorReportingInGitUse.html</loc>
+    <loc>http://cherryblog.site/gulp%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
