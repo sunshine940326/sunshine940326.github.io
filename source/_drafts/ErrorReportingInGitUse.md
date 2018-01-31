@@ -3,7 +3,7 @@ title: Git使用中的报错情况
 date: 2017-03-11 23:54:11
 tags: [git,实战经验] 
 categories: git
-description: [git,git实战,git报错]
+description: [JavaScript]
 ---
 ![git图片](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493224022490&di=4b9c36844b17e0c6116d1fd5aa883baf&imgtype=0&src=http%3A%2F%2Fimages.cnblogs.com%2Fcnblogs_com%2Fqyf404%2F612381%2Fo_git-logo.png)
 在Git的使用过程中，难免会有这样那样的错误，对于刚开始使用git的小白来说，来记录一下使用过程中报错情况以及怎么处理的

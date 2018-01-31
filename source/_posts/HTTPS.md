@@ -2,8 +2,8 @@
 title: 谈谈 HTTPS
 date: 2017-10-16 13:24:51
 tags: [HTTPS,HTTP] 
-categories: [HTTP]
-top: 1000
+categories: [JavaScript]
+top: 8
 ---
 ![](https://user-gold-cdn.xitu.io/2017/10/16/55e053829bc464e24e373a6efed6db90?imageView2/1/w/1304/h/734/q/85/interlace/1)
 前言：这是作为一个前端开发对 HTTPS 的浅显的理解，仅仅是可以让你在看完文章之后对 HTTPS 的原理了解，具体的实现方式并没有给出。有不对的地方欢迎指出。

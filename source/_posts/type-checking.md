@@ -1,9 +1,10 @@
+---
 title: 【JS】类型检测
 date: 2017-09-10 14:54:11
 tags: [JavaScript] 
 categories: [JavaScript]
-top: 1000
-------------------
+top: 8
+---
 ![](https://user-gold-cdn.xitu.io/2017/9/10/1873903988fcac89c3115a61c5c60f9b?imageView2/1/w/1200/h/700/q/85/interlace/1&quot)
 > 本文首发于我的个人博客 ： http://cherryblog.site/
 

@@ -1,8 +1,8 @@
 ---
 title: gulp（一）
 date: 2017-03-18 20:00:06
-tags: gulp
-categories: gulp
+tags: JavaScript
+categories: JavaScript
 ---
 因为新的工作使用的是gulp，所以学习一下gulp，本文主要参考的是：http://www.cnblogs.com/2050/p/4198792.html.   以及gulp的官网
 <!--more-->

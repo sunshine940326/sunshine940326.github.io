@@ -2,7 +2,7 @@
 title: 移动端调试方法
 date: 2017-03-28 23:21:55
 tags: [调试] 
-categories: 日积月累
+categories: Anytging
 ---
 ![title](http://img.blog.csdn.net/20170810182835737?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 

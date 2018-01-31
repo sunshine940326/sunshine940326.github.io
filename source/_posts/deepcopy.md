@@ -1,9 +1,9 @@
 ---
-title: 【JS】ECAMScript 中的浅拷贝和深拷贝
+title: 【JS】ECMAScript 中的浅拷贝和深拷贝
 date: 2017-09-3 22:54:11
 tags: [JavaScript] 
 categories: [JavaScript]
-top: 1000
+top: 8
 ---
 
 ![](https://user-gold-cdn.xitu.io/2017/9/3/c042568e973e72674c2e731b7df02d3b?imageView2/1/w/1200/h/700/q/85/interlace/1&quo)

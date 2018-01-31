@@ -3,7 +3,7 @@ title: this、call、apply、bind
 date: 2017-09-19 14:40:06
 tags: [JavaScript]
 categories: [JavaScript]
-top: 1000
+top: 8
 ---
 ![](https://user-gold-cdn.xitu.io/2017/9/19/54a85be5d884cf40ef12c15be4c3d885?imageView2/1/w/1200/h/700/q/85/interlace/1&quot)
 

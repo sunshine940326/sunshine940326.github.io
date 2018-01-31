@@ -2,7 +2,7 @@
 title: 【git】将项目上传至 github
 date: 2017-02-25 17:35:35
 tags: git 
-categories: git
+categories: JavaScript
 ---
 概括的说明什么是git和github，以及怎么上传你的项目到github。主要说明在使用github时遇到的问题
 <!--more-->

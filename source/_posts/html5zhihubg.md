@@ -2,7 +2,7 @@
 title: 【canvas】教你实现知乎登录动态粒子背景
 date: 2017-05-24 13:24:51
 tags: [html5,前端,canvas] 
-categories: [html5,canvas]
+categories: [HTML]
 ---
 ![最终效果图](http://img.blog.csdn.net/20170525212539678?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 <!--more-->

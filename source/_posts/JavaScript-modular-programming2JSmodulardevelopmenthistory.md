@@ -1,8 +1,8 @@
 ---
-title: javascript模块化编程（二）：js模块化发展史
+title: JS 模块化发展史
 date: 2017-03-07 23:04:40
 tags: [js模块化,js]
-categories: js
+categories: JavaScript
 ---
 在看了一下午的文章之后，我大概对js模块化有了一定的了解。现在来回顾和记录一下javascrip的模块化发展史，主要是commonJS、AMD和应用AMD的requireJS、CMD和应用CMD的seaJS（不过现在seaJS貌似用的人挺少的，就不详细说明了）
 <!--more-->

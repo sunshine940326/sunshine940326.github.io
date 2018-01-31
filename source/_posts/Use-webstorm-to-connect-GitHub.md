@@ -2,7 +2,7 @@
 title: 【git】使用 webstorm 连接 github
 date: 2017-02-24 10:40:20
 tags: git
-categories: git
+categories: JavaScript
 ---
 本文主要讲了怎么使用webstorm连接自己的github，从而做到版本控制自己的代码，用起来很方便，在coding完之后直接可以commit和push，但是时间长了发现还是有一定的不方便（应该是自己还不会用= =），本文持续更新，*★,°*:.☆\(￣▽￣)/$:*.°★*。撒花！~
 <!--more-->

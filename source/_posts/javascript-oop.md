@@ -2,7 +2,7 @@
 title: javascript面向对象编程，带你认识封装、继承和多态
 date: 2017-06-8 14:54:11
 tags: [js,面向对象编程,软件工程] 
-categories: [js,面向对象]
+categories: [JavaScript]
 ---
 
 

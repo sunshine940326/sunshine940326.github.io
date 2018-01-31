@@ -2,7 +2,7 @@
 title: react（二）：用实例认识react
 date: 2017-03-02 21:34:44
 tags: react
-categories: react
+categories: JavaScript
 ---
 昨天在认识了什么是react之后，今天开始用代码来写一些demo，跟着慕课网的视频一起写demo发现运行不出来，找其原因是视频太老了，react已经更新换代了，摔！！
 然后跟着阮一峰老师一起写12个demo，阮一峰老师的教程：[React 入门实例教程](http://note.youdao.com/http://www.ruanyifeng.com/blog/2015/03/react.html)，希望大家可以看一下老师写的demo

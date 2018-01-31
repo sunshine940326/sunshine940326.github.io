@@ -2,7 +2,7 @@
 title: javascript设计模式（一）
 date: 2017-03-11 23:54:11
 tags: [js,js设计模式] 
-categories: js
+categories: JavaScript
 ---
  
 

@@ -3,7 +3,7 @@ title: 【CSS】 常见 CSS 布局
 date: 2017-08-20 14:40:06
 tags: [CSS]
 categories: [CSS]
-top: 1000
+top: 8
 ---
 
 ![](https://user-gold-cdn.xitu.io/2017/8/20/b6e622a73fdbf94b10e7e22a6023f2db?imageView2/1/w/1200/h/700/q/85/interlace/1)

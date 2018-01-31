@@ -1,8 +1,9 @@
+---
 title: 【读书笔记】《锋利的jQuery》
 date: 2017-08-21 14:54:11
 tags: [读书笔记] 
-categories: [读书笔记,JavaScript]
-------------------
+categories: [book-movie-music]
+---
 
 ![锋利的jQuery](http://www.java1234.com/uploads/allimg/140406/1-1404060R111453.jpg)
 

@@ -2,8 +2,8 @@
 title: 【React.js】学习 React.js 比你想象的要简单
 date: 2017-08-14 23:54:11
 tags: [翻译] 
-categories: [React,翻译]
-top: 998
+categories: [翻译]
+top: 8
 ---
 ![](https://user-gold-cdn.xitu.io/2017/8/14/88e06ce88c09c77c1504b772f5801686?imageView2/1/w/1200/h/700/q/85/interlace/1&quot)
 

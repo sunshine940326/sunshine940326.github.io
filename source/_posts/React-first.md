@@ -2,7 +2,7 @@
 title: react（一）：初识react
 date: 2017-03-01 22:01:40
 tags: react
-categories: react
+categories: JavaScript
 ---
 这里只是读书笔记，因为刚开始接触react，概况的说一下什么是react，并且使用react完成hello world
 
