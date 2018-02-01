@@ -34,6 +34,6 @@ http://cherryblog.site/Use-webstorm-to-connect-GitHub.html
 http://cherryblog.site/Hexo-advanced.html
 http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html
 http://cherryblog.site/Use-Gitpagehexo-to-develop-their-own-blog.html
-http://cherryblog.site/movie-categories.html
 http://cherryblog.site/music-categories.html
+http://cherryblog.site/movie-categories.html
 http://cherryblog.site/book-categories.html

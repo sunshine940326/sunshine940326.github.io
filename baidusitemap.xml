@@ -3,6 +3,26 @@
 
 
     
+  <url>
+    <loc>http://cherryblog.site/Mobile-terminal-debugging-method.html</loc>
+    <lastmod>2018-01-31T15:25:00.040Z</lastmod>
+    <data>
+        <display>
+        <title>移动端调试方法</title>
+        <pubTime>2017-03-28T15:21:55.000Z</pubTime>
+        
+        <tag>调试</tag>
+         
+         
+           
+             
+              <breadCrumb title="Anything" url="http://cherryblog.site/categories/Anything/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://cherryblog.site/Use-webstorm-to-connect-GitHub.html</loc>
@@ -138,26 +158,6 @@
            
              
               <breadCrumb title="JavaScript" url="http://cherryblog.site/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Mobile-terminal-debugging-method.html</loc>
-    <lastmod>2018-01-31T14:58:34.225Z</lastmod>
-    <data>
-        <display>
-        <title>移动端调试方法</title>
-        <pubTime>2017-03-28T15:21:55.000Z</pubTime>
-        
-        <tag>调试</tag>
-         
-         
-           
-             
-              <breadCrumb title="Anytging" url="http://cherryblog.site/categories/Anytging/"/>
           
         </display>
     </data>
@@ -725,14 +725,14 @@
 
     
   <url>
-    <loc>http://cherryblog.site/movie-categories.html</loc>
+    <loc>http://cherryblog.site/music-categories.html</loc>
     <lastmod>2017-08-22T02:01:35.000Z</lastmod>
     <data>
         <display>
-        <title>那些年看过的电影</title>
+        <title>那些年听过的音乐</title>
         <pubTime>1994-03-25T16:00:00.000Z</pubTime>
         
-        <tag>那些年看过的电影</tag>
+        <tag>那些年听过的音乐</tag>
          
          
            
@@ -745,14 +745,14 @@
 
     
   <url>
-    <loc>http://cherryblog.site/music-categories.html</loc>
+    <loc>http://cherryblog.site/movie-categories.html</loc>
     <lastmod>2017-08-22T02:01:35.000Z</lastmod>
     <data>
         <display>
-        <title>那些年听过的音乐</title>
+        <title>那些年看过的电影</title>
         <pubTime>1994-03-25T16:00:00.000Z</pubTime>
         
-        <tag>那些年听过的音乐</tag>
+        <tag>那些年看过的电影</tag>
          
          
            
@@ -781,26 +781,6 @@
         <tag>动态背景</tag>
          
         <tag>统计功能</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
-    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo 2：【基础】了解 hexo + githubPages 搭建博客的原理</title>
-        <pubTime>2017-02-26T06:30:15.000Z</pubTime>
-        
-        <tag>Hexo</tag>
          
          
            
@@ -845,6 +825,26 @@
         <tag>Hexo建站初级教程</tag>
          
         <tag>Githubpages</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo建站" url="http://cherryblog.site/categories/Hexo%E5%BB%BA%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cherryblog.site/Hexo-Understand-the-principles-of-githubPages-hexoblog.html</loc>
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 2：【基础】了解 hexo + githubPages 搭建博客的原理</title>
+        <pubTime>2017-02-26T06:30:15.000Z</pubTime>
+        
+        <tag>Hexo</tag>
          
          
            

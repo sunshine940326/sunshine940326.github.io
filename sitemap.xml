@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://cherryblog.site/Mobile-terminal-debugging-method.html</loc>
+    
+    <lastmod>2018-01-31T15:25:00.040Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://cherryblog.site/about/index.html</loc>
     
     <lastmod>2018-01-31T15:09:18.136Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>http://cherryblog.site/React-first.html</loc>
     
     <lastmod>2018-01-31T14:58:47.132Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cherryblog.site/Mobile-terminal-debugging-method.html</loc>
-    
-    <lastmod>2018-01-31T14:58:34.225Z</lastmod>
     
   </url>
   
@@ -254,13 +254,6 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/music-categories.html</loc>
-    
-    <lastmod>2017-08-22T02:01:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/movie-categories.html</loc>
     
     <lastmod>2017-08-22T02:01:35.000Z</lastmod>
@@ -268,7 +261,21 @@
   </url>
   
   <url>
+    <loc>http://cherryblog.site/music-categories.html</loc>
+    
+    <lastmod>2017-08-22T02:01:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://cherryblog.site/Hexo-insert-music-share-comment-tab-search.html</loc>
+    
+    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
     
     <lastmod>2017-08-12T12:00:54.000Z</lastmod>
     
@@ -289,13 +296,6 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html</loc>
-    
-    <lastmod>2017-08-12T12:00:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://cherryblog.site/life/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
@@ -303,7 +303,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/categories/index.html</loc>
+    <loc>http://cherryblog.site/tags/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
@@ -317,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://cherryblog.site/tags/index.html</loc>
+    <loc>http://cherryblog.site/categories/index.html</loc>
     
     <lastmod>2017-07-01T13:44:27.000Z</lastmod>
     
